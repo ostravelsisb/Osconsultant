@@ -22,12 +22,12 @@ export function Navbar() {
   return (
     <>
       <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "glass shadow-soft border-b" : "bg-background/90 lg:bg-background/40 backdrop-blur-md"}`}>
-        <div className="container-px mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 md:gap-4">
+        <div className="container-px mx-auto flex h-20 max-w-17xl items-center justify-between gap-2 md:gap-4">
           <Link to="/" className="group flex flex-shrink-0 items-center gap-3">
-            <img 
-              src={logo} 
-              alt={COMPANY.name} 
-              className="h-11 w-auto object-contain transition-transform group-hover:scale-105" 
+            <img
+              src={logo}
+              alt={COMPANY.name}
+              className="h-11 w-auto object-contain transition-transform group-hover:scale-105"
             />
             <div className="hidden sm:block border-l border-border h-8 mx-1" />
             <span className="leading-tight">

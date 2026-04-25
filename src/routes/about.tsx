@@ -33,10 +33,10 @@ function About() {
           <Reveal delay={0.1}>
             <div className="grid grid-cols-2 gap-4">
               {[
-                {n:"15+", l:"Years of experience"},
-                {n:"20K+", l:"Happy travelers"},
-                {n:"98%", l:"Approval rate"},
-                {n:"50+", l:"Countries covered"},
+                { n: "15+", l: "Years of experience" },
+                { n: "20K+", l: "Happy travelers" },
+                { n: "98%", l: "Approval rate" },
+                { n: "50+", l: "Countries covered" },
               ].map((s) => (
                 <div key={s.l} className="rounded-2xl border border-border bg-card p-6 shadow-soft text-center hover-lift">
                   <p className="text-4xl font-bold gradient-text">{s.n}</p>
@@ -66,28 +66,7 @@ function About() {
         </div>
       </section>
 
-      <section className="container-px mx-auto max-w-7xl py-20">
-        <SectionHeader eyebrow="Our Team" title="Experts who care about your journey" subtitle="A multi-disciplinary team of visa consultants, IATA ticketing experts and travel coordinators." />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { name: "Omar Saeed", role: "Founder & Chief Consultant", icon: Award },
-            { name: "Sana Iqbal", role: "Head of Schengen & EU Visas", icon: Globe2 },
-            { name: "Hassan Raza", role: "USA & UK Specialist", icon: Users },
-            { name: "Maira Khan", role: "IATA Ticketing Lead", icon: Sparkles },
-          ].map((m, i) => (
-            <Reveal key={m.name} delay={i * 0.05}>
-              <div className="card-3d rounded-2xl border border-border bg-card p-6 text-center shadow-soft">
-                <div className="mx-auto inline-flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-2xl font-bold text-white shadow-glow">
-                  {m.name.split(" ").map(s => s[0]).slice(0,2).join("")}
-                </div>
-                <p className="mt-4 text-base font-bold">{m.name}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{m.role}</p>
-                <m.icon size={16} className="mx-auto mt-3 text-accent" />
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+
     </>
   );
 }
