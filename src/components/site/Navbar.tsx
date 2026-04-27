@@ -26,7 +26,7 @@ export function Navbar() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "glass shadow-soft border-b" : "bg-background/90 lg:bg-background/40 backdrop-blur-md"}`}
       >
-        <div className="container-px mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 md:gap-4">
+        <div className="container-px mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 lg:gap-4 xl:gap-8">
           <Link to="/" className="group flex flex-shrink-0 items-center gap-3">
             <img
               src={logo}
@@ -50,7 +50,13 @@ export function Navbar() {
                 key={l.to}
                 to={l.to}
                 activeOptions={{ exact: l.to === "/" }}
-                className="group relative px-2 xl:px-3 py-2 text-[10px] xl:text-[13px] font-semibold text-foreground/70 hover:text-primary transition-all duration-300 data-[status=active]:text-primary whitespace-nowrap"
+                className={`group relative px-1.5 xl:px-2.5 py-2 text-[11px] xl:text-[13px] font-semibold text-foreground/70 hover:text-primary transition-all duration-300 data-[status=active]:text-primary whitespace-nowrap ${
+                  l.label === "Insurance" || l.label === "Passport"
+                    ? "hidden 2xl:block"
+                    : l.label === "Hotels" || l.label === "Air Ticketing"
+                      ? "hidden xl:block"
+                      : ""
+                }`}
                 activeProps={{ className: "text-primary" }}
               >
                 <span className="relative z-10">
@@ -74,11 +80,11 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-4 shrink-0">
             <Link
               to="/consultation"
-              className="relative inline-flex items-center gap-1 xl:gap-2 overflow-hidden rounded-full bg-primary px-3 xl:px-6 py-2.5 text-[10px] xl:text-sm font-bold text-primary-foreground shadow-soft transition-all hover:shadow-elevated hover:-translate-y-0.5 active:translate-y-0 shine whitespace-nowrap"
+              className="relative inline-flex items-center gap-1 xl:gap-2 overflow-hidden rounded-full bg-primary px-4 xl:px-5 2xl:px-6 py-2.5 text-[11px] xl:text-sm font-bold text-primary-foreground shadow-soft transition-all hover:shadow-elevated hover:-translate-y-0.5 active:translate-y-0 shine whitespace-nowrap"
             >
               <span className="relative z-10">
-                <span className="xl:hidden">Consultation</span>
-                <span className="hidden xl:inline">Free Consultation</span>
+                <span className="2xl:hidden">Consultation</span>
+                <span className="hidden 2xl:inline">Free Consultation</span>
               </span>
               <ChevronRight size={14} className="relative z-10" />
             </Link>
