@@ -17,12 +17,16 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [location.pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
 
   return (
     <>
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "glass shadow-soft border-b" : "bg-background/90 lg:bg-background/40 backdrop-blur-md"}`}>
-        <div className="container-px mx-auto flex h-20 max-w-17xl items-center justify-between gap-2 md:gap-4">
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "glass shadow-soft border-b" : "bg-background/90 lg:bg-background/40 backdrop-blur-md"}`}
+      >
+        <div className="container-px mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 md:gap-4">
           <Link to="/" className="group flex flex-shrink-0 items-center gap-3">
             <img
               src={logo}
@@ -31,32 +35,52 @@ export function Navbar() {
             />
             <div className="hidden sm:block border-l border-border h-8 mx-1" />
             <span className="leading-tight">
-              <span className="block text-base md:text-lg font-bold tracking-tight whitespace-nowrap uppercase">OS <span className="gradient-text-accent">Consultants</span></span>
-              <span className="hidden sm:block text-[9px] md:text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground/80 whitespace-nowrap">Visa & Travel · Islamabad</span>
+              <span className="block text-sm md:text-base xl:text-lg font-bold tracking-tight whitespace-nowrap uppercase">
+                OS <span className="gradient-text-accent">Consultants</span>
+              </span>
+              <span className="hidden xl:block text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground/80 whitespace-nowrap">
+                Visa & Travel · Islamabad
+              </span>
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-px xl:gap-1">
             {NAV_LINKS.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 activeOptions={{ exact: l.to === "/" }}
-                className="group relative px-2.5 xl:px-4 py-2 text-[13px] font-semibold text-foreground/70 hover:text-primary transition-all duration-300 data-[status=active]:text-primary whitespace-nowrap"
+                className="group relative px-2 xl:px-3 py-2 text-[10px] xl:text-[13px] font-semibold text-foreground/70 hover:text-primary transition-all duration-300 data-[status=active]:text-primary whitespace-nowrap"
                 activeProps={{ className: "text-primary" }}
               >
-                <span className="relative z-10">{l.label}</span>
+                <span className="relative z-10">
+                  {l.label === "Visa Services" ? (
+                    <>
+                      <span className="xl:hidden">Visas</span>
+                      <span className="hidden xl:inline">Visa Services</span>
+                    </>
+                  ) : (
+                    l.label
+                  )}
+                </span>
                 {/* Hover Pill Background */}
-                <span className="absolute inset-0 z-0 scale-90 rounded-full bg-primary/5 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
+                <span className="absolute inset-0 z-0 scale-95 rounded-full bg-primary/5 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
                 {/* Active/Hover Underline */}
-                <span className="absolute inset-x-4 -bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-primary to-accent transition-transform duration-300 group-hover:scale-x-100" />
+                <span className="absolute inset-x-2 xl:inset-x-3 -bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-primary to-accent transition-transform duration-300 group-hover:scale-x-100" />
               </Link>
             ))}
           </nav>
 
-          <div className="hidden xl:flex items-center gap-4 shrink-0">
-            <Link to="/consultation" className="relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground shadow-soft transition-all hover:shadow-elevated hover:-translate-y-0.5 active:translate-y-0 shine whitespace-nowrap">
-              Free Consultation <ChevronRight size={16} />
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
+            <Link
+              to="/consultation"
+              className="relative inline-flex items-center gap-1 xl:gap-2 overflow-hidden rounded-full bg-primary px-3 xl:px-6 py-2.5 text-[10px] xl:text-sm font-bold text-primary-foreground shadow-soft transition-all hover:shadow-elevated hover:-translate-y-0.5 active:translate-y-0 shine whitespace-nowrap"
+            >
+              <span className="relative z-10">
+                <span className="xl:hidden">Consultation</span>
+                <span className="hidden xl:inline">Free Consultation</span>
+              </span>
+              <ChevronRight size={14} className="relative z-10" />
             </Link>
           </div>
 
@@ -72,9 +96,18 @@ export function Navbar() {
 
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm lg:hidden" onClick={() => setOpen(false)}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm lg:hidden"
+            onClick={() => setOpen(false)}
+          >
             <motion.aside
-              initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", damping: 28, stiffness: 240 }}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 28, stiffness: 240 }}
               className="absolute right-0 top-0 h-full w-[86%] max-w-sm bg-background shadow-elevated"
               onClick={(e) => e.stopPropagation()}
             >
@@ -82,7 +115,9 @@ export function Navbar() {
                 <div className="flex items-center justify-between border-b border-border px-6 py-5">
                   <div className="flex items-center gap-3">
                     <img src={logo} alt="Logo" className="h-8 w-auto" />
-                    <span className="font-bold tracking-tight text-lg uppercase">OS <span className="text-accent">Consultants</span></span>
+                    <span className="font-bold tracking-tight text-lg uppercase">
+                      OS <span className="text-accent">Consultants</span>
+                    </span>
                   </div>
                   <button
                     onClick={() => setOpen(false)}
@@ -117,13 +152,16 @@ export function Navbar() {
                 </nav>
 
                 <div className="p-6 border-t border-border bg-muted/30">
-                  <Link to="/consultation" className="flex items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-4 text-sm font-bold text-primary-foreground shadow-soft transition-transform active:scale-[0.98]">
+                  <Link
+                    to="/consultation"
+                    className="flex items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-4 text-sm font-bold text-primary-foreground shadow-soft transition-transform active:scale-[0.98]"
+                  >
                     Free Consultation <ChevronRight size={18} />
                   </Link>
                   <div className="mt-6 space-y-3">
-                    <p className="text-xs font-medium text-muted-foreground flex items-center gap-2">
+                    <div className="text-xs font-medium text-muted-foreground flex items-center gap-2">
                       <div className="h-1 w-1 rounded-full bg-primary" /> {COMPANY.address}
-                    </p>
+                    </div>
                     <p className="text-[10px] text-muted-foreground/60 text-center uppercase tracking-widest font-bold">
                       &copy; {new Date().getFullYear()} {COMPANY.name}
                     </p>

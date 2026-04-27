@@ -4,6 +4,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { TopBar } from "@/components/site/TopBar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { COMPANY } from "@/data/site";
 
 function NotFoundComponent() {
   return (
@@ -33,8 +34,37 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: COMPANY.name,
+    image: "https://osconsultants.pk/src/assets/hero-travel.jpg",
+    "@id": "https://osconsultants.pk",
+    url: "https://osconsultants.pk",
+    telephone: COMPANY.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Office # 3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area",
+      addressLocality: "Islamabad",
+      postalCode: "44000",
+      addressCountry: "PK",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 33.7135,
+      longitude: 73.0673,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "10:00",
+      closes: "19:00",
+    },
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <TopBar />
       <Navbar />
       <main className="flex-1">

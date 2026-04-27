@@ -7,9 +7,16 @@ export const Route = createFileRoute("/consultation")({
   head: () => ({
     meta: [
       { title: "Free Visa Consultation — OS Consultants Islamabad" },
-      { name: "description", content: "Book a free 15-minute visa consultation with OS Consultants. Get an expert pathway and clear timeline." },
+      {
+        name: "description",
+        content:
+          "Book a free 15-minute visa consultation with OS Consultants. Get an expert pathway and clear timeline.",
+      },
       { property: "og:title", content: "Book a Free Consultation" },
-      { property: "og:description", content: "15 minutes with a senior consultant — no obligation." },
+      {
+        property: "og:description",
+        content: "15 minutes with a senior consultant — no obligation.",
+      },
     ],
   }),
   component: Consultation,
@@ -18,7 +25,11 @@ export const Route = createFileRoute("/consultation")({
 function Consultation() {
   return (
     <>
-      <PageHero eyebrow="Free Consultation" title="15 minutes that changes your travel plans" subtitle="Tell us about your goal — we&apos;ll respond with a clear pathway, timeline and honest fee estimate." />
+      <PageHero
+        eyebrow="Free Consultation"
+        title="15 minutes that changes your travel plans"
+        subtitle="Tell us about your goal — we'll respond with a clear pathway, timeline and honest fee estimate."
+      />
       <section className="container-px mx-auto max-w-7xl py-20 grid gap-10 lg:grid-cols-2 items-start">
         <div>
           <h2 className="text-2xl font-bold md:text-3xl">Why book a consultation?</h2>
@@ -30,7 +41,9 @@ function Consultation() {
               "Senior consultant — no junior reps",
               "100% obligation-free",
             ].map((it) => (
-              <li key={it} className="flex gap-3"><CheckCircle2 className="text-primary mt-0.5" size={18} /> {it}</li>
+              <li key={it} className="flex gap-3">
+                <CheckCircle2 className="text-primary mt-0.5" size={18} /> {it}
+              </li>
             ))}
           </ul>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold text-accent-foreground">

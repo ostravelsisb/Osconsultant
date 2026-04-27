@@ -1,7 +1,19 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
-export function CountryCard({ name, short, image, accent, slug }: { name: string; short: string; image: string; accent?: string; slug: string }) {
+export function CountryCard({
+  name,
+  short,
+  image,
+  accent,
+  slug,
+}: {
+  name: string;
+  short: string;
+  image: string;
+  accent?: string;
+  slug: string;
+}) {
   return (
     <Link to="/countries/$slug" params={{ slug }} className="block">
       <article className="group relative h-80 overflow-hidden rounded-2xl border border-border shadow-soft card-3d">

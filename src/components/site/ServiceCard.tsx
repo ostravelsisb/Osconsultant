@@ -23,10 +23,17 @@ export function ServiceCard({
       <p className="relative mt-2 text-sm text-muted-foreground leading-relaxed">{desc}</p>
       {to && (
         <span className="relative mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-          Learn more <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+          Learn more{" "}
+          <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
         </span>
       )}
     </div>
   );
-  return to ? <Link to={to} className="group block h-full">{inner}</Link> : <div className="group h-full">{inner}</div>;
+  return to ? (
+    <Link to={to} className="group block h-full">
+      {inner}
+    </Link>
+  ) : (
+    <div className="group h-full">{inner}</div>
+  );
 }

@@ -1,33 +1,33 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { SCHENGEN_COUNTRIES } from "@/data/site";
+import { CENTRAL_ASIA_COUNTRIES } from "@/data/site";
 import { PageHero } from "@/components/site/PageHero";
-import { CheckCircle2, FileText, Globe2, ArrowRight } from "lucide-react";
+import { CheckCircle2, FileText, Globe2 } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { COMPANY } from "@/data/site";
 
-export const Route = createFileRoute("/countries/schengen/$country")({
+export const Route = createFileRoute("/countries/central-asia/$country")({
   loader: ({ params }) => {
-    const country = SCHENGEN_COUNTRIES.find((c) => c.slug === params.country);
+    const country = CENTRAL_ASIA_COUNTRIES.find((c) => c.slug === params.country);
     if (!country) throw notFound();
     return country;
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: loaderData?.title || "Schengen Visa Consultant Islamabad" },
+      { title: loaderData?.title || "Visa Consultant Islamabad" },
       { name: "description", content: loaderData?.description || "" },
       { name: "keywords", content: loaderData?.keywords || "" },
     ],
   }),
-  component: SchengenCountryPage,
+  component: CentralAsiaCountryPage,
 });
 
-function SchengenCountryPage() {
+function CentralAsiaCountryPage() {
   const country = Route.useLoaderData();
 
   return (
     <>
       <PageHero
-        eyebrow="Schengen Area"
+        eyebrow="Central Asia & Turkey"
         title={country.name}
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
@@ -70,11 +70,11 @@ function SchengenCountryPage() {
             <div className="rounded-2xl border border-border bg-secondary/30 p-6 shadow-soft">
               <div className="flex items-center gap-3 mb-4">
                 <Globe2 size={24} className="text-primary" />
-                <h3 className="font-bold text-lg">Why {country.name}?</h3>
+                <h3 className="font-bold text-lg">Travel Tip</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Part of the Schengen zone, {country.name} is a gateway to Europe. We ensure your
-                application meets the specific standards of the embassy in Islamabad.
+                For {country.name}, e-visas are typically the fastest option. For sticker visas
+                (Turkey), we recommend starting the process 30 days before travel.
               </p>
             </div>
 
@@ -82,10 +82,10 @@ function SchengenCountryPage() {
               <h3 className="font-bold text-lg mb-4 text-primary-glow">Consultancy Benefits</h3>
               <ul className="space-y-3">
                 {[
-                  "Error-free form filling",
-                  "Early appointment slots",
-                  "Meticulous file assembly",
-                  "Interview preparation",
+                  "ASAN e-visa expertise",
+                  "Anatolia/Gerry's file prep",
+                  "Official invitation support",
+                  "Document legalization guidance",
                 ].map((tip, idx) => (
                   <li key={idx} className="text-sm text-muted-foreground flex gap-2 font-medium">
                     <span className="text-primary">•</span> {tip}
@@ -106,8 +106,8 @@ function SchengenCountryPage() {
                 Start Your {country.name} Journey Today
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                The {country.name} embassy has strict requirements. Don't risk a refusal — let our
-                experts in Islamabad handle your application from start to finish.
+                The Silk Road destinations have unique requirements. Let our Islamabad team guide
+                you through the process for a successful visa approval.
               </p>
 
               <div className="pt-6 flex flex-wrap gap-4">

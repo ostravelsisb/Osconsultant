@@ -1,6 +1,16 @@
 import { Reveal } from "./Reveal";
 
-export function SectionHeader({ eyebrow, title, subtitle, center = true }: { eyebrow?: string; title: string; subtitle?: string; center?: boolean }) {
+export function SectionHeader({
+  eyebrow,
+  title,
+  subtitle,
+  center = true,
+}: {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  center?: boolean;
+}) {
   return (
     <div className={`mb-12 ${center ? "text-center mx-auto max-w-2xl" : ""}`}>
       {eyebrow && (
@@ -11,13 +21,13 @@ export function SectionHeader({ eyebrow, title, subtitle, center = true }: { eye
         </Reveal>
       )}
       <Reveal delay={0.05}>
-        <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-          {title}
-        </h2>
+        <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">{title}</h2>
       </Reveal>
       {subtitle && (
         <Reveal delay={0.1}>
-          <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">{subtitle}</p>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">
+            {subtitle}
+          </p>
         </Reveal>
       )}
     </div>
