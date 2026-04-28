@@ -24,8 +24,17 @@ export const Route = createFileRoute("/countries/north-africa/$country")({
 function NorthAfricaCountryPage() {
   const country = Route.useLoaderData();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: country.title || `${country.name} Visa Consultant Islamabad`,
+    description: country.description,
+    url: `https://osconsultants.pk/countries/north-africa/${country.slug}`,
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <PageHero
         eyebrow="North Africa"
         title={country.name}

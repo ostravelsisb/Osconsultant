@@ -79,13 +79,13 @@ function DestinationHub() {
                 </p>
               </Reveal>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
               {SCHENGEN_COUNTRIES.map((c, i) => (
                 <Reveal key={c.slug} delay={i * 0.02}>
                   <Link
                     to="/countries/schengen/$country"
                     params={{ country: c.slug }}
-                    className="group relative flex h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
                   >
                     {/* Background Image */}
                     {c.image && (
@@ -93,6 +93,7 @@ function DestinationHub() {
                         <img
                           src={c.image}
                           alt={c.name}
+                          loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -162,13 +163,13 @@ function DestinationHub() {
                 </p>
               </Reveal>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
               {SOUTH_ASIA_COUNTRIES.map((c, i) => (
                 <Reveal key={c.slug} delay={i * 0.05}>
                   <Link
                     to="/countries/south-asia/$country"
                     params={{ country: c.slug }}
-                    className="group relative flex h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
                   >
                     {/* Background Image */}
                     {c.image && (
@@ -176,6 +177,7 @@ function DestinationHub() {
                         <img
                           src={c.image}
                           alt={c.name}
+                          loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -240,13 +242,13 @@ function DestinationHub() {
                 </p>
               </Reveal>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
               {CENTRAL_ASIA_COUNTRIES.map((c, i) => (
                 <Reveal key={c.slug} delay={i * 0.05}>
                   <Link
                     to="/countries/central-asia/$country"
                     params={{ country: c.slug }}
-                    className="group relative flex h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
                   >
                     {/* Background Image */}
                     {c.image && (
@@ -254,6 +256,7 @@ function DestinationHub() {
                         <img
                           src={c.image}
                           alt={c.name}
+                          loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -317,13 +320,13 @@ function DestinationHub() {
                 </p>
               </Reveal>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
               {NORTH_AFRICA_COUNTRIES.map((c, i) => (
                 <Reveal key={c.slug} delay={i * 0.05}>
                   <Link
                     to="/countries/north-africa/$country"
                     params={{ country: c.slug }}
-                    className="group relative flex h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
                   >
                     {/* Background Image */}
                     {c.image && (
@@ -331,6 +334,7 @@ function DestinationHub() {
                         <img
                           src={c.image}
                           alt={c.name}
+                          loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -394,13 +398,13 @@ function DestinationHub() {
                 </p>
               </Reveal>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
               {SOUTHERN_AFRICA_COUNTRIES.map((c, i) => (
                 <Reveal key={c.slug} delay={i * 0.05}>
                   <Link
                     to="/countries/southern-africa/$country"
                     params={{ country: c.slug }}
-                    className="group relative flex h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
                   >
                     {/* Background Image */}
                     {c.image && (
@@ -408,6 +412,7 @@ function DestinationHub() {
                         <img
                           src={c.image}
                           alt={c.name}
+                          loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -478,7 +483,7 @@ function DestinationHub() {
             {dest.visas.map((v: VisaType, i: number) => (
               <Reveal key={v.slug} delay={i * 0.05}>
                 <Link
-                  to="/countries/$slug/$visaType"
+                  to="/countries/$slug/visa/$visaType"
                   params={{ slug: dest.slug, visaType: v.slug }}
                   className="group flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-soft hover-lift transition-all hover:border-primary/50"
                 >

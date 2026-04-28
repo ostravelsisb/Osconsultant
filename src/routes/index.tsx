@@ -44,25 +44,25 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OS Consultants — Best Visa Consultant in Islamabad, Pakistan" },
+      { title: "OS Consultants | #1 Travel Agency & Best Visa Consultant in Pakistan" },
       {
         name: "description",
         content:
-          "Expert visa consultancy in Islamabad. Specializing in Schengen, UK, USA, Canada, & Australia visas. 15+ years experience, IATA authorized ticketing & travel insurance.",
+          "Ranked as the No.1 Travel Agency and Best Visa Consultant in Pakistan. Specializing in Schengen, USA, UK, Canada, & Australia visas. Get cheap flights, hotel bookings, and expert immigration services in Islamabad.",
       },
       {
         name: "keywords",
         content:
-          "visa consultant islamabad, best visa agency pakistan, schengen visa islamabad, uk visit visa pakistan, usa visa consultant islamabad, canada pr islamabad, australia visa agent pakistan, travel agency blue area islamabad",
+          "best travel agency in pakistan, top travel agency islamabad, #1 visa consultant pakistan, best visa agency islamabad, top tour operator pakistan, cheap flights pakistan, schengen visa pakistan, uk visa agent islamabad, usa visa consultant pakistan, canada immigration pakistan, australia student visa islamabad, corporate travel agency pakistan, reliable travel agents in pakistan, flight booking pakistan, hotel reservation islamabad, no.1 travel agency in pakistan, best travel and tours pakistan, top immigration consultant pakistan, top travel agent in pakistan",
       },
       {
         property: "og:title",
-        content: "OS Consultants — Best Visa & Travel Consultancy in Islamabad",
+        content: "OS Consultants | #1 Travel Agency & Best Visa Consultant in Pakistan",
       },
       {
         property: "og:description",
         content:
-          "Pakistan's trusted visa & travel consultancy. 15+ years experience, 98% approval rate for Schengen, UK, USA, and Canada.",
+          "Ranked as the No.1 Travel Agency and Best Visa Consultant in Pakistan. Specializing in Schengen, USA, UK, Canada, & Australia visas.",
       },
       { property: "og:image", content: "/src/assets/hero-travel.jpg" },
       {

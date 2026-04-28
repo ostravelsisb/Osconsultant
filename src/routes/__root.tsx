@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent } from "@tanstack/react-router";
 
 import { Navbar } from "@/components/site/Navbar";
 import { TopBar } from "@/components/site/TopBar";
@@ -36,8 +36,10 @@ export const Route = createRootRoute({
 function RootComponent() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["TravelAgency", "LocalBusiness"],
     name: COMPANY.name,
+    description:
+      "Ranked as the No.1 Travel Agency and Best Visa Consultant in Pakistan. Expert in cheap flight tickets, hotel bookings, and Schengen, UK, USA visas.",
     image: "https://osconsultants.pk/src/assets/hero-travel.jpg",
     "@id": "https://osconsultants.pk",
     url: "https://osconsultants.pk",
@@ -64,6 +66,7 @@ function RootComponent() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <HeadContent />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <TopBar />
       <Navbar />

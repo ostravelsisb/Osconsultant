@@ -104,10 +104,10 @@ function AirTicketing() {
                   Seamless connections to over 200+ destinations
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  As an <strong>IATA-certified agency</strong>, we bridge the gap between you and the
-                  world's leading airlines. Our direct integration with global distribution systems
-                  (GDS) ensures that you see real-time availability and "web-only" fares that
-                  aren't available to the general public.
+                  As an <strong>IATA-certified agency</strong>, we bridge the gap between you and
+                  the world's leading airlines. Our direct integration with global distribution
+                  systems (GDS) ensures that you see real-time availability and "web-only" fares
+                  that aren't available to the general public.
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2 text-sm font-medium">
                   <div className="flex items-center gap-3">
@@ -150,7 +150,8 @@ function AirTicketing() {
                   major hubs including London, New York, Toronto, Dubai, and Melbourne. We don't
                   just use automated tools; our expert ticketing officers manually audit routes to
                   find hidden savings, such as "split-ticketing" or choosing alternative hubs that
-                  can save you thousands of rupees on <strong>international flight bookings</strong>.
+                  can save you thousands of rupees on <strong>international flight bookings</strong>
+                  .
                 </p>
                 <h3 className="text-xl font-bold text-foreground">Global Airline Partnerships</h3>
                 <p>
@@ -212,8 +213,8 @@ function AirTicketing() {
             <div className="rounded-3xl bg-accent/5 p-8 border border-accent/10">
               <h4 className="font-bold text-lg mb-4">24/7 Urgent Support</h4>
               <p className="text-sm text-muted-foreground mb-6">
-                Flight cancelled? Need an urgent date change? Our "Human-Powered" support is available
-                around the clock to handle emergencies.
+                Flight cancelled? Need an urgent date change? Our "Human-Powered" support is
+                available around the clock to handle emergencies.
               </p>
               <div className="space-y-3">
                 <div className="flex justify-between text-xs font-semibold uppercase tracking-wider text-muted-foreground">

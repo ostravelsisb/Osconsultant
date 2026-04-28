@@ -9,8 +9,8 @@ export function Footer() {
     <footer className="relative mt-24 overflow-hidden bg-gradient-to-br from-[oklch(0.18_0.05_260)] via-[oklch(0.16_0.04_258)] to-[oklch(0.20_0.06_265)] text-white/85">
       <div className="absolute inset-0 mesh-bg opacity-30 pointer-events-none" />
       <div className="container-px mx-auto max-w-7xl py-16 relative">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-12">
+          <div className="lg:col-span-2 pr-4">
             <div className="flex items-center gap-3">
               <img src={logo} alt={COMPANY.name} className="h-10 w-auto brightness-0 invert" />
               <span className="text-lg font-bold text-white uppercase tracking-tight">

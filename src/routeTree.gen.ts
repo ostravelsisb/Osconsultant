@@ -27,7 +27,7 @@ import { Route as CountriesSouthAsiaCountryRouteImport } from './routes/countrie
 import { Route as CountriesSchengenCountryRouteImport } from './routes/countries.schengen.$country'
 import { Route as CountriesNorthAfricaCountryRouteImport } from './routes/countries.north-africa.$country'
 import { Route as CountriesCentralAsiaCountryRouteImport } from './routes/countries.central-asia.$country'
-import { Route as CountriesSlugVisaTypeRouteImport } from './routes/countries.$slug_.$visaType'
+import { Route as CountriesSlugVisaVisaTypeRouteImport } from './routes/countries.$slug_.visa.$visaType'
 
 const VisaServicesRoute = VisaServicesRouteImport.update({
   id: '/visa-services',
@@ -124,11 +124,12 @@ const CountriesCentralAsiaCountryRoute =
     path: '/countries/central-asia/$country',
     getParentRoute: () => rootRouteImport,
   } as any)
-const CountriesSlugVisaTypeRoute = CountriesSlugVisaTypeRouteImport.update({
-  id: '/countries/$slug_/$visaType',
-  path: '/countries/$slug/$visaType',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const CountriesSlugVisaVisaTypeRoute =
+  CountriesSlugVisaVisaTypeRouteImport.update({
+    id: '/countries/$slug_/visa/$visaType',
+    path: '/countries/$slug/visa/$visaType',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -144,12 +145,12 @@ export interface FileRoutesByFullPath {
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries/': typeof CountriesIndexRoute
-  '/countries/$slug/$visaType': typeof CountriesSlugVisaTypeRoute
   '/countries/central-asia/$country': typeof CountriesCentralAsiaCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
   '/countries/southern-africa/$country': typeof CountriesSouthernAfricaCountryRoute
+  '/countries/$slug/visa/$visaType': typeof CountriesSlugVisaVisaTypeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -165,12 +166,12 @@ export interface FileRoutesByTo {
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries': typeof CountriesIndexRoute
-  '/countries/$slug/$visaType': typeof CountriesSlugVisaTypeRoute
   '/countries/central-asia/$country': typeof CountriesCentralAsiaCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
   '/countries/southern-africa/$country': typeof CountriesSouthernAfricaCountryRoute
+  '/countries/$slug/visa/$visaType': typeof CountriesSlugVisaVisaTypeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -187,12 +188,12 @@ export interface FileRoutesById {
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries/': typeof CountriesIndexRoute
-  '/countries/$slug_/$visaType': typeof CountriesSlugVisaTypeRoute
   '/countries/central-asia/$country': typeof CountriesCentralAsiaCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
   '/countries/southern-africa/$country': typeof CountriesSouthernAfricaCountryRoute
+  '/countries/$slug_/visa/$visaType': typeof CountriesSlugVisaVisaTypeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -210,12 +211,12 @@ export interface FileRouteTypes {
     | '/visa-services'
     | '/countries/$slug'
     | '/countries/'
-    | '/countries/$slug/$visaType'
     | '/countries/central-asia/$country'
     | '/countries/north-africa/$country'
     | '/countries/schengen/$country'
     | '/countries/south-asia/$country'
     | '/countries/southern-africa/$country'
+    | '/countries/$slug/visa/$visaType'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -231,12 +232,12 @@ export interface FileRouteTypes {
     | '/visa-services'
     | '/countries/$slug'
     | '/countries'
-    | '/countries/$slug/$visaType'
     | '/countries/central-asia/$country'
     | '/countries/north-africa/$country'
     | '/countries/schengen/$country'
     | '/countries/south-asia/$country'
     | '/countries/southern-africa/$country'
+    | '/countries/$slug/visa/$visaType'
   id:
     | '__root__'
     | '/'
@@ -252,12 +253,12 @@ export interface FileRouteTypes {
     | '/visa-services'
     | '/countries/$slug'
     | '/countries/'
-    | '/countries/$slug_/$visaType'
     | '/countries/central-asia/$country'
     | '/countries/north-africa/$country'
     | '/countries/schengen/$country'
     | '/countries/south-asia/$country'
     | '/countries/southern-africa/$country'
+    | '/countries/$slug_/visa/$visaType'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -274,12 +275,12 @@ export interface RootRouteChildren {
   VisaServicesRoute: typeof VisaServicesRoute
   CountriesSlugRoute: typeof CountriesSlugRoute
   CountriesIndexRoute: typeof CountriesIndexRoute
-  CountriesSlugVisaTypeRoute: typeof CountriesSlugVisaTypeRoute
   CountriesCentralAsiaCountryRoute: typeof CountriesCentralAsiaCountryRoute
   CountriesNorthAfricaCountryRoute: typeof CountriesNorthAfricaCountryRoute
   CountriesSchengenCountryRoute: typeof CountriesSchengenCountryRoute
   CountriesSouthAsiaCountryRoute: typeof CountriesSouthAsiaCountryRoute
   CountriesSouthernAfricaCountryRoute: typeof CountriesSouthernAfricaCountryRoute
+  CountriesSlugVisaVisaTypeRoute: typeof CountriesSlugVisaVisaTypeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -410,11 +411,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CountriesCentralAsiaCountryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/countries/$slug_/$visaType': {
-      id: '/countries/$slug_/$visaType'
-      path: '/countries/$slug/$visaType'
-      fullPath: '/countries/$slug/$visaType'
-      preLoaderRoute: typeof CountriesSlugVisaTypeRouteImport
+    '/countries/$slug_/visa/$visaType': {
+      id: '/countries/$slug_/visa/$visaType'
+      path: '/countries/$slug/visa/$visaType'
+      fullPath: '/countries/$slug/visa/$visaType'
+      preLoaderRoute: typeof CountriesSlugVisaVisaTypeRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -434,12 +435,12 @@ const rootRouteChildren: RootRouteChildren = {
   VisaServicesRoute: VisaServicesRoute,
   CountriesSlugRoute: CountriesSlugRoute,
   CountriesIndexRoute: CountriesIndexRoute,
-  CountriesSlugVisaTypeRoute: CountriesSlugVisaTypeRoute,
   CountriesCentralAsiaCountryRoute: CountriesCentralAsiaCountryRoute,
   CountriesNorthAfricaCountryRoute: CountriesNorthAfricaCountryRoute,
   CountriesSchengenCountryRoute: CountriesSchengenCountryRoute,
   CountriesSouthAsiaCountryRoute: CountriesSouthAsiaCountryRoute,
   CountriesSouthernAfricaCountryRoute: CountriesSouthernAfricaCountryRoute,
+  CountriesSlugVisaVisaTypeRoute: CountriesSlugVisaVisaTypeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

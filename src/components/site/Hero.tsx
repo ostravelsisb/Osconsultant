@@ -82,6 +82,8 @@ export function Hero() {
               alt="OS Consultants traveler at airport with passport and tickets"
               width={1920}
               height={1080}
+              loading="eager"
+              fetchPriority="high"
               className="h-[400px] w-full object-cover md:h-[500px] lg:h-[520px]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

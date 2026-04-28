@@ -24,8 +24,17 @@ export const Route = createFileRoute("/countries/schengen/$country")({
 function SchengenCountryPage() {
   const country = Route.useLoaderData();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: country.title || `${country.name} Visa Consultant Islamabad`,
+    description: country.description,
+    url: `https://osconsultants.pk/countries/schengen/${country.slug}`,
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <PageHero
         eyebrow="Schengen Area"
         title={country.name}

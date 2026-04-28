@@ -5,7 +5,7 @@ import { CheckCircle2, FileText, Banknote, Clock, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { COMPANY } from "@/data/site";
 
-export const Route = createFileRoute("/countries/$slug_/$visaType")({
+export const Route = createFileRoute("/countries/$slug_/visa/$visaType")({
   loader: ({ params }) => {
     const destination = DESTINATIONS.find((c) => c.slug === params.slug);
     if (!destination) throw notFound();

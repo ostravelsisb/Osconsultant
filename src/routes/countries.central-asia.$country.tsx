@@ -24,8 +24,17 @@ export const Route = createFileRoute("/countries/central-asia/$country")({
 function CentralAsiaCountryPage() {
   const country = Route.useLoaderData();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: country.title || `${country.name} Visa Consultant Islamabad`,
+    description: country.description,
+    url: `https://osconsultants.pk/countries/central-asia/${country.slug}`,
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <PageHero
         eyebrow="Central Asia & Turkey"
         title={country.name}
