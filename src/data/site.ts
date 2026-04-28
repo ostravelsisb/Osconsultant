@@ -687,7 +687,7 @@ export const SCHENGEN_COUNTRIES = [
       "Lapland",
       "Suomenlinna",
     ],
-    image: "https://static.independent.co.uk/2025/11/24/16/01/iStock-865530762.jpeg",
+    image: "https://nordivatours.com/wp-content/uploads/2025/03/Finland.jpg",
   },
   {
     slug: "hungary",
