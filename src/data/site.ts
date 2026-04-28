@@ -459,7 +459,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Vienna (Schönbrunn Palace)", "Salzburg (Old Town)", "Hallstatt", "Innsbruck"],
     image:
-      "https://www.costsavertour.com/media/rxpb4ii3/durnstein-town-in-wachau-valley-in-autumn-austria-1355636197.jpg?rxy=0.489974937343358%2C0.468671679197995&mode=crop&width=1920&format=webp&quality=80&height=823",
+      "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "belgium",
