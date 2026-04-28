@@ -24,7 +24,7 @@ export const COMPANY = {
   websites: ["ostravel.pk", "ostravels.com"],
   socials: {
     facebook: "https://www.facebook.com/osconsultants01/",
-    instagram: "https://www.instagram.com/osconsultants/",
+    instagram: "https://www.instagram.com/osconsultants.pk/",
     linkedin: "https://www.linkedin.com/company/os-consultants/",
     twitter: "https://twitter.com/osconsultants",
   },

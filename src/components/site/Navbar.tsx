@@ -120,7 +120,7 @@ export function Navbar() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between border-b border-border px-6 py-5">
                   <div className="flex items-center gap-3">
-                    <img src={logo} alt="Logo" className="h-8 w-auto" />
+                    <img src={logo} alt="OS Consultants Logo" className="h-8 w-auto" />
                     <span className="font-bold tracking-tight text-lg uppercase">
                       OS <span className="text-accent">Consultants</span>
                     </span>

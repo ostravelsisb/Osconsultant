@@ -44,11 +44,11 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OS Consultants | #1 Travel Agency & Best Visa Consultant in Pakistan" },
+      { title: "OS Consultants | Top Travel Agency & Visa Consultant" },
       {
         name: "description",
         content:
-          "Ranked as the No.1 Travel Agency and Best Visa Consultant in Pakistan. Specializing in Schengen, USA, UK, Canada, & Australia visas. Get cheap flights, hotel bookings, and expert immigration services in Islamabad.",
+          "Top Travel Agency & Visa Consultant in Pakistan. Expert services for Schengen, USA, UK, Canada & Australia visas. Cheap flights & hotel bookings in Islamabad.",
       },
       {
         name: "keywords",
@@ -57,23 +57,28 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "OS Consultants | #1 Travel Agency & Best Visa Consultant in Pakistan",
+        content: "OS Consultants | Top Travel Agency & Visa Consultant",
       },
       {
         property: "og:description",
         content:
-          "Ranked as the No.1 Travel Agency and Best Visa Consultant in Pakistan. Specializing in Schengen, USA, UK, Canada, & Australia visas.",
+          "Top Travel Agency & Visa Consultant in Pakistan. Expert services for Schengen, USA, UK, Canada & Australia visas. Cheap flights & hotel bookings in Islamabad.",
       },
       { property: "og:image", content: "/src/assets/hero-travel.jpg" },
       {
         name: "twitter:title",
-        content: "OS Consultants — Best Visa & Travel Consultancy in Islamabad",
+        content: "OS Consultants | Best Visa & Travel Consultancy",
       },
       {
         name: "twitter:description",
         content:
           "Expert visa services for Schengen, UK, USA, Canada, and Australia. 15+ years experience in Islamabad.",
       },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/" },
+      { rel: "alternate", hrefLang: "en-PK", href: "https://osconsultants.pk/" },
+      { rel: "alternate", hrefLang: "en", href: "https://osconsultants.pk/" },
     ],
   }),
   component: Home,
@@ -118,9 +123,27 @@ function Home() {
     })),
   };
 
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    name: "OS Consultants",
+    url: "https://osconsultants.pk/",
+    logo: "https://osconsultants.pk/logo.png",
+    description: "Top Travel Agency & Visa Consultant in Pakistan.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Blue Area",
+      addressLocality: "Islamabad",
+      addressCountry: "PK",
+    },
+    telephone: COMPANY.phone,
+    email: COMPANY.email,
+  };
+
   return (
     <>
       <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
       <Hero />
 
       {/* Visa Services */}
