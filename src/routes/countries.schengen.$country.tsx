@@ -15,7 +15,7 @@ export const Route = createFileRoute("/countries/schengen/$country")({
     meta: [
       { title: loaderData?.title || "Schengen Visa Consultant Islamabad" },
       { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: loaderData?.keywords || "" },
+      { name: "keywords", content: `${loaderData?.keywords || ""}, top travel agency pakistan, best in islamabad, travel agency` },
     ],
   }),
   component: SchengenCountryPage,
@@ -116,7 +116,7 @@ function SchengenCountryPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
                 The {country.name} embassy has strict requirements. Don't risk a refusal — let our
-                experts in Islamabad handle your application from start to finish.
+                experts at Pakistan's no.1 travel agency and consultancy handle your application from start to finish.
               </p>
 
               <div className="pt-6 flex flex-wrap gap-4">

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/countries/central-asia/$country")({
     meta: [
       { title: loaderData?.title || "Visa Consultant Islamabad" },
       { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: loaderData?.keywords || "" },
+      { name: "keywords", content: `${loaderData?.keywords || ""}, top travel agency pakistan, best in islamabad, travel agency` },
     ],
   }),
   component: CentralAsiaCountryPage,
@@ -115,7 +115,7 @@ function CentralAsiaCountryPage() {
                 Start Your {country.name} Journey Today
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                The Silk Road destinations have unique requirements. Let our Islamabad team guide
+                The Silk Road destinations have unique requirements. Let our experts at Pakistan's no.1 travel agency and consultancy guide
                 you through the process for a successful visa approval.
               </p>
 

@@ -31,21 +31,23 @@ ${data.message}`;
       className="rounded-2xl border border-border bg-card p-6 shadow-soft md:p-8"
     >
       <div className="grid gap-4 md:grid-cols-2">
-        <Field label="Full Name" name="name" placeholder="Your name" required />
-        <Field label="Email" name="email" type="email" placeholder="you@email.com" required />
-        <Field label="Phone / WhatsApp" name="phone" placeholder="+92 ..." required />
+        <Field label="Full Name" name="name" placeholder="Your name" required autoComplete="name" />
+        <Field label="Email" name="email" type="email" placeholder="you@email.com" required autoComplete="email" />
+        <Field label="Phone / WhatsApp" name="phone" placeholder="+92 ..." required autoComplete="tel" />
         <Field
           label="Destination Country"
           name="country"
           placeholder="e.g. Schengen, UK, Canada"
           defaultValue={defaultSubject}
+          autoComplete="off"
         />
       </div>
       <div className="mt-4">
-        <label className="block text-xs font-medium text-muted-foreground">
+        <label htmlFor="message" className="block text-xs font-medium text-muted-foreground">
           Tell us about your travel plans
         </label>
         <textarea
+          id="message"
           name="message"
           rows={4}
           required
@@ -78,6 +80,7 @@ function Field({
   placeholder,
   required,
   defaultValue,
+  autoComplete,
 }: {
   label: string;
   name: string;
@@ -85,6 +88,7 @@ function Field({
   placeholder?: string;
   required?: boolean;
   defaultValue?: string;
+  autoComplete?: string;
 }) {
   return (
     <label className="block">
@@ -95,6 +99,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         defaultValue={defaultValue}
+        autoComplete={autoComplete}
         className="mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-primary/15"
       />
     </label>
