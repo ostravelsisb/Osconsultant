@@ -36,9 +36,9 @@ export const NAV_LINKS = [
   { to: "/visa-services", label: "Visa Services" },
   { to: "/countries", label: "Countries" },
   { to: "/air-ticketing", label: "Air Ticketing" },
-  { to: "/hotel-booking", label: "Hotels" },
   { to: "/travel-insurance", label: "Insurance" },
   { to: "/passport-services", label: "Passport" },
+  { to: "/profile-assessment", label: "Free Assessment" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -51,14 +51,14 @@ export const COUNTRIES = [
     accent: "Europe",
   },
   {
-    slug: "usa",
+    slug: "united-states",
     name: "United States",
     short: "B1/B2, F1, work and family visas.",
     image: usaImg,
     accent: "Americas",
   },
   {
-    slug: "uk",
+    slug: "united-kingdom",
     name: "United Kingdom",
     short: "Visitor, student and work visas.",
     image: ukImg,

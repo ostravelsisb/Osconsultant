@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisaServicesRouteImport } from './routes/visa-services'
 import { Route as TravelInsuranceRouteImport } from './routes/travel-insurance'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as ProfileAssessmentRouteImport } from './routes/profile-assessment'
 import { Route as PassportServicesRouteImport } from './routes/passport-services'
 import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -42,6 +43,11 @@ const TravelInsuranceRoute = TravelInsuranceRouteImport.update({
 const TestimonialsRoute = TestimonialsRouteImport.update({
   id: '/testimonials',
   path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileAssessmentRoute = ProfileAssessmentRouteImport.update({
+  id: '/profile-assessment',
+  path: '/profile-assessment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PassportServicesRoute = PassportServicesRouteImport.update({
@@ -140,6 +146,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/passport-services': typeof PassportServicesRoute
+  '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
   '/travel-insurance': typeof TravelInsuranceRoute
   '/visa-services': typeof VisaServicesRoute
@@ -161,6 +168,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/passport-services': typeof PassportServicesRoute
+  '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
   '/travel-insurance': typeof TravelInsuranceRoute
   '/visa-services': typeof VisaServicesRoute
@@ -183,6 +191,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/passport-services': typeof PassportServicesRoute
+  '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
   '/travel-insurance': typeof TravelInsuranceRoute
   '/visa-services': typeof VisaServicesRoute
@@ -206,6 +215,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/hotel-booking'
     | '/passport-services'
+    | '/profile-assessment'
     | '/testimonials'
     | '/travel-insurance'
     | '/visa-services'
@@ -227,6 +237,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/hotel-booking'
     | '/passport-services'
+    | '/profile-assessment'
     | '/testimonials'
     | '/travel-insurance'
     | '/visa-services'
@@ -248,6 +259,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/hotel-booking'
     | '/passport-services'
+    | '/profile-assessment'
     | '/testimonials'
     | '/travel-insurance'
     | '/visa-services'
@@ -270,6 +282,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   HotelBookingRoute: typeof HotelBookingRoute
   PassportServicesRoute: typeof PassportServicesRoute
+  ProfileAssessmentRoute: typeof ProfileAssessmentRoute
   TestimonialsRoute: typeof TestimonialsRoute
   TravelInsuranceRoute: typeof TravelInsuranceRoute
   VisaServicesRoute: typeof VisaServicesRoute
@@ -304,6 +317,13 @@ declare module '@tanstack/react-router' {
       path: '/testimonials'
       fullPath: '/testimonials'
       preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile-assessment': {
+      id: '/profile-assessment'
+      path: '/profile-assessment'
+      fullPath: '/profile-assessment'
+      preLoaderRoute: typeof ProfileAssessmentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/passport-services': {
@@ -430,6 +450,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   HotelBookingRoute: HotelBookingRoute,
   PassportServicesRoute: PassportServicesRoute,
+  ProfileAssessmentRoute: ProfileAssessmentRoute,
   TestimonialsRoute: TestimonialsRoute,
   TravelInsuranceRoute: TravelInsuranceRoute,
   VisaServicesRoute: VisaServicesRoute,

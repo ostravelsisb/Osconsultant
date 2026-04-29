@@ -24,7 +24,7 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "glass shadow-soft border-b" : "bg-background/90 lg:bg-background/40 backdrop-blur-md"}`}
+        className={`sticky top-0 z-[100] transition-all duration-300 ${scrolled ? "glass shadow-soft border-b" : "bg-background/95 lg:bg-background/60 backdrop-blur-md"}`}
       >
         <div className="container-px mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 lg:gap-4 xl:gap-8">
           <Link to="/" className="group flex flex-shrink-0 items-center gap-3">
