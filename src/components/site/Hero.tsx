@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Plane, Award, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import { SEOBlock } from "./SEOBlock";
+import { COUNTRIES } from "@/data/site";
+import { CountryCard } from "./CountryCard";
 
 export function Hero() {
   return (
@@ -69,23 +71,46 @@ export function Hero() {
           <SEOBlock />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative"
-        >
-          <div className="absolute inset-0 -m-6 rounded-[2rem] bg-gradient-to-br from-accent/40 to-primary-glow/40 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/15 shadow-elevated">
-            <img
-              src={heroImg}
-              alt="OS Consultants traveler at airport with passport and tickets"
-              width={1920}
-              height={1080}
-              loading="eager"
-              fetchPriority="high"
-              className="h-[400px] w-full object-cover md:h-[500px] lg:h-[520px]"
-            />
+        <div className="flex flex-col gap-6 lg:gap-8 w-full max-w-full overflow-hidden">
+          {/* Top Right: Country Card Slider */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full overflow-hidden"
+            style={{ maskImage: "linear-gradient(to right, transparent, black 2%, black 98%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 2%, black 98%, transparent)" }}
+          >
+            <motion.div
+              className="flex gap-4 w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+            >
+              {[...COUNTRIES, ...COUNTRIES].map((country, idx) => (
+                <div key={`slide-${country.slug}-${idx}`} className="w-[240px] md:w-[280px] flex-shrink-0">
+                  <CountryCard {...country} />
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Bottom Right: Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
+            <div className="absolute inset-0 -m-6 rounded-[2rem] bg-gradient-to-br from-accent/40 to-primary-glow/40 blur-2xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/15 shadow-elevated">
+              <img
+                src={heroImg}
+                alt="OS Consultants traveler at airport with passport and tickets"
+                width={1920}
+                height={1080}
+                loading="eager"
+                fetchPriority="high"
+                className="h-[300px] w-full object-cover md:h-[360px] lg:h-[400px]"
+              />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
             <motion.div
@@ -136,7 +161,8 @@ export function Hero() {
               </div>
             </motion.div>
           </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { Plane, Globe2, BadgeCheck, Banknote, Clock4, ArrowRight } from "lucide-react";
+import { FlightSearchPortal } from "@/components/site/FlightSearchPortal";
 
 export const Route = createFileRoute("/air-ticketing")({
   head: () => ({
@@ -35,6 +36,10 @@ function AirTicketing() {
         title="IATA-authorized tickets at the best fares"
         subtitle="Instant booking on every major airline — domestic and international — backed by 24/7 support."
       />
+
+      <div className="container-px mx-auto max-w-[85rem]">
+        <FlightSearchPortal />
+      </div>
 
       <section className="container-px mx-auto max-w-7xl py-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {[
