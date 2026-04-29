@@ -35,7 +35,7 @@ export function Navbar() {
             />
             <div className="hidden sm:block border-l border-border h-8 mx-1" />
             <span className="leading-tight">
-              <span className="block text-sm md:text-base xl:text-lg font-bold tracking-tight whitespace-nowrap uppercase">
+              <span className="block text-sm md:text-base xl:text-lg font-bold italic tracking-tight whitespace-nowrap uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 OS <span className="gradient-text-accent">Consultants</span>
               </span>
               <span className="hidden xl:block text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground/80 whitespace-nowrap">
@@ -121,7 +121,7 @@ export function Navbar() {
                 <div className="flex items-center justify-between border-b border-border px-6 py-5">
                   <div className="flex items-center gap-3">
                     <img src={logo} alt="OS Consultants Logo" className="h-8 w-auto" />
-                    <span className="font-bold tracking-tight text-lg uppercase">
+                    <span className="font-bold italic tracking-tight text-lg uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
                       OS <span className="text-accent">Consultants</span>
                     </span>
                   </div>
