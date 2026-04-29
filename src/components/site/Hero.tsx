@@ -17,7 +17,7 @@ export function Hero() {
         style={{ animationDelay: "3s" }}
       />
 
-      <div className="container-px relative mx-auto grid max-w-7xl items-center gap-12 py-20 lg:grid-cols-2 lg:gap-8 lg:py-28">
+      <div className="container-px relative mx-auto grid items-center gap-12 py-20 lg:grid-cols-2 lg:gap-8 lg:py-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,8 +100,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="absolute inset-0 -m-6 rounded-[2rem] bg-gradient-to-br from-accent/40 to-primary-glow/40 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/15 shadow-elevated">
+            <div className="relative overflow-hidden rounded-2xl">
               <img
                 src={heroImg}
                 alt="OS Consultants traveler at airport with passport and tickets"
