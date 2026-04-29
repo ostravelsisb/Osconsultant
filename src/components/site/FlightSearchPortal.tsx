@@ -2,7 +2,7 @@ import * as React from "react"
 import { format } from "date-fns"
 import {
   Calendar as CalendarIcon, ArrowLeftRight, PlaneTakeoff, PlaneLanding,
-  Phone, Search, Users, Armchair, ChevronDown, Loader2, CheckCircle2, Plane
+  Phone, Search, Users, Armchair, ChevronDown, Loader2, CheckCircle2, Plane, Plus, X
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -17,26 +17,36 @@ const AGENTS = [
   { name: "Noor Ul Huda", phone: "923315500177" },
 ]
 
+type Leg = { from: string; to: string; date?: Date }
+
 function buildWhatsAppUrl(
   phone: string, name: string,
-  from: string, to: string, depDate: string, retDate: string,
-  tripType: string, pax: string, cabin: string, contact: string,
+  tripType: string, legs: { fromLabel: string; toLabel: string; dateLabel: string }[],
+  retDate: string, pax: string, cabin: string, contact: string,
 ) {
+  const tripLabel = tripType === "round" ? "Round Trip" : tripType === "one" ? "One Way" : "Multi-City"
   const lines = [
     `Hello ${name}! I am interested in booking a flight.`,
     "",
     `✈️ *Flight Details:*`,
-    `• Trip Type: ${tripType === "round" ? "Round Trip" : tripType === "one" ? "One Way" : "Multi-City"}`,
-    `• From: ${from}`,
-    `• To: ${to}`,
-    `• Departure: ${depDate}`,
-    ...(tripType !== "one" ? [`• Return: ${retDate || "Flexible"}`] : []),
-    `• Passengers: ${pax}`,
-    `• Cabin: ${cabin}`,
-    ...(contact ? [`• Contact: ${contact}`] : []),
-    "",
-    "Please let me know the best available rates. Thank you!",
+    `• Trip Type: ${tripLabel}`,
   ]
+  if (tripType === "multi") {
+    legs.forEach((leg, i) => {
+      lines.push(``, `*Leg ${i + 1}:*`)
+      lines.push(`  From: ${leg.fromLabel}`)
+      lines.push(`  To: ${leg.toLabel}`)
+      lines.push(`  Date: ${leg.dateLabel}`)
+    })
+  } else {
+    lines.push(`• From: ${legs[0]?.fromLabel || ""}`)
+    lines.push(`• To: ${legs[0]?.toLabel || ""}`)
+    lines.push(`• Departure: ${legs[0]?.dateLabel || ""}`)
+    if (tripType === "round") lines.push(`• Return: ${retDate || "Flexible"}`)
+  }
+  lines.push("", `• Passengers: ${pax}`, `• Cabin: ${cabin}`)
+  if (contact) lines.push(`• Contact: ${contact}`)
+  lines.push("", "Please let me know the best available rates. Thank you!")
   return `https://wa.me/${phone}?text=${encodeURIComponent(lines.join("\n"))}`
 }
 
@@ -49,6 +59,13 @@ export function FlightSearchPortal() {
   const [fromOpen, setFromOpen] = React.useState(false)
   const [toOpen, setToOpen] = React.useState(false)
   const [contact, setContact] = React.useState("")
+
+  // Multi-city legs (extra legs beyond the first)
+  const [extraLegs, setExtraLegs] = React.useState<Leg[]>([{ from: "", to: "", date: undefined }])
+
+  const addLeg = () => { if (extraLegs.length < 3) setExtraLegs([...extraLegs, { from: "", to: "", date: undefined }]) }
+  const removeLeg = (i: number) => setExtraLegs(extraLegs.filter((_, idx) => idx !== i))
+  const updateLeg = (i: number, patch: Partial<Leg>) => setExtraLegs(extraLegs.map((l, idx) => idx === i ? { ...l, ...patch } : l))
 
   const [adults, setAdults] = React.useState(1)
   const [children, setChildren] = React.useState(0)
@@ -66,29 +83,29 @@ export function FlightSearchPortal() {
   const [processing, setProcessing] = React.useState(false)
   const [showAgentPicker, setShowAgentPicker] = React.useState(false)
 
-  const getFromLabel = () => {
-    const a = AIRPORTS.find(a => a.code === fromCode)
+  const codeToLabel = (code: string) => {
+    const a = AIRPORTS.find(a => a.code === code)
     return a ? `${a.city} (${a.code})` : ""
   }
-  const getToLabel = () => {
-    const a = AIRPORTS.find(a => a.code === toCode)
-    return a ? `${a.city} (${a.code})` : ""
+
+  const getAllLegs = () => {
+    const first = { fromLabel: codeToLabel(fromCode), toLabel: codeToLabel(toCode), dateLabel: date ? format(date, "PPP") : "" }
+    if (tripType !== "multi") return [first]
+    return [first, ...extraLegs.map(l => ({ fromLabel: codeToLabel(l.from), toLabel: codeToLabel(l.to), dateLabel: l.date ? format(l.date, "PPP") : "Flexible" }))]
   }
 
   const getAgentUrl = (agent: typeof AGENTS[0]) => buildWhatsAppUrl(
-    agent.phone, agent.name,
-    getFromLabel(), getToLabel(),
-    date ? format(date, "PPP") : "",
+    agent.phone, agent.name, tripType, getAllLegs(),
     returnDate ? format(returnDate, "PPP") : "",
-    tripType, paxLabel, cabinClass, contact,
+    paxLabel, cabinClass, contact,
   )
 
+  const canSearch = fromCode && toCode && date && (tripType !== "multi" || extraLegs.every(l => l.from && l.to))
+
   const handleSearch = () => {
-    if (!fromCode || !toCode || !date) return
+    if (!canSearch) return
     setProcessing(true)
     setShowAgentPicker(false)
-
-    // Show spinner for 2s, then show agent picker
     setTimeout(() => {
       setProcessing(false)
       setShowAgentPicker(true)
@@ -203,7 +220,7 @@ export function FlightSearchPortal() {
           </Popover>
         </div>
 
-        {/* Main Inputs */}
+        {/* Leg 1 — Main Inputs */}
         <div className="flex flex-col lg:flex-row gap-3">
           {/* From / To */}
           <div className="flex flex-col sm:flex-row relative flex-1">
@@ -211,7 +228,7 @@ export function FlightSearchPortal() {
               <PopoverTrigger asChild>
                 <Button variant="outline" role="combobox" className="justify-start w-full sm:rounded-r-none h-14 pl-12 text-base font-normal border-border bg-white shadow-none hover:bg-muted/50 hover:text-foreground">
                   <PlaneTakeoff className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-500" size={20} />
-                  {fromCode ? getFromLabel() : <span className="text-muted-foreground">From Where</span>}
+                  {fromCode ? codeToLabel(fromCode) : <span className="text-muted-foreground">From Where</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-[300px] p-0" align="start">
@@ -235,7 +252,7 @@ export function FlightSearchPortal() {
               <PopoverTrigger asChild>
                 <Button variant="outline" role="combobox" className="justify-start w-full sm:rounded-l-none border-t-0 sm:border-t sm:border-l-0 h-14 pl-12 sm:pl-10 text-base font-normal border-border bg-white shadow-none hover:bg-muted/50 hover:text-foreground">
                   <PlaneLanding className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-500" size={20} />
-                  {toCode ? getToLabel() : <span className="text-muted-foreground">To Where</span>}
+                  {toCode ? codeToLabel(toCode) : <span className="text-muted-foreground">To Where</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-[300px] p-0" align="start">
@@ -251,42 +268,115 @@ export function FlightSearchPortal() {
             </Popover>
           </div>
 
-          {/* Dates */}
-          <div className="flex gap-3 lg:w-[320px]">
+          {/* Departure Date */}
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" className={cn("h-14 px-4 text-base bg-white border-border hover:bg-muted/50 shadow-none justify-start text-left font-normal lg:w-[160px]", !date && "text-muted-foreground")}>
+                {date ? format(date, "PPP") : <span>Departure</span>}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0" align="start"><Calendar mode="single" selected={date} onSelect={setDate} disabled={d => d < new Date(new Date().setHours(0,0,0,0))} initialFocus /></PopoverContent>
+          </Popover>
+
+          {/* Return Date — only for Round Trip */}
+          {tripType === "round" && (
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="outline" className={cn("w-full justify-start text-left font-normal h-14 px-4 text-base bg-white border-border hover:bg-muted/50 shadow-none", !date && "text-muted-foreground")}>
-                  {date ? format(date, "PPP") : <span>Departure</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start"><Calendar mode="single" selected={date} onSelect={setDate} disabled={d => d < new Date(new Date().setHours(0,0,0,0))} initialFocus /></PopoverContent>
-            </Popover>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" disabled={tripType === "one"} className={cn("w-full justify-start text-left font-normal h-14 px-4 text-base bg-white border-border hover:bg-muted/50 shadow-none disabled:opacity-50", !returnDate && "text-muted-foreground")}>
+                <Button variant="outline" className={cn("h-14 px-4 text-base bg-white border-border hover:bg-muted/50 shadow-none justify-start text-left font-normal lg:w-[160px]", !returnDate && "text-muted-foreground")}>
                   {returnDate ? format(returnDate, "PPP") : <span>Returning</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start"><Calendar mode="single" selected={returnDate} onSelect={setReturnDate} disabled={d => d < (date || new Date(new Date().setHours(0,0,0,0)))} initialFocus /></PopoverContent>
             </Popover>
-          </div>
+          )}
+        </div>
 
-          {/* Contact & Search */}
-          <div className="flex flex-col sm:flex-row gap-3 lg:w-auto">
-            <div className="relative flex-1 sm:w-44 lg:w-48">
-              <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500 h-5 w-5" />
-              <Input placeholder="Contact No." value={contact} onChange={e => setContact(e.target.value)} className="pl-11 h-14 text-base bg-white border-border shadow-none" />
-            </div>
-            <Button
-              onClick={handleSearch}
-              disabled={!fromCode || !toCode || !date || processing}
-              className="h-14 px-8 text-lg font-semibold bg-[#25D366] hover:bg-[#1fb855] text-white w-full sm:w-auto shadow-none rounded-lg disabled:opacity-50 gap-2"
-            >
-              <Search className="h-5 w-5" /> Search
-            </Button>
+        {/* Multi-City Extra Legs */}
+        {tripType === "multi" && (
+          <div className="mt-4 space-y-3">
+            {extraLegs.map((leg, i) => (
+              <div key={i} className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center p-3 rounded-xl bg-blue-50/50 border border-blue-100">
+                <span className="text-xs font-bold text-blue-600 shrink-0 self-center">Leg {i + 2}</span>
+                {/* From */}
+                <AirportPicker
+                  value={leg.from}
+                  onChange={code => updateLeg(i, { from: code })}
+                  placeholder="From"
+                  icon="takeoff"
+                />
+                {/* To */}
+                <AirportPicker
+                  value={leg.to}
+                  onChange={code => updateLeg(i, { to: code })}
+                  placeholder="To"
+                  icon="landing"
+                />
+                {/* Date */}
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button variant="outline" className={cn("h-12 px-4 text-sm bg-white border-border hover:bg-muted/50 shadow-none justify-start text-left font-normal min-w-[140px]", !leg.date && "text-muted-foreground")}>
+                      {leg.date ? format(leg.date, "PPP") : <span>Date</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start"><Calendar mode="single" selected={leg.date} onSelect={d => updateLeg(i, { date: d })} disabled={d => d < new Date(new Date().setHours(0,0,0,0))} initialFocus /></PopoverContent>
+                </Popover>
+                {/* Remove */}
+                <Button variant="ghost" size="icon" className="h-10 w-10 shrink-0 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-full" onClick={() => removeLeg(i)}>
+                  <X size={18} />
+                </Button>
+              </div>
+            ))}
+            {extraLegs.length < 3 && (
+              <button onClick={addLeg} className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors pl-1 outline-none">
+                <Plus size={16} /> Add another flight
+              </button>
+            )}
           </div>
+        )}
+
+        {/* Contact & Search */}
+        <div className="flex flex-col sm:flex-row gap-3 mt-4">
+          <div className="relative flex-1 sm:max-w-[220px]">
+            <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500 h-5 w-5" />
+            <Input id="flight-contact" name="contact" autoComplete="tel" placeholder="Contact No." value={contact} onChange={e => setContact(e.target.value)} className="pl-11 h-14 text-base bg-white border-border shadow-none" />
+          </div>
+          <Button
+            onClick={handleSearch}
+            disabled={!canSearch || processing}
+            className="h-14 px-8 text-lg font-semibold bg-[#25D366] hover:bg-[#1fb855] text-white flex-1 sm:flex-initial shadow-none rounded-lg disabled:opacity-50 gap-2"
+          >
+            <Search className="h-5 w-5" /> Search
+          </Button>
         </div>
       </div>
     </>
+  )
+}
+
+/** Small reusable airport picker for multi-city leg rows */
+function AirportPicker({ value, onChange, placeholder, icon }: { value: string; onChange: (code: string) => void; placeholder: string; icon: "takeoff" | "landing" }) {
+  const [open, setOpen] = React.useState(false)
+  const Icon = icon === "takeoff" ? PlaneTakeoff : PlaneLanding
+  const label = value ? AIRPORTS.find(a => a.code === value) : null
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button variant="outline" role="combobox" className="justify-start h-12 pl-10 text-sm font-normal border-border bg-white shadow-none hover:bg-muted/50 hover:text-foreground flex-1 min-w-[140px]">
+          <Icon className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-500" size={16} />
+          {label ? `${label.city} (${label.code})` : <span className="text-muted-foreground">{placeholder}</span>}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[280px] p-0" align="start">
+        <Command><CommandInput placeholder="Search airports..." /><CommandList><CommandEmpty>No airport found.</CommandEmpty><CommandGroup>
+          {AIRPORTS.map(a => (
+            <CommandItem key={a.code} value={`${a.city} ${a.name} ${a.code}`} onSelect={() => { onChange(a.code); setOpen(false) }} className="cursor-pointer">
+              <Icon className="mr-2 h-4 w-4 opacity-50" />
+              <div className="flex flex-col"><span className="font-medium">{a.city} ({a.code})</span><span className="text-xs text-muted-foreground">{a.name}</span></div>
+            </CommandItem>
+          ))}
+        </CommandGroup></CommandList></Command>
+      </PopoverContent>
+    </Popover>
   )
 }
