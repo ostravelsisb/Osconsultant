@@ -9,7 +9,7 @@ import { BookingWidget } from "./BookingWidget";
 
 export function Hero() {
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.18_0.05_260)] via-[oklch(0.22_0.08_258)] to-[oklch(0.30_0.14_30)] overflow-hidden" />
       <div className="absolute inset-0 mesh-bg opacity-50" />
       <div className="absolute -top-32 -left-32 h-[36rem] w-[36rem] rounded-full bg-primary-glow/30 blur-3xl animate-blob" />
@@ -26,8 +26,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="relative z-50 mb-12 md:mb-16"
         >
-          <div className="mb-6 text-center">
-            <h1 className="text-3xl font-black tracking-tight text-white md:text-4xl lg:text-5xl uppercase">
+          <div className="mb-6 text-center px-4">
+            <h1 className="text-2xl xs:text-3xl font-black tracking-tight text-white md:text-4xl lg:text-5xl uppercase leading-[1.1]">
               Book Your Global <span className="gradient-text-accent">Travel Now</span>
             </h1>
             <p className="mt-2 text-sm font-medium text-white/60 tracking-[0.2em] uppercase">
@@ -55,17 +55,17 @@ export function Hero() {
               From Schengen to the USA, UK, Canada, Australia and beyond — OS Consultants delivers
               premium visa, ticketing, hotel and insurance services backed by 15+ years of expertise.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
               <Link
                 to="/consultation"
-                className="group inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-accent to-accent-glow px-6 py-3.5 text-sm font-semibold text-accent-foreground shadow-glow transition-transform hover:-translate-y-0.5 shine"
+                className="group inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-accent to-accent-glow px-6 py-3.5 text-sm font-semibold text-accent-foreground shadow-glow transition-transform hover:-translate-y-0.5 shine"
               >
                 Book Free Consultation{" "}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/profile-assessment"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
               >
                 <FileText size={16} /> Free Profile Assessment
               </Link>
@@ -77,15 +77,15 @@ export function Hero() {
               </Link>
             </div>
 
-            <div className="mt-10 grid grid-cols-3 gap-4 max-w-md">
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 max-w-md">
               {[
                 { v: "15+", l: "Years experience" },
                 { v: "98%", l: "Approval rate" },
                 { v: "20K+", l: "Happy travelers" },
-              ].map((s: { v: string; l: string }) => (
+              ].map((s: { v: string; l: string }, idx: number) => (
                 <div
                   key={s.l}
-                  className="rounded-xl border border-white/15 bg-white/5 p-3 backdrop-blur text-center"
+                  className={`rounded-xl border border-white/15 bg-white/5 p-3 backdrop-blur text-center ${idx === 2 ? 'col-span-2 sm:col-span-1' : ''}`}
                 >
                   <p className="text-xl font-bold text-white md:text-2xl">{s.v}</p>
                   <p className="mt-0.5 text-[11px] text-white/70 leading-tight">{s.l}</p>

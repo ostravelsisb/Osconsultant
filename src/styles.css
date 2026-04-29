@@ -140,6 +140,7 @@
   }
   html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
   }
   body {
     background-color: var(--color-background);
@@ -232,6 +233,14 @@
     .container-px {
       padding-inline: 3rem;
     }
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .custom-scrollbar::-webkit-scrollbar {

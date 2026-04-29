@@ -106,7 +106,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-[150] bg-black/40 backdrop-blur-sm lg:hidden"
             onClick={() => setOpen(false)}
           >
             <motion.aside
@@ -114,7 +114,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 240 }}
-              className="absolute right-0 top-0 h-full w-[86%] max-w-sm bg-background shadow-elevated"
+              className="absolute right-0 top-0 h-full w-[86%] max-w-sm bg-background shadow-elevated z-[151]"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col h-full">

@@ -225,8 +225,10 @@ function ProfileAssessment() {
               {step === 1 && (
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Full Name</Label>
+                    <Label htmlFor="pa-name" className="text-xs uppercase font-bold text-muted-foreground ml-1">Full Name</Label>
                     <Input 
+                      id="pa-name"
+                      name="name"
                       placeholder="Enter your full name" 
                       className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
                       value={formData.name}
@@ -234,8 +236,10 @@ function ProfileAssessment() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Age</Label>
+                    <Label htmlFor="pa-age" className="text-xs uppercase font-bold text-muted-foreground ml-1">Age</Label>
                     <Input 
+                      id="pa-age"
+                      name="age"
                       placeholder="e.g. 28" 
                       type="number"
                       className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
@@ -244,9 +248,9 @@ function ProfileAssessment() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Marital Status</Label>
+                    <Label htmlFor="pa-marital-status" className="text-xs uppercase font-bold text-muted-foreground ml-1">Marital Status</Label>
                     <Select value={formData.maritalStatus} onValueChange={(v) => handleInputChange('maritalStatus', v)}>
-                      <SelectTrigger className="h-14 rounded-2xl bg-secondary/10 border-none px-6">
+                      <SelectTrigger id="pa-marital-status" className="h-14 rounded-2xl bg-secondary/10 border-none px-6">
                         <SelectValue placeholder="Select Status" />
                       </SelectTrigger>
                       <SelectContent>
@@ -257,8 +261,11 @@ function ProfileAssessment() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Phone Number</Label>
+                    <Label htmlFor="pa-phone" className="text-xs uppercase font-bold text-muted-foreground ml-1">Phone Number</Label>
                     <Input 
+                      id="pa-phone"
+                      name="phone"
+                      autoComplete="tel"
                       placeholder="+92 300 1234567" 
                       className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
                       value={formData.phone}
@@ -271,9 +278,9 @@ function ProfileAssessment() {
               {step === 2 && (
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2 md:col-span-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Highest Education</Label>
+                    <Label htmlFor="pa-education" className="text-xs uppercase font-bold text-muted-foreground ml-1">Highest Education</Label>
                     <Select value={formData.education} onValueChange={(v) => handleInputChange('education', v)}>
-                      <SelectTrigger className="h-14 rounded-2xl bg-secondary/10 border-none px-6">
+                      <SelectTrigger id="pa-education" className="h-14 rounded-2xl bg-secondary/10 border-none px-6">
                         <SelectValue placeholder="Select Education" />
                       </SelectTrigger>
                       <SelectContent>
@@ -285,8 +292,10 @@ function ProfileAssessment() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Occupation</Label>
+                    <Label htmlFor="pa-occupation" className="text-xs uppercase font-bold text-muted-foreground ml-1">Occupation</Label>
                     <Input 
+                      id="pa-occupation"
+                      name="occupation"
                       placeholder="e.g. Software Engineer" 
                       className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
                       value={formData.occupation}
@@ -294,8 +303,10 @@ function ProfileAssessment() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Work Experience (Years)</Label>
+                    <Label htmlFor="pa-experience" className="text-xs uppercase font-bold text-muted-foreground ml-1">Work Experience (Years)</Label>
                     <Input 
+                      id="pa-experience"
+                      name="experience"
                       placeholder="e.g. 5" 
                       type="number"
                       className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
@@ -309,8 +320,10 @@ function ProfileAssessment() {
               {step === 3 && (
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Monthly Income (PKR)</Label>
+                    <Label htmlFor="pa-income" className="text-xs uppercase font-bold text-muted-foreground ml-1">Monthly Income (PKR)</Label>
                     <Input 
+                      id="pa-income"
+                      name="income"
                       placeholder="e.g. 150,000" 
                       className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
                       value={formData.income}
@@ -318,8 +331,10 @@ function ProfileAssessment() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-xs uppercase font-bold text-muted-foreground ml-1">Approx Bank Balance (PKR)</Label>
+                    <Label htmlFor="pa-bank-balance" className="text-xs uppercase font-bold text-muted-foreground ml-1">Approx Bank Balance (PKR)</Label>
                     <Input 
+                      id="pa-bank-balance"
+                      name="bankBalance"
                       placeholder="e.g. 2,500,000" 
                       className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
                       value={formData.bankBalance}
@@ -469,8 +484,10 @@ function ProfileAssessment() {
 
                   <div className="grid gap-6 md:grid-cols-2 bg-secondary/10 p-8 rounded-[2.5rem]">
                     <div className="space-y-2">
-                      <Label className="text-xs uppercase font-black text-muted-foreground/60 tracking-widest ml-1">Visa Stamps</Label>
+                      <Label htmlFor="pa-stamps" className="text-xs uppercase font-black text-muted-foreground/60 tracking-widest ml-1">Visa Stamps</Label>
                       <Input 
+                        id="pa-stamps"
+                        name="stamps"
                         placeholder="Total Stamps" 
                         type="number"
                         className="h-14 rounded-2xl bg-white border-none px-6 font-bold" 
@@ -479,8 +496,10 @@ function ProfileAssessment() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label className="text-xs uppercase font-black text-destructive/50 tracking-widest ml-1">Total Refusals</Label>
+                      <Label htmlFor="pa-refusals" className="text-xs uppercase font-black text-destructive/50 tracking-widest ml-1">Total Refusals</Label>
                       <Input 
+                        id="pa-refusals"
+                        name="refusals"
                         placeholder="Total Refusals" 
                         type="number"
                         className="h-14 rounded-2xl bg-white border-none px-6 font-bold" 
@@ -489,8 +508,10 @@ function ProfileAssessment() {
                       />
                     </div>
                     <div className="space-y-2 md:col-span-2">
-                      <Label className="text-xs uppercase font-black text-muted-foreground/60 tracking-widest ml-1">Travel Countries</Label>
+                      <Label htmlFor="pa-travel-history" className="text-xs uppercase font-black text-muted-foreground/60 tracking-widest ml-1">Travel Countries</Label>
                       <Input 
+                        id="pa-travel-history"
+                        name="travelHistory"
                         placeholder="UAE, Turkey, Thailand etc." 
                         className="h-14 rounded-2xl bg-white border-none px-6 font-bold" 
                         value={formData.travelHistory}

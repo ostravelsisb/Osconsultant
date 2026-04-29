@@ -183,7 +183,7 @@ export function FlightSearchPortal() {
           {/* Cabin */}
           <Popover>
             <PopoverTrigger asChild>
-              <button className="flex items-center gap-1.5 hover:text-foreground transition-colors outline-none text-muted-foreground font-medium">
+              <button aria-label="Select Cabin Class" className="flex items-center gap-1.5 hover:text-foreground transition-colors outline-none text-muted-foreground font-medium">
                 <Armchair size={16} className="text-blue-500" /> {cabinClass} <ChevronDown size={14} className="opacity-50" />
               </button>
             </PopoverTrigger>
@@ -197,7 +197,7 @@ export function FlightSearchPortal() {
           {/* Passengers */}
           <Popover>
             <PopoverTrigger asChild>
-              <button className="flex items-center gap-1.5 hover:text-foreground transition-colors outline-none text-muted-foreground font-medium">
+              <button aria-label="Select Travellers" className="flex items-center gap-1.5 hover:text-foreground transition-colors outline-none text-muted-foreground font-medium">
                 <Users size={16} className="text-blue-500" /> {totalPax} Traveller{totalPax > 1 ? "s" : ""} <ChevronDown size={14} className="opacity-50" />
               </button>
             </PopoverTrigger>
@@ -226,7 +226,7 @@ export function FlightSearchPortal() {
           <div className="flex flex-col sm:flex-row relative flex-1">
             <Popover open={fromOpen} onOpenChange={setFromOpen}>
               <PopoverTrigger asChild>
-                <Button variant="outline" role="combobox" className="justify-start w-full sm:rounded-r-none h-14 pl-12 text-base font-normal border-border bg-white shadow-none hover:bg-muted/50 hover:text-foreground">
+                <Button aria-label="Select Departure Airport" variant="outline" role="combobox" className="justify-start w-full sm:rounded-r-none h-14 pl-12 text-base font-normal border-border bg-white shadow-none hover:bg-muted/50 hover:text-foreground">
                   <PlaneTakeoff className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-500" size={20} />
                   {fromCode ? codeToLabel(fromCode) : <span className="text-muted-foreground">From Where</span>}
                 </Button>
@@ -250,7 +250,7 @@ export function FlightSearchPortal() {
 
             <Popover open={toOpen} onOpenChange={setToOpen}>
               <PopoverTrigger asChild>
-                <Button variant="outline" role="combobox" className="justify-start w-full sm:rounded-l-none border-t-0 sm:border-t sm:border-l-0 h-14 pl-12 sm:pl-10 text-base font-normal border-border bg-white shadow-none hover:bg-muted/50 hover:text-foreground">
+                <Button aria-label="Select Destination Airport" variant="outline" role="combobox" className="justify-start w-full sm:rounded-l-none border-t-0 sm:border-t sm:border-l-0 h-14 pl-12 sm:pl-10 text-base font-normal border-border bg-white shadow-none hover:bg-muted/50 hover:text-foreground">
                   <PlaneLanding className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-500" size={20} />
                   {toCode ? codeToLabel(toCode) : <span className="text-muted-foreground">To Where</span>}
                 </Button>
@@ -337,6 +337,7 @@ export function FlightSearchPortal() {
         {/* Contact & Search */}
         <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <div className="relative flex-1 sm:max-w-[220px]">
+            <label htmlFor="flight-contact" className="sr-only">Contact Number</label>
             <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 text-blue-500 h-5 w-5" />
             <Input id="flight-contact" name="contact" autoComplete="tel" placeholder="Contact No." value={contact} onChange={e => setContact(e.target.value)} className="pl-11 h-14 text-base bg-white border-border shadow-none" />
           </div>
