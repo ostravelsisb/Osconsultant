@@ -30,7 +30,7 @@ export function Hero() {
             <h1 className="text-2xl xs:text-3xl font-black tracking-tight text-white md:text-4xl lg:text-5xl uppercase leading-[1.1]">
               Book Your Global <span className="gradient-text-accent">Travel Now</span>
             </h1>
-            <p className="mt-2 text-sm font-medium text-white/60 tracking-[0.2em] uppercase">
+            <p className="mt-2 text-sm font-medium text-white/60 tracking-[0.2em] uppercase hidden sm:block">
               Pakistan's No. 1 Travel Agency & Visa Consultant
             </p>
           </div>

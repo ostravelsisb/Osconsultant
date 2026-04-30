@@ -71,6 +71,9 @@ export function BookingWidget() {
   });
   const [hotelRooms, setHotelRooms] = useState(1);
   const [hotelGuests, setHotelGuests] = useState({ adults: 2, children: 0 });
+  const [hotelCategory, setHotelCategory] = useState("4-star");
+  const [hotelBudget, setHotelBudget] = useState("");
+  const [userPhone, setUserPhone] = useState("");
   const [showInquiryModal, setShowInquiryModal] = useState(false);
 
   const [airports, setAirports] = useState<any[]>([]);
@@ -138,6 +141,14 @@ export function BookingWidget() {
   }, [hotelSearch, airports]);
 
   const [activeMultiSearch, setActiveMultiSearch] = useState<{ id: number, field: 'from' | 'to' } | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const addLeg = () => {
     setMultiCityLegs([...multiCityLegs, { id: Date.now(), from: "", to: "", date: undefined }]);
@@ -191,8 +202,12 @@ export function BookingWidget() {
       msg += `🏨 *Hotel Booking Inquiry*\n`;
       msg += `Destination: ${hotelSearch || 'TBA'}\n`;
       msg += `Dates: ${hotelRange?.from ? format(hotelRange.from, 'dd MMM') : 'TBA'} - ${hotelRange?.to ? format(hotelRange.to, 'dd MMM') : 'TBA'}\n`;
+      msg += `Category: ${hotelCategory.replace('-', ' ')}\n`;
+      if (hotelBudget) msg += `Budget: PKR ${hotelBudget}\n`;
       msg += `Rooms: ${hotelRooms}, Guests: ${hotelGuests.adults + hotelGuests.children}\n`;
     }
+
+    if (userPhone) msg += `\nMy Contact: ${userPhone}\n`;
 
     msg += `\nPlease provide the best rates and details.`;
     return `https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(msg)}`;
@@ -223,16 +238,17 @@ export function BookingWidget() {
               return (
                 <button
                   key={tab.id}
+                  type="button"
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    "flex items-center gap-2 px-6 py-4 transition-all duration-300 relative min-w-max",
+                    "flex items-center gap-1.5 px-3 sm:px-4 md:px-6 py-4 transition-all duration-300 relative min-w-max",
                     isActive ? "text-primary font-bold" : "text-muted-foreground hover:text-foreground"
                   )}
                 >
-                  <div className={cn("p-2 rounded-lg transition-colors", isActive ? tab.bg : "bg-transparent")}>
-                    <Icon size={20} className={cn(isActive ? tab.color : "text-muted-foreground")} />
+                  <div className={cn("p-1.5 rounded-lg transition-colors", isActive ? tab.bg : "bg-transparent")}>
+                    <Icon size={18} className={cn(isActive ? tab.color : "text-muted-foreground")} />
                   </div>
-                  <span className="text-sm md:text-base">{tab.label}</span>
+                  <span className="text-xs sm:text-sm md:text-base">{tab.label}</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
@@ -245,7 +261,7 @@ export function BookingWidget() {
           </div>
 
           {/* Middle Branding - Pakistan's No. 1 Consultancy */}
-          <div className="hidden lg:flex items-center flex-1 justify-center px-4 overflow-hidden">
+          <div className="hidden 2xl:flex items-center flex-1 justify-center px-4 overflow-hidden">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -260,7 +276,7 @@ export function BookingWidget() {
             </motion.div>
           </div>
 
-          <div className="hidden md:flex items-center gap-3 py-2">
+          <div className="hidden xl:flex items-center gap-3 py-2 pr-6">
             <div className="h-8 w-px bg-border/50 mx-2" />
             <img src={logo} alt={COMPANY.name} className="h-8 w-auto object-contain" />
             <div className="flex flex-col">
@@ -382,7 +398,7 @@ export function BookingWidget() {
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 gap-6 lg:gap-10 relative">
                         {/* Origin */}
                         <div className="relative group">
-                          <Label htmlFor="origin-input" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">From</Label>
+                          <Label htmlFor="origin-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">From</Label>
                           <div className="relative">
                             <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform" size={18} />
                             <Input
@@ -449,7 +465,7 @@ export function BookingWidget() {
 
                         {/* Destination */}
                         <div className="relative group">
-                          <Label htmlFor="destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">To</Label>
+                          <Label htmlFor="destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">To</Label>
                           <div className="relative">
                             <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform" size={18} />
                             <Input
@@ -502,7 +518,7 @@ export function BookingWidget() {
                       {/* Date Pickers */}
                       <div className={cn("grid gap-2", tripType === "round-trip" ? "lg:col-span-2 grid-cols-2" : "grid-cols-1")}>
                         <div className="relative group">
-                          <Label htmlFor="flight-departure-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Departure</Label>
+                          <Label htmlFor="flight-departure-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Departure</Label>
                           <Popover>
                             <PopoverTrigger asChild>
                               <Button
@@ -531,7 +547,7 @@ export function BookingWidget() {
 
                         {tripType === "round-trip" && (
                           <div className="relative group">
-                            <Label htmlFor="flight-return-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Return</Label>
+                            <Label htmlFor="flight-return-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Return</Label>
                             <Popover>
                               <PopoverTrigger asChild>
                                 <Button
@@ -562,7 +578,7 @@ export function BookingWidget() {
 
                       {/* Contact Info */}
                       <div className="relative group">
-                        <Label htmlFor="flight-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Contact No.</Label>
+                        <Label htmlFor="flight-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Contact No.</Label>
                         <div className="relative">
                           <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform" size={18} />
                           <Input
@@ -571,6 +587,8 @@ export function BookingWidget() {
                             autoComplete="tel"
                             placeholder="+92 300 1234567"
                             type="tel"
+                            value={userPhone}
+                            onChange={(e) => setUserPhone(e.target.value)}
                             className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border focus-visible:ring-primary/20 transition-all text-sm font-medium"
                           />
                         </div>
@@ -715,16 +733,13 @@ export function BookingWidget() {
                           </div>
                         </motion.div>
                       ))}
-                      <div className="flex items-center justify-between mt-6">
-                        <Button variant="outline" onClick={addLeg} className="rounded-xl border-dashed border-primary/50 text-primary hover:bg-primary/5">
-                          <Plus className="mr-2" size={16} /> Add Another City
-                        </Button>
+                      <div className="mt-6">
                         <Button
-                          onClick={() => setShowInquiryModal(true)}
-                          className="h-14 px-10 rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none"
+                          variant="outline"
+                          onClick={addLeg}
+                          className="w-full sm:w-auto rounded-xl border-dashed border-primary/50 text-primary hover:bg-primary/5"
                         >
-                          <Search className="mr-2" size={18} />
-                          Search Multi-City
+                          <Plus className="mr-2" size={16} /> Add Another City
                         </Button>
                       </div>
                     </div>
@@ -736,7 +751,7 @@ export function BookingWidget() {
                   <Button
                     onClick={() => setShowInquiryModal(true)}
                     disabled={!isFlightValid()}
-                    className="h-14 px-10 rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
+                    className="w-full md:w-auto h-14 px-10 rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
                   >
                     <Search className="mr-2" size={20} />
                     Search Flights
@@ -754,7 +769,7 @@ export function BookingWidget() {
               >
                 <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2">
                   <div className="relative group">
-                    <Label htmlFor="umrah-package-select" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Package Type</Label>
+                    <Label htmlFor="umrah-package-select" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Package Type</Label>
                     <Select defaultValue="economy">
                       <SelectTrigger id="umrah-package-select" className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20">
                         <SelectValue placeholder="Select Package" />
@@ -770,7 +785,7 @@ export function BookingWidget() {
                   </div>
 
                   <div className="relative group">
-                    <Label className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Travel Date</Label>
+                    <Label className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Travel Date</Label>
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
@@ -791,7 +806,7 @@ export function BookingWidget() {
                   </div>
 
                   <div className="relative group">
-                    <Label htmlFor="umrah-travellers-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Travellers</Label>
+                    <Label htmlFor="umrah-travellers-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Travellers</Label>
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button id="umrah-travellers-btn" variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
@@ -836,10 +851,10 @@ export function BookingWidget() {
                   </div>
 
                   <div className="relative group">
-                    <Label htmlFor="umrah-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Contact No.</Label>
+                    <Label htmlFor="umrah-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Contact No.</Label>
                     <div className="relative">
                       <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
-                      <Input id="umrah-contact-input" name="phone" autoComplete="tel" placeholder="+92 300 1234567" type="tel" className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border focus-visible:ring-primary/20 transition-all text-sm font-medium" />
+                      <Input id="umrah-contact-input" name="phone" autoComplete="tel" placeholder="+92 300 1234567" type="tel" value={userPhone} onChange={(e) => setUserPhone(e.target.value)} className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border focus-visible:ring-primary/20 transition-all text-sm font-medium" />
                     </div>
                   </div>
                 </div>
@@ -848,7 +863,7 @@ export function BookingWidget() {
                   <Button
                     onClick={() => setShowInquiryModal(true)}
                     disabled={!isUmrahValid()}
-                    className="h-14 px-10 rounded-2xl bg-red-600 hover:bg-red-700 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
+                    className="w-full md:w-auto h-14 px-10 rounded-2xl bg-red-600 hover:bg-red-700 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
                   >
                     <Moon className="mr-2" size={18} />
                     Check Package Details
@@ -866,7 +881,7 @@ export function BookingWidget() {
               >
                 <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2">
                   <div className="relative group lg:col-span-2">
-                    <Label htmlFor="visa-destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Destination Country</Label>
+                    <Label htmlFor="visa-destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Destination Country</Label>
                     <div className="relative">
                       <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
                       <Input
@@ -918,7 +933,7 @@ export function BookingWidget() {
                   </div>
 
                   <div className="relative group">
-                    <Label htmlFor="visa-type-select" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Visa Type</Label>
+                    <Label htmlFor="visa-type-select" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Visa Type</Label>
                     <Select defaultValue="tourist">
                       <SelectTrigger id="visa-type-select" className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20">
                         <SelectValue placeholder="Select Type" />
@@ -933,10 +948,10 @@ export function BookingWidget() {
                   </div>
 
                   <div className="relative group">
-                    <Label htmlFor="visa-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Contact No.</Label>
+                    <Label htmlFor="visa-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Contact No.</Label>
                     <div className="relative">
                       <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
-                      <Input id="visa-contact-input" name="phone" autoComplete="tel" placeholder="+92 300 1234567" type="tel" className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border" />
+                      <Input id="visa-contact-input" name="phone" autoComplete="tel" placeholder="+92 300 1234567" type="tel" value={userPhone} onChange={(e) => setUserPhone(e.target.value)} className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border" />
                     </div>
                   </div>
                 </div>
@@ -945,7 +960,7 @@ export function BookingWidget() {
                   <Button
                     onClick={() => navigate({ to: "/profile-assessment" })}
                     disabled={!isVisaValid()}
-                    className="h-14 px-10 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
+                    className="w-full md:w-auto h-14 px-10 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
                   >
                     <Stamp className="mr-2" size={18} />
                     Check Visa Eligibility
@@ -963,7 +978,7 @@ export function BookingWidget() {
               >
                 <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2">
                   <div className="relative group lg:col-span-2">
-                    <Label htmlFor="hotel-destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Destination or Hotel Name</Label>
+                    <Label htmlFor="hotel-destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Destination or Hotel Name</Label>
                     <div className="relative">
                       <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
                       <Input
@@ -1013,7 +1028,7 @@ export function BookingWidget() {
                   </div>
 
                   <div className="relative group">
-                    <Label htmlFor="hotel-dates-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Check-in / Check-out</Label>
+                    <Label htmlFor="hotel-dates-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Check-in / Check-out</Label>
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button id="hotel-dates-btn" variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
@@ -1032,7 +1047,7 @@ export function BookingWidget() {
                           defaultMonth={hotelRange?.from}
                           selected={hotelRange as any}
                           onSelect={setHotelRange as any}
-                          numberOfMonths={2}
+                          numberOfMonths={1}
                           disabled={(date) => date < startOfToday()}
                           className="rounded-2xl"
                         />
@@ -1041,7 +1056,7 @@ export function BookingWidget() {
                   </div>
 
                   <div className="relative group">
-                    <Label htmlFor="hotel-guests-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground ml-1 mb-1 block">Guests & Rooms</Label>
+                    <Label htmlFor="hotel-guests-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Guests & Rooms</Label>
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button id="hotel-guests-btn" variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
@@ -1109,11 +1124,53 @@ export function BookingWidget() {
                   </div>
                 </div>
 
+                <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 mt-4">
+                  <div className="relative group">
+                    <Label htmlFor="hotel-category-select" className="text-[11px] uppercase tracking-wider text-muted-foreground  mb-1 block">Hotel Category</Label>
+                    <Select value={hotelCategory} onValueChange={setHotelCategory}>
+                      <SelectTrigger id="hotel-category-select" className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20">
+                        <SelectValue placeholder="Select Category" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="hostel">Hostel / Shared</SelectItem>
+                        <SelectItem value="2-star">2 Star Hotel</SelectItem>
+                        <SelectItem value="3-star">3 Star Hotel</SelectItem>
+                        <SelectItem value="4-star">4 Star Hotel</SelectItem>
+                        <SelectItem value="5-star">5 Star Luxury</SelectItem>
+                        <SelectItem value="boutique">Boutique / Guest House</SelectItem>
+                        <SelectItem value="apartment">Hotel Apartment</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="relative group">
+                    <Label htmlFor="hotel-budget-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Budget (Optional)</Label>
+                    <div className="relative">
+                      <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary font-bold text-sm">PKR</div>
+                      <Input
+                        id="hotel-budget-input"
+                        placeholder="e.g. 50,000"
+                        value={hotelBudget}
+                        onChange={(e) => setHotelBudget(e.target.value)}
+                        className="pl-14 h-14 rounded-2xl bg-secondary/20 border-border focus-visible:ring-primary/20 transition-all text-sm font-medium"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="relative group">
+                    <Label htmlFor="hotel-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Contact No.</Label>
+                    <div className="relative">
+                      <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
+                      <Input id="hotel-contact-input" name="phone" autoComplete="tel" placeholder="+92 300 1234567" type="tel" value={userPhone} onChange={(e) => setUserPhone(e.target.value)} className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border" />
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex items-center justify-end mt-4">
                   <Button
-                    onClick={() => window.open(getInquiryMessage(COMPANY.whatsapp), "_blank")}
+                    onClick={() => window.open(getInquiryMessage("+923365500477"), "_blank")}
                     disabled={!isHotelValid()}
-                    className="h-14 px-10 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
+                    className="w-full md:w-auto h-14 px-10 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-glow hover:scale-[1.02] transition-all shine border-none disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
                   >
                     <Search className="mr-2" size={18} />
                     Find Best Hotels
