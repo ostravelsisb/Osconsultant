@@ -6,14 +6,24 @@ import { FAQS } from "@/data/site";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — OS Consultants Visa & Travel" },
+      { title: "FAQ — Pakistan's #1 Visa & Travel Agency | OS Consultants Islamabad" },
       {
         name: "description",
         content:
-          "Common questions about visa processing times, documentation, fees, ticketing and more.",
+          "Frequently asked questions about visa processing, documentation, fees, air ticketing & Umrah packages. Get instant answers from Pakistan's top visa consultancy.",
       },
-      { property: "og:title", content: "Frequently Asked Questions" },
-      { property: "og:description", content: "Everything you need to know about our services." },
+      {
+        name: "keywords",
+        content: "visa FAQ pakistan, visa processing questions islamabad, how to apply schengen visa pakistan, visa consultant FAQ, travel agency questions islamabad, os consultants FAQ",
+      },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "FAQ — OS Consultants | Pakistan's #1 Travel Agency" },
+      { property: "og:description", content: "Quick answers about visa processing, fees, documentation & travel services." },
+      { property: "og:url", content: "https://osconsultants.pk/faq" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/faq" },
     ],
   }),
   component: FAQPage,

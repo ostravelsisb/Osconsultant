@@ -3,6 +3,7 @@ import { SOUTHERN_AFRICA_COUNTRIES } from "@/data/site";
 import { PageHero } from "@/components/site/PageHero";
 import { CheckCircle2, FileText, Globe2 } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
+import { BookingWidget } from "@/components/site/BookingWidget";
 import { COMPANY } from "@/data/site";
 
 export const Route = createFileRoute("/countries/southern-africa/$country")({
@@ -41,6 +42,10 @@ function SouthernAfricaCountryPage() {
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
       />
+
+      <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">
+        <BookingWidget initialTab="visa" />
+      </div>
 
       <section className="container-px mx-auto max-w-5xl py-20">
         {/* Intro */}

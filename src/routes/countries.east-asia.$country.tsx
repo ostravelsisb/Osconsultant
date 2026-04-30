@@ -1,43 +1,34 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { NORTH_AFRICA_COUNTRIES } from "@/data/site";
+import { EAST_ASIA_COUNTRIES } from "@/data/site";
 import { PageHero } from "@/components/site/PageHero";
-import { CheckCircle2, FileText, Globe2 } from "lucide-react";
+import { CheckCircle2, FileText, Globe2, ArrowRight } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { BookingWidget } from "@/components/site/BookingWidget";
 import { COMPANY } from "@/data/site";
 
-export const Route = createFileRoute("/countries/north-africa/$country")({
+export const Route = createFileRoute("/countries/east-asia/$country")({
   loader: ({ params }) => {
-    const country = NORTH_AFRICA_COUNTRIES.find((c) => c.slug === params.country);
+    const country = EAST_ASIA_COUNTRIES.find((c) => c.slug === params.country);
     if (!country) throw notFound();
     return country;
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: loaderData?.title || "Visa Consultant Islamabad" },
+      { title: loaderData?.title || "East Asia Visa Consultant Islamabad" },
       { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, top travel agency pakistan, best in islamabad, travel agency` },
+      { name: "keywords", content: `${loaderData?.keywords || ""}, east asia visa, top travel agency pakistan` },
     ],
   }),
-  component: NorthAfricaCountryPage,
+  component: EastAsiaCountryPage,
 });
 
-function NorthAfricaCountryPage() {
+function EastAsiaCountryPage() {
   const country = Route.useLoaderData();
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: country.title || `${country.name} Visa Consultant Islamabad`,
-    description: country.description,
-    url: `https://osconsultants.pk/countries/north-africa/${country.slug}`,
-  };
 
   return (
     <>
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <PageHero
-        eyebrow="North Africa"
+        eyebrow="East Asia"
         title={country.name}
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
@@ -48,7 +39,6 @@ function NorthAfricaCountryPage() {
       </div>
 
       <section className="container-px mx-auto max-w-5xl py-20">
-        {/* Intro */}
         <div className="space-y-6 text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl font-bold md:text-4xl">
             {country.name} Visa Services in Islamabad
@@ -57,7 +47,6 @@ function NorthAfricaCountryPage() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-3 mb-20">
-          {/* Main Requirements */}
           <div className="lg:col-span-2 rounded-[2rem] border border-border bg-card p-8 shadow-soft">
             <div className="flex items-center gap-3 mb-8 border-b border-border pb-4">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/20 text-primary">
@@ -79,39 +68,20 @@ function NorthAfricaCountryPage() {
             </ul>
           </div>
 
-          {/* Quick Info Sidebar */}
           <div className="space-y-6">
             <div className="rounded-2xl border border-border bg-secondary/30 p-6 shadow-soft">
               <div className="flex items-center gap-3 mb-4">
                 <Globe2 size={24} className="text-primary" />
-                <h3 className="font-bold text-lg">Travel Tip</h3>
+                <h3 className="font-bold text-lg">Why {country.name}?</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                North African embassies often require physical passport submission and verified
-                hotel bookings. We handle all logistics including embassy visits in Islamabad.
+                {country.name} is a key destination in East Asia. We ensure your application is processed with professional excellence.
               </p>
-            </div>
-
-            <div className="rounded-2xl border border-border bg-primary/5 p-6 shadow-soft border-primary/20">
-              <h3 className="font-bold text-lg mb-4 text-primary-glow">Consultancy Benefits</h3>
-              <ul className="space-y-3">
-                {[
-                  "Sticker visa dossier prep",
-                  "Official embassy coordination",
-                  "Verified hotel vouchers",
-                  "Medical insurance support",
-                ].map((tip, idx) => (
-                  <li key={idx} className="text-sm text-muted-foreground flex gap-2 font-medium">
-                    <span className="text-primary">•</span> {tip}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust & Contact Section */}
       <section className="bg-secondary/30 py-20 border-t border-border">
         <div className="container-px mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
@@ -120,10 +90,8 @@ function NorthAfricaCountryPage() {
                 Start Your {country.name} Journey Today
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Our team at Pakistan's no.1 travel agency and consultancy has extensive experience with North African visa protocols. We
-                ensure your application is professionally prepared to maximize approval chances.
+                Connect with our East Asia visa experts for a free evaluation of your profile.
               </p>
-
               <div className="pt-6 flex flex-wrap gap-4">
                 <a
                   href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`}
@@ -141,13 +109,7 @@ function NorthAfricaCountryPage() {
                 </a>
               </div>
             </div>
-
             <div className="bg-card rounded-[2rem] border border-border p-8 shadow-elevated relative overflow-hidden">
-              <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-primary-glow/10 blur-3xl pointer-events-none" />
-              <h3 className="text-2xl font-bold mb-2">Book a Free Assessment</h3>
-              <p className="text-sm text-muted-foreground mb-6">
-                Discuss your {country.name} visa application with our senior consultants.
-              </p>
               <ContactForm />
             </div>
           </div>

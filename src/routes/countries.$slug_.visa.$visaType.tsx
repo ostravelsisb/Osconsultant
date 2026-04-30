@@ -3,6 +3,7 @@ import { DESTINATIONS } from "@/data/destinations";
 import { PageHero } from "@/components/site/PageHero";
 import { CheckCircle2, FileText, Banknote, Clock, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
+import { BookingWidget } from "@/components/site/BookingWidget";
 import { COMPANY } from "@/data/site";
 
 export const Route = createFileRoute("/countries/$slug_/visa/$visaType")({
@@ -29,6 +30,10 @@ function VisaSubPage() {
   return (
     <>
       <PageHero eyebrow={`${destination.name} Visas`} title={visa.name} subtitle={visa.heroText} />
+
+      <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">
+        <BookingWidget initialTab="visa" />
+      </div>
 
       <section className="container-px mx-auto max-w-5xl py-20">
         {/* Intro */}

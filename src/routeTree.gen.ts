@@ -28,7 +28,11 @@ import { Route as CountriesSouthernAfricaCountryRouteImport } from './routes/cou
 import { Route as CountriesSouthAsiaCountryRouteImport } from './routes/countries.south-asia.$country'
 import { Route as CountriesSchengenCountryRouteImport } from './routes/countries.schengen.$country'
 import { Route as CountriesNorthAfricaCountryRouteImport } from './routes/countries.north-africa.$country'
+import { Route as CountriesMiddleEastCountryRouteImport } from './routes/countries.middle-east.$country'
+import { Route as CountriesEuropeOthersCountryRouteImport } from './routes/countries.europe-others.$country'
+import { Route as CountriesEastAsiaCountryRouteImport } from './routes/countries.east-asia.$country'
 import { Route as CountriesCentralAsiaCountryRouteImport } from './routes/countries.central-asia.$country'
+import { Route as CountriesAmericasCountryRouteImport } from './routes/countries.americas.$country'
 import { Route as CountriesSlugVisaVisaTypeRouteImport } from './routes/countries.$slug_.visa.$visaType'
 
 const VisaServicesRoute = VisaServicesRouteImport.update({
@@ -130,10 +134,34 @@ const CountriesNorthAfricaCountryRoute =
     path: '/countries/north-africa/$country',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CountriesMiddleEastCountryRoute =
+  CountriesMiddleEastCountryRouteImport.update({
+    id: '/countries/middle-east/$country',
+    path: '/countries/middle-east/$country',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CountriesEuropeOthersCountryRoute =
+  CountriesEuropeOthersCountryRouteImport.update({
+    id: '/countries/europe-others/$country',
+    path: '/countries/europe-others/$country',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CountriesEastAsiaCountryRoute =
+  CountriesEastAsiaCountryRouteImport.update({
+    id: '/countries/east-asia/$country',
+    path: '/countries/east-asia/$country',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CountriesCentralAsiaCountryRoute =
   CountriesCentralAsiaCountryRouteImport.update({
     id: '/countries/central-asia/$country',
     path: '/countries/central-asia/$country',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CountriesAmericasCountryRoute =
+  CountriesAmericasCountryRouteImport.update({
+    id: '/countries/americas/$country',
+    path: '/countries/americas/$country',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CountriesSlugVisaVisaTypeRoute =
@@ -159,7 +187,11 @@ export interface FileRoutesByFullPath {
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries/': typeof CountriesIndexRoute
+  '/countries/americas/$country': typeof CountriesAmericasCountryRoute
   '/countries/central-asia/$country': typeof CountriesCentralAsiaCountryRoute
+  '/countries/east-asia/$country': typeof CountriesEastAsiaCountryRoute
+  '/countries/europe-others/$country': typeof CountriesEuropeOthersCountryRoute
+  '/countries/middle-east/$country': typeof CountriesMiddleEastCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
@@ -182,7 +214,11 @@ export interface FileRoutesByTo {
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries': typeof CountriesIndexRoute
+  '/countries/americas/$country': typeof CountriesAmericasCountryRoute
   '/countries/central-asia/$country': typeof CountriesCentralAsiaCountryRoute
+  '/countries/east-asia/$country': typeof CountriesEastAsiaCountryRoute
+  '/countries/europe-others/$country': typeof CountriesEuropeOthersCountryRoute
+  '/countries/middle-east/$country': typeof CountriesMiddleEastCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
@@ -206,7 +242,11 @@ export interface FileRoutesById {
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries/': typeof CountriesIndexRoute
+  '/countries/americas/$country': typeof CountriesAmericasCountryRoute
   '/countries/central-asia/$country': typeof CountriesCentralAsiaCountryRoute
+  '/countries/east-asia/$country': typeof CountriesEastAsiaCountryRoute
+  '/countries/europe-others/$country': typeof CountriesEuropeOthersCountryRoute
+  '/countries/middle-east/$country': typeof CountriesMiddleEastCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
@@ -231,7 +271,11 @@ export interface FileRouteTypes {
     | '/visa-services'
     | '/countries/$slug'
     | '/countries/'
+    | '/countries/americas/$country'
     | '/countries/central-asia/$country'
+    | '/countries/east-asia/$country'
+    | '/countries/europe-others/$country'
+    | '/countries/middle-east/$country'
     | '/countries/north-africa/$country'
     | '/countries/schengen/$country'
     | '/countries/south-asia/$country'
@@ -254,7 +298,11 @@ export interface FileRouteTypes {
     | '/visa-services'
     | '/countries/$slug'
     | '/countries'
+    | '/countries/americas/$country'
     | '/countries/central-asia/$country'
+    | '/countries/east-asia/$country'
+    | '/countries/europe-others/$country'
+    | '/countries/middle-east/$country'
     | '/countries/north-africa/$country'
     | '/countries/schengen/$country'
     | '/countries/south-asia/$country'
@@ -277,7 +325,11 @@ export interface FileRouteTypes {
     | '/visa-services'
     | '/countries/$slug'
     | '/countries/'
+    | '/countries/americas/$country'
     | '/countries/central-asia/$country'
+    | '/countries/east-asia/$country'
+    | '/countries/europe-others/$country'
+    | '/countries/middle-east/$country'
     | '/countries/north-africa/$country'
     | '/countries/schengen/$country'
     | '/countries/south-asia/$country'
@@ -301,7 +353,11 @@ export interface RootRouteChildren {
   VisaServicesRoute: typeof VisaServicesRoute
   CountriesSlugRoute: typeof CountriesSlugRoute
   CountriesIndexRoute: typeof CountriesIndexRoute
+  CountriesAmericasCountryRoute: typeof CountriesAmericasCountryRoute
   CountriesCentralAsiaCountryRoute: typeof CountriesCentralAsiaCountryRoute
+  CountriesEastAsiaCountryRoute: typeof CountriesEastAsiaCountryRoute
+  CountriesEuropeOthersCountryRoute: typeof CountriesEuropeOthersCountryRoute
+  CountriesMiddleEastCountryRoute: typeof CountriesMiddleEastCountryRoute
   CountriesNorthAfricaCountryRoute: typeof CountriesNorthAfricaCountryRoute
   CountriesSchengenCountryRoute: typeof CountriesSchengenCountryRoute
   CountriesSouthAsiaCountryRoute: typeof CountriesSouthAsiaCountryRoute
@@ -444,11 +500,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CountriesNorthAfricaCountryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/countries/middle-east/$country': {
+      id: '/countries/middle-east/$country'
+      path: '/countries/middle-east/$country'
+      fullPath: '/countries/middle-east/$country'
+      preLoaderRoute: typeof CountriesMiddleEastCountryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/countries/europe-others/$country': {
+      id: '/countries/europe-others/$country'
+      path: '/countries/europe-others/$country'
+      fullPath: '/countries/europe-others/$country'
+      preLoaderRoute: typeof CountriesEuropeOthersCountryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/countries/east-asia/$country': {
+      id: '/countries/east-asia/$country'
+      path: '/countries/east-asia/$country'
+      fullPath: '/countries/east-asia/$country'
+      preLoaderRoute: typeof CountriesEastAsiaCountryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/countries/central-asia/$country': {
       id: '/countries/central-asia/$country'
       path: '/countries/central-asia/$country'
       fullPath: '/countries/central-asia/$country'
       preLoaderRoute: typeof CountriesCentralAsiaCountryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/countries/americas/$country': {
+      id: '/countries/americas/$country'
+      path: '/countries/americas/$country'
+      fullPath: '/countries/americas/$country'
+      preLoaderRoute: typeof CountriesAmericasCountryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/countries/$slug_/visa/$visaType': {
@@ -477,7 +561,11 @@ const rootRouteChildren: RootRouteChildren = {
   VisaServicesRoute: VisaServicesRoute,
   CountriesSlugRoute: CountriesSlugRoute,
   CountriesIndexRoute: CountriesIndexRoute,
+  CountriesAmericasCountryRoute: CountriesAmericasCountryRoute,
   CountriesCentralAsiaCountryRoute: CountriesCentralAsiaCountryRoute,
+  CountriesEastAsiaCountryRoute: CountriesEastAsiaCountryRoute,
+  CountriesEuropeOthersCountryRoute: CountriesEuropeOthersCountryRoute,
+  CountriesMiddleEastCountryRoute: CountriesMiddleEastCountryRoute,
   CountriesNorthAfricaCountryRoute: CountriesNorthAfricaCountryRoute,
   CountriesSchengenCountryRoute: CountriesSchengenCountryRoute,
   CountriesSouthAsiaCountryRoute: CountriesSouthAsiaCountryRoute,

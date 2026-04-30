@@ -2,28 +2,40 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { CountryCard } from "@/components/site/CountryCard";
 import { Reveal } from "@/components/site/Reveal";
+import { BookingWidget } from "@/components/site/BookingWidget";
 import { DESTINATIONS } from "@/data/destinations";
 
 export const Route = createFileRoute("/countries/")({
   head: () => ({
     meta: [
-      { title: "Visa Destinations Worldwide — Apply from Islamabad" },
+      { title: "50+ Visa Destinations Worldwide — Apply from Islamabad | Pakistan's #1 Visa Agency" },
       {
         name: "description",
         content:
-          "OS Consultants covers 50+ countries. Get expert visa assistance for USA, UK, Canada, Australia, Schengen, Middle East, and Asia from Islamabad.",
+          "OS Consultants covers 50+ countries worldwide. Expert visa assistance for USA, UK, Canada, Australia, Schengen, Dubai, Turkey, Malaysia & more from Islamabad. Pakistan's #1 visa consultancy with 98% approval rate.",
       },
       {
         name: "keywords",
         content:
-          "Schengen visa from Pakistan, USA visa from Islamabad, UK visa destinations ISB, Canada immigration Islamabad, Australia visit visa ISB, top visa destinations Pakistan, Europe visa consultancy Blue Area",
+          "visa destinations from pakistan, all countries visa consultant islamabad, schengen visa from pakistan, USA visa from islamabad, UK visa destinations ISB, canada immigration islamabad, australia visit visa ISB, top visa destinations pakistan, europe visa consultancy blue area, dubai visa agent islamabad, turkey visa pakistan, malaysia visa consultant islamabad, best visa consultancy for all countries pakistan",
       },
-      { property: "og:title", content: "Global Destinations — OS Consultants" },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: "50+ Global Visa Destinations — OS Consultants | Pakistan's #1" },
       {
         property: "og:description",
         content:
-          "Expert visa consultancy for North America, Europe, Oceania, Asia, and the Middle East.",
+          "Expert visa consultancy for North America, Europe, Oceania, Asia, Middle East & Africa. 98% approval rate from Islamabad.",
       },
+      { property: "og:url", content: "https://osconsultants.pk/countries" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "50+ Visa Destinations | OS Consultants Pakistan" },
+      { name: "twitter:description", content: "USA, UK, Canada, Schengen, Australia & 50+ more. Apply from Islamabad." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/countries" },
     ],
   }),
   component: CountriesPage,
@@ -37,6 +49,10 @@ function CountriesPage() {
         title="Visa support across every continent"
         subtitle="From iconic European capitals to vibrant Middle Eastern hubs and Oceania's natural wonders."
       />
+
+      <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">
+        <BookingWidget initialTab="visa" />
+      </div>
 
       <section className="container-px mx-auto max-w-7xl pt-20 pb-10">
         <div className="space-y-6 mb-10 text-center max-w-2xl mx-auto">

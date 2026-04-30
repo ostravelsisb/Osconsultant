@@ -3,6 +3,7 @@ import { SCHENGEN_COUNTRIES } from "@/data/site";
 import { PageHero } from "@/components/site/PageHero";
 import { CheckCircle2, FileText, Globe2, ArrowRight } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
+import { BookingWidget } from "@/components/site/BookingWidget";
 import { COMPANY } from "@/data/site";
 
 export const Route = createFileRoute("/countries/schengen/$country")({
@@ -13,9 +14,27 @@ export const Route = createFileRoute("/countries/schengen/$country")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: loaderData?.title || "Schengen Visa Consultant Islamabad" },
-      { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, top travel agency pakistan, best in islamabad, travel agency` },
+      { title: `${loaderData?.title || "Schengen Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026` },
+      { name: "description", content: loaderData?.description ? `${loaderData.description} OS Consultants Islamabad — Pakistan's #1 visa agency. 98% approval rate, IATA-accredited, Blue Area office.` : "" },
+      { name: "keywords", content: `${loaderData?.keywords || ""}, best schengen visa consultant islamabad, top europe visa agent pakistan, schengen visa success rate pakistan, schengen visa from pakistan 2026, os consultants schengen visa, blue area visa consultant` },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { name: "author", content: "OS Consultants" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: `${loaderData?.name || "Schengen"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants` },
+      { property: "og:description", content: loaderData?.description || "" },
+      { property: "og:url", content: `https://osconsultants.pk/countries/schengen/${loaderData?.slug || ""}` },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_PK" },
+      { property: "og:site_name", content: "OS Consultants — Pakistan's No.1 Travel Agency" },
+      { property: "og:image", content: loaderData?.image || "" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: `${loaderData?.name || ""} Visa Consultant Islamabad | OS Consultants` },
+      { name: "twitter:description", content: loaderData?.description || "" },
+      { name: "twitter:image", content: loaderData?.image || "" },
+    ],
+    links: [
+      { rel: "canonical", href: `https://osconsultants.pk/countries/schengen/${loaderData?.slug || ""}` },
     ],
   }),
   component: SchengenCountryPage,
@@ -26,10 +45,29 @@ function SchengenCountryPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: country.title || `${country.name} Visa Consultant Islamabad`,
+    "@type": ["WebPage", "Service"],
+    name: `${country.name} Visa Consultancy — OS Consultants Islamabad`,
     description: country.description,
     url: `https://osconsultants.pk/countries/schengen/${country.slug}`,
+    provider: {
+      "@type": "TravelAgency",
+      name: "OS Consultants",
+      url: "https://osconsultants.pk",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Office # 3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area",
+        addressLocality: "Islamabad",
+        addressCountry: "PK",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        bestRating: "5",
+        ratingCount: "2847",
+      },
+    },
+    areaServed: { "@type": "Country", name: "Pakistan" },
+    serviceType: `${country.name} Schengen Visa Consultancy`,
   };
 
   return (
@@ -41,6 +79,10 @@ function SchengenCountryPage() {
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
       />
+
+      <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">
+        <BookingWidget initialTab="visa" />
+      </div>
 
       <section className="container-px mx-auto max-w-5xl py-20">
         {/* Intro */}

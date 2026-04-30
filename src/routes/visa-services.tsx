@@ -19,24 +19,37 @@ import { VISA_SERVICES } from "@/data/site";
 export const Route = createFileRoute("/visa-services")({
   head: () => ({
     meta: [
-      { title: "Visa Consultant in Islamabad | Best Visa Services in Pakistan" },
+      { title: "#1 Visa Consultant in Islamabad 2026 | Best Visa Services in Pakistan | OS Consultants" },
       {
         name: "description",
         content:
-          "OS Consultants: Top-rated visa consultant in Islamabad. Specialized in UK, USA, Canada, Schengen & Australia visit and student visas. 98% approval rate in Blue Area.",
+          "OS Consultants: Pakistan's #1 visa consultant in Islamabad. 98% approval rate for UK, USA, Canada, Schengen, Australia, Dubai & Turkey visas. IATA-accredited, Blue Area office. Expert documentation, interview prep & fast processing.",
       },
       {
         name: "keywords",
         content:
-          "visa consultant islamabad, best visa agency pakistan, uk visit visa islamabad, usa visa agent islamabad, canada visa pakistan, schengen visa consultant islamabad, student visa islamabad, australia visa agent pakistan",
+          "best visa consultant islamabad 2026, #1 visa agency pakistan, uk visit visa islamabad, usa B1/B2 visa consultant islamabad, canada immigration agent islamabad, schengen visa consultant islamabad blue area, australia student visa islamabad, dubai visa agent pakistan, turkey visa consultant ISB, student visa islamabad, work visa consultant pakistan, business visa islamabad, family visa consultant pakistan, visa rejection help islamabad, visa refusal appeal pakistan, best visa approval rate pakistan, trusted visa company islamabad, affordable visa services pakistan, express visa processing islamabad",
       },
-      { property: "og:title", content: "Premium Visa Services in Islamabad | OS Consultants" },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { name: "author", content: "OS Consultants" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: "Pakistan's #1 Visa Consultant 2026 — 98% Approval Rate | OS Consultants Islamabad" },
       {
         property: "og:description",
         content:
-          "Top-rated visa consultancy for UK, USA, Canada, Schengen & Australia. High approval rates and professional documentation.",
+          "Expert visa consultancy for UK, USA, Canada, Schengen, Australia & 50+ countries. High approval rates and professional documentation from Blue Area, Islamabad.",
       },
-      { property: "og:image", content: "/src/assets/hero-travel.jpg" },
+      { property: "og:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { property: "og:url", content: "https://osconsultants.pk/visa-services" },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_PK" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "#1 Visa Consultant Islamabad | OS Consultants" },
+      { name: "twitter:description", content: "98% approval rate. UK, USA, Canada, Schengen & Australia visas from Islamabad." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/visa-services" },
     ],
   }),
   component: VisaServices,

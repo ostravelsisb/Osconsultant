@@ -22,24 +22,36 @@ import umrahHero from "@/assets/umrah-hero.png";
 export const Route = createFileRoute("/umrah")({
   head: () => ({
     meta: [
-      { title: "Best Umrah Packages from Pakistan 2026 | Cheap & Custom Umrah Islamabad" },
+      { title: "Best Umrah Packages from Pakistan 2026 — Pakistan's #1 Umrah Travel Agency | OS Consultants" },
       {
         name: "description",
         content:
-          "Book cheap Umrah packages from Pakistan 2026 with OS Consultants. We offer Economy, 3-Star, 4-Star & 5-Star Umrah packages with visa, flights & hotels in Makkah & Madinah.",
+          "Pakistan's #1 Umrah travel agency. Book cheap Umrah packages from Islamabad 2026. Economy, 3-Star, 4-Star & 5-Star packages with visa, flights & hotels in Makkah & Madinah. Trusted by 5000+ families. OS Consultants Blue Area.",
       },
       {
         name: "keywords",
         content:
-          "umrah packages from pakistan 2026, cheap umrah packages islamabad, customized umrah packages 2026, best umrah travel agency islamabad, economy umrah packages 2026, luxury umrah packages 2026, umrah visa islamabad, makkah madinah hotels pakistan",
+          "best umrah packages from pakistan 2026, cheapest umrah packages islamabad, #1 umrah travel agency pakistan, customized umrah packages 2026, economy umrah packages islamabad, luxury 5 star umrah packages pakistan, umrah visa processing islamabad, makkah madinah hotel booking pakistan, group umrah packages islamabad, family umrah packages 2026, umrah with flights from islamabad, umrah agents blue area islamabad, ramadan umrah packages pakistan, last minute umrah deals pakistan",
       },
-      { property: "og:title", content: "Umrah Packages 2026 | OS Consultants Islamabad" },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: "Pakistan's #1 Umrah Packages 2026 — Economy to 5-Star Luxury | OS Consultants" },
       {
         property: "og:description",
         content:
-          "Explore our premium and budget-friendly Umrah packages. Complete documentation and premium support for your spiritual journey.",
+          "Trusted by 5000+ families. Economy to luxury Umrah packages from Islamabad with visa, flights & premium hotels near Haram.",
       },
       { property: "og:image", content: "/src/assets/umrah-hero.png" },
+      { property: "og:url", content: "https://osconsultants.pk/umrah" },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_PK" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "#1 Umrah Packages Pakistan 2026 | OS Consultants" },
+      { name: "twitter:description", content: "Economy to 5-Star luxury. Visa, flights & Haram-facing hotels from Islamabad." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/umrah" },
     ],
   }),
   component: UmrahPage,

@@ -6,22 +6,32 @@ import { BookUser, RefreshCcw, Flag, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/passport-services")({
   head: () => ({
     meta: [
-      { title: "Passport Services Islamabad — Fast Renewals & USA Passports" },
+      { title: "Passport Services Islamabad 2026 — Fast Renewals & New Applications | OS Consultants" },
       {
         name: "description",
         content:
-          "Expert passport services in Islamabad. Fast passport applications, reliable renewals, and specialized USA passport processing handled end-to-end from Blue Area.",
+          "Expert passport services in Islamabad by Pakistan's #1 travel agency. Fast passport applications, reliable renewals, urgent processing & USA passport services. OS Consultants Blue Area.",
       },
       {
         name: "keywords",
         content:
-          "passport services Islamabad, fast passport renewal ISB, USA passport application Pakistan, passport processing agency Blue Area, apply for new passport Islamabad, urgent passport renewal ISB",
+          "passport services islamabad, fast passport renewal ISB, USA passport application pakistan, passport processing agency blue area, apply for new passport islamabad, urgent passport renewal islamabad, passport agent near me islamabad, overseas passport processing pakistan, passport renewal fees pakistan 2026, best passport agent islamabad",
       },
-      { property: "og:title", content: "Passport Services — OS Consultants" },
+      { name: "robots", content: "index, follow" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: "Passport Services Islamabad — Fast Processing | OS Consultants" },
       {
         property: "og:description",
-        content: "Applications, renewals and USA passport processing.",
+        content: "New applications, renewals & USA passport processing from Blue Area, Islamabad.",
       },
+      { property: "og:url", content: "https://osconsultants.pk/passport-services" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Passport Services Islamabad | OS Consultants" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/passport-services" },
     ],
   }),
   component: PassportServices,

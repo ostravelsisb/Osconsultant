@@ -108,13 +108,43 @@ function ProfileAssessment() {
     visaType: "tourist",
     phone: ""
   });
+  const [triedNext, setTriedNext] = useState(false);
 
   const handleInputChange = (field: string, value: string) => {
+    // Prevent negative numbers for specific fields
+    if (['age', 'experience', 'stamps', 'refusals'].includes(field)) {
+      if (value !== "" && (parseInt(value) < 0 || value.startsWith('-'))) return;
+    }
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const nextStep = () => setStep(s => Math.min(s + 1, totalSteps));
-  const prevStep = () => setStep(s => Math.max(s - 1, 1));
+  const isStepValid = () => {
+    if (step === 1) return !!(formData.name && formData.age && formData.maritalStatus && formData.phone);
+    if (step === 2) return !!(formData.occupation && formData.experience);
+    if (step === 3) return !!(formData.income && formData.bankBalance);
+    if (step === 4) return !!(formData.destination && formData.visaType && formData.stamps !== "" && formData.refusals !== "" && formData.travelHistory);
+    return true;
+  };
+
+  const isInvalid = (field: keyof typeof formData) => {
+    if (!triedNext) return false;
+    if (field === 'education') return false; // "except study"
+    return formData[field] === "";
+  };
+
+  const nextStep = () => {
+    if (isStepValid()) {
+      setStep(s => Math.min(s + 1, totalSteps));
+      setTriedNext(false);
+    } else {
+      setTriedNext(true);
+    }
+  };
+
+  const prevStep = () => {
+    setStep(s => Math.max(s - 1, 1));
+    setTriedNext(false);
+  };
 
   const generateWhatsAppLink = () => {
     const visaTypeLabels: Record<string, string> = {
@@ -230,7 +260,7 @@ function ProfileAssessment() {
                       id="pa-name"
                       name="name"
                       placeholder="Enter your full name" 
-                      className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
+                      className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid('name') && "ring-2 ring-destructive")} 
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                     />
@@ -242,15 +272,16 @@ function ProfileAssessment() {
                       name="age"
                       placeholder="e.g. 28" 
                       type="number"
-                      className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
+                      min="0"
+                      className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid('age') && "ring-2 ring-destructive")} 
                       value={formData.age}
                       onChange={(e) => handleInputChange('age', e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="pa-marital-status" className="text-xs uppercase font-bold text-muted-foreground ml-1">Marital Status</Label>
-                    <Select value={formData.maritalStatus} onValueChange={(v) => handleInputChange('maritalStatus', v)}>
-                      <SelectTrigger id="pa-marital-status" className="h-14 rounded-2xl bg-secondary/10 border-none px-6">
+                    <Select value={formData.maritalStatus || ""} onValueChange={(v) => handleInputChange('maritalStatus', v)}>
+                      <SelectTrigger id="pa-marital-status" className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid('maritalStatus') && "ring-2 ring-destructive")}>
                         <SelectValue placeholder="Select Status" />
                       </SelectTrigger>
                       <SelectContent>
@@ -267,7 +298,7 @@ function ProfileAssessment() {
                       name="phone"
                       autoComplete="tel"
                       placeholder="+92 300 1234567" 
-                      className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
+                      className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid('phone') && "ring-2 ring-destructive")} 
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                     />
@@ -279,7 +310,7 @@ function ProfileAssessment() {
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2 md:col-span-2">
                     <Label htmlFor="pa-education" className="text-xs uppercase font-bold text-muted-foreground ml-1">Highest Education</Label>
-                    <Select value={formData.education} onValueChange={(v) => handleInputChange('education', v)}>
+                    <Select value={formData.education || ""} onValueChange={(v) => handleInputChange('education', v)}>
                       <SelectTrigger id="pa-education" className="h-14 rounded-2xl bg-secondary/10 border-none px-6">
                         <SelectValue placeholder="Select Education" />
                       </SelectTrigger>
@@ -297,7 +328,7 @@ function ProfileAssessment() {
                       id="pa-occupation"
                       name="occupation"
                       placeholder="e.g. Software Engineer" 
-                      className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
+                      className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid('occupation') && "ring-2 ring-destructive")} 
                       value={formData.occupation}
                       onChange={(e) => handleInputChange('occupation', e.target.value)}
                     />
@@ -309,7 +340,8 @@ function ProfileAssessment() {
                       name="experience"
                       placeholder="e.g. 5" 
                       type="number"
-                      className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
+                      min="0"
+                      className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid('experience') && "ring-2 ring-destructive")} 
                       value={formData.experience}
                       onChange={(e) => handleInputChange('experience', e.target.value)}
                     />
@@ -325,7 +357,7 @@ function ProfileAssessment() {
                       id="pa-income"
                       name="income"
                       placeholder="e.g. 150,000" 
-                      className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
+                      className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid('income') && "ring-2 ring-destructive")} 
                       value={formData.income}
                       onChange={(e) => handleInputChange('income', e.target.value)}
                     />
@@ -336,7 +368,7 @@ function ProfileAssessment() {
                       id="pa-bank-balance"
                       name="bankBalance"
                       placeholder="e.g. 2,500,000" 
-                      className="h-14 rounded-2xl bg-secondary/10 border-none px-6" 
+                      className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid('bankBalance') && "ring-2 ring-destructive")} 
                       value={formData.bankBalance}
                       onChange={(e) => handleInputChange('bankBalance', e.target.value)}
                     />
@@ -369,7 +401,8 @@ function ProfileAssessment() {
                           onClick={() => handleInputChange('destination', tier.id)}
                           className={cn(
                             "text-left p-6 rounded-[2rem] border-2 transition-all group relative overflow-hidden",
-                            formData.destination === tier.id ? `${tier.border} ${tier.bg} shadow-md scale-[1.02]` : "border-border bg-white hover:border-primary/30"
+                            formData.destination === tier.id ? `${tier.border} ${tier.bg} shadow-md scale-[1.02]` : "border-border bg-white hover:border-primary/30",
+                            isInvalid('destination') && "ring-2 ring-destructive border-destructive/20"
                           )}
                         >
                           <div className={cn("h-1 w-12 rounded-full mb-4", tier.color)} />
@@ -397,7 +430,8 @@ function ProfileAssessment() {
                           onClick={() => handleInputChange('visaType', p.id)}
                           className={cn(
                             "text-left p-6 rounded-[2.5rem] border-2 transition-all flex items-center gap-6 group",
-                            formData.visaType === p.id ? "border-primary bg-primary/5 shadow-md scale-[1.02]" : "border-border bg-white hover:border-primary/30"
+                            formData.visaType === p.id ? "border-primary bg-primary/5 shadow-md scale-[1.02]" : "border-border bg-white hover:border-primary/30",
+                            isInvalid('visaType') && "ring-2 ring-destructive border-destructive/20"
                           )}
                         >
                           <div className={cn(
@@ -490,7 +524,7 @@ function ProfileAssessment() {
                         name="stamps"
                         placeholder="Total Stamps" 
                         type="number"
-                        className="h-14 rounded-2xl bg-white border-none px-6 font-bold" 
+                        className={cn("h-14 rounded-2xl bg-white border-none px-6 font-bold", isInvalid('stamps') && "ring-2 ring-destructive")} 
                         value={formData.stamps}
                         onChange={(e) => handleInputChange('stamps', e.target.value)}
                       />
@@ -502,7 +536,8 @@ function ProfileAssessment() {
                         name="refusals"
                         placeholder="Total Refusals" 
                         type="number"
-                        className="h-14 rounded-2xl bg-white border-none px-6 font-bold" 
+                        min="0"
+                        className={cn("h-14 rounded-2xl bg-white border-none px-6 font-bold", isInvalid('refusals') && "ring-2 ring-destructive")} 
                         value={formData.refusals}
                         onChange={(e) => handleInputChange('refusals', e.target.value)}
                       />
@@ -513,7 +548,7 @@ function ProfileAssessment() {
                         id="pa-travel-history"
                         name="travelHistory"
                         placeholder="UAE, Turkey, Thailand etc." 
-                        className="h-14 rounded-2xl bg-white border-none px-6 font-bold" 
+                        className={cn("h-14 rounded-2xl bg-white border-none px-6 font-bold", isInvalid('travelHistory') && "ring-2 ring-destructive")} 
                         value={formData.travelHistory}
                         onChange={(e) => handleInputChange('travelHistory', e.target.value)}
                       />
@@ -536,17 +571,32 @@ function ProfileAssessment() {
               {step < totalSteps ? (
                 <Button 
                   onClick={nextStep} 
-                  className="h-14 px-10 rounded-2xl bg-primary text-white font-bold shadow-glow hover:scale-[1.02] transition-all"
+                  disabled={!isStepValid()}
+                  className={cn(
+                    "h-14 px-10 rounded-2xl font-bold transition-all flex items-center",
+                    isStepValid() 
+                      ? "bg-primary text-white shadow-glow hover:scale-[1.02]" 
+                      : "bg-muted text-muted-foreground cursor-not-allowed"
+                  )}
                 >
                   Continue
                   <ChevronRight className="ml-2" size={20} />
                 </Button>
               ) : (
                 <a 
-                  href={generateWhatsAppLink()}
-                  target="_blank"
+                  href={isStepValid() ? generateWhatsAppLink() : "#"}
+                  onClick={(e) => {
+                    if (!isStepValid()) {
+                      e.preventDefault();
+                      setTriedNext(true);
+                    }
+                  }}
+                  target={isStepValid() ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="h-14 px-10 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-glow-emerald hover:scale-[1.02] transition-all flex items-center gap-2"
+                  className={cn(
+                    "h-14 px-10 rounded-2xl text-white font-bold shadow-glow-emerald hover:scale-[1.02] transition-all flex items-center gap-2",
+                    isStepValid() ? "bg-emerald-600 hover:bg-emerald-700 shadow-glow-emerald" : "bg-muted text-muted-foreground cursor-not-allowed"
+                  )}
                 >
                   <MessageCircle size={20} />
                   Submit Assessment

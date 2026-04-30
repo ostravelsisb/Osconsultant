@@ -7,14 +7,24 @@ import { TESTIMONIALS } from "@/data/site";
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
-      { title: "Testimonials — Real Stories from Our Travelers" },
+      { title: "Client Reviews & Success Stories — Pakistan's #1 Visa Agency | OS Consultants" },
       {
         name: "description",
         content:
-          "Read approval stories and reviews from clients who trusted OS Consultants for their visa journeys.",
+          "Read 1500+ real client reviews and visa approval success stories. OS Consultants Islamabad has a 98% approval rate for Schengen, USA, UK, Canada & Australia visas. Trusted by 20,000+ travelers.",
       },
-      { property: "og:title", content: "Client Testimonials — OS Consultants" },
-      { property: "og:description", content: "Approval stories from real travelers." },
+      {
+        name: "keywords",
+        content: "os consultants reviews, visa approval stories pakistan, best visa consultant reviews islamabad, travel agency testimonials pakistan, visa success stories islamabad, trusted visa agent reviews",
+      },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Client Reviews — OS Consultants | 98% Approval Rate" },
+      { property: "og:description", content: "Real approval stories from 20,000+ happy travelers. Pakistan's most trusted visa agency." },
+      { property: "og:url", content: "https://osconsultants.pk/testimonials" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/testimonials" },
     ],
   }),
   component: TestimonialsPage,

@@ -7,24 +7,36 @@ import { Award, Target, Eye, Users, Globe2, Sparkles, ArrowRight } from "lucide-
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About OS Consultants | Top Visa Agency in Islamabad" },
+      { title: "About OS Consultants — Pakistan's #1 Visa & Travel Agency Since 2009 | Islamabad" },
       {
         name: "description",
         content:
-          "Discover OS Consultants — Islamabad's premier visa & travel consultancy since 2009. 15+ years experience, 20,000+ happy clients, and a 98% approval rate in Blue Area.",
+          "OS Consultants is Pakistan's most trusted visa & travel agency since 2009. 15+ years experience, 20,000+ happy clients, 98% approval rate. IATA-accredited office in Blue Area, Islamabad. Expert team for Schengen, USA, UK, Canada & Australia visas.",
       },
       {
         name: "keywords",
         content:
-          "top visa consultancy islamabad, best immigration agency ISB, trusted visa company pakistan, overseas consultancy islamabad, visa experts pakistan, reliable visa consultant islamabad",
+          "about os consultants, best visa consultancy islamabad history, top immigration agency pakistan, trusted visa company since 2009, IATA accredited travel company islamabad, 98 percent visa approval rate pakistan, most experienced visa consultant islamabad, top rated travel agency pakistan, os consultants team, blue area visa agency",
       },
-      { property: "og:title", content: "About OS Consultants | Pakistan's Leading Visa Agency" },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { name: "author", content: "OS Consultants" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: "About OS Consultants — Pakistan's Leading Visa & Travel Agency Since 2009" },
       {
         property: "og:description",
         content:
-          "Learn about our mission, values, and 15-year track record of excellence in visa consultancy.",
+          "15+ years of excellence. 20,000+ happy clients. 98% approval rate. Learn about Pakistan's most trusted visa consultancy.",
       },
-      { property: "og:image", content: "/src/assets/hero-travel.jpg" },
+      { property: "og:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { property: "og:url", content: "https://osconsultants.pk/about" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About OS Consultants | Pakistan's #1 Since 2009" },
+      { name: "twitter:description", content: "15+ years, 20K+ clients, 98% approval rate. The story of Pakistan's top visa agency." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/about" },
     ],
   }),
   component: About,

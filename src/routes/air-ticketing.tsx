@@ -37,7 +37,7 @@ export const Route = createFileRoute("/air-ticketing")({
       { name: "twitter:description", content: "IATA-authorized. Cheapest flights from ISB to London, Dubai, Toronto, New York & more. Instant booking." },
     ],
     links: [
-      { rel: "canonical", href: "https://www.ostravels.com/air-ticketing" },
+      { rel: "canonical", href: "https://osconsultants.pk/air-ticketing" },
     ],
   }),
   component: AirTicketing,

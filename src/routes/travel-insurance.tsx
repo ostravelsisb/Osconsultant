@@ -6,19 +6,29 @@ import { ShieldCheck, HeartPulse, CalendarX2, Globe2, ArrowRight } from "lucide-
 export const Route = createFileRoute("/travel-insurance")({
   head: () => ({
     meta: [
-      { title: "Best Travel Insurance in Pakistan — Schengen Compliant" },
+      { title: "Best Travel Insurance in Pakistan 2026 — Schengen Compliant | OS Consultants Islamabad" },
       {
         name: "description",
         content:
-          "Get cheap and reliable travel insurance in Pakistan. Fully Schengen-compliant medical cover and trip cancellation insurance for international travelers.",
+          "Get the cheapest Schengen-compliant travel insurance in Pakistan. €30,000+ medical cover, trip cancellation protection & worldwide coverage. Instant policy from OS Consultants Islamabad.",
       },
       {
         name: "keywords",
         content:
-          "Schengen approved travel insurance Islamabad, cheapest travel insurance Pakistan, travel medical insurance ISB, trip cancellation cover Pakistan, buy travel insurance Blue Area, Europe visa insurance Islamabad",
+          "best travel insurance pakistan 2026, schengen approved travel insurance islamabad, cheapest travel insurance pakistan, travel medical insurance ISB, trip cancellation cover pakistan, buy travel insurance blue area, europe visa insurance islamabad, worldwide travel insurance pakistan, instant travel insurance policy islamabad, travel insurance for USA visa pakistan, travel insurance for UK visa islamabad",
       },
-      { property: "og:title", content: "Travel Insurance — OS Consultants" },
-      { property: "og:description", content: "Protect your trip with Schengen-compliant cover." },
+      { name: "robots", content: "index, follow" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: "Best Travel Insurance Pakistan — Schengen Compliant | OS Consultants" },
+      { property: "og:description", content: "Instant Schengen-compliant travel insurance. €30,000+ medical cover from Islamabad." },
+      { property: "og:url", content: "https://osconsultants.pk/travel-insurance" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Travel Insurance Pakistan | OS Consultants" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/travel-insurance" },
     ],
   }),
   component: TravelInsurance,

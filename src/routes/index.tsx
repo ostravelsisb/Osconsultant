@@ -44,41 +44,61 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OS Consultants | Top Travel Agency & Visa Consultant" },
+      { title: "OS Consultants — Pakistan's No.1 Travel Agency & Best Visa Consultant 2026 | Islamabad" },
       {
         name: "description",
         content:
-          "Top Travel Agency & Visa Consultant in Pakistan. Expert services for Schengen, USA, UK, Canada & Australia visas. Cheap flights & hotel bookings in Islamabad.",
+          "OS Consultants is Pakistan's #1 travel agency & best visa consultant in Islamabad. IATA-accredited experts for Schengen, USA, UK, Canada & Australia visas. Cheap flights, Umrah packages, hotel bookings & travel insurance. 98% approval rate. Blue Area, Islamabad.",
       },
       {
         name: "keywords",
         content:
-          "best travel agency in pakistan, top travel agency islamabad, #1 visa consultant pakistan, best visa agency islamabad, top tour operator pakistan, cheap flights pakistan, schengen visa pakistan, uk visa agent islamabad, usa visa consultant pakistan, canada immigration pakistan, australia student visa islamabad, corporate travel agency pakistan, reliable travel agents in pakistan, flight booking pakistan, hotel reservation islamabad, no.1 travel agency in pakistan, best travel and tours pakistan, top immigration consultant pakistan, top travel agent in pakistan",
+          "best travel agency in pakistan 2026, pakistan no 1 travel agency, top travel agency islamabad, #1 visa consultant pakistan, best visa agency islamabad blue area, top tour operator pakistan, cheap flights from pakistan, schengen visa consultant islamabad, uk visa agent islamabad, usa visa consultant pakistan, canada immigration consultant islamabad, australia student visa islamabad, corporate travel agency pakistan, reliable travel agents in pakistan, flight booking pakistan, hotel reservation islamabad, best travel and tours pakistan, top immigration consultant pakistan, IATA accredited travel agent islamabad, umrah packages from pakistan 2026, cheap umrah packages islamabad, travel insurance islamabad, passport services islamabad, world best travel agency, international visa consultant, visa success rate pakistan, affordable travel agency islamabad, online travel booking pakistan, multi city flights islamabad, business class deals pakistan, economy flights islamabad to london, islamabad to dubai cheap tickets, best visa approval rate pakistan, trusted visa consultant near me islamabad",
       },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      { name: "author", content: "OS Consultants" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad, Pakistan" },
+      { name: "geo.position", content: "33.7135;73.0673" },
+      { name: "ICBM", content: "33.7135, 73.0673" },
+      { name: "rating", content: "general" },
+      { name: "revisit-after", content: "3 days" },
+      { name: "language", content: "English" },
+      { name: "coverage", content: "Worldwide" },
+      { name: "distribution", content: "Global" },
       {
         property: "og:title",
-        content: "OS Consultants | Top Travel Agency & Visa Consultant",
+        content: "OS Consultants — Pakistan's No.1 Travel Agency & Best Visa Consultant 2026",
       },
       {
         property: "og:description",
         content:
-          "Top Travel Agency & Visa Consultant in Pakistan. Expert services for Schengen, USA, UK, Canada & Australia visas. Cheap flights & hotel bookings in Islamabad.",
+          "IATA-accredited travel agency in Islamabad. Expert Schengen, USA, UK, Canada & Australia visa consultancy. Cheap flights, Umrah packages & hotel bookings. 98% approval rate.",
       },
-      { property: "og:image", content: "/src/assets/hero-travel.jpg" },
+      { property: "og:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { property: "og:url", content: "https://osconsultants.pk/" },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_PK" },
+      { property: "og:site_name", content: "OS Consultants — Pakistan's No.1 Travel Agency" },
+      {
+        name: "twitter:card", content: "summary_large_image",
+      },
       {
         name: "twitter:title",
-        content: "OS Consultants | Best Visa & Travel Consultancy",
+        content: "OS Consultants | Pakistan's #1 Travel Agency & Visa Consultant 2026",
       },
       {
         name: "twitter:description",
         content:
-          "Expert visa services for Schengen, UK, USA, Canada, and Australia. 15+ years experience in Islamabad.",
+          "IATA-accredited. 98% visa approval rate. Schengen, UK, USA, Canada & Australia visas from Islamabad. Cheap flights & Umrah packages.",
       },
+      { name: "twitter:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
     ],
     links: [
       { rel: "canonical", href: "https://osconsultants.pk/" },
       { rel: "alternate", hrefLang: "en-PK", href: "https://osconsultants.pk/" },
       { rel: "alternate", hrefLang: "en", href: "https://osconsultants.pk/" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://osconsultants.pk/" },
     ],
   }),
   component: Home,

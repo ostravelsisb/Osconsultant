@@ -7,27 +7,38 @@ import { COMPANY } from "@/data/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact OS Consultants | Best Visa Office in Blue Area, Islamabad" },
+      { title: "Contact OS Consultants — Pakistan's #1 Visa Office in Blue Area, Islamabad" },
       {
         name: "description",
         content:
-          "Get in touch with Islamabad's top visa consultancy. Visit our office in Blue Area or contact us via phone, email, or WhatsApp for expert visa and travel guidance.",
+          "Contact Pakistan's best visa consultancy. Visit OS Consultants in Blue Area, Islamabad or reach us via phone +92 51 2021700, WhatsApp, or email. Open Mon-Sat 10AM-7PM. Expert visa & travel guidance.",
       },
       {
         name: "keywords",
         content:
-          "visa office islamabad, contact visa consultant ISB, blue area travel agency, immigration office islamabad, OS Consultants phone number, WhatsApp visa agent pakistan, best visa agency islamabad address",
+          "contact os consultants, visa office islamabad blue area, best visa agency address islamabad, immigration office near me islamabad, OS Consultants phone number, WhatsApp visa agent pakistan, travel agency contact islamabad, visa consultant near me pakistan, os consultants email, os consultants whatsapp number",
       },
+      { name: "robots", content: "index, follow" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad, Blue Area" },
       {
         property: "og:title",
-        content: "Contact OS Consultants | Visa & Travel Experts in Islamabad",
+        content: "Contact OS Consultants — Pakistan's #1 Visa & Travel Office",
       },
       {
         property: "og:description",
         content:
-          "Reach out for expert help with Schengen, UK, USA, Canada, and Australia visas. Located in Blue Area, Islamabad.",
+          "Visit us at Blue Area, Islamabad. Expert help for Schengen, UK, USA, Canada & Australia visas. WhatsApp, phone & walk-in available.",
       },
-      { property: "og:image", content: "/src/assets/hero-travel.jpg" },
+      { property: "og:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { property: "og:url", content: "https://osconsultants.pk/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Contact Pakistan's #1 Visa Agency | OS Consultants" },
+      { name: "twitter:description", content: "Blue Area, Islamabad. Phone, WhatsApp & walk-in consultations available." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/contact" },
     ],
   }),
   component: Contact,

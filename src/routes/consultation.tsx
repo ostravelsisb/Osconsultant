@@ -6,17 +6,28 @@ import { CheckCircle2, Sparkles } from "lucide-react";
 export const Route = createFileRoute("/consultation")({
   head: () => ({
     meta: [
-      { title: "Free Visa Consultation — OS Consultants Islamabad" },
+      { title: "Free Visa Consultation — Pakistan's #1 Visa Expert | OS Consultants Islamabad" },
       {
         name: "description",
         content:
-          "Book a free 15-minute visa consultation with OS Consultants. Get an expert pathway and clear timeline.",
+          "Book a free 15-minute visa consultation with Pakistan's best visa consultants. Get expert pathway analysis, document checklist & honest fee estimate. No obligation. OS Consultants Blue Area, Islamabad.",
       },
-      { property: "og:title", content: "Book a Free Consultation" },
+      {
+        name: "keywords",
+        content: "free visa consultation islamabad, book visa appointment pakistan, visa expert consultation blue area, free immigration advice islamabad, os consultants consultation, visa pathway assessment pakistan",
+      },
+      { name: "robots", content: "index, follow" },
+      { name: "geo.region", content: "PK-IS" },
+      { property: "og:title", content: "Free Visa Consultation — Pakistan's #1 Visa Expert" },
       {
         property: "og:description",
-        content: "15 minutes with a senior consultant — no obligation.",
+        content: "15 minutes with a senior visa consultant — no obligation. Expert pathway & document checklist.",
       },
+      { property: "og:url", content: "https://osconsultants.pk/consultation" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/consultation" },
     ],
   }),
   component: Consultation,

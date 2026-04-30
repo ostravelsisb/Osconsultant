@@ -7,22 +7,33 @@ import { Hotel, Crown, Wallet, Globe2, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/hotel-booking")({
   head: () => ({
     meta: [
-      { title: "Best Hotel Booking Agent in Islamabad — Cheap Reservations" },
+      { title: "Best Hotel Booking Agent in Islamabad 2026 — Cheap International Reservations | OS Consultants" },
       {
         name: "description",
         content:
-          "OS Consultants is your trusted hotel booking agent in Islamabad providing cheap hotel reservations for visas, luxury stays, and budget accommodations globally.",
+          "Pakistan's trusted hotel booking agent in Islamabad. Cheap hotel reservations worldwide for visa applications, luxury stays & budget travel. Schengen, UK, USA visa hotel bookings. Best rates guaranteed from Blue Area.",
       },
       {
         name: "keywords",
         content:
-          "hotel booking agent Islamabad, cheap hotel reservations for visa ISB, Schengen visa hotel booking Islamabad, best travel agent for hotels Blue Area, Dubai hotel booking ISB, international hotel reservations Pakistan",
+          "best hotel booking agent islamabad, cheap hotel reservations for visa ISB, schengen visa hotel booking islamabad, uk visa hotel booking pakistan, best travel agent for hotels blue area, dubai hotel booking islamabad, international hotel reservations pakistan, luxury hotel booking islamabad, budget hotel booking pakistan, visa compliant hotel reservation, makkah hotel booking pakistan, europe hotel booking agent",
       },
-      { property: "og:title", content: "Hotel Booking — Luxury & Budget Stays Worldwide" },
+      { name: "robots", content: "index, follow" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: "Best Hotel Booking Agent Islamabad — Worldwide Reservations | OS Consultants" },
       {
         property: "og:description",
-        content: "Global hotel partners. Best rates guaranteed for visa applications and holidays.",
+        content: "Global hotel partners. Best rates for visa applications & holidays. Luxury to budget worldwide.",
       },
+      { property: "og:url", content: "https://osconsultants.pk/hotel-booking" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Hotel Booking Agent Islamabad | OS Consultants" },
+      { name: "twitter:description", content: "Cheapest hotel reservations for visas & holidays from Islamabad." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://osconsultants.pk/hotel-booking" },
     ],
   }),
   component: HotelBooking,
