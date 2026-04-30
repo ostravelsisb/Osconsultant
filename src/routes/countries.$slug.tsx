@@ -14,6 +14,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
+import { BookingWidget } from "@/components/site/BookingWidget";
 import {
   COMPANY,
   SCHENGEN_COUNTRIES,
@@ -63,6 +64,10 @@ function DestinationHub() {
         subtitle={dest.shortDesc}
       />
 
+      <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">
+        <BookingWidget initialTab="visa" />
+      </div>
+
       {/* Individual Schengen Countries (Conditional - Moved to Top) */}
       {dest.slug === "schengen" && (
         <section className="bg-secondary/30 py-16 border-b border-border">
@@ -103,9 +108,18 @@ function DestinationHub() {
                     {/* Content Overlay */}
                     <div className="relative z-10 flex h-full flex-col p-6 text-white">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
-                          {c.name}
-                        </h3>
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
                         <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                           <ArrowRight size={16} />
                         </div>
@@ -187,9 +201,18 @@ function DestinationHub() {
                     {/* Content Overlay */}
                     <div className="relative z-10 flex h-full flex-col p-6 text-white">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
-                          {c.name}
-                        </h3>
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
                         <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                           <ArrowRight size={16} />
                         </div>
@@ -266,9 +289,18 @@ function DestinationHub() {
                     {/* Content Overlay */}
                     <div className="relative z-10 flex h-full flex-col p-6 text-white">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
-                          {c.name}
-                        </h3>
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
                         <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                           <ArrowRight size={16} />
                         </div>
@@ -344,9 +376,18 @@ function DestinationHub() {
                     {/* Content Overlay */}
                     <div className="relative z-10 flex h-full flex-col p-6 text-white">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
-                          {c.name}
-                        </h3>
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
                         <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                           <ArrowRight size={16} />
                         </div>
@@ -422,9 +463,18 @@ function DestinationHub() {
                     {/* Content Overlay */}
                     <div className="relative z-10 flex h-full flex-col p-6 text-white">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
-                          {c.name}
-                        </h3>
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
                         <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                           <ArrowRight size={16} />
                         </div>

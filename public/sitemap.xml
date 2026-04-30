@@ -56,12 +56,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://osconsultants.pk/countries/usa</loc>
+    <loc>https://osconsultants.pk/countries/united-states</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://osconsultants.pk/countries/uk</loc>
+    <loc>https://osconsultants.pk/countries/united-kingdom</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

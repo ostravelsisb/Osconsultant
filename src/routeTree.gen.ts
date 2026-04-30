@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisaServicesRouteImport } from './routes/visa-services'
+import { Route as UmrahRouteImport } from './routes/umrah'
 import { Route as TravelInsuranceRouteImport } from './routes/travel-insurance'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ProfileAssessmentRouteImport } from './routes/profile-assessment'
@@ -33,6 +34,11 @@ import { Route as CountriesSlugVisaVisaTypeRouteImport } from './routes/countrie
 const VisaServicesRoute = VisaServicesRouteImport.update({
   id: '/visa-services',
   path: '/visa-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UmrahRoute = UmrahRouteImport.update({
+  id: '/umrah',
+  path: '/umrah',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TravelInsuranceRoute = TravelInsuranceRouteImport.update({
@@ -149,6 +155,7 @@ export interface FileRoutesByFullPath {
   '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
   '/travel-insurance': typeof TravelInsuranceRoute
+  '/umrah': typeof UmrahRoute
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries/': typeof CountriesIndexRoute
@@ -171,6 +178,7 @@ export interface FileRoutesByTo {
   '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
   '/travel-insurance': typeof TravelInsuranceRoute
+  '/umrah': typeof UmrahRoute
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries': typeof CountriesIndexRoute
@@ -194,6 +202,7 @@ export interface FileRoutesById {
   '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
   '/travel-insurance': typeof TravelInsuranceRoute
+  '/umrah': typeof UmrahRoute
   '/visa-services': typeof VisaServicesRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/countries/': typeof CountriesIndexRoute
@@ -218,6 +227,7 @@ export interface FileRouteTypes {
     | '/profile-assessment'
     | '/testimonials'
     | '/travel-insurance'
+    | '/umrah'
     | '/visa-services'
     | '/countries/$slug'
     | '/countries/'
@@ -240,6 +250,7 @@ export interface FileRouteTypes {
     | '/profile-assessment'
     | '/testimonials'
     | '/travel-insurance'
+    | '/umrah'
     | '/visa-services'
     | '/countries/$slug'
     | '/countries'
@@ -262,6 +273,7 @@ export interface FileRouteTypes {
     | '/profile-assessment'
     | '/testimonials'
     | '/travel-insurance'
+    | '/umrah'
     | '/visa-services'
     | '/countries/$slug'
     | '/countries/'
@@ -285,6 +297,7 @@ export interface RootRouteChildren {
   ProfileAssessmentRoute: typeof ProfileAssessmentRoute
   TestimonialsRoute: typeof TestimonialsRoute
   TravelInsuranceRoute: typeof TravelInsuranceRoute
+  UmrahRoute: typeof UmrahRoute
   VisaServicesRoute: typeof VisaServicesRoute
   CountriesSlugRoute: typeof CountriesSlugRoute
   CountriesIndexRoute: typeof CountriesIndexRoute
@@ -303,6 +316,13 @@ declare module '@tanstack/react-router' {
       path: '/visa-services'
       fullPath: '/visa-services'
       preLoaderRoute: typeof VisaServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/umrah': {
+      id: '/umrah'
+      path: '/umrah'
+      fullPath: '/umrah'
+      preLoaderRoute: typeof UmrahRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/travel-insurance': {
@@ -453,6 +473,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProfileAssessmentRoute: ProfileAssessmentRoute,
   TestimonialsRoute: TestimonialsRoute,
   TravelInsuranceRoute: TravelInsuranceRoute,
+  UmrahRoute: UmrahRoute,
   VisaServicesRoute: VisaServicesRoute,
   CountriesSlugRoute: CountriesSlugRoute,
   CountriesIndexRoute: CountriesIndexRoute,

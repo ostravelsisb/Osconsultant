@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { Plane, Globe2, BadgeCheck, Banknote, Clock4, ArrowRight, Star } from "lucide-react";
-import { FlightSearchPortal } from "@/components/site/FlightSearchPortal";
+import { BookingWidget } from "@/components/site/BookingWidget";
 import { FAQAccordion } from "@/components/site/FAQAccordion";
 
 const TICKETING_FAQS = [
@@ -52,8 +52,11 @@ function AirTicketing() {
         subtitle="Instant booking on every major airline — domestic and international — backed by 24/7 support."
       />
 
-      <div className="container-px mx-auto max-w-[85rem]">
-        <FlightSearchPortal />
+      {/* Integrated Booking Widget */}
+      <div className="relative z-10 -mt-16 md:-mt-24 pb-12">
+        <Reveal delay={0.2}>
+          <BookingWidget initialTab="flights" />
+        </Reveal>
       </div>
 
       <section className="container-px mx-auto max-w-7xl py-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

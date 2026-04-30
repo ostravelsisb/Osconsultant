@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
+import { BookingWidget } from "@/components/site/BookingWidget";
 import { Hotel, Crown, Wallet, Globe2, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/hotel-booking")({
@@ -35,6 +36,13 @@ function HotelBooking() {
         title="Stay where you love, save where it matters"
         subtitle="From 5-star icons to boutique gems and value stays — we book it all."
       />
+
+      {/* Integrated Booking Widget */}
+      <div className="relative z-10 -mt-16 md:-mt-24 pb-12">
+        <Reveal delay={0.2}>
+          <BookingWidget initialTab="hotel" />
+        </Reveal>
+      </div>
 
       <section className="container-px mx-auto max-w-7xl py-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {[

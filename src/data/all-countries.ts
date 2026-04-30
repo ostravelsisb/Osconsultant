@@ -193,5 +193,4 @@ export const ALL_COUNTRIES = [
   { name: "Yemen", code: "ye" },
   { name: "Zambia", code: "zm" },
   { name: "Zimbabwe", code: "zw" },
-  { name: "Schengen Area", code: "eu" }
 ];

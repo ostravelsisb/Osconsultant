@@ -3,6 +3,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { Reveal } from "@/components/site/Reveal";
 import { ServiceCard } from "@/components/site/ServiceCard";
+import { BookingWidget } from "@/components/site/BookingWidget";
 import {
   Briefcase,
   GraduationCap,
@@ -51,6 +52,13 @@ function VisaServices() {
         title="Visas tailored to your journey"
         subtitle="Whether you're visiting family, studying abroad or expanding your business — our expert team handles every detail."
       />
+
+      {/* Integrated Booking Widget */}
+      <div className="relative z-10 -mt-16 md:-mt-24 pb-12">
+        <Reveal delay={0.2}>
+          <BookingWidget initialTab="visa" />
+        </Reveal>
+      </div>
 
       <section className="container-px mx-auto max-w-7xl py-20">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

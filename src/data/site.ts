@@ -34,6 +34,7 @@ export const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/visa-services", label: "Visa Services" },
+  { to: "/umrah", label: "Umrah" },
   { to: "/countries", label: "Countries" },
   { to: "/air-ticketing", label: "Air Ticketing" },
   { to: "/travel-insurance", label: "Insurance" },
@@ -46,7 +47,7 @@ export const COUNTRIES = [
   {
     slug: "schengen",
     name: "Schengen Area",
-    short: "26 European countries on a single visa.",
+    short: "29 European countries on a single visa.",
     image: schengenImg,
     accent: "Europe",
   },
@@ -149,7 +150,7 @@ export const VISA_SERVICES = [
     title: "Family Reunification",
     desc: "Long-term family reunion visas with documentation support.",
   },
-  { title: "Schengen Visa", desc: "Single visa to explore 26 European countries seamlessly." },
+  { title: "Schengen Visa", desc: "Single visa to explore 29 European countries seamlessly." },
   { title: "Student Visa", desc: "Study abroad with end-to-end student visa guidance." },
   { title: "Business Visa", desc: "Business and corporate travel visas, fast and reliable." },
 ];
@@ -246,6 +247,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "germany",
     name: "Germany",
+    code: "de",
     title: "Germany Visa Consultant in Islamabad",
     description:
       "Expert assistance for Germany Schengen visa applications from Pakistan. Tourist, business, and family visit visas handled with precision.",
@@ -279,6 +281,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "france",
     name: "France",
+    code: "fr",
     title: "France Visit Visa Consultant in Islamabad",
     description:
       "Fast and reliable France Schengen visa processing in Islamabad. Expert documentation and appointment scheduling.",
@@ -311,6 +314,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "italy",
     name: "Italy",
+    code: "it",
     title: "Italy Visa Expert in Islamabad",
     description:
       "Comprehensive visa assistance for Italy from Pakistan. Get your Italy tourist or business visa approved smoothly.",
@@ -339,6 +343,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "spain",
     name: "Spain",
+    code: "es",
     title: "Spain Visa Consultant in Islamabad",
     description:
       "Apply for a Spain Schengen visa from Islamabad. We provide expert documentation and application tracking.",
@@ -372,6 +377,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "netherlands",
     name: "Netherlands",
+    code: "nl",
     title: "Netherlands Visa Consultant in Islamabad",
     description:
       "Expert guidance for Netherlands Schengen visa applications. Get your Dutch visit visa approved.",
@@ -405,6 +411,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "switzerland",
     name: "Switzerland",
+    code: "ch",
     title: "Switzerland Visa Consultant in Islamabad",
     description:
       "Premium visa consultancy for Switzerland in Islamabad. Flawless documentation for your Swiss adventure.",
@@ -438,6 +445,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "austria",
     name: "Austria",
+    code: "at",
     title: "Austria Visa Consultant in Islamabad",
     description: "Expert assistance for Austria Schengen visa applications from Pakistan.",
     keywords: "Austria visa consultant Islamabad, Austria visit visa requirements Pakistan",
@@ -464,6 +472,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "belgium",
     name: "Belgium",
+    code: "be",
     title: "Belgium Visa Consultant in Islamabad",
     description: "Apply for a Belgium Schengen visa from Islamabad with expert help.",
     keywords: "Belgium visa consultant Islamabad, Belgium visit visa Pakistan",
@@ -489,6 +498,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "denmark",
     name: "Denmark",
+    code: "dk",
     title: "Denmark Visa Consultant in Islamabad",
     description: "Fast and reliable Denmark Schengen visa processing in Islamabad.",
     keywords: "Denmark visa consultant Islamabad, Denmark visit visa Pakistan",
@@ -514,6 +524,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "greece",
     name: "Greece",
+    code: "gr",
     title: "Greece Visa Consultant in Islamabad",
     description: "Secure your Greece Schengen visa from Pakistan with professional guidance.",
     keywords: "Greece visa consultant Islamabad, Greece visit visa requirements Pakistan",
@@ -539,6 +550,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "norway",
     name: "Norway",
+    code: "no",
     title: "Norway Visa Consultant in Islamabad",
     description: "Expert assistance for Norway Schengen visa applications from Pakistan.",
     keywords: "Norway visa consultant Islamabad, Norway visit visa Pakistan",
@@ -569,6 +581,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "portugal",
     name: "Portugal",
+    code: "pt",
     title: "Portugal Visa Consultant in Islamabad",
     description: "Apply for a Portugal Schengen visa from Islamabad with ease.",
     keywords: "Portugal visa consultant Islamabad, Portugal visit visa Pakistan",
@@ -599,6 +612,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "sweden",
     name: "Sweden",
+    code: "se",
     title: "Sweden Visa Consultant in Islamabad",
     description: "Professional Sweden Schengen visa assistance in Islamabad.",
     keywords: "Sweden visa consultant Islamabad, Sweden visit visa requirements Pakistan",
@@ -624,6 +638,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "czech-republic",
     name: "Czech Republic",
+    code: "cz",
     title: "Czech Republic Visa Consultant in Islamabad",
     description: "Apply for a Czech Republic Schengen visa from Pakistan with expert help.",
     keywords: "Czech Republic visa consultant Islamabad, Prague visa Pakistan",
@@ -645,6 +660,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "estonia",
     name: "Estonia",
+    code: "ee",
     title: "Estonia Visa Consultant in Islamabad",
     description:
       "Estonia Schengen visa assistance in Islamabad. Specialist in digital nomad and visit visas.",
@@ -667,6 +683,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "finland",
     name: "Finland",
+    code: "fi",
     title: "Finland Visa Consultant in Islamabad",
     description: "Expert Finland Schengen visa services in Islamabad for tourism and study.",
     keywords: "Finland visa consultant Islamabad, Finland visit visa Pakistan",
@@ -692,6 +709,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "hungary",
     name: "Hungary",
+    code: "hu",
     title: "Hungary Visa Consultant in Islamabad",
     description: "Secure your Hungary Schengen visa from Pakistan with our expert consultants.",
     keywords: "Hungary visa consultant Islamabad, Budapest visa Pakistan",
@@ -718,6 +736,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "iceland",
     name: "Iceland",
+    code: "is",
     title: "Iceland Visa Consultant in Islamabad",
     description: "Expert assistance for Iceland Schengen visa applications from Islamabad.",
     keywords: "Iceland visa consultant Islamabad, Iceland visit visa Pakistan",
@@ -739,6 +758,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "latvia",
     name: "Latvia",
+    code: "lv",
     title: "Latvia Visa Consultant in Islamabad",
     description: "Apply for a Latvia Schengen visa from Pakistan with ease.",
     keywords: "Latvia visa consultant Islamabad, Riga visa Pakistan",
@@ -760,6 +780,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "lithuania",
     name: "Lithuania",
+    code: "lt",
     title: "Lithuania Visa Consultant in Islamabad",
     description: "Lithuania Schengen visa services in Islamabad for tourism and business.",
     keywords: "Lithuania visa consultant Islamabad, Lithuania visit visa Pakistan",
@@ -785,6 +806,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "luxembourg",
     name: "Luxembourg",
+    code: "lu",
     title: "Luxembourg Visa Consultant in Islamabad",
     description: "Premium Luxembourg Schengen visa assistance in Islamabad.",
     keywords: "Luxembourg visa consultant Islamabad, Luxembourg visit visa Pakistan",
@@ -810,6 +832,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "malta",
     name: "Malta",
+    code: "mt",
     title: "Malta Visa Consultant in Islamabad",
     description: "Secure your Malta Schengen visa from Pakistan with professional help.",
     keywords: "Malta visa consultant Islamabad, Malta visit visa Pakistan",
@@ -831,6 +854,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "poland",
     name: "Poland",
+    code: "pl",
     title: "Poland Visa Consultant in Islamabad",
     description: "Expert assistance for Poland Schengen visa applications from Islamabad.",
     keywords: "Poland visa consultant Islamabad, Poland visit visa Pakistan",
@@ -857,6 +881,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "slovakia",
     name: "Slovakia",
+    code: "sk",
     title: "Slovakia Visa Consultant in Islamabad",
     description: "Apply for a Slovakia Schengen visa from Pakistan with expert help.",
     keywords: "Slovakia visa consultant Islamabad, Bratislava visa Pakistan",
@@ -877,6 +902,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "slovenia",
     name: "Slovenia",
+    code: "si",
     title: "Slovenia Visa Consultant in Islamabad",
     description: "Expert Slovenia Schengen visa services in Islamabad for tourism and study.",
     keywords: "Slovenia visa consultant Islamabad, Slovenia visit visa Pakistan",
@@ -898,6 +924,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "liechtenstein",
     name: "Liechtenstein",
+    code: "li",
     title: "Liechtenstein Visa Consultant in Islamabad",
     description: "Expert assistance for Liechtenstein Schengen visa applications from Islamabad.",
     keywords: "Liechtenstein visa consultant Islamabad, Liechtenstein visit visa Pakistan",
@@ -919,6 +946,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "croatia",
     name: "Croatia",
+    code: "hr",
     title: "Croatia Visa Consultant in Islamabad",
     description: "Expert assistance for Croatia Schengen visa applications from Islamabad.",
     keywords: "Croatia visa consultant Islamabad, Croatia visit visa Pakistan",
@@ -944,6 +972,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "bulgaria",
     name: "Bulgaria",
+    code: "bg",
     title: "Bulgaria Visa Consultant in Islamabad",
     description: "Expert assistance for Bulgaria Schengen visa applications from Islamabad.",
     keywords: "Bulgaria visa consultant Islamabad, Bulgaria visit visa Pakistan",
@@ -970,6 +999,7 @@ export const SCHENGEN_COUNTRIES = [
   {
     slug: "romania",
     name: "Romania",
+    code: "ro",
     title: "Romania Visa Consultant in Islamabad",
     description: "Expert assistance for Romania Schengen visa applications from Islamabad.",
     keywords: "Romania visa consultant Islamabad, Romania visit visa Pakistan",
@@ -994,6 +1024,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "thailand",
     name: "Thailand",
+    code: "th",
     title: "Thailand Visa Consultant in Islamabad",
     description:
       "Apply for Thailand visit visa from Pakistan. Expert documentation for sticker and e-visas.",
@@ -1018,6 +1049,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "malaysia",
     name: "Malaysia",
+    code: "my",
     title: "Malaysia Visa Consultant in Islamabad",
     description: "Get your Malaysia e-visa or sticker visa processed quickly in Islamabad.",
     keywords: "Malaysia visa consultant Islamabad, Malaysia e-visa Pakistan",
@@ -1038,6 +1070,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "sri-lanka",
     name: "Sri Lanka",
+    code: "lk",
     title: "Sri Lanka ETA Consultant in Islamabad",
     description: "Fast Sri Lanka ETA processing for Pakistani tourists. Minimum documentation.",
     keywords: "Sri Lanka visa Pakistan, Sri Lanka ETA Islamabad",
@@ -1051,6 +1084,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "maldives",
     name: "Maldives",
+    code: "mv",
     title: "Maldives Travel Guide for Pakistanis",
     description:
       "Guidance on Maldives visa on arrival and mandatory travel declarations for Pakistanis.",
@@ -1071,6 +1105,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "nepal",
     name: "Nepal",
+    code: "np",
     title: "Nepal Visa Consultant in Islamabad",
     description:
       "Apply for Nepal visit visa from Pakistan. Expert assistance for trekking and leisure tours.",
@@ -1092,6 +1127,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "indonesia",
     name: "Indonesia",
+    code: "id",
     title: "Indonesia Visa Expert in Islamabad",
     description:
       "Apply for Indonesia B211A or tourist visa from Pakistan. Expert guidance for Bali travel.",
@@ -1113,6 +1149,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "vietnam",
     name: "Vietnam",
+    code: "vn",
     title: "Vietnam E-Visa Consultant Islamabad",
     description: "Fast and easy Vietnam e-visa processing for Pakistani citizens.",
     keywords: "Vietnam visa Pakistan, Vietnam e-visa consultant Islamabad",
@@ -1132,6 +1169,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "bangladesh",
     name: "Bangladesh",
+    code: "bd",
     title: "Bangladesh Visa Consultant in Islamabad",
     description: "Expert assistance for Bangladesh visit and business visas in Islamabad.",
     keywords: "Bangladesh visa consultant Islamabad, Bangladesh visit visa Pakistan",
@@ -1153,6 +1191,7 @@ export const SOUTH_ASIA_COUNTRIES = [
   {
     slug: "cambodia",
     name: "Cambodia",
+    code: "kh",
     title: "Cambodia E-Visa Services Islamabad",
     description: "Quick Cambodia e-visa processing for Pakistani travelers.",
     keywords: "Cambodia visa Pakistan, Cambodia e-visa consultant Islamabad",
@@ -1175,6 +1214,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
   {
     slug: "turkey",
     name: "Turkey",
+    code: "tr",
     title: "Turkey Visa Consultant in Islamabad",
     description: "Expert assistance for Turkey sticker and e-visas in Islamabad.",
     keywords:
@@ -1197,6 +1237,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
   {
     slug: "azerbaijan",
     name: "Azerbaijan",
+    code: "az",
     title: "Azerbaijan E-Visa Expert in Islamabad",
     description: "Instant Azerbaijan ASAN e-visa processing for Pakistani tourists.",
     keywords: "Azerbaijan visa Pakistan, Baku visa consultant Islamabad",
@@ -1213,6 +1254,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
   {
     slug: "uzbekistan",
     name: "Uzbekistan",
+    code: "uz",
     title: "Uzbekistan Visa Consultant in Islamabad",
     description: "Apply for Uzbekistan e-visa or sticker visa from Pakistan.",
     keywords: "Uzbekistan visa Pakistan, Tashkent visa consultant Islamabad",
@@ -1231,6 +1273,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
   {
     slug: "kazakhstan",
     name: "Kazakhstan",
+    code: "kz",
     title: "Kazakhstan Visa Services in Islamabad",
     description: "Expert assistance for Kazakhstan visit and business visas from Pakistan.",
     keywords: "Kazakhstan visa Pakistan, Almaty visa agent Islamabad",
@@ -1250,6 +1293,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
   {
     slug: "kyrgyzstan",
     name: "Kyrgyzstan",
+    code: "kg",
     title: "Kyrgyzstan E-Visa Consultant Islamabad",
     description: "Apply for Kyrgyzstan e-visa from Pakistan. Fast and reliable processing.",
     keywords: "Kyrgyzstan visa Pakistan, Bishkek visa agent Islamabad",
@@ -1265,6 +1309,7 @@ export const NORTH_AFRICA_COUNTRIES = [
   {
     slug: "egypt",
     name: "Egypt",
+    code: "eg",
     title: "Egypt Visa Consultant in Islamabad",
     description:
       "Apply for Egypt tourist or business visa from Pakistan. Expert guidance for Nile tours.",
@@ -1294,6 +1339,7 @@ export const NORTH_AFRICA_COUNTRIES = [
   {
     slug: "morocco",
     name: "Morocco",
+    code: "ma",
     title: "Morocco Visa Consultant in Islamabad",
     description: "Get your Morocco tourist visa processed with expert assistance in Islamabad.",
     keywords: "Morocco visa consultant Islamabad, Morocco visit visa Pakistan",
@@ -1315,6 +1361,7 @@ export const NORTH_AFRICA_COUNTRIES = [
   {
     slug: "tunisia",
     name: "Tunisia",
+    code: "tn",
     title: "Tunisia Visa Services in Islamabad",
     description: "Apply for Tunisia visit visa from Pakistan. Reliable documentation assistance.",
     keywords: "Tunisia visa Pakistan, Tunisia visa consultant Islamabad",
@@ -1336,6 +1383,7 @@ export const NORTH_AFRICA_COUNTRIES = [
   {
     slug: "algeria",
     name: "Algeria",
+    code: "dz",
     title: "Algeria Visa Consultant Islamabad",
     description: "Expert assistance for Algeria visit and business visas from Pakistan.",
     keywords: "Algeria visa Pakistan, Algeria visa consultant Islamabad",
@@ -1359,6 +1407,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
   {
     slug: "south-africa",
     name: "South Africa",
+    code: "za",
     title: "South Africa Visa Consultant in Islamabad",
     description: "Expert assistance for South Africa visit and business visas from Pakistan.",
     keywords: "South Africa visa consultant Islamabad, South Africa visit visa Pakistan",
@@ -1386,6 +1435,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
   {
     slug: "mauritius",
     name: "Mauritius",
+    code: "mu",
     title: "Mauritius Visa Guide for Pakistanis",
     description: "Guidance on Mauritius visa on arrival and documentation for Pakistani tourists.",
     keywords: "Mauritius visa for Pakistanis, Mauritius travel agent Islamabad",
@@ -1410,6 +1460,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
   {
     slug: "kenya",
     name: "Kenya",
+    code: "ke",
     title: "Kenya E-Visa Services Islamabad",
     description: "Fast Kenya e-visa processing for Pakistani citizens. Ideal for safaris.",
     keywords: "Kenya visa Pakistan, Kenya e-visa consultant Islamabad",
@@ -1429,6 +1480,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
   {
     slug: "seychelles",
     name: "Seychelles",
+    code: "sc",
     title: "Seychelles Visitor Permit Guide",
     description: "Assistance with Seychelles mandatory travel authorization for Pakistanis.",
     keywords: "Seychelles visa Pakistan, Seychelles travel agent Islamabad",

@@ -81,7 +81,7 @@ function CountriesPage() {
               <h3 className="text-xl font-bold text-primary mb-3">Schengen & European Visas</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Applying for a <strong>Schengen visa from Pakistan</strong> requires precision. We
-                cover all 26 Schengen member states, including popular destinations like France,
+                cover all 29 Schengen member states, including popular destinations like France,
                 Germany, Italy, and Spain. Whether you are aiming for a summer tour or a business
                 conference, our Islamabad-based experts handle your flight reservations, hotel
                 bookings, and travel insurance to meet strict embassy standards.

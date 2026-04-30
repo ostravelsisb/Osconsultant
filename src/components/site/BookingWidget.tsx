@@ -39,13 +39,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { ALL_COUNTRIES } from "@/data/all-countries";
 import { COMPANY } from "@/data/site";
+import { DESTINATIONS } from "@/data/destinations";
 import logo from "@/assets/logo.png";
 
 type TripType = "round-trip" | "one-way" | "multi-city";
 
-export function BookingWidget() {
+export function BookingWidget({ initialTab = "flights" }: { initialTab?: string }) {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("flights");
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [tripType, setTripType] = useState<TripType>("round-trip");
   const [departureDate, setDepartureDate] = useState<Date>();
   const [returnDate, setReturnDate] = useState<Date>();
@@ -58,6 +59,7 @@ export function BookingWidget() {
   const [fromSearch, setFromSearch] = useState("");
   const [toSearch, setToSearch] = useState("");
   const [visaSearch, setVisaSearch] = useState("");
+  const [umrahDuration, setUmrahDuration] = useState("15");
 
   const [showFromSuggestions, setShowFromSuggestions] = useState(false);
   const [showToSuggestions, setShowToSuggestions] = useState(false);
@@ -127,9 +129,39 @@ export function BookingWidget() {
   const filteredTo = useMemo(() => getFilteredAirports(toSearch), [toSearch, airports]);
 
   const filteredVisaCountries = useMemo(() => {
-    if (!visaSearch || visaSearch.length < 1) return [];
     const s = visaSearch.toLowerCase();
-    return ALL_COUNTRIES.filter(c => c.name.toLowerCase().includes(s)).slice(0, 15);
+    
+    // Explicit list of top individual countries from the website
+    const featuredDestinations = [
+      { name: "United Kingdom", code: "gb" },
+      { name: "United States", code: "us" },
+      { name: "Canada", code: "ca" },
+      { name: "Australia", code: "au" },
+      { name: "Germany", code: "de" },
+      { name: "France", code: "fr" },
+      { name: "Italy", code: "it" },
+      { name: "Spain", code: "es" },
+      { name: "United Arab Emirates", code: "ae" },
+      { name: "Saudi Arabia", code: "sa" },
+      { name: "Turkey", code: "tr" },
+      { name: "Qatar", code: "qa" },
+      { name: "Azerbaijan", code: "az" },
+      { name: "Thailand", code: "th" },
+      { name: "Malaysia", code: "my" },
+      { name: "Egypt", code: "eg" },
+    ];
+
+    if (!visaSearch || visaSearch.length < 1) {
+      return featuredDestinations;
+    }
+
+    // Combine with all countries, prioritizing featured
+    const combined = [
+      ...featuredDestinations,
+      ...ALL_COUNTRIES.filter(c => !featuredDestinations.some(fd => fd.name === c.name))
+    ];
+
+    return combined.filter(c => c.name.toLowerCase().includes(s)).slice(0, 40);
   }, [visaSearch]);
 
   const filteredHotelDestinations = useMemo(() => {
@@ -192,7 +224,8 @@ export function BookingWidget() {
       }
       msg += `Travellers: ${travellers.adults} Adults, ${travellers.children} Children, ${travellers.infants} Infants\n`;
     } else if (activeTab === 'umrah') {
-      msg += `🕋 *Umrah Package Inquiry*\n`;
+      msg += `🕋 *Umrah Inquiry*\n`;
+      msg += `Stay Duration: ${umrahDuration} Days\n`;
       msg += `Departure: ${departureDate ? format(departureDate, 'dd MMM yyyy') : 'TBA'}\n`;
       msg += `Travellers: ${travellers.adults} Adults, ${travellers.children} Children, ${travellers.infants} Infants\n`;
     } else if (activeTab === 'visa') {
@@ -226,52 +259,79 @@ export function BookingWidget() {
   const isVisaValid = () => !!visaSearch;
   const isHotelValid = () => !!hotelSearch && !!hotelRange?.from && !!hotelRange?.to;
 
+
+  // Sync tab with URL search params
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tabParam = params.get('tab');
+    if (tabParam && ['flights', 'umrah', 'visa', 'hotel'].includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, []);
+
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+    
+    const paths: Record<string, string> = {
+      flights: '/air-ticketing',
+      umrah: '/umrah',
+      visa: '/visa-services',
+      hotel: '/hotel-booking'
+    };
+
+    const targetPath = paths[tabId];
+    if (targetPath) {
+      navigate({ to: `${targetPath}?tab=${tabId}` as any });
+    }
+  };
+
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-elevated border border-border">
-        {/* Top Navigation Bar */}
-        <div className="flex items-center justify-between border-b border-border bg-secondary/30 rounded-t-3xl pr-4 md:pr-6">
-          <div className="flex overflow-x-auto no-scrollbar scroll-smooth focus:outline-none">
-            {tabs.map((tab) => {
-              const isActive = activeTab === tab.id;
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveTab(tab.id)}
-                  className={cn(
-                    "flex items-center gap-1.5 px-3 sm:px-4 md:px-6 py-4 transition-all duration-300 relative min-w-max",
-                    isActive ? "text-primary font-bold" : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  <div className={cn("p-1.5 rounded-lg transition-colors", isActive ? tab.bg : "bg-transparent")}>
-                    <Icon size={18} className={cn(isActive ? tab.color : "text-muted-foreground")} />
-                  </div>
-                  <span className="text-xs sm:text-sm md:text-base">{tab.label}</span>
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-t-full"
-                    />
-                  )}
-                </button>
-              );
-            })}
-          </div>
+    <div className="w-full max-w-7xl mx-auto px-4 md:px-6 relative z-50">
+      <div className="bg-white rounded-3xl shadow-glow overflow-visible border border-border/50 backdrop-blur-xl">
+        <div className="flex flex-col">
+          {/* Header/Tabs Container */}
+          <div className="flex items-center justify-between border-b border-border/50 bg-secondary/5 pr-4 sm:pr-8">
+            <div className="flex overflow-x-auto no-scrollbar scroll-smooth">
+              {tabs.map((tab) => {
+                const Icon = tab.icon;
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => handleTabClick(tab.id)}
+                    className={cn(
+                      "flex items-center gap-1.5 px-3 sm:px-4 md:px-6 py-4 transition-all duration-300 relative min-w-max",
+                      isActive ? "text-primary font-bold" : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <div className={cn("p-1.5 rounded-lg transition-colors", isActive ? tab.bg : "bg-transparent")}>
+                      <Icon size={18} className={cn(isActive ? tab.color : "text-muted-foreground")} />
+                    </div>
+                    <span className="text-xs sm:text-sm md:text-base">{tab.label}</span>
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeTab"
+                        className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-t-full"
+                      />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
 
           {/* Middle Branding - Pakistan's No. 1 Consultancy */}
-          <div className="hidden 2xl:flex items-center flex-1 justify-center px-4 overflow-hidden">
+          <div className="hidden 2xl:flex items-center flex-1 justify-center px-4 overflow-hidden border-x border-border/30 mx-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               className="whitespace-nowrap"
             >
-              <span className="text-[14px] font-black uppercase tracking-[0.2em] text-primary/80 flex items-center gap-4">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-[12px] font-bold uppercase tracking-[0.3em] text-primary/70 flex items-center gap-3">
+                <span className="h-1 w-1 rounded-full bg-primary/40" />
                 Pakistan&apos;s No. 1 Consultancy
-                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                <span className="h-1 w-1 rounded-full bg-primary/40" />
               </span>
             </motion.div>
           </div>
@@ -280,8 +340,8 @@ export function BookingWidget() {
             <div className="h-8 w-px bg-border/50 mx-2" />
             <img src={logo} alt={COMPANY.name} className="h-8 w-auto object-contain" />
             <div className="flex flex-col">
-              <span className="text-[10px] uppercase tracking-tighter text-muted-foreground font-bold leading-none">Travel Portal</span>
-              <span className="text-xs font-black text-primary leading-tight">{COMPANY.name}</span>
+              <span className="text-[9px] uppercase tracking-tighter text-muted-foreground font-black leading-none mb-0.5">Travel Portal</span>
+              <span className="text-[11px] font-black text-primary leading-tight">{COMPANY.name}</span>
             </div>
           </div>
         </div>
@@ -767,7 +827,7 @@ export function BookingWidget() {
                 exit={{ opacity: 0, y: -10 }}
                 className="space-y-6"
               >
-                <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2">
+                <div className="grid gap-4 lg:grid-cols-5 md:grid-cols-2">
                   <div className="relative group">
                     <Label htmlFor="umrah-package-select" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Package Type</Label>
                     <Select defaultValue="economy">
@@ -780,6 +840,21 @@ export function BookingWidget() {
                         <SelectItem value="star-4">4 Star Package</SelectItem>
                         <SelectItem value="star-5">5 Star Premium</SelectItem>
                         <SelectItem value="custom">Custom Package</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="relative group">
+                    <Label htmlFor="umrah-duration-select" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Stay Duration</Label>
+                    <Select value={umrahDuration} onValueChange={setUmrahDuration}>
+                      <SelectTrigger id="umrah-duration-select" className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20">
+                        <SelectValue placeholder="Select Duration" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="7">7 Days</SelectItem>
+                        <SelectItem value="10">10 Days</SelectItem>
+                        <SelectItem value="15">15 Days</SelectItem>
+                        <SelectItem value="30">30 Days</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -888,7 +963,7 @@ export function BookingWidget() {
                         id="visa-destination-input"
                         name="destination"
                         autoComplete="off"
-                        placeholder="Where do you want to go? (e.g. UK, USA, Schengen)"
+                        placeholder="Where do you want to go? (e.g. UK, USA, Canada)"
                         value={visaSearch}
                         onChange={(e) => {
                           setVisaSearch(e.target.value);
@@ -922,7 +997,7 @@ export function BookingWidget() {
                               <img
                                 src={`https://flagcdn.com/w40/${country.code}.png`}
                                 alt={country.name}
-                                className="h-5 w-auto object-contain rounded-sm shadow-sm border border-border/50"
+                                className="w-6 h-4 object-cover rounded-sm shadow-sm border border-border/50 shrink-0"
                               />
                               <span className="text-sm font-bold group-hover/item:text-primary transition-colors">{country.name}</span>
                             </button>
@@ -1182,18 +1257,19 @@ export function BookingWidget() {
           </AnimatePresence>
         </div>
       </div>
+    </div>
 
       {/* Trust Badges */}
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-6 md:gap-12 transition-all duration-500 px-4">
-        <div className="flex items-center gap-4 sm:gap-6 bg-white/10 backdrop-blur-xl px-5 sm:px-8 py-4 sm:py-5 rounded-[2rem] border border-white/20 shadow-glow group hover:bg-white/15 transition-all cursor-default">
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-6 md:gap-12 transition-all duration-500 px-4 pb-4">
+        <div className="flex items-center gap-4 sm:gap-6 bg-slate-900 px-5 sm:px-8 py-4 sm:py-5 rounded-[2rem] border border-white/10 shadow-glow group hover:bg-slate-800 transition-all cursor-default">
           <img
             src="https://developer.iata.org/globalassets/iata/general/brand_icons/white_iata_logo_rgb.png"
             alt="IATA Authorized Agent"
-            className="h-10 w-auto opacity-100 group-hover:scale-110 transition-transform duration-500 drop-shadow-glow"
+            className="h-10 w-auto opacity-100 group-hover:scale-110 transition-transform duration-500"
           />
           <div className="flex flex-col">
-            <span className="text-[11px] uppercase tracking-[0.4em] font-black text-white leading-none mb-1.5">Accredited Agent</span>
-            <span className="text-xl font-black text-white tracking-tight leading-none">IATA Member</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/70 leading-none mb-1.5">Accredited Agent</span>
+            <span className="text-lg font-bold text-white tracking-tight leading-none">IATA Member</span>
           </div>
         </div>
       </div>
