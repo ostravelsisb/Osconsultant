@@ -243,7 +243,7 @@ export function BookingWidget() {
               );
             })}
           </div>
-          
+
           {/* Middle Branding - Pakistan's No. 1 Consultancy */}
           <div className="hidden lg:flex items-center flex-1 justify-center px-4 overflow-hidden">
             <motion.div
@@ -1129,9 +1129,9 @@ export function BookingWidget() {
       {/* Trust Badges */}
       <div className="mt-8 flex flex-wrap items-center justify-center gap-6 md:gap-12 transition-all duration-500 px-4">
         <div className="flex items-center gap-4 sm:gap-6 bg-white/10 backdrop-blur-xl px-5 sm:px-8 py-4 sm:py-5 rounded-[2rem] border border-white/20 shadow-glow group hover:bg-white/15 transition-all cursor-default">
-          <img 
-            src="https://developer.iata.org/globalassets/iata/general/brand_icons/white_iata_logo_rgb.png" 
-            alt="IATA Authorized Agent" 
+          <img
+            src="https://developer.iata.org/globalassets/iata/general/brand_icons/white_iata_logo_rgb.png"
+            alt="IATA Authorized Agent"
             className="h-10 w-auto opacity-100 group-hover:scale-110 transition-transform duration-500 drop-shadow-glow"
           />
           <div className="flex flex-col">
@@ -1169,10 +1169,10 @@ export function BookingWidget() {
                   </p>
                   <div className="space-y-3">
                     {(activeTab === 'umrah' ? [
-                      { name: "Hamad Ahmed", role: "Umrah Specialist", phone: "+923335542877" }
+                      { name: "Hammad Ahmed", role: "Umrah Specialist", phone: "+923325500377" }
                     ] : [
-                      { name: "Hamad Ahmed", role: "Travel Specialist", phone: "+923335542877" },
-                      { name: "Noor Ul Huda", role: "Visa Expert", phone: "+923365500477" }
+                      { name: "Hammad Ahmed", role: "Travel Specialist", phone: "+923325500377" },
+                      { name: "Noor Ul Huda", role: "Visa Expert", phone: "+923315500177" }
                     ]).map((rep) => (
                       <a
                         key={rep.name}
