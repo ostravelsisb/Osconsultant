@@ -118,7 +118,7 @@ function RootComponent() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col w-full max-w-full overflow-x-hidden">
       <HeadContent />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <TopBar />

@@ -584,19 +584,10 @@ function ProfileAssessment() {
                 </Button>
               ) : (
                 <a 
-                  href={isStepValid() ? generateWhatsAppLink() : "#"}
-                  onClick={(e) => {
-                    if (!isStepValid()) {
-                      e.preventDefault();
-                      setTriedNext(true);
-                    }
-                  }}
-                  target={isStepValid() ? "_blank" : undefined}
+                  href={generateWhatsAppLink()}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className={cn(
-                    "h-14 px-10 rounded-2xl text-white font-bold shadow-glow-emerald hover:scale-[1.02] transition-all flex items-center gap-2",
-                    isStepValid() ? "bg-emerald-600 hover:bg-emerald-700 shadow-glow-emerald" : "bg-muted text-muted-foreground cursor-not-allowed"
-                  )}
+                  className="h-14 px-10 rounded-2xl text-white font-bold bg-emerald-600 hover:bg-emerald-700 shadow-glow-emerald hover:scale-[1.02] transition-all flex items-center gap-2"
                 >
                   <MessageCircle size={20} />
                   Submit Assessment

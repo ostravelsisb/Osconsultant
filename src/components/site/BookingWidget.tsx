@@ -43,12 +43,13 @@ import {
   SCHENGEN_COUNTRIES, 
   SOUTH_ASIA_COUNTRIES, 
   CENTRAL_ASIA_COUNTRIES, 
-  NORTH_AFRICA_COUNTRIES, 
+  NORTH_AFRICA_COUNTRIES,
   SOUTHERN_AFRICA_COUNTRIES,
   MIDDLE_EAST_COUNTRIES,
   AMERICAS_COUNTRIES,
   EAST_ASIA_COUNTRIES,
-  EUROPE_OTHERS_COUNTRIES
+  EUROPE_OTHERS_COUNTRIES,
+  SOUTH_AMERICA_COUNTRIES
 } from "@/data/site";
 import { DESTINATIONS } from "@/data/destinations";
 import logo from "@/assets/logo.png";
@@ -94,6 +95,11 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
   const [currency, setCurrency] = useState("PKR");
   const [umrahPackage, setUmrahPackage] = useState("economy");
   const [visaType, setVisaType] = useState("tourist");
+
+  const [flightDepOpen, setFlightDepOpen] = useState(false);
+  const [flightRetOpen, setFlightRetOpen] = useState(false);
+  const [umrahDateOpen, setUmrahDateOpen] = useState(false);
+  const [multiDateOpen, setMultiDateOpen] = useState<number | null>(null);
 
   const [airports, setAirports] = useState<any[]>([]);
   const [isLoadingAirports, setIsLoadingAirports] = useState(true);
@@ -343,9 +349,8 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
     <div className="w-full max-w-7xl mx-auto px-4 md:px-6 relative z-50">
       <div className="bg-white rounded-3xl shadow-glow overflow-visible border border-border/50 backdrop-blur-xl">
         <div className="flex flex-col">
-          {/* Header/Tabs Container */}
-          <div className="flex items-center justify-between border-b border-border/50 bg-secondary/5 pr-4 sm:pr-8 rounded-t-3xl overflow-hidden">
-            <div className="flex overflow-x-auto no-scrollbar scroll-smooth">
+          <div className="flex items-center justify-between border-b border-border/50 bg-secondary/5 pr-2 sm:pr-8 rounded-t-3xl overflow-hidden w-full select-none">
+            <div className="flex overflow-x-auto no-scrollbar scroll-smooth w-full lg:w-auto flex-nowrap shrink-0">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
                 const isActive = activeTab === tab.id;
@@ -355,7 +360,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     type="button"
                     onClick={() => handleTabClick(tab.id)}
                     className={cn(
-                      "flex items-center gap-1.5 px-3 sm:px-4 md:px-6 py-4 transition-all duration-300 relative min-w-max",
+                      "flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 md:px-6 py-3.5 transition-all duration-300 relative min-w-max",
                       isActive ? "text-primary font-bold" : "text-muted-foreground hover:text-foreground"
                     )}
                   >
@@ -375,7 +380,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
             </div>
 
           {/* Middle Branding - Pakistan's No. 1 Consultancy */}
-          <div className="hidden 2xl:flex items-center flex-1 justify-center px-4 overflow-hidden border-x border-border/30 mx-2">
+          <div className="hidden xl:flex items-center flex-1 justify-center px-4 overflow-hidden border-x border-border/30 mx-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -634,7 +639,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                       <div className={cn("grid gap-2", tripType === "round-trip" ? "lg:col-span-2 grid-cols-2" : "grid-cols-1")}>
                         <div className="relative group">
                           <Label htmlFor="flight-departure-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Departure</Label>
-                          <Popover>
+                          <Popover open={flightDepOpen} onOpenChange={setFlightDepOpen}>
                             <PopoverTrigger asChild>
                               <Button
                                 id="flight-departure-btn"
@@ -652,7 +657,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                               <CalendarComponent
                                 mode="single"
                                 selected={departureDate}
-                                onSelect={setDepartureDate}
+                                onSelect={(date) => { setDepartureDate(date); setFlightDepOpen(false); }}
                                 initialFocus
                                 disabled={(date) => date < startOfToday()}
                               />
@@ -663,7 +668,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                         {tripType === "round-trip" && (
                           <div className="relative group">
                             <Label htmlFor="flight-return-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Return</Label>
-                            <Popover>
+                            <Popover open={flightRetOpen} onOpenChange={setFlightRetOpen}>
                               <PopoverTrigger asChild>
                                 <Button
                                   id="flight-return-btn"
@@ -681,7 +686,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                 <CalendarComponent
                                   mode="single"
                                   selected={returnDate}
-                                  onSelect={setReturnDate}
+                                  onSelect={(date) => { setReturnDate(date); setFlightRetOpen(false); }}
                                   initialFocus
                                   disabled={(date) => date < startOfToday() || (!!departureDate && date < departureDate)}
                                 />
@@ -811,7 +816,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                           </div>
                           <div className="lg:col-span-3 relative">
                             <Label htmlFor={`multi-date-${leg.id}`} className="text-[10px] uppercase text-muted-foreground ml-1">Departure</Label>
-                            <Popover>
+                            <Popover open={multiDateOpen === leg.id} onOpenChange={(isOpen) => setMultiDateOpen(isOpen ? leg.id : null)}>
                               <PopoverTrigger asChild>
                                 <Button
                                   id={`multi-date-${leg.id}`}
@@ -829,7 +834,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                 <CalendarComponent
                                   mode="single"
                                   selected={leg.date}
-                                  onSelect={(date) => updateLeg(leg.id, 'date', date)}
+                                  onSelect={(date) => { updateLeg(leg.id, 'date', date); setMultiDateOpen(null); }}
                                   initialFocus
                                   disabled={(date) => date < startOfToday()}
                                 />
@@ -918,7 +923,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
 
                   <div className="relative group">
                     <Label htmlFor="umrah-travel-date-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Travel Date</Label>
-                    <Popover>
+                    <Popover open={umrahDateOpen} onOpenChange={setUmrahDateOpen}>
                       <PopoverTrigger asChild>
                         <Button id="umrah-travel-date-btn" variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
                           <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
@@ -929,7 +934,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                         <CalendarComponent
                           mode="single"
                           selected={departureDate}
-                          onSelect={setDepartureDate}
+                          onSelect={(date) => { setDepartureDate(date); setUmrahDateOpen(false); }}
                           initialFocus
                           disabled={(date) => date < addDays(startOfToday(), 7)}
                         />
@@ -1350,32 +1355,35 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
       {/* Inquiry Modal */}
       <AnimatePresence>
         {showInquiryModal && (
-          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden"
+              className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-[calc(100vw-24px)] sm:w-full max-w-md overflow-hidden max-h-[90vh] flex flex-col"
             >
-              <div className="bg-primary p-6 text-white relative">
+              <div className="bg-primary p-5 sm:p-6 text-white relative shrink-0">
                 <button
                   onClick={() => setShowInquiryModal(false)}
-                  className="absolute right-4 top-4 text-white/70 hover:text-white"
+                  className="absolute right-4 top-4 text-white/70 hover:text-white p-1"
                 >
-                  <X size={24} />
+                  <X size={20} className="sm:w-6 sm:h-6" />
                 </button>
-                <h3 className="text-2xl font-black mb-1">Travel Inquiry</h3>
-                <p className="text-white/80 text-sm">Send your details to our expert via WhatsApp</p>
+                <h3 className="text-xl sm:text-2xl font-black mb-1 pr-6">Travel Inquiry</h3>
+                <p className="text-white/80 text-xs sm:text-sm">Send your details to our expert via WhatsApp</p>
               </div>
 
-              <div className="p-8 space-y-4">
-                <div className="bg-secondary/30 rounded-2xl p-4 border border-border mb-2">
+              <div className="p-4 sm:p-8 space-y-4 overflow-y-auto custom-scrollbar">
+                <div className="bg-secondary/30 rounded-2xl p-3 sm:p-4 border border-border mb-2">
                   <p className="text-[10px] text-center text-muted-foreground uppercase tracking-widest font-bold mb-3">
                     Choose Your Travel Expert
                   </p>
                   <div className="space-y-3">
                     {(activeTab === 'umrah' ? [
                       { name: "Hammad Ahmed", role: "Umrah Specialist", phone: "+923325500377" }
+                    ] : activeTab === 'flights' ? [
+                      { name: "Hammad Ahmed", role: "Ticketing Officer", phone: "+923325500377" },
+                      { name: "Noor Ul Huda", role: "Ticketing Officer", phone: "+923315500177" }
                     ] : [
                       { name: "Hammad Ahmed", role: "Travel Specialist", phone: "+923325500377" },
                       { name: "Noor Ul Huda", role: "Visa Expert", phone: "+923315500177" },
@@ -1386,16 +1394,16 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                         href={getInquiryMessage(rep.phone)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-4 w-full p-4 bg-white border border-border hover:border-emerald-500 rounded-2xl transition-all group/wa"
+                        className="flex items-center gap-3 sm:gap-4 w-full p-3 sm:p-4 bg-white border border-border hover:border-emerald-500 rounded-2xl transition-all group/wa"
                       >
-                        <div className="h-12 w-12 rounded-full bg-emerald-50 flex items-center justify-center group-hover/wa:bg-emerald-500 group-hover/wa:text-white transition-colors">
-                          <MessageCircle size={24} className="text-emerald-600 group-hover/wa:text-white" />
+                        <div className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-full bg-emerald-50 flex items-center justify-center group-hover/wa:bg-emerald-500 group-hover/wa:text-white transition-colors">
+                          <MessageCircle size={20} className="text-emerald-600 group-hover/wa:text-white sm:w-6 sm:h-6" />
                         </div>
-                        <div className="flex-1 text-left">
-                          <p className="text-xs text-muted-foreground font-bold uppercase tracking-tighter">{rep.role}</p>
-                          <p className="text-lg font-black text-foreground">{rep.name}</p>
+                        <div className="flex-1 text-left min-w-0">
+                          <p className="text-[10px] sm:text-xs text-muted-foreground font-bold uppercase tracking-tighter truncate">{rep.role}</p>
+                          <p className="text-[15px] sm:text-lg font-black text-foreground truncate">{rep.name}</p>
                         </div>
-                        <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                        <div className="h-2 w-2 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
                       </a>
                     ))}
                   </div>

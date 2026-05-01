@@ -1,29 +1,29 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { SOUTH_ASIA_COUNTRIES } from "@/data/site";
+import { SOUTH_AMERICA_COUNTRIES } from "@/data/site";
 import { PageHero } from "@/components/site/PageHero";
-import { CheckCircle2, FileText, Globe2 } from "lucide-react";
+import { CheckCircle2, FileText, Globe2, ArrowRight } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { BookingWidget } from "@/components/site/BookingWidget";
 import { COMPANY } from "@/data/site";
 
-export const Route = createFileRoute("/countries/south-asia/$country")({
+export const Route = createFileRoute("/countries/south-america/$country")({
   loader: ({ params }) => {
-    const country = SOUTH_ASIA_COUNTRIES.find((c) => c.slug === params.country);
+    const country = SOUTH_AMERICA_COUNTRIES.find((c) => c.slug === params.country);
     if (!country) throw notFound();
     return country;
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.title || "South Asia Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026` },
+      { title: `${loaderData?.title || "South America Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026` },
       { name: "description", content: loaderData?.description ? `${loaderData.description} OS Consultants Islamabad — Pakistan's #1 visa agency. 98% approval rate, IATA-accredited, Blue Area office.` : "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, best south asia visa consultant islamabad, top south asia visa agent pakistan, south asia visa success rate pakistan, south asia visa from pakistan 2026, os consultants south asia visa, blue area visa consultant` },
+      { name: "keywords", content: `${loaderData?.keywords || ""}, best south america visa consultant islamabad, top south america visa agent pakistan, south america visa success rate pakistan, south america visa from pakistan 2026, os consultants south america visa, blue area visa consultant` },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
       { name: "author", content: "OS Consultants" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: `${loaderData?.name || "South Asia"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants` },
+      { property: "og:title", content: `${loaderData?.name || "South America"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants` },
       { property: "og:description", content: loaderData?.description || "" },
-      { property: "og:url", content: `https://osconsultants.pk/countries/south-asia/${loaderData?.slug || ""}` },
+      { property: "og:url", content: `https://osconsultants.pk/countries/south-america/${loaderData?.slug || ""}` },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_PK" },
       { property: "og:site_name", content: "OS Consultants — Pakistan's No.1 Travel Agency" },
@@ -34,13 +34,13 @@ export const Route = createFileRoute("/countries/south-asia/$country")({
       { name: "twitter:image", content: loaderData?.image || "" },
     ],
     links: [
-      { rel: "canonical", href: `https://osconsultants.pk/countries/south-asia/${loaderData?.slug || ""}` },
+      { rel: "canonical", href: `https://osconsultants.pk/countries/south-america/${loaderData?.slug || ""}` },
     ],
   }),
-  component: SouthAsiaCountryPage,
+  component: SouthAmericaCountryPage,
 });
 
-function SouthAsiaCountryPage() {
+function SouthAmericaCountryPage() {
   const country = Route.useLoaderData();
 
   const jsonLd = {
@@ -48,7 +48,7 @@ function SouthAsiaCountryPage() {
     "@type": ["WebPage", "Service"],
     name: `${country.name} Visa Consultancy — OS Consultants Islamabad`,
     description: country.description,
-    url: `https://osconsultants.pk/countries/south-asia/${country.slug}`,
+    url: `https://osconsultants.pk/countries/south-america/${country.slug}`,
     provider: {
       "@type": "TravelAgency",
       name: "OS Consultants",
@@ -67,14 +67,14 @@ function SouthAsiaCountryPage() {
       },
     },
     areaServed: { "@type": "Country", name: "Pakistan" },
-    serviceType: `${country.name} South Asia Visa Consultancy`,
+    serviceType: `${country.name} South America Visa Consultancy`,
   };
 
   return (
     <>
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <PageHero
-        eyebrow="South Asia & Beyond"
+        eyebrow="South America"
         title={country.name}
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
@@ -85,7 +85,6 @@ function SouthAsiaCountryPage() {
       </div>
 
       <section className="container-px mx-auto max-w-5xl py-20">
-        {/* Intro */}
         <div className="space-y-6 text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl font-bold md:text-4xl">
             {country.name} Visa Services in Islamabad
@@ -94,7 +93,6 @@ function SouthAsiaCountryPage() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-3 mb-20">
-          {/* Main Requirements */}
           <div className="lg:col-span-2 rounded-[2rem] border border-border bg-card p-8 shadow-soft">
             <div className="flex items-center gap-3 mb-8 border-b border-border pb-4">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/20 text-primary">
@@ -116,39 +114,20 @@ function SouthAsiaCountryPage() {
             </ul>
           </div>
 
-          {/* Quick Info Sidebar */}
           <div className="space-y-6">
             <div className="rounded-2xl border border-border bg-secondary/30 p-6 shadow-soft">
               <div className="flex items-center gap-3 mb-4">
                 <Globe2 size={24} className="text-primary" />
-                <h3 className="font-bold text-lg">Travel Tip</h3>
+                <h3 className="font-bold text-lg">Why {country.name}?</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                For {country.name}, we recommend applying at least 15 days in advance. We handle
-                mandatory hotel and flight bookings for your application.
+                {country.name} is a key destination in South America. We ensure your application is processed with professional excellence.
               </p>
-            </div>
-
-            <div className="rounded-2xl border border-border bg-primary/5 p-6 shadow-soft border-primary/20">
-              <h3 className="font-bold text-lg mb-4 text-primary-glow">Consultancy Benefits</h3>
-              <ul className="space-y-3">
-                {[
-                  "Accurate form filling",
-                  "Rapid e-visa processing",
-                  "Verified hotel vouchers",
-                  "Complete file assembly",
-                ].map((tip, idx) => (
-                  <li key={idx} className="text-sm text-muted-foreground flex gap-2 font-medium">
-                    <span className="text-primary">•</span> {tip}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust & Contact Section */}
       <section className="bg-secondary/30 py-20 border-t border-border">
         <div className="container-px mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
@@ -157,10 +136,8 @@ function SouthAsiaCountryPage() {
                 Start Your {country.name} Journey Today
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Our experts at Pakistan's no.1 travel agency and consultancy are ready to handle your {country.name} visa application
-                with speed and precision.
+                Connect with our South America visa experts for a free evaluation of your profile.
               </p>
-
               <div className="pt-6 flex flex-wrap gap-4">
                 <a
                   href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`}
@@ -178,13 +155,7 @@ function SouthAsiaCountryPage() {
                 </a>
               </div>
             </div>
-
             <div className="bg-card rounded-[2rem] border border-border p-8 shadow-elevated relative overflow-hidden">
-              <div className="absolute -top-32 -right-32 h-64 w-64 rounded-full bg-primary-glow/10 blur-3xl pointer-events-none" />
-              <h3 className="text-2xl font-bold mb-2">Book a Free Assessment</h3>
-              <p className="text-sm text-muted-foreground mb-6">
-                Discuss your {country.name} visa application with our senior consultants.
-              </p>
               <ContactForm />
             </div>
           </div>
@@ -193,3 +164,4 @@ function SouthAsiaCountryPage() {
     </>
   );
 }
+

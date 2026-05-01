@@ -53,7 +53,7 @@ export function Navbar() {
                 className={`group relative px-1.5 xl:px-2.5 py-2 text-[11px] xl:text-[13px] font-semibold text-foreground/70 hover:text-primary transition-all duration-300 data-[status=active]:text-primary whitespace-nowrap ${
                   l.label === "Insurance" || l.label === "Passport"
                     ? "hidden 2xl:block"
-                    : l.label === "Hotels" || l.label === "Air Ticketing"
+                    : l.label === "Air Ticketing"
                       ? "hidden xl:block"
                       : ""
                 }`}

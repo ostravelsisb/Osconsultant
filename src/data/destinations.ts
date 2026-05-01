@@ -450,222 +450,6 @@ export const DESTINATIONS: Destination[] = [
     ],
   },
   {
-    slug: "australia",
-    name: "Australia",
-    image: australiaImg,
-    shortDesc: "Subclass 600 visit visas, Student visas, and skilled migration.",
-    seoTitle: "Australia Visa Consultant Islamabad | Visit & Student Visas",
-    seoDescription:
-      "Expert Australia visa consultants in Islamabad. Specializing in Subclass 600 visit visas and Subclass 500 student visas from Pakistan.",
-    keywords:
-      "Australia student visa Pakistan, Australia visit visa ISB, authorized visa agent Pakistan, Australia visa consultant Islamabad",
-    intro:
-      "Applying for an Australian visa requires navigating the ImmiAccount system. We specialize in Subclass 600 (Visitor) and Subclass 500 (Student) visas, ensuring all your uploads meet the stringent requirements of the Department of Home Affairs.",
-    generalRequirements: [
-      "Passport and National ID (CNIC) Scans",
-      "Visa Fee: 200 AUD (approx 37,000 PKR)",
-      "Form 54 (Family Composition) - NADRA FRC is also mandatory",
-      "Bank Statement (Verifiable 6 months) + Maintenance Certificate",
-      "Professional Docs (Salary slips/NTN/Business Registration)",
-      "Polio Vaccination Certificate (Updated)",
-      "Evidence of substantial ties to Pakistan",
-    ],
-    stepByStep: [
-      { title: "ImmiAccount Setup", desc: "We set up and manage your official ImmiAccount." },
-      { title: "Data Entry", desc: "Accurate completion of extensive online forms." },
-      {
-        title: "Document Attachment",
-        desc: "Uploading high-quality, certified scans of all required evidence.",
-      },
-      {
-        title: "Biometrics & Medical",
-        desc: "Scheduling biometrics and panel doctor medical exams if required.",
-      },
-    ],
-    faqs: [
-      {
-        q: "Is the Australia visa stamped on the passport?",
-        a: "No, Australia issues electronic visas (eVisa). You will receive a grant notice via email.",
-      },
-      {
-        q: "Do I need a medical exam for a visit visa?",
-        a: "Usually not for short stays, but it may be requested if you are over 75 or intend to enter a hospital/school environment.",
-      },
-      {
-        q: "How much is the Australia visit visa fee?",
-        a: "The Subclass 600 Visitor visa fee is currently 200 AUD.",
-      },
-    ],
-    visas: [
-      {
-        slug: "visitor-visa",
-        name: "Visitor Visa (Subclass 600)",
-        seoTitle: "Australia Visitor Visa Consultant Islamabad | Subclass 600 Pakistan",
-        seoDescription:
-          "Expert assistance for Australia Subclass 600 visitor visas in Islamabad. Complete ImmiAccount management and document certification.",
-        keywords:
-          "Australia tourist visa Pakistan, Australia Subclass 600 consultant ISB, apply Australia visit visa ISB",
-        heroText:
-          "The Visitor visa (subclass 600) lets you visit Australia as a tourist, to see family and friends or for business purposes.",
-        requirements: [
-          "Valid Passport and CNIC",
-          "6 Months Bank Statement (Verifiable)",
-          "Form 54 (Family Composition)",
-          "Employment Certificate & FBR Tax Returns",
-          "Property/Asset Proofs",
-          "Polio Vaccination Certificate",
-          "Cover Letter & Itinerary",
-        ],
-        fees: "200 AUD Embassy Fee + Service Charges",
-        processingTime: "Typically 2 to 6 weeks.",
-        tips: [
-          "Ensure all documents are color scans and clearly legible.",
-          "Australia checks for 'GTE' (Genuine Temporary Entrant) status carefully.",
-          "Provide evidence of ongoing commitments in Pakistan.",
-        ],
-      },
-      ...defaultVisas("Australia").filter((v) => v.slug !== "visit-visa"),
-    ],
-  },
-  {
-    slug: "new-zealand",
-    name: "New Zealand",
-    image: nzImg,
-    shortDesc: "Visitor visas and NZeTA processing for seamless travel.",
-    seoTitle: "New Zealand Visa Consultant Islamabad | Top Visa Consultancy",
-    seoDescription:
-      "Apply for a New Zealand visa from Pakistan with ease. Expert assistance for NZ visitor visas and student visas in Islamabad.",
-    keywords: "New Zealand visa Pakistan, NZ visa consultant Islamabad, apply NZ visa ISB",
-    intro:
-      "New Zealand offers incredible landscapes and world-class universities. We handle electronic visa applications through the Immigration New Zealand portal, ensuring your financial and character documents are perfectly presented.",
-    generalRequirements: [
-      "Valid Passport",
-      "Visa Fee: $441 NZD (Effective Oct 2024)",
-      "Proof of onward travel",
-      "Proof of funds (Bank statements)",
-      "Employment/Leave letter",
-      "Good character proofs",
-    ],
-    stepByStep: [
-      { title: "RealMe Setup", desc: "Creating your secure RealMe login for INZ." },
-      {
-        title: "Application Processing",
-        desc: "Drafting the application and ensuring all questions are answered accurately.",
-      },
-      { title: "Uploads", desc: "Submitting financial and identity documents." },
-      {
-        title: "Passport Submission",
-        desc: "Sending physical passport to the VFS center if requested by INZ.",
-      },
-    ],
-    faqs: [
-      {
-        q: "How long does a New Zealand visa take?",
-        a: "Processing times vary, but visitor visas typically take 3 to 6 weeks.",
-      },
-      {
-        q: "What is the new New Zealand visa fee?",
-        a: "As of October 2024, the visitor visa fee has been updated to $441 NZD.",
-      },
-    ],
-    visas: [
-      {
-        slug: "visitor-visa",
-        name: "Visitor Visa",
-        seoTitle: "New Zealand Visitor Visa Consultant Islamabad | NZ Visa Pakistan",
-        seoDescription:
-          "Apply for a New Zealand visitor visa from Islamabad. Expert assistance for documentation, RealMe setup, and application filing.",
-        keywords:
-          "New Zealand tourist visa Pakistan, NZ visitor visa consultant ISB, apply NZ visa ISB",
-        heroText:
-          "The New Zealand Visitor Visa allows you to stay for up to 9 months for tourism, visiting family, or short-term study.",
-        requirements: [
-          "Original Passport and copies",
-          "6 Months Bank Statement (Verifiable)",
-          "Account Maintenance Certificate",
-          "Evidence of ties to Pakistan (Job/Business/Property)",
-          "Planned Itinerary & Onward Travel proof",
-          "Police Clearance Certificate (if staying > 24 months)",
-          "Medical Certificate (if staying > 6 months)",
-        ],
-        fees: "$441 NZD Embassy Fee + Service Charges",
-        processingTime: "Typically 3 to 6 weeks.",
-        tips: [
-          "Ensure your RealMe account is secure and information matches your passport exactly.",
-          "Provide a clear cover letter explaining your ties to Pakistan.",
-          "Be mindful of the new fee structure introduced in late 2024.",
-        ],
-      },
-      ...defaultVisas("New Zealand").filter((v) => v.slug !== "visit-visa"),
-    ],
-  },
-  {
-    slug: "qatar",
-    name: "Qatar",
-    image: qatarImg,
-    shortDesc: "Fast-track Qatar Hayya card and visit visa processing.",
-    seoTitle: "Qatar Visa Consultant Islamabad | Fast Processing",
-    seoDescription:
-      "Get your Qatar visit visa processed quickly from Islamabad. We assist with Hayya cards and business visas.",
-    keywords: "Qatar visa Pakistan, Qatar visit visa consultant Islamabad, Hayya card Pakistan",
-    intro:
-      "Whether traveling to Doha for business, tourism, or transit, we provide swift processing for Qatar visas, including assistance with the Hayya platform and Discover Qatar hotel bookings.",
-    generalRequirements: [
-      "Valid Passport",
-      "Confirmed Return Ticket",
-      "Discover Qatar Hotel Booking (if applicable)",
-      "Polio Certificate",
-    ],
-    stepByStep: [
-      {
-        title: "Platform Selection",
-        desc: "We determine the right visa portal (Hayya vs standard).",
-      },
-      { title: "Booking Alignment", desc: "Aligning your flights and mandatory hotel bookings." },
-      { title: "Submission", desc: "Rapid processing and tracking." },
-    ],
-    faqs: [
-      {
-        q: "Is visa on arrival available for Pakistanis?",
-        a: "Rules change frequently. Currently, specific conditions (like Discover Qatar bookings) must be met prior to travel.",
-      },
-    ],
-    visas: defaultVisas("Qatar"),
-  },
-  {
-    slug: "bahrain",
-    name: "Bahrain",
-    image: bahrainImg,
-    shortDesc: "Electronic visa (eVisa) processing for business and tourism.",
-    seoTitle: "Bahrain eVisa Consultant Islamabad | OS Consultants",
-    seoDescription:
-      "Seamless Bahrain eVisa processing from Pakistan. Expert travel agents for Middle East destinations.",
-    keywords: "Bahrain visa Pakistan, Bahrain eVisa consultant Islamabad",
-    intro:
-      "Bahrain offers a straightforward eVisa system for eligible Pakistani citizens. We ensure your application is error-free, handling the online portal submission for rapid approvals.",
-    generalRequirements: [
-      "Passport Copy",
-      "Return Flight Ticket",
-      "Hotel Booking",
-      "Bank Statement",
-    ],
-    stepByStep: [
-      { title: "Document Review", desc: "Ensuring your scans are high quality." },
-      {
-        title: "eVisa Application",
-        desc: "Filing the application via the official Bahrain portal.",
-      },
-      { title: "Delivery", desc: "Delivering your approved eVisa directly to your inbox." },
-    ],
-    faqs: [
-      {
-        q: "Do I need to visit an embassy for a Bahrain visa?",
-        a: "No, the entire process is handled electronically.",
-      },
-    ],
-    visas: defaultVisas("Bahrain"),
-  },
-  {
     slug: "middle-east",
     name: "Middle East",
     image: middleEastImg,
@@ -834,5 +618,111 @@ export const DESTINATIONS: Destination[] = [
       },
     ],
     visas: defaultVisas("Southern Africa"),
+  },
+  {
+    slug: "east-asia",
+    name: "East Asia",
+    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
+    shortDesc: "China, Japan, and South Korea visa assistance.",
+    seoTitle: "East Asia Visa Consultant Islamabad | Japan & South Korea",
+    seoDescription:
+      "Reliable visa processing for Japan, South Korea, and China from Pakistan.",
+    keywords: "Japan visa Pakistan, South Korea visa consultant Islamabad",
+    intro:
+      "East Asia is a hub of technological advancement and rich cultural heritage. We provide expert assistance for securing visas to Japan, South Korea, and China.",
+    generalRequirements: [
+      "Original Passport",
+      "Photos (Size varies by country)",
+      "Bank Statement (6 Months)",
+      "NTN & Tax Returns",
+      "Employment/Business Docs",
+    ],
+    stepByStep: [
+      {
+        title: "Profile Assessment",
+        desc: "Ensuring you meet the financial and travel history requirements.",
+      },
+      {
+        title: "File Compilation",
+        desc: "Preparing a strong case for the embassy.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do I need an interview for a Japan visa?",
+        a: "Generally no, but the embassy may call you for an interview if they need more information.",
+      },
+    ],
+    visas: defaultVisas("East Asia"),
+  },
+  {
+    slug: "south-america",
+    name: "South America",
+    image: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=1200",
+    shortDesc: "Brazil, Argentina, Colombia & more.",
+    seoTitle: "South America Visa Agent Islamabad | Brazil & Argentina",
+    seoDescription:
+      "Reliable visa processing for Brazil, Argentina, Colombia from Pakistan.",
+    keywords: "Brazil visa Pakistan, Argentina visa consultant Islamabad",
+    intro:
+      "Explore the diverse cultures and landscapes of South America. We provide expert assistance for securing tourist and business visas.",
+    generalRequirements: [
+      "Original Passport",
+      "Photos",
+      "Bank Statement (6 Months)",
+      "NTN & Tax Returns",
+    ],
+    stepByStep: [
+      {
+        title: "Assessment & Planning",
+        desc: "Checking your specific documentation requirements.",
+      },
+      {
+        title: "File Compilation",
+        desc: "Preparing the visa application file completely.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How long does standard processing take for South America visas?",
+        a: "Typically 3 to 6 weeks, depending on the embassy's specific guidelines.",
+      },
+    ],
+    visas: defaultVisas("South America"),
+  },
+  {
+    slug: "oceania",
+    name: "Oceania",
+    image: "https://beantowntraveller.com/wp-content/uploads/2018/07/IMG_2484-scaled.jpg",
+    shortDesc: "Australia, New Zealand, Fiji & more.",
+    seoTitle: "Oceania Visa Agent Islamabad | Australia & New Zealand",
+    seoDescription:
+      "Expert visa assistance for Australia and New Zealand from Pakistan.",
+    keywords: "Australia visa Pakistan, New Zealand visa consultant Islamabad",
+    intro:
+      "From pristine beaches and coral reefs to magnificent mountains, Oceania has it all. We provide comprehensive visa assistance.",
+    generalRequirements: [
+      "Original Passport",
+      "Photos",
+      "Bank Statement (6 Months)",
+      "NTN & Tax Returns",
+    ],
+    stepByStep: [
+      {
+        title: "Initial Assessment",
+        desc: "Reviewing your eligibility and documentation.",
+      },
+      {
+        title: "Submission & Tracking",
+        desc: "Preparing and handling the application process.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How long is an Australian visitor visa valid for?",
+        a: "Typically up to 3 years with multiple entries, allowing stays up to 3 or 6 months per visit.",
+      },
+    ],
+    visas: defaultVisas("Oceania"),
   },
 ];

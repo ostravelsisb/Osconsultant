@@ -22,6 +22,10 @@ import {
   CENTRAL_ASIA_COUNTRIES,
   NORTH_AFRICA_COUNTRIES,
   SOUTHERN_AFRICA_COUNTRIES,
+  MIDDLE_EAST_COUNTRIES,
+  EAST_ASIA_COUNTRIES,
+  SOUTH_AMERICA_COUNTRIES,
+  OCEANIA_COUNTRIES,
 } from "@/data/site";
 import {
   Accordion,
@@ -504,6 +508,335 @@ function DestinationHub() {
                           </p>
                           <div className="flex flex-wrap gap-1.5">
                             {c.popularPlaces.slice(0, 3).map((place) => (
+                              <span
+                                key={place}
+                                className="inline-flex items-center gap-1 rounded-md bg-white/10 backdrop-blur-md px-2 py-1 text-[10px] font-medium text-white group-hover:bg-primary/30 transition-colors border border-white/5"
+                              >
+                                <MapPin size={8} className="shrink-0" /> {place}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="relative z-10 mt-2 border-t border-white/10 bg-white/5 backdrop-blur-md px-6 py-3 text-[11px] font-semibold text-white flex items-center gap-1.5 group-hover:bg-primary/20">
+                      <FileText size={12} /> View Requirements
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Individual Middle East Countries (Conditional) */}
+      {dest.slug === "middle-east" && (
+        <section className="bg-secondary/30 py-16 border-b border-border">
+          <div className="container-px mx-auto max-w-7xl">
+            <div className="text-center mb-12">
+              <Reveal>
+                <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-4">
+                  Middle East
+                </span>
+                <h2 className="text-3xl font-bold md:text-4xl">Middle Eastern Destinations</h2>
+                <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+                  Explore visa requirements for UAE, Saudi Arabia, Qatar, Bahrain, and more.
+                </p>
+              </Reveal>
+            </div>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+              {MIDDLE_EAST_COUNTRIES.map((c, i) => (
+                <Reveal key={c.slug} delay={i * 0.05}>
+                  <Link
+                    to="/countries/middle-east/$country"
+                    params={{ country: c.slug }}
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                  >
+                    {/* Background Image */}
+                    {c.image && (
+                      <div className="absolute inset-0 z-0">
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      </div>
+                    )}
+
+                    {/* Content Overlay */}
+                    <div className="relative z-10 flex h-full flex-col p-6 text-white">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
+                        <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                          <ArrowRight size={16} />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="relative z-10 mt-2 border-t border-white/10 bg-white/5 backdrop-blur-md px-6 py-3 text-[11px] font-semibold text-white flex items-center gap-1.5 group-hover:bg-primary/20">
+                      <FileText size={12} /> View Requirements
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Individual East Asia Countries (Conditional) */}
+      {dest.slug === "east-asia" && (
+        <section className="bg-secondary/30 py-16 border-b border-border">
+          <div className="container-px mx-auto max-w-7xl">
+            <div className="text-center mb-12">
+              <Reveal>
+                <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-4">
+                  East Asia
+                </span>
+                <h2 className="text-3xl font-bold md:text-4xl">East Asian Destinations</h2>
+                <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+                  Explore visa requirements for Japan, South Korea, China, and more. We handle sticker visas and provide comprehensive application support.
+                </p>
+              </Reveal>
+            </div>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+              {EAST_ASIA_COUNTRIES.map((c, i) => (
+                <Reveal key={c.slug} delay={i * 0.05}>
+                  <Link
+                    to="/countries/east-asia/$country"
+                    params={{ country: c.slug }}
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                  >
+                    {/* Background Image */}
+                    {c.image && (
+                      <div className="absolute inset-0 z-0">
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      </div>
+                    )}
+
+                    {/* Content Overlay */}
+                    <div className="relative z-10 flex h-full flex-col p-6 text-white">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
+                        <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                          <ArrowRight size={16} />
+                        </div>
+                      </div>
+
+                      {/* Popular Places Design */}
+                      {c.popularPlaces && (
+                        <div className="mt-auto">
+                          <p className="text-[10px] uppercase tracking-wider text-white/70 font-bold mb-2">
+                            Top Attractions
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {c.popularPlaces.slice(0, 3).map((place: string) => (
+                              <span
+                                key={place}
+                                className="inline-flex items-center gap-1 rounded-md bg-white/10 backdrop-blur-md px-2 py-1 text-[10px] font-medium text-white group-hover:bg-primary/30 transition-colors border border-white/5"
+                              >
+                                <MapPin size={8} className="shrink-0" /> {place}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="relative z-10 mt-2 border-t border-white/10 bg-white/5 backdrop-blur-md px-6 py-3 text-[11px] font-semibold text-white flex items-center gap-1.5 group-hover:bg-primary/20">
+                      <FileText size={12} /> View Requirements
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Individual South America Countries (Conditional) */}
+      {dest.slug === "south-america" && (
+        <section className="bg-secondary/30 py-16 border-b border-border">
+          <div className="container-px mx-auto max-w-7xl">
+            <div className="text-center mb-12">
+              <Reveal>
+                <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-4">
+                  South America
+                </span>
+                <h2 className="text-3xl font-bold md:text-4xl">South American Destinations</h2>
+                <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+                  Explore visa requirements for Brazil, Argentina, Colombia, and more.
+                </p>
+              </Reveal>
+            </div>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+              {SOUTH_AMERICA_COUNTRIES.map((c, i) => (
+                <Reveal key={c.slug} delay={i * 0.05}>
+                  <Link
+                    to="/countries/south-america/$country"
+                    params={{ country: c.slug }}
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                  >
+                    {/* Background Image */}
+                    {c.image && (
+                      <div className="absolute inset-0 z-0">
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      </div>
+                    )}
+
+                    {/* Content Overlay */}
+                    <div className="relative z-10 flex h-full flex-col p-6 text-white">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
+                        <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                          <ArrowRight size={16} />
+                        </div>
+                      </div>
+
+                      {/* Popular Places Design */}
+                      {c.popularPlaces && (
+                        <div className="mt-auto">
+                          <p className="text-[10px] uppercase tracking-wider text-white/70 font-bold mb-2">
+                            Top Attractions
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {c.popularPlaces.slice(0, 3).map((place: string) => (
+                              <span
+                                key={place}
+                                className="inline-flex items-center gap-1 rounded-md bg-white/10 backdrop-blur-md px-2 py-1 text-[10px] font-medium text-white group-hover:bg-primary/30 transition-colors border border-white/5"
+                              >
+                                <MapPin size={8} className="shrink-0" /> {place}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="relative z-10 mt-2 border-t border-white/10 bg-white/5 backdrop-blur-md px-6 py-3 text-[11px] font-semibold text-white flex items-center gap-1.5 group-hover:bg-primary/20">
+                      <FileText size={12} /> View Requirements
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Individual Oceania Countries (Conditional) */}
+      {dest.slug === "oceania" && (
+        <section className="bg-secondary/30 py-16 border-b border-border">
+          <div className="container-px mx-auto max-w-7xl">
+            <div className="text-center mb-12">
+              <Reveal>
+                <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-4">
+                  Oceania
+                </span>
+                <h2 className="text-3xl font-bold md:text-4xl">Oceania Destinations</h2>
+                <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+                  Explore visa requirements for Australia, New Zealand, Fiji, and more.
+                </p>
+              </Reveal>
+            </div>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+              {OCEANIA_COUNTRIES.map((c, i) => (
+                <Reveal key={c.slug} delay={i * 0.05}>
+                  <Link
+                    to="/countries/oceania/$country"
+                    params={{ country: c.slug }}
+                    className="group relative flex h-[240px] sm:h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:shadow-elevated hover:border-primary/50"
+                  >
+                    {/* Background Image */}
+                    {c.image && (
+                      <div className="absolute inset-0 z-0">
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      </div>
+                    )}
+
+                    {/* Content Overlay */}
+                    <div className="relative z-10 flex h-full flex-col p-6 text-white">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-3">
+                          {c.code && (
+                            <img
+                              src={`https://flagcdn.com/w40/${c.code}.png`}
+                              alt=""
+                              className="w-6 h-4 object-cover rounded-sm shadow-sm shrink-0"
+                            />
+                          )}
+                          <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h3>
+                        </div>
+                        <div className="h-8 w-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                          <ArrowRight size={16} />
+                        </div>
+                      </div>
+
+                      {/* Popular Places Design */}
+                      {c.popularPlaces && (
+                        <div className="mt-auto">
+                          <p className="text-[10px] uppercase tracking-wider text-white/70 font-bold mb-2">
+                            Top Attractions
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {c.popularPlaces.slice(0, 3).map((place: string) => (
                               <span
                                 key={place}
                                 className="inline-flex items-center gap-1 rounded-md bg-white/10 backdrop-blur-md px-2 py-1 text-[10px] font-medium text-white group-hover:bg-primary/30 transition-colors border border-white/5"

@@ -90,6 +90,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/pakistan-visa" className="text-accent hover:text-accent-glow font-medium">
+                  Pakistan Visa
+                </Link>
+              </li>
+              <li>
                 <Link to="/air-ticketing" className="text-white/70 hover:text-accent-glow">
                   Air Ticketing
                 </Link>

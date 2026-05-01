@@ -15,6 +15,7 @@ import { Route as TravelInsuranceRouteImport } from './routes/travel-insurance'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ProfileAssessmentRouteImport } from './routes/profile-assessment'
 import { Route as PassportServicesRouteImport } from './routes/passport-services'
+import { Route as PakistanVisaRouteImport } from './routes/pakistan-visa'
 import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -26,7 +27,9 @@ import { Route as CountriesIndexRouteImport } from './routes/countries/index'
 import { Route as CountriesSlugRouteImport } from './routes/countries.$slug'
 import { Route as CountriesSouthernAfricaCountryRouteImport } from './routes/countries.southern-africa.$country'
 import { Route as CountriesSouthAsiaCountryRouteImport } from './routes/countries.south-asia.$country'
+import { Route as CountriesSouthAmericaCountryRouteImport } from './routes/countries.south-america.$country'
 import { Route as CountriesSchengenCountryRouteImport } from './routes/countries.schengen.$country'
+import { Route as CountriesOceaniaCountryRouteImport } from './routes/countries.oceania.$country'
 import { Route as CountriesNorthAfricaCountryRouteImport } from './routes/countries.north-africa.$country'
 import { Route as CountriesMiddleEastCountryRouteImport } from './routes/countries.middle-east.$country'
 import { Route as CountriesEuropeOthersCountryRouteImport } from './routes/countries.europe-others.$country'
@@ -63,6 +66,11 @@ const ProfileAssessmentRoute = ProfileAssessmentRouteImport.update({
 const PassportServicesRoute = PassportServicesRouteImport.update({
   id: '/passport-services',
   path: '/passport-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PakistanVisaRoute = PakistanVisaRouteImport.update({
+  id: '/pakistan-visa',
+  path: '/pakistan-visa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HotelBookingRoute = HotelBookingRouteImport.update({
@@ -122,12 +130,23 @@ const CountriesSouthAsiaCountryRoute =
     path: '/countries/south-asia/$country',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CountriesSouthAmericaCountryRoute =
+  CountriesSouthAmericaCountryRouteImport.update({
+    id: '/countries/south-america/$country',
+    path: '/countries/south-america/$country',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CountriesSchengenCountryRoute =
   CountriesSchengenCountryRouteImport.update({
     id: '/countries/schengen/$country',
     path: '/countries/schengen/$country',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CountriesOceaniaCountryRoute = CountriesOceaniaCountryRouteImport.update({
+  id: '/countries/oceania/$country',
+  path: '/countries/oceania/$country',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CountriesNorthAfricaCountryRoute =
   CountriesNorthAfricaCountryRouteImport.update({
     id: '/countries/north-africa/$country',
@@ -179,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/pakistan-visa': typeof PakistanVisaRoute
   '/passport-services': typeof PassportServicesRoute
   '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
@@ -193,7 +213,9 @@ export interface FileRoutesByFullPath {
   '/countries/europe-others/$country': typeof CountriesEuropeOthersCountryRoute
   '/countries/middle-east/$country': typeof CountriesMiddleEastCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
+  '/countries/oceania/$country': typeof CountriesOceaniaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
+  '/countries/south-america/$country': typeof CountriesSouthAmericaCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
   '/countries/southern-africa/$country': typeof CountriesSouthernAfricaCountryRoute
   '/countries/$slug/visa/$visaType': typeof CountriesSlugVisaVisaTypeRoute
@@ -206,6 +228,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/pakistan-visa': typeof PakistanVisaRoute
   '/passport-services': typeof PassportServicesRoute
   '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
@@ -220,7 +243,9 @@ export interface FileRoutesByTo {
   '/countries/europe-others/$country': typeof CountriesEuropeOthersCountryRoute
   '/countries/middle-east/$country': typeof CountriesMiddleEastCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
+  '/countries/oceania/$country': typeof CountriesOceaniaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
+  '/countries/south-america/$country': typeof CountriesSouthAmericaCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
   '/countries/southern-africa/$country': typeof CountriesSouthernAfricaCountryRoute
   '/countries/$slug/visa/$visaType': typeof CountriesSlugVisaVisaTypeRoute
@@ -234,6 +259,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/pakistan-visa': typeof PakistanVisaRoute
   '/passport-services': typeof PassportServicesRoute
   '/profile-assessment': typeof ProfileAssessmentRoute
   '/testimonials': typeof TestimonialsRoute
@@ -248,7 +274,9 @@ export interface FileRoutesById {
   '/countries/europe-others/$country': typeof CountriesEuropeOthersCountryRoute
   '/countries/middle-east/$country': typeof CountriesMiddleEastCountryRoute
   '/countries/north-africa/$country': typeof CountriesNorthAfricaCountryRoute
+  '/countries/oceania/$country': typeof CountriesOceaniaCountryRoute
   '/countries/schengen/$country': typeof CountriesSchengenCountryRoute
+  '/countries/south-america/$country': typeof CountriesSouthAmericaCountryRoute
   '/countries/south-asia/$country': typeof CountriesSouthAsiaCountryRoute
   '/countries/southern-africa/$country': typeof CountriesSouthernAfricaCountryRoute
   '/countries/$slug_/visa/$visaType': typeof CountriesSlugVisaVisaTypeRoute
@@ -263,6 +291,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/hotel-booking'
+    | '/pakistan-visa'
     | '/passport-services'
     | '/profile-assessment'
     | '/testimonials'
@@ -277,7 +306,9 @@ export interface FileRouteTypes {
     | '/countries/europe-others/$country'
     | '/countries/middle-east/$country'
     | '/countries/north-africa/$country'
+    | '/countries/oceania/$country'
     | '/countries/schengen/$country'
+    | '/countries/south-america/$country'
     | '/countries/south-asia/$country'
     | '/countries/southern-africa/$country'
     | '/countries/$slug/visa/$visaType'
@@ -290,6 +321,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/hotel-booking'
+    | '/pakistan-visa'
     | '/passport-services'
     | '/profile-assessment'
     | '/testimonials'
@@ -304,7 +336,9 @@ export interface FileRouteTypes {
     | '/countries/europe-others/$country'
     | '/countries/middle-east/$country'
     | '/countries/north-africa/$country'
+    | '/countries/oceania/$country'
     | '/countries/schengen/$country'
+    | '/countries/south-america/$country'
     | '/countries/south-asia/$country'
     | '/countries/southern-africa/$country'
     | '/countries/$slug/visa/$visaType'
@@ -317,6 +351,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/hotel-booking'
+    | '/pakistan-visa'
     | '/passport-services'
     | '/profile-assessment'
     | '/testimonials'
@@ -331,7 +366,9 @@ export interface FileRouteTypes {
     | '/countries/europe-others/$country'
     | '/countries/middle-east/$country'
     | '/countries/north-africa/$country'
+    | '/countries/oceania/$country'
     | '/countries/schengen/$country'
+    | '/countries/south-america/$country'
     | '/countries/south-asia/$country'
     | '/countries/southern-africa/$country'
     | '/countries/$slug_/visa/$visaType'
@@ -345,6 +382,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   HotelBookingRoute: typeof HotelBookingRoute
+  PakistanVisaRoute: typeof PakistanVisaRoute
   PassportServicesRoute: typeof PassportServicesRoute
   ProfileAssessmentRoute: typeof ProfileAssessmentRoute
   TestimonialsRoute: typeof TestimonialsRoute
@@ -359,7 +397,9 @@ export interface RootRouteChildren {
   CountriesEuropeOthersCountryRoute: typeof CountriesEuropeOthersCountryRoute
   CountriesMiddleEastCountryRoute: typeof CountriesMiddleEastCountryRoute
   CountriesNorthAfricaCountryRoute: typeof CountriesNorthAfricaCountryRoute
+  CountriesOceaniaCountryRoute: typeof CountriesOceaniaCountryRoute
   CountriesSchengenCountryRoute: typeof CountriesSchengenCountryRoute
+  CountriesSouthAmericaCountryRoute: typeof CountriesSouthAmericaCountryRoute
   CountriesSouthAsiaCountryRoute: typeof CountriesSouthAsiaCountryRoute
   CountriesSouthernAfricaCountryRoute: typeof CountriesSouthernAfricaCountryRoute
   CountriesSlugVisaVisaTypeRoute: typeof CountriesSlugVisaVisaTypeRoute
@@ -407,6 +447,13 @@ declare module '@tanstack/react-router' {
       path: '/passport-services'
       fullPath: '/passport-services'
       preLoaderRoute: typeof PassportServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pakistan-visa': {
+      id: '/pakistan-visa'
+      path: '/pakistan-visa'
+      fullPath: '/pakistan-visa'
+      preLoaderRoute: typeof PakistanVisaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hotel-booking': {
@@ -486,11 +533,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CountriesSouthAsiaCountryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/countries/south-america/$country': {
+      id: '/countries/south-america/$country'
+      path: '/countries/south-america/$country'
+      fullPath: '/countries/south-america/$country'
+      preLoaderRoute: typeof CountriesSouthAmericaCountryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/countries/schengen/$country': {
       id: '/countries/schengen/$country'
       path: '/countries/schengen/$country'
       fullPath: '/countries/schengen/$country'
       preLoaderRoute: typeof CountriesSchengenCountryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/countries/oceania/$country': {
+      id: '/countries/oceania/$country'
+      path: '/countries/oceania/$country'
+      fullPath: '/countries/oceania/$country'
+      preLoaderRoute: typeof CountriesOceaniaCountryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/countries/north-africa/$country': {
@@ -553,6 +614,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   HotelBookingRoute: HotelBookingRoute,
+  PakistanVisaRoute: PakistanVisaRoute,
   PassportServicesRoute: PassportServicesRoute,
   ProfileAssessmentRoute: ProfileAssessmentRoute,
   TestimonialsRoute: TestimonialsRoute,
@@ -567,7 +629,9 @@ const rootRouteChildren: RootRouteChildren = {
   CountriesEuropeOthersCountryRoute: CountriesEuropeOthersCountryRoute,
   CountriesMiddleEastCountryRoute: CountriesMiddleEastCountryRoute,
   CountriesNorthAfricaCountryRoute: CountriesNorthAfricaCountryRoute,
+  CountriesOceaniaCountryRoute: CountriesOceaniaCountryRoute,
   CountriesSchengenCountryRoute: CountriesSchengenCountryRoute,
+  CountriesSouthAmericaCountryRoute: CountriesSouthAmericaCountryRoute,
   CountriesSouthAsiaCountryRoute: CountriesSouthAsiaCountryRoute,
   CountriesSouthernAfricaCountryRoute: CountriesSouthernAfricaCountryRoute,
   CountriesSlugVisaVisaTypeRoute: CountriesSlugVisaVisaTypeRoute,

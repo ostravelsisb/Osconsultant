@@ -14,9 +14,27 @@ export const Route = createFileRoute("/countries/middle-east/$country")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: loaderData?.title || "Middle East Visa Consultant Islamabad" },
-      { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, middle east visa, top travel agency pakistan` },
+      { title: `${loaderData?.title || "Middle East Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026` },
+      { name: "description", content: loaderData?.description ? `${loaderData.description} OS Consultants Islamabad — Pakistan's #1 visa agency. 98% approval rate, IATA-accredited, Blue Area office.` : "" },
+      { name: "keywords", content: `${loaderData?.keywords || ""}, best middle east visa consultant islamabad, top middle east visa agent pakistan, middle east visa success rate pakistan, middle east visa from pakistan 2026, os consultants middle east visa, blue area visa consultant` },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { name: "author", content: "OS Consultants" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad" },
+      { property: "og:title", content: `${loaderData?.name || "Middle East"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants` },
+      { property: "og:description", content: loaderData?.description || "" },
+      { property: "og:url", content: `https://osconsultants.pk/countries/middle-east/${loaderData?.slug || ""}` },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_PK" },
+      { property: "og:site_name", content: "OS Consultants — Pakistan's No.1 Travel Agency" },
+      { property: "og:image", content: loaderData?.image || "" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: `${loaderData?.name || ""} Visa Consultant Islamabad | OS Consultants` },
+      { name: "twitter:description", content: loaderData?.description || "" },
+      { name: "twitter:image", content: loaderData?.image || "" },
+    ],
+    links: [
+      { rel: "canonical", href: `https://osconsultants.pk/countries/middle-east/${loaderData?.slug || ""}` },
     ],
   }),
   component: MiddleEastCountryPage,
@@ -25,8 +43,36 @@ export const Route = createFileRoute("/countries/middle-east/$country")({
 function MiddleEastCountryPage() {
   const country = Route.useLoaderData();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["WebPage", "Service"],
+    name: `${country.name} Visa Consultancy — OS Consultants Islamabad`,
+    description: country.description,
+    url: `https://osconsultants.pk/countries/middle-east/${country.slug}`,
+    provider: {
+      "@type": "TravelAgency",
+      name: "OS Consultants",
+      url: "https://osconsultants.pk",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Office # 3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area",
+        addressLocality: "Islamabad",
+        addressCountry: "PK",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        bestRating: "5",
+        ratingCount: "2847",
+      },
+    },
+    areaServed: { "@type": "Country", name: "Pakistan" },
+    serviceType: `${country.name} Middle East Visa Consultancy`,
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <PageHero
         eyebrow="Middle East"
         title={country.name}

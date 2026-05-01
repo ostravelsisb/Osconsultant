@@ -1,54 +1,36 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
-import { EAST_ASIA_COUNTRIES } from "@/data/site";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { CheckCircle2, FileText, Globe2, ArrowRight } from "lucide-react";
 import { ContactForm } from "@/components/site/ContactForm";
 import { BookingWidget } from "@/components/site/BookingWidget";
+import { CheckCircle2, FileText, Globe2, ArrowRight } from "lucide-react";
 import { COMPANY } from "@/data/site";
 
-export const Route = createFileRoute("/countries/east-asia/$country")({
-  loader: ({ params }) => {
-    const country = EAST_ASIA_COUNTRIES.find((c) => c.slug === params.country);
-    if (!country) throw notFound();
-    return country;
-  },
-  head: ({ loaderData }) => ({
+export const Route = createFileRoute("/pakistan-visa")({
+  head: () => ({
     meta: [
-      { title: `${loaderData?.title || "East Asia Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026` },
-      { name: "description", content: loaderData?.description ? `${loaderData.description} OS Consultants Islamabad — Pakistan's #1 visa agency. 98% approval rate, IATA-accredited, Blue Area office.` : "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, best east asia visa consultant islamabad, top east asia visa agent pakistan, east asia visa success rate pakistan, east asia visa from pakistan 2026, os consultants east asia visa, blue area visa consultant` },
-      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
-      { name: "author", content: "OS Consultants" },
-      { name: "geo.region", content: "PK-IS" },
-      { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: `${loaderData?.name || "East Asia"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants` },
-      { property: "og:description", content: loaderData?.description || "" },
-      { property: "og:url", content: `https://osconsultants.pk/countries/east-asia/${loaderData?.slug || ""}` },
+      { title: "Pakistan Visa Consultant Islamabad | Pakistan Inbound E-Visa 2026" },
+      { name: "description", content: "Expert assistance for Pakistan inbound visa (E-Visa, tourist, business, work) at OS Consultants Islamabad. 100% online, hassle-free processing." },
+      { name: "keywords", content: "pakistan inbound visa, pakistan e-visa islamabad, pakistan tourist visa, apply pakistan visa 2026, travel to pakistan visa consultancy, best visa agent pakistan" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Pakistan Inbound E-Visa Processing | OS Consultants" },
+      { property: "og:description", content: "Fast e-visa, business visa, and tourist visa services for traveling to Pakistan from anywhere globally." },
+      { property: "og:url", content: "https://osconsultants.pk/pakistan-visa" },
       { property: "og:type", content: "website" },
-      { property: "og:locale", content: "en_PK" },
-      { property: "og:site_name", content: "OS Consultants — Pakistan's No.1 Travel Agency" },
-      { property: "og:image", content: loaderData?.image || "" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: `${loaderData?.name || ""} Visa Consultant Islamabad | OS Consultants` },
-      { name: "twitter:description", content: loaderData?.description || "" },
-      { name: "twitter:image", content: loaderData?.image || "" },
     ],
     links: [
-      { rel: "canonical", href: `https://osconsultants.pk/countries/east-asia/${loaderData?.slug || ""}` },
+      { rel: "canonical", href: "https://osconsultants.pk/pakistan-visa" },
     ],
   }),
-  component: EastAsiaCountryPage,
+  component: PakistanVisaPage,
 });
 
-function EastAsiaCountryPage() {
-  const country = Route.useLoaderData();
-
+function PakistanVisaPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["WebPage", "Service"],
-    name: `${country.name} Visa Consultancy — OS Consultants Islamabad`,
-    description: country.description,
-    url: `https://osconsultants.pk/countries/east-asia/${country.slug}`,
+    name: "Pakistan Inbound Visa Consultancy — OS Consultants",
+    description: "Secure an inbound tourist, business, or e-visa for Pakistan smoothly.",
+    url: "https://osconsultants.pk/pakistan-visa",
     provider: {
       "@type": "TravelAgency",
       name: "OS Consultants",
@@ -59,25 +41,29 @@ function EastAsiaCountryPage() {
         addressLocality: "Islamabad",
         addressCountry: "PK",
       },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        bestRating: "5",
-        ratingCount: "2847",
-      },
     },
     areaServed: { "@type": "Country", name: "Pakistan" },
-    serviceType: `${country.name} East Asia Visa Consultancy`,
+    serviceType: "Inbound Pakistan Visa",
   };
+
+  const pakistanDocs = [
+    "Valid Passport Color Scan (Bio-data page, minimum 6-month validity)",
+    "Recent Digital Photograph (White background, size 35x45mm, matte finish)",
+    "Hotel Booking Confirmation or Invitation Letter (Sponsorship from host)",
+    "Copy of Pakistani Host CNIC / Passport (If visiting family or friends)",
+    "Copy of Parents' CNIC / Passport (For minors and applicants of Pakistani origin)",
+    "SECP Registration Certificate or Chamber of Commerce Letter (For Business Visa)",
+    "Evidence of legal residence in the country of application (For foreign applicants)",
+    "Proof of Return Travel & Day-by-day Itinerary",
+  ];
 
   return (
     <>
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <PageHero
-        eyebrow="East Asia"
-        title={country.name}
-        subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
-        backgroundImage={country.image}
+        eyebrow="Inbound Visa"
+        title="Pakistan Visa Services"
+        subtitle="Complete assistance for Tourist, Business, and E-Visas to Pakistan."
       />
 
       <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">
@@ -87,9 +73,11 @@ function EastAsiaCountryPage() {
       <section className="container-px mx-auto max-w-5xl py-20">
         <div className="space-y-6 text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl font-bold md:text-4xl">
-            {country.name} Visa Services in Islamabad
+            Inbound Pakistan Visa Processing
           </h2>
-          <p className="text-muted-foreground leading-relaxed text-lg">{country.intro}</p>
+          <p className="text-muted-foreground leading-relaxed text-lg">
+            We provide fast, efficient end-to-end guidance for foreign nationals applying for Pakistan E-Visa, tourist visa, and business entry permits.
+          </p>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-3 mb-20">
@@ -101,7 +89,7 @@ function EastAsiaCountryPage() {
               <h2 className="text-2xl font-bold">Required Documents Checklist</h2>
             </div>
             <ul className="grid gap-4 sm:grid-cols-2">
-              {country.docs.map((req: string, idx: number) => (
+              {pakistanDocs.map((req, idx) => (
                 <li key={idx} className="flex items-start gap-4">
                   <span className="mt-0.5 flex shrink-0 h-6 w-6 items-center justify-center rounded-full bg-accent/20 text-accent">
                     <CheckCircle2 size={14} />
@@ -118,10 +106,10 @@ function EastAsiaCountryPage() {
             <div className="rounded-2xl border border-border bg-secondary/30 p-6 shadow-soft">
               <div className="flex items-center gap-3 mb-4">
                 <Globe2 size={24} className="text-primary" />
-                <h3 className="font-bold text-lg">Why {country.name}?</h3>
+                <h3 className="font-bold text-lg">Pakistan E-Visa Portal</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                {country.name} is a key destination in East Asia. We ensure your application is processed with professional excellence.
+                The official Pakistan online visa system simplifies the process. We assemble your sponsor letters, hotel bookings, and required documentation for rapid approvals.
               </p>
             </div>
           </div>
@@ -133,10 +121,10 @@ function EastAsiaCountryPage() {
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold md:text-4xl">
-                Start Your {country.name} Journey Today
+                Start Your Pakistan Visa Application
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Connect with our East Asia visa experts for a free evaluation of your profile.
+                Our team at OS Consultants handles file compilation and official visa submissions smoothly.
               </p>
               <div className="pt-6 flex flex-wrap gap-4">
                 <a
