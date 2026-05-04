@@ -183,6 +183,7 @@
   }
   .card-3d {
     transform-style: preserve-3d;
+    will-change: transform;
     transition:
       transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
       box-shadow 0.5s;
@@ -212,6 +213,7 @@
     background-image: var(--gradient-mesh);
   }
   .hover-lift {
+    will-change: transform;
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
