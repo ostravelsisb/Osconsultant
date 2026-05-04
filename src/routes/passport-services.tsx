@@ -21,7 +21,10 @@ import {
 export const Route = createFileRoute("/passport-services")({
   head: () => ({
     meta: [
-      { title: "Passport Services Islamabad 2026 — Fast Renewals & New Applications | OS Consultants" },
+      {
+        title:
+          "Passport Services Islamabad 2026 — Fast Renewals & New Applications | OS Consultants",
+      },
       {
         name: "description",
         content:
@@ -35,7 +38,10 @@ export const Route = createFileRoute("/passport-services")({
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: "Passport Services Islamabad — Fast Processing | OS Consultants" },
+      {
+        property: "og:title",
+        content: "Passport Services Islamabad — Fast Processing | OS Consultants",
+      },
       {
         property: "og:description",
         content: "New applications, renewals & USA passport processing from Blue Area, Islamabad.",
@@ -45,9 +51,7 @@ export const Route = createFileRoute("/passport-services")({
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Passport Services Islamabad | OS Consultants" },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/passport-services" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/passport-services" }],
   }),
   component: PassportServices,
 });
@@ -160,9 +164,7 @@ function PassportServices() {
                     {p.step}
                   </span>
                   <h3 className="text-xl font-bold mt-4">{p.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    {p.desc}
-                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -182,7 +184,8 @@ function PassportServices() {
                 The Trusted Name in Blue Area, Islamabad
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base">
-                We handle each case with meticulous precision. Our physical presence in Blue Area provides you with secure document submission and complete peace of mind.
+                We handle each case with meticulous precision. Our physical presence in Blue Area
+                provides you with secure document submission and complete peace of mind.
               </p>
               <ul className="space-y-3.5">
                 {[
@@ -232,7 +235,9 @@ function PassportServices() {
                 <BookUser className="text-primary mx-auto sm:mx-0" size={32} />
                 <div>
                   <h4 className="text-3xl font-black mt-4 gradient-text">12k+</h4>
-                  <p className="text-xs text-muted-foreground mt-1">Passports Handled Successfully</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Passports Handled Successfully
+                  </p>
                 </div>
               </div>
             </div>

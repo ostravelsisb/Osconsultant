@@ -15,14 +15,17 @@ import {
   ArrowRight,
   ShieldCheck,
   Calendar,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 import umrahHero from "@/assets/umrah-hero.png";
 
 export const Route = createFileRoute("/umrah")({
   head: () => ({
     meta: [
-      { title: "Best Umrah Packages from Pakistan 2026 — Pakistan's #1 Umrah Travel Agency | OS Consultants" },
+      {
+        title:
+          "Best Umrah Packages from Pakistan 2026 — Pakistan's #1 Umrah Travel Agency | OS Consultants",
+      },
       {
         name: "description",
         content:
@@ -36,7 +39,10 @@ export const Route = createFileRoute("/umrah")({
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: "Pakistan's #1 Umrah Packages 2026 — Economy to 5-Star Luxury | OS Consultants" },
+      {
+        property: "og:title",
+        content: "Pakistan's #1 Umrah Packages 2026 — Economy to 5-Star Luxury | OS Consultants",
+      },
       {
         property: "og:description",
         content:
@@ -48,11 +54,12 @@ export const Route = createFileRoute("/umrah")({
       { property: "og:locale", content: "en_PK" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "#1 Umrah Packages Pakistan 2026 | OS Consultants" },
-      { name: "twitter:description", content: "Economy to 5-Star luxury. Visa, flights & Haram-facing hotels from Islamabad." },
+      {
+        name: "twitter:description",
+        content: "Economy to 5-Star luxury. Visa, flights & Haram-facing hotels from Islamabad.",
+      },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/umrah" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/umrah" }],
   }),
   component: UmrahPage,
 });
@@ -62,37 +69,61 @@ const UMRAH_PACKAGES = [
     title: "Silver Package",
     price: "From PKR 139,000",
     rating: "4.5",
-    features: ["15 Days Duration", "Without Air Ticket", "Makkah: Voco Hotel", "Madinah: Zawar Int.", "Umrah Visa Included"],
+    features: [
+      "15 Days Duration",
+      "Without Air Ticket",
+      "Makkah: Voco Hotel",
+      "Madinah: Zawar Int.",
+      "Umrah Visa Included",
+    ],
     icon: Moon,
     color: "text-slate-500",
-    bg: "bg-slate-50"
+    bg: "bg-slate-50",
   },
   {
     title: "Gold Package",
     price: "From PKR 250,000",
     rating: "4.8",
-    features: ["15 Days Duration", "Without Air Ticket", "Makkah: DoubleTree", "Madinah: Waqf Bin Usman", "Umrah Visa Included"],
+    features: [
+      "15 Days Duration",
+      "Without Air Ticket",
+      "Makkah: DoubleTree",
+      "Madinah: Waqf Bin Usman",
+      "Umrah Visa Included",
+    ],
     icon: Star,
     color: "text-amber-500",
-    bg: "bg-amber-50"
+    bg: "bg-amber-50",
   },
   {
     title: "Platinum Package",
     price: "From PKR 275,000",
     rating: "4.9",
-    features: ["15 Days Duration", "Without Air Ticket", "Makkah: Hilton Convention", "Madinah: Saja Al Madinah", "Umrah Visa Included"],
+    features: [
+      "15 Days Duration",
+      "Without Air Ticket",
+      "Makkah: Hilton Convention",
+      "Madinah: Saja Al Madinah",
+      "Umrah Visa Included",
+    ],
     icon: Sparkles,
     color: "text-indigo-500",
-    bg: "bg-indigo-50"
+    bg: "bg-indigo-50",
   },
   {
     title: "5 Star Luxury",
     price: "From PKR 395,000",
     rating: "5.0",
-    features: ["7-15 Days Duration", "Front-row 5 Star Hotels", "VIP Private Transport", "Full Board Options", "24/7 Ground Support"],
+    features: [
+      "7-15 Days Duration",
+      "Front-row 5 Star Hotels",
+      "VIP Private Transport",
+      "Full Board Options",
+      "24/7 Ground Support",
+    ],
     icon: ShieldCheck,
     color: "text-emerald-500",
-    bg: "bg-emerald-50"
+    bg: "bg-emerald-50",
   },
 ];
 
@@ -106,7 +137,7 @@ function UmrahPage() {
           subtitle="From budget-friendly economy stays to premium 5-star luxury experiences — we handle every detail of your sacred pilgrimage."
           backgroundImage={umrahHero}
         />
-        
+
         {/* Integrated Booking Widget */}
         <div className="relative z-10 -mt-16 md:-mt-24 pb-20">
           <Reveal delay={0.2}>
@@ -138,28 +169,40 @@ function UmrahPage() {
                 </span>
                 <h2 className="text-2xl md:text-3xl font-black text-foreground tracking-tight flex items-center justify-between gap-2">
                   Silver
-                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">15 Days</span>
+                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">
+                    15 Days
+                  </span>
                 </h2>
-                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">Without Air Ticket</p>
+                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">
+                  Without Air Ticket
+                </p>
 
                 <div className="grid gap-2 sm:grid-cols-3 pt-1">
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex flex-col gap-1 hover:bg-white hover:border-primary/20 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Quad</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Quad
+                    </span>
                     <p className="text-base font-black text-primary">139,000</p>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex flex-col gap-1 hover:bg-white hover:border-primary/20 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Triple</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Triple
+                    </span>
                     <p className="text-base font-black text-primary">159,000</p>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex flex-col gap-1 hover:bg-white hover:border-primary/20 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Double</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Double
+                    </span>
                     <p className="text-base font-black text-primary">199,000</p>
                   </div>
                 </div>
 
                 <div className="grid gap-3 pt-4 border-t border-slate-100">
                   <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div className="h-8 w-8 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-extrabold text-sm">
+                      M
+                    </div>
                     <div>
                       <h4 className="font-bold text-sm">Makkah 6+4 Nights</h4>
                       <p className="text-xs text-slate-500 font-bold">Voco Hotel (Room Only)</p>
@@ -167,7 +210,9 @@ function UmrahPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div className="h-8 w-8 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-extrabold text-sm">
+                      M
+                    </div>
                     <div>
                       <h4 className="font-bold text-sm">Madinah 4 Nights</h4>
                       <p className="text-xs text-slate-500 font-bold">Zawar International</p>
@@ -177,9 +222,15 @@ function UmrahPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground pt-4 border-t border-slate-100">
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Visa</span>
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport</span>
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)</span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Visa
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)
+                  </span>
                 </div>
               </div>
 
@@ -208,28 +259,40 @@ function UmrahPage() {
                 </span>
                 <h2 className="text-2xl md:text-3xl font-black text-foreground tracking-tight flex items-center justify-between gap-2">
                   Gold
-                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">15 Days</span>
+                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">
+                    15 Days
+                  </span>
                 </h2>
-                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">Without Air Ticket</p>
+                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">
+                  Without Air Ticket
+                </p>
 
                 <div className="grid gap-2 sm:grid-cols-3 pt-1">
                   <div className="p-3 rounded-xl bg-amber-50/30 border border-amber-100/40 flex flex-col gap-1 hover:bg-white hover:border-amber-300 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Quad</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Quad
+                    </span>
                     <p className="text-base font-black text-amber-600">250,000</p>
                   </div>
                   <div className="p-3 rounded-xl bg-amber-50/30 border border-amber-100/40 flex flex-col gap-1 hover:bg-white hover:border-amber-300 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Triple</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Triple
+                    </span>
                     <p className="text-base font-black text-amber-600">285,000</p>
                   </div>
                   <div className="p-3 rounded-xl bg-amber-50/30 border border-amber-100/40 flex flex-col gap-1 hover:bg-white hover:border-amber-300 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Double</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Double
+                    </span>
                     <p className="text-base font-black text-amber-600">355,000</p>
                   </div>
                 </div>
 
                 <div className="grid gap-3 pt-4 border-t border-slate-100">
                   <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 shrink-0 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div className="h-8 w-8 shrink-0 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-extrabold text-sm">
+                      M
+                    </div>
                     <div>
                       <h4 className="font-bold text-sm">Makkah 6+4 Nights</h4>
                       <p className="text-xs text-slate-500 font-bold">DoubleTree by Hilton</p>
@@ -237,7 +300,9 @@ function UmrahPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 shrink-0 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div className="h-8 w-8 shrink-0 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-extrabold text-sm">
+                      M
+                    </div>
                     <div>
                       <h4 className="font-bold text-sm">Madinah 4 Nights</h4>
                       <p className="text-xs text-slate-500 font-bold">Waqf Bin Usman</p>
@@ -247,9 +312,15 @@ function UmrahPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground pt-4 border-t border-slate-100">
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Visa</span>
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport</span>
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)</span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Visa
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)
+                  </span>
                 </div>
               </div>
 
@@ -278,28 +349,40 @@ function UmrahPage() {
                 </span>
                 <h2 className="text-2xl md:text-3xl font-black text-foreground tracking-tight flex items-center justify-between gap-2">
                   Platinum
-                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">15 Days</span>
+                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">
+                    15 Days
+                  </span>
                 </h2>
-                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">Without Air Ticket</p>
+                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">
+                  Without Air Ticket
+                </p>
 
                 <div className="grid gap-2 sm:grid-cols-3 pt-1">
                   <div className="p-3 rounded-xl bg-indigo-50/30 border border-indigo-100/40 flex flex-col gap-1 hover:bg-white hover:border-indigo-300 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Quad</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Quad
+                    </span>
                     <p className="text-base font-black text-indigo-600">275,000</p>
                   </div>
                   <div className="p-3 rounded-xl bg-indigo-50/30 border border-indigo-100/40 flex flex-col gap-1 hover:bg-white hover:border-indigo-300 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Triple</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Triple
+                    </span>
                     <p className="text-base font-black text-indigo-600">315,000</p>
                   </div>
                   <div className="p-3 rounded-xl bg-indigo-50/30 border border-indigo-100/40 flex flex-col gap-1 hover:bg-white hover:border-indigo-300 transition-all text-center">
-                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Double</span>
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                      Double
+                    </span>
                     <p className="text-base font-black text-indigo-600">399,000</p>
                   </div>
                 </div>
 
                 <div className="grid gap-3 pt-4 border-t border-slate-100">
                   <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 shrink-0 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div className="h-8 w-8 shrink-0 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center font-extrabold text-sm">
+                      M
+                    </div>
                     <div>
                       <h4 className="font-bold text-sm">Makkah 6+4 Nights</h4>
                       <p className="text-xs text-slate-500 font-bold">Hilton Convention</p>
@@ -307,7 +390,9 @@ function UmrahPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 shrink-0 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div className="h-8 w-8 shrink-0 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center font-extrabold text-sm">
+                      M
+                    </div>
                     <div>
                       <h4 className="font-bold text-sm">Madinah 4 Nights</h4>
                       <p className="text-xs text-slate-500 font-bold">Saja Al Madinah</p>
@@ -317,9 +402,15 @@ function UmrahPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground pt-4 border-t border-slate-100">
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Visa</span>
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport</span>
-                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)</span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Visa
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)
+                  </span>
                 </div>
               </div>
 
@@ -349,15 +440,20 @@ function UmrahPage() {
           {UMRAH_PACKAGES.map((pkg, i) => (
             <Reveal key={pkg.title} delay={i * 0.1} className="h-full">
               <div className="group relative h-full flex flex-col overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 transition-all duration-300 hover:shadow-elevated hover:-translate-y-2">
-                <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${pkg.bg} ${pkg.color} transition-transform group-hover:scale-110`}>
+                <div
+                  className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${pkg.bg} ${pkg.color} transition-transform group-hover:scale-110`}
+                >
                   <pkg.icon size={28} />
                 </div>
                 <h3 className="text-xl font-bold">{pkg.title}</h3>
                 <p className="mt-2 text-2xl font-black text-primary">{pkg.price}</p>
-                
+
                 <div className="mt-6 space-y-3 flex-1">
                   {pkg.features.map((feat) => (
-                    <div key={feat} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <div
+                      key={feat}
+                      className="flex items-start gap-3 text-sm text-muted-foreground"
+                    >
                       <CheckCircle2 size={16} className="text-primary shrink-0 mt-0.5" />
                       <span className="leading-tight">{feat}</span>
                     </div>
@@ -387,28 +483,37 @@ function UmrahPage() {
                   Customized Umrah Planning
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Can't find exactly what you're looking for? Our <strong>Custom Umrah Selection</strong> allows you to build your own itinerary. Choose your preferred hotels, decide how many days you want to spend in Makkah and Madinah, and select the transport that suits your family.
+                  Can't find exactly what you're looking for? Our{" "}
+                  <strong>Custom Umrah Selection</strong> allows you to build your own itinerary.
+                  Choose your preferred hotels, decide how many days you want to spend in Makkah and
+                  Madinah, and select the transport that suits your family.
                 </p>
                 <div className="grid gap-4 pt-4">
                   {[
                     { icon: Hotel, text: "Choice of 300+ Hotels in Makkah & Madinah" },
                     { icon: Bus, text: "Private GMC or Luxury Bus Transport" },
-                    { 
-                      icon: Calendar, 
-                      text: "Stay Duration", 
+                    {
+                      icon: Calendar,
+                      text: "Stay Duration",
                       extra: (
                         <div className="flex flex-wrap gap-2 mt-2">
-                          {["7", "10", "15", "30"].map(d => (
-                            <span key={d} className="px-3 py-1.5 rounded-xl bg-primary/5 text-primary text-[11px] font-black border border-primary/10 hover:bg-primary hover:text-white transition-all cursor-default">
+                          {["7", "10", "15", "30"].map((d) => (
+                            <span
+                              key={d}
+                              className="px-3 py-1.5 rounded-xl bg-primary/5 text-primary text-[11px] font-black border border-primary/10 hover:bg-primary hover:text-white transition-all cursor-default"
+                            >
                               {d} Days
                             </span>
                           ))}
                         </div>
-                      )
+                      ),
                     },
                     { icon: Users, text: "Group or Private Family Packages" },
                   ].map((item) => (
-                    <div key={item.text} className="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-soft border border-border/50">
+                    <div
+                      key={item.text}
+                      className="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-soft border border-border/50"
+                    >
                       <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary shrink-0">
                         <item.icon size={20} />
                       </div>
@@ -427,21 +532,24 @@ function UmrahPage() {
                 </Link>
               </div>
             </Reveal>
-            
+
             <Reveal delay={0.2}>
               <div className="relative group">
                 {/* Decoration */}
                 <div className="absolute -inset-4 bg-primary/10 rounded-[4rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
+
                 <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl isolate transform translate-z-0">
-                  <img 
-                    src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Pilgrims at Makkah" 
+                  <img
+                    src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1000"
+                    alt="Pilgrims at Makkah"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-10 left-10 right-10 text-white">
-                    <p className="text-2xl font-bold italic tracking-tight leading-snug">"Everything was handled perfectly, from the visa to the hotels right in front of the Haram."</p>
+                    <p className="text-2xl font-bold italic tracking-tight leading-snug">
+                      "Everything was handled perfectly, from the visa to the hotels right in front
+                      of the Haram."
+                    </p>
                     <p className="mt-6 font-semibold opacity-80 font-display uppercase tracking-widest text-xs flex items-center gap-2">
                       <span className="h-px w-8 bg-white/40" />
                       Hammad Ahmed, Islamabad
@@ -459,37 +567,50 @@ function UmrahPage() {
         <div className="prose prose-slate max-w-none">
           <h2 className="text-center mb-12">Expert Umrah Travel Agency in Islamabad</h2>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            Finding the <strong>best Umrah packages from Pakistan 2026</strong> can be overwhelming. At OS Consultants, we simplify your spiritual journey. As a leading <strong>Umrah travel agency in Islamabad</strong>, we provide verified <strong>cheap Umrah packages</strong> that don't compromise on quality or proximity to the holy sites.
+            Finding the <strong>best Umrah packages from Pakistan 2026</strong> can be overwhelming.
+            At OS Consultants, we simplify your spiritual journey. As a leading{" "}
+            <strong>Umrah travel agency in Islamabad</strong>, we provide verified{" "}
+            <strong>cheap Umrah packages</strong> that don't compromise on quality or proximity to
+            the holy sites.
           </p>
-          
+
           <div className="grid gap-10 md:grid-cols-2 mt-12">
             <div>
               <h3 className="text-xl font-bold mb-4">Economy & Budget Umrah 2026</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Our <strong>economy Umrah packages 2026</strong> are perfect for families looking for affordability. We ensure clean, certified hotels with shuttle services, making it the most reliable <strong>budget Umrah Islamabad</strong> option.
+                Our <strong>economy Umrah packages 2026</strong> are perfect for families looking
+                for affordability. We ensure clean, certified hotels with shuttle services, making
+                it the most reliable <strong>budget Umrah Islamabad</strong> option.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Luxury 5-Star Umrah Experience</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                For those seeking comfort, our <strong>luxury Umrah packages 2026</strong> feature stays in the Clock Tower or hotels directly facing the Haram. With private VIP transport and premium ground handling, your focus remains entirely on your prayers.
+                For those seeking comfort, our <strong>luxury Umrah packages 2026</strong> feature
+                stays in the Clock Tower or hotels directly facing the Haram. With private VIP
+                transport and premium ground handling, your focus remains entirely on your prayers.
               </p>
             </div>
           </div>
-          
+
           <div className="mt-16 p-8 md:p-10 rounded-[2.5rem] bg-secondary/30 border border-border/50 relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 opacity-5">
               <ShieldCheck size={120} className="text-primary" />
             </div>
-            <h3 className="text-2xl font-bold mb-8 text-center relative z-10">Why Book Your Umrah with OS Consultants?</h3>
+            <h3 className="text-2xl font-bold mb-8 text-center relative z-10">
+              Why Book Your Umrah with OS Consultants?
+            </h3>
             <div className="grid sm:grid-cols-2 gap-6 relative z-10">
               {[
                 { t: "Authorized Umrah Visa Agent", d: "Directly processing in Blue Area, ISB" },
                 { t: "Confirmed Hotel Bookings", d: "Makkah & Madinah proximity guaranteed" },
                 { t: "Best Umrah Airfares", d: "Exclusive rates from Islamabad/Lahore" },
-                { t: "24/7 Pilgrim Support", d: "Dedicated team on ground in KSA" }
+                { t: "24/7 Pilgrim Support", d: "Dedicated team on ground in KSA" },
               ].map((item) => (
-                <div key={item.t} className="flex items-start gap-4 p-4 rounded-2xl bg-white/50 border border-white/50 shadow-sm hover:bg-white transition-colors">
+                <div
+                  key={item.t}
+                  className="flex items-start gap-4 p-4 rounded-2xl bg-white/50 border border-white/50 shadow-sm hover:bg-white transition-colors"
+                >
                   <div className="h-8 w-8 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle2 size={18} className="text-emerald-600" />
                   </div>

@@ -16,7 +16,10 @@ export const Route = createFileRoute("/countries/europe-others/$country")({
     meta: [
       { title: loaderData?.title || "European Visa Consultant Islamabad" },
       { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, europe visa, travel agency pakistan` },
+      {
+        name: "keywords",
+        content: `${loaderData?.keywords || ""}, europe visa, travel agency pakistan`,
+      },
     ],
   }),
   component: EuropeOthersCountryPage,
@@ -75,7 +78,8 @@ function EuropeOthersCountryPage() {
                 <h3 className="font-bold text-lg">Why {country.name}?</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Visit {country.name} with ease. Our specialized consultants provide expert file preparation for all European non-Schengen destinations.
+                Visit {country.name} with ease. Our specialized consultants provide expert file
+                preparation for all European non-Schengen destinations.
               </p>
             </div>
           </div>
@@ -86,11 +90,10 @@ function EuropeOthersCountryPage() {
         <div className="container-px mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold md:text-4xl">
-                Experience {country.name}
-              </h2>
+              <h2 className="text-3xl font-bold md:text-4xl">Experience {country.name}</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Our team handles European visa applications with meticulous care. Book your consultation now.
+                Our team handles European visa applications with meticulous care. Book your
+                consultation now.
               </p>
               <div className="pt-6 flex flex-wrap gap-4">
                 <a

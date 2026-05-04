@@ -45,13 +45,15 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`z-[100] transition-all duration-500 ${scrolled
+        className={`z-[100] transition-all duration-500 ${
+          scrolled
             ? "fixed top-4 left-1/2 -translate-x-1/2 max-w-7xl rounded-full bg-sky-100/70 dark:bg-blue-950/70 backdrop-blur-xl border border-sky-400/50 shadow-elevated h-16 w-[96%] px-1 duration-300 ease-in-out"
             : "sticky top-0 w-full bg-sky-500/10 backdrop-blur-md border-b border-sky-400/20 shadow-sm h-20"
-          }`}
+        }`}
       >
-
-        <div className={`container-px mx-auto flex items-center justify-between gap-2 lg:gap-4 xl:gap-8 transition-all duration-300 h-full max-w-7xl px-4 ${scrolled ? "px-6" : ""}`}>
+        <div
+          className={`container-px mx-auto flex items-center justify-between gap-2 lg:gap-4 xl:gap-8 transition-all duration-300 h-full max-w-7xl px-4 ${scrolled ? "px-6" : ""}`}
+        >
           <Link to="/" className="group flex flex-shrink-0 items-center gap-3">
             <img
               src={logo}
@@ -60,7 +62,10 @@ export function Navbar() {
             />
             <div className="hidden sm:block border-l border-border h-6 mx-1" />
             <span className="hidden sm:block leading-tight">
-              <span className="block text-sm md:text-base xl:text-lg font-bold italic tracking-tight whitespace-nowrap uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <span
+                className="block text-sm md:text-base xl:text-lg font-bold italic tracking-tight whitespace-nowrap uppercase"
+                style={{ fontFamily: "'Poppins', sans-serif" }}
+              >
                 OS <span className="gradient-text-accent">Consultants</span>
               </span>
             </span>
@@ -78,7 +83,10 @@ export function Navbar() {
                 >
                   <button className="flex items-center gap-1 px-3 py-2 text-sm font-bold text-foreground/80 hover:text-primary transition-all rounded-full hover:bg-primary/5 select-none whitespace-nowrap">
                     {l.label}
-                    <ChevronDown size={14} className="opacity-60 transition-transform group-hover:rotate-180" />
+                    <ChevronDown
+                      size={14}
+                      className="opacity-60 transition-transform group-hover:rotate-180"
+                    />
                   </button>
                   <AnimatePresence>
                     {activeDropdown === l.label && (
@@ -91,7 +99,9 @@ export function Navbar() {
                       >
                         {l.children.map((c, idx) => (
                           <Fragment key={c.to}>
-                            {idx > 0 && <div className="mx-2 my-1 h-[1.5px] bg-gradient-to-r from-blue-500 to-orange-500 opacity-70" />}
+                            {idx > 0 && (
+                              <div className="mx-2 my-1 h-[1.5px] bg-gradient-to-r from-blue-500 to-orange-500 opacity-70" />
+                            )}
                             <Link
                               to={c.to}
                               activeOptions={{ exact: c.to === "/" }}
@@ -99,7 +109,10 @@ export function Navbar() {
                               className="px-4 py-2.5 text-xs font-semibold text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-xl transition-all flex items-center justify-between whitespace-nowrap"
                             >
                               {c.label}
-                              <ChevronRight size={14} className="opacity-0 group-hover:opacity-40 transition-opacity" />
+                              <ChevronRight
+                                size={14}
+                                className="opacity-0 group-hover:opacity-40 transition-opacity"
+                              />
                             </Link>
                           </Fragment>
                         ))}
@@ -117,7 +130,7 @@ export function Navbar() {
                 >
                   {l.label}
                 </Link>
-              )
+              ),
             )}
           </nav>
 
@@ -164,7 +177,10 @@ export function Navbar() {
                 <div className="flex items-center justify-between border-b border-border px-6 py-5">
                   <div className="flex items-center gap-3">
                     <img src={logo} alt="OS Consultants Logo" className="h-8 w-auto" />
-                    <span className="font-bold italic tracking-tight text-lg uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    <span
+                      className="font-bold italic tracking-tight text-lg uppercase"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
                       OS <span className="text-accent">Consultants</span>
                     </span>
                   </div>

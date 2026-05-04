@@ -53,7 +53,8 @@ export function Hero() {
             </h2>
             <p className="mt-5 max-w-xl text-base text-white/85 md:text-lg leading-relaxed">
               From Schengen to the USA, UK, Canada, Australia and beyond — OS Consultants delivers
-              premium visa, ticketing, hotel and insurance services backed by 15+ years of expertise.
+              premium visa, ticketing, hotel and insurance services backed by 15+ years of
+              expertise.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
               <Link
@@ -85,7 +86,7 @@ export function Hero() {
               ].map((s: { v: string; l: string }, idx: number) => (
                 <div
                   key={s.l}
-                  className={`rounded-xl border border-white/15 bg-white/5 p-3 backdrop-blur text-center ${idx === 2 ? 'col-span-2 sm:col-span-1' : ''}`}
+                  className={`rounded-xl border border-white/15 bg-white/5 p-3 backdrop-blur text-center ${idx === 2 ? "col-span-2 sm:col-span-1" : ""}`}
                 >
                   <p className="text-xl font-bold text-white md:text-2xl">{s.v}</p>
                   <p className="mt-0.5 text-[11px] text-white/70 leading-tight">{s.l}</p>
@@ -104,7 +105,12 @@ export function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="w-full overflow-hidden"
-              style={{ maskImage: "linear-gradient(to right, transparent, black 2%, black 98%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 2%, black 98%, transparent)" }}
+              style={{
+                maskImage:
+                  "linear-gradient(to right, transparent, black 2%, black 98%, transparent)",
+                WebkitMaskImage:
+                  "linear-gradient(to right, transparent, black 2%, black 98%, transparent)",
+              }}
             >
               <motion.div
                 className="flex gap-4 w-max"
@@ -112,7 +118,10 @@ export function Hero() {
                 transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
               >
                 {[...COUNTRIES, ...COUNTRIES].map((country, idx) => (
-                  <div key={`slide-${country.slug}-${idx}`} className="w-[240px] md:w-[280px] flex-shrink-0">
+                  <div
+                    key={`slide-${country.slug}-${idx}`}
+                    className="w-[240px] md:w-[280px] flex-shrink-0"
+                  >
                     <CountryCard {...country} />
                   </div>
                 ))}
@@ -147,7 +156,9 @@ export function Hero() {
                       <ShieldCheck size={16} />
                     </span>
                     <div>
-                      <p className="text-[11px] font-semibold text-foreground/70">IATA Authorized</p>
+                      <p className="text-[11px] font-semibold text-foreground/70">
+                        IATA Authorized
+                      </p>
                       <p className="text-xs font-bold text-foreground">Trusted Agency</p>
                     </div>
                   </div>
@@ -163,7 +174,9 @@ export function Hero() {
                       <Plane size={16} />
                     </span>
                     <div>
-                      <p className="text-[11px] font-semibold text-foreground/70">Flights worldwide</p>
+                      <p className="text-[11px] font-semibold text-foreground/70">
+                        Flights worldwide
+                      </p>
                       <p className="text-xs font-bold text-foreground">Best Fares Guaranteed</p>
                     </div>
                   </div>
@@ -188,7 +201,6 @@ export function Hero() {
             </motion.div>
           </div>
         </div>
-
       </div>
     </section>
   );

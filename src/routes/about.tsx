@@ -3,7 +3,17 @@ import { PageHero } from "@/components/site/PageHero";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { Reveal } from "@/components/site/Reveal";
 import { FAQAccordion } from "@/components/site/FAQAccordion";
-import { Award, Target, Eye, Users, Globe2, Sparkles, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import {
+  Award,
+  Target,
+  Eye,
+  Users,
+  Globe2,
+  Sparkles,
+  ArrowRight,
+  ShieldCheck,
+  CheckCircle2,
+} from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -23,7 +33,10 @@ export const Route = createFileRoute("/about")({
       { name: "author", content: "OS Consultants" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: "About OS Consultants — Pakistan's Leading Visa & Travel Agency Since 2009" },
+      {
+        property: "og:title",
+        content: "About OS Consultants — Pakistan's Leading Visa & Travel Agency Since 2009",
+      },
       {
         property: "og:description",
         content:
@@ -34,11 +47,13 @@ export const Route = createFileRoute("/about")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "About OS Consultants | Pakistan's #1 Since 2009" },
-      { name: "twitter:description", content: "15+ years, 20K+ clients, 98% approval rate. The story of Pakistan's top visa agency." },
+      {
+        name: "twitter:description",
+        content:
+          "15+ years, 20K+ clients, 98% approval rate. The story of Pakistan's top visa agency.",
+      },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/about" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/about" }],
   }),
   component: About,
 });
@@ -143,7 +158,8 @@ function About() {
                 The Top Visa Consultancy in Pakistan
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base">
-                With over a decade of continuous presence in Blue Area, Islamabad, we've set industry benchmarks for transparency, validation, and processing accuracy.
+                With over a decade of continuous presence in Blue Area, Islamabad, we've set
+                industry benchmarks for transparency, validation, and processing accuracy.
               </p>
               <ul className="space-y-3.5">
                 {[
@@ -167,8 +183,11 @@ function About() {
                 { label: "Visa Approved Rate", count: "98% Validated" },
                 { label: "Travel Insurance Partner", count: "100% Compliant" },
                 { label: "Total Successful Visas", count: "12,500+" },
-              ].map(d => (
-                <div key={d.label} className="p-6 bg-card border border-border rounded-2xl shadow-soft">
+              ].map((d) => (
+                <div
+                  key={d.label}
+                  className="p-6 bg-card border border-border rounded-2xl shadow-soft"
+                >
                   <p className="text-sm font-bold text-foreground">{d.label}</p>
                   <p className="text-xl font-extrabold gradient-text mt-2">{d.count}</p>
                 </div>
@@ -182,20 +201,46 @@ function About() {
       <section className="container-px mx-auto max-w-7xl py-20 border-t border-border/50">
         <Reveal>
           <div className="prose max-w-none prose-lg">
-            <h2 className="text-3xl font-bold md:text-4xl text-foreground">Our Story & Extensive Industry Expertise</h2>
+            <h2 className="text-3xl font-bold md:text-4xl text-foreground">
+              Our Story & Extensive Industry Expertise
+            </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              For more than 15 years, OS Consultants has maintained its status as the most comprehensive travel agency and trusted visa consultant in Islamabad. We provide reliable guidance across a variety of pathways for individuals seeking to travel abroad, study internationally, or move overseas. Operating from our central office in Blue Area, Islamabad, we understand that submitting visa applications can be a stressful experience, which is why we handle all aspects of the process from end to end.
+              For more than 15 years, OS Consultants has maintained its status as the most
+              comprehensive travel agency and trusted visa consultant in Islamabad. We provide
+              reliable guidance across a variety of pathways for individuals seeking to travel
+              abroad, study internationally, or move overseas. Operating from our central office in
+              Blue Area, Islamabad, we understand that submitting visa applications can be a
+              stressful experience, which is why we handle all aspects of the process from end to
+              end.
             </p>
-            <h3 className="text-2xl font-bold text-foreground mt-8">Extensive Focus on Schengen, US, UK & Canada Visas</h3>
+            <h3 className="text-2xl font-bold text-foreground mt-8">
+              Extensive Focus on Schengen, US, UK & Canada Visas
+            </h3>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              We specialize in preparing detailed documentation for Schengen visa applications across all 29 member countries. Our thorough document verification ensures your bank statements, travel insurance, flight reservations, and hotel itineraries meet the exacting requirements of various embassies. Furthermore, we help you draft personalized cover letters that clearly present the purpose of your trip to entry clearance officers.
+              We specialize in preparing detailed documentation for Schengen visa applications
+              across all 29 member countries. Our thorough document verification ensures your bank
+              statements, travel insurance, flight reservations, and hotel itineraries meet the
+              exacting requirements of various embassies. Furthermore, we help you draft
+              personalized cover letters that clearly present the purpose of your trip to entry
+              clearance officers.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              When applying for a UK, USA, or Canada visa, small errors can lead to immediate rejections. Our case officers review every single document to confirm full compliance with immigration rules. We offer end-to-end support for business visits, family visits, tourism, and study permits. Our goal is to maintain our strong 98% approval rate by providing you with premium, specialized advice.
+              When applying for a UK, USA, or Canada visa, small errors can lead to immediate
+              rejections. Our case officers review every single document to confirm full compliance
+              with immigration rules. We offer end-to-end support for business visits, family
+              visits, tourism, and study permits. Our goal is to maintain our strong 98% approval
+              rate by providing you with premium, specialized advice.
             </p>
-            <h3 className="text-2xl font-bold text-foreground mt-8">IATA-Accredited Services & Reliable Booking</h3>
+            <h3 className="text-2xl font-bold text-foreground mt-8">
+              IATA-Accredited Services & Reliable Booking
+            </h3>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              In addition to offering visa consultancy, OS Consultants is a fully IATA-accredited travel agency. This accreditation allows us to book flights on major airlines at highly competitive prices. We also offer affordable Umrah packages, flexible hotel bookings, and comprehensive travel insurance. By combining these services into one reliable travel agency, we save you time and money while making your journey much smoother.
+              In addition to offering visa consultancy, OS Consultants is a fully IATA-accredited
+              travel agency. This accreditation allows us to book flights on major airlines at
+              highly competitive prices. We also offer affordable Umrah packages, flexible hotel
+              bookings, and comprehensive travel insurance. By combining these services into one
+              reliable travel agency, we save you time and money while making your journey much
+              smoother.
             </p>
           </div>
         </Reveal>

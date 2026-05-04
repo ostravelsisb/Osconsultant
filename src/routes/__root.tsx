@@ -98,14 +98,29 @@ function RootComponent() {
       "@type": "OfferCatalog",
       name: "Travel & Visa Services",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Schengen Visa Consultancy" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "USA B1/B2 & F1 Visa Processing" } },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "Schengen Visa Consultancy" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "USA B1/B2 & F1 Visa Processing" },
+        },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "UK Standard Visitor Visa" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Canada TRV & Study Permit" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Australia Subclass 600 Visa" } },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "Canada TRV & Study Permit" },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "Australia Subclass 600 Visa" },
+        },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "IATA Air Ticketing" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Umrah Packages 2026" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "International Hotel Bookings" } },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "International Hotel Bookings" },
+        },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Travel Insurance" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Passport Services" } },
       ],
@@ -118,7 +133,15 @@ function RootComponent() {
     },
     foundingDate: "2009",
     numberOfEmployees: { "@type": "QuantitativeValue", value: "25+" },
-    knowsAbout: ["Visa Processing", "Immigration Consultancy", "IATA Air Ticketing", "Umrah Packages", "Travel Insurance", "Hotel Bookings", "Passport Services"],
+    knowsAbout: [
+      "Visa Processing",
+      "Immigration Consultancy",
+      "IATA Air Ticketing",
+      "Umrah Packages",
+      "Travel Insurance",
+      "Hotel Bookings",
+      "Passport Services",
+    ],
   };
 
   const location = useLocation();
@@ -136,7 +159,9 @@ function RootComponent() {
       // Prevent Ctrl+C, Ctrl+U, Ctrl+Shift+I, F12
       if (
         (e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s" || e.key === "a")) ||
-        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C" || e.key === "i")) ||
+        (e.ctrlKey &&
+          e.shiftKey &&
+          (e.key === "I" || e.key === "J" || e.key === "C" || e.key === "i")) ||
         e.key === "F12"
       ) {
         e.preventDefault();
@@ -150,23 +175,31 @@ function RootComponent() {
     // Dynamic High-Intent Keyword Injector for automatic Google SEO
     const routeKeywords: Record<string, string> = {
       "/": "best travel agency in pakistan 2026, top visa consultant pakistan, top rated travel agency islamabad, cheap international flights islamabad",
-      "/about": "about os consultants, trusted visa agency islamabad, experienced tour operator pakistan, best visa company blue area islamabad",
-      "/umrah": "best umrah packages pakistan 2026, cheap umrah deals islamabad, 5 star luxury umrah makkah madinah, trusted umrah visa agent",
-      "/visa-services": "schengen visa consultant islamabad, uk student visa consultant, usa tourist visa agent pakistan, canada trv processing",
-      "/countries": "schengen country visa requirements 2026, europe tourist visa agent, best travel and tours islamabad",
-      "/air-ticketing": "cheap airline tickets islamabad, book online flights pakistan, iata accredited air travel agent, business class deals",
-      "/contact": "contact os consultants, travel agency office blue area, visa office phone number islamabad, whatsapp os travel"
+      "/about":
+        "about os consultants, trusted visa agency islamabad, experienced tour operator pakistan, best visa company blue area islamabad",
+      "/umrah":
+        "best umrah packages pakistan 2026, cheap umrah deals islamabad, 5 star luxury umrah makkah madinah, trusted umrah visa agent",
+      "/visa-services":
+        "schengen visa consultant islamabad, uk student visa consultant, usa tourist visa agent pakistan, canada trv processing",
+      "/countries":
+        "schengen country visa requirements 2026, europe tourist visa agent, best travel and tours islamabad",
+      "/air-ticketing":
+        "cheap airline tickets islamabad, book online flights pakistan, iata accredited air travel agent, business class deals",
+      "/contact":
+        "contact os consultants, travel agency office blue area, visa office phone number islamabad, whatsapp os travel",
     };
 
-    const activeKeywords = routeKeywords[location.pathname] || "best travel agency in pakistan 2026, no 1 visa consultant pakistan, leading travel agent islamabad";
+    const activeKeywords =
+      routeKeywords[location.pathname] ||
+      "best travel agency in pakistan 2026, no 1 visa consultant pakistan, leading travel agent islamabad";
 
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
+      metaKeywords = document.createElement("meta");
+      metaKeywords.setAttribute("name", "keywords");
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', activeKeywords);
+    metaKeywords.setAttribute("content", activeKeywords);
 
     // Auto update page titles for maximum Google search relevance
     if (document.title && !document.title.includes("OS Consultants")) {

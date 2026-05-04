@@ -24,7 +24,10 @@ import { VISA_SERVICES } from "@/data/site";
 export const Route = createFileRoute("/visa-services")({
   head: () => ({
     meta: [
-      { title: "#1 Visa Consultant in Islamabad 2026 | Best Visa Services in Pakistan | OS Consultants" },
+      {
+        title:
+          "#1 Visa Consultant in Islamabad 2026 | Best Visa Services in Pakistan | OS Consultants",
+      },
       {
         name: "description",
         content:
@@ -39,7 +42,11 @@ export const Route = createFileRoute("/visa-services")({
       { name: "author", content: "OS Consultants" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: "Pakistan's #1 Visa Consultant 2026 — 98% Approval Rate | OS Consultants Islamabad" },
+      {
+        property: "og:title",
+        content:
+          "Pakistan's #1 Visa Consultant 2026 — 98% Approval Rate | OS Consultants Islamabad",
+      },
       {
         property: "og:description",
         content:
@@ -51,11 +58,12 @@ export const Route = createFileRoute("/visa-services")({
       { property: "og:locale", content: "en_PK" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "#1 Visa Consultant Islamabad | OS Consultants" },
-      { name: "twitter:description", content: "98% approval rate. UK, USA, Canada, Schengen & Australia visas from Islamabad." },
+      {
+        name: "twitter:description",
+        content: "98% approval rate. UK, USA, Canada, Schengen & Australia visas from Islamabad.",
+      },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/visa-services" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/visa-services" }],
   }),
   component: VisaServices,
 });
@@ -174,9 +182,7 @@ function VisaServices() {
                     {p.step}
                   </span>
                   <h3 className="text-xl font-bold mt-4">{p.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    {p.desc}
-                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -196,7 +202,8 @@ function VisaServices() {
                 Dubai, UAE & Saudi Arabia Visas From Pakistan
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base">
-                Navigating middle east work or tourist requirements shouldn't be confusing. We provide express e-visa and direct embassy services for quick travel.
+                Navigating middle east work or tourist requirements shouldn't be confusing. We
+                provide express e-visa and direct embassy services for quick travel.
               </p>
               <ul className="space-y-3.5">
                 {[
@@ -218,12 +225,18 @@ function VisaServices() {
               <div className="p-6 bg-card border border-border rounded-2xl shadow-soft">
                 <BookOpen className="text-primary" size={32} />
                 <h4 className="text-lg font-bold mt-4">Document Checklists</h4>
-                <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">Exact checklists for all major embassies tailored to your employment and business profile.</p>
+                <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+                  Exact checklists for all major embassies tailored to your employment and business
+                  profile.
+                </p>
               </div>
               <div className="p-6 bg-card border border-border rounded-2xl shadow-soft">
                 <ShieldCheck className="text-primary" size={32} />
                 <h4 className="text-lg font-bold mt-4">Safe Tracking</h4>
-                <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">Direct end-to-end tracking of application status with direct embassy notifications.</p>
+                <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+                  Direct end-to-end tracking of application status with direct embassy
+                  notifications.
+                </p>
               </div>
             </div>
           </Reveal>

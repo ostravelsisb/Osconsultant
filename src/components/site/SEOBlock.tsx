@@ -10,37 +10,87 @@ export function SEOBlock() {
         Pakistan's No.1 Travel Agency & Best Visa Consultant
       </h2>
       <p className="mb-4 leading-relaxed">
-        OS Consultants is widely recognized as the <strong><Link to="/">No.1 Travel Agency in Pakistan</Link></strong>{" "}
+        OS Consultants is widely recognized as the{" "}
+        <strong>
+          <Link to="/">No.1 Travel Agency in Pakistan</Link>
+        </strong>{" "}
         and the <strong>best visa consultant in Islamabad</strong>. We provide premium, reliable,
         and authorized travel services, helping thousands of clients with their global travel needs,
-        from <Link to="/air-ticketing">cheap flight bookings</Link> to complex immigration processes.
+        from <Link to="/air-ticketing">cheap flight bookings</Link> to complex immigration
+        processes.
       </p>
       <p className="mb-2 font-semibold text-white/70">
         As the top-rated travel agency and immigration consultant in Pakistan, we specialize in:
       </p>
       <ul className="mb-4 list-inside list-disc space-y-1">
-        <li><Link to="/air-ticketing">Worldwide Air Ticketing & Cheap Flight Bookings</Link></li>
-        <li><Link to="/countries/schengen">Schengen Visa Processing for Europe</Link></li>
-        <li><Link to="/countries">UK, USA, Canada & Australia Visa Assistance</Link></li>
-        <li><Link to="/hotel-booking">Global Hotel Reservations & Tour Packages</Link></li>
-        <li><Link to="/visa-services">Corporate Travel Management in Pakistan</Link></li>
+        <li>
+          <Link to="/air-ticketing">Worldwide Air Ticketing & Cheap Flight Bookings</Link>
+        </li>
+        <li>
+          <Link to="/countries/schengen">Schengen Visa Processing for Europe</Link>
+        </li>
+        <li>
+          <Link to="/countries">UK, USA, Canada & Australia Visa Assistance</Link>
+        </li>
+        <li>
+          <Link to="/hotel-booking">Global Hotel Reservations & Tour Packages</Link>
+        </li>
+        <li>
+          <Link to="/visa-services">Corporate Travel Management in Pakistan</Link>
+        </li>
       </ul>
       <p className="mb-4 leading-relaxed">
         Whether you are looking for the best travel agency in Pakistan to book your next vacation,
         or the top visa consultant in Islamabad to handle your student, work, or visit visa, OS
         Consultants is your ultimate gateway. We pride ourselves on a 98% visa success rate and
-        offering the cheapest flight tickets in Pakistan. Contact the <Link to="/contact">best travel and tours company in Pakistan</Link> today.
+        offering the cheapest flight tickets in Pakistan. Contact the{" "}
+        <Link to="/contact">best travel and tours company in Pakistan</Link> today.
       </p>
 
       {/* Hidden Keywords & Backlinks for SEO */}
       <div className="sr-only" aria-hidden="true">
         <p>{keywords}</p>
         <div className="flex flex-col gap-1 mt-2">
-          <a href="https://ostravel.pk" title="OS Travel Pakistan" target="_blank" rel="noopener noreferrer">OS Travel Pakistan</a>
-          <a href="https://ostravels.com" title="OS Travels" target="_blank" rel="noopener noreferrer">OS Travels</a>
-          <a href="https://www.facebook.com/osconsultants01/" title="OS Consultants Facebook" target="_blank" rel="noopener noreferrer">OS Consultants Facebook</a>
-          <a href="https://www.instagram.com/osconsultants.pk/" title="OS Consultants Instagram" target="_blank" rel="noopener noreferrer">OS Consultants Instagram</a>
-          <a href="https://www.linkedin.com/company/os-consultants/" title="OS Consultants LinkedIn" target="_blank" rel="noopener noreferrer">OS Consultants LinkedIn</a>
+          <a
+            href="https://ostravel.pk"
+            title="OS Travel Pakistan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OS Travel Pakistan
+          </a>
+          <a
+            href="https://ostravels.com"
+            title="OS Travels"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OS Travels
+          </a>
+          <a
+            href="https://www.facebook.com/osconsultants01/"
+            title="OS Consultants Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OS Consultants Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/osconsultants.pk/"
+            title="OS Consultants Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OS Consultants Instagram
+          </a>
+          <a
+            href="https://www.linkedin.com/company/os-consultants/"
+            title="OS Consultants LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OS Consultants LinkedIn
+          </a>
         </div>
       </div>
     </div>

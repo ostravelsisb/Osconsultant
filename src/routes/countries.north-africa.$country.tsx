@@ -16,7 +16,10 @@ export const Route = createFileRoute("/countries/north-africa/$country")({
     meta: [
       { title: loaderData?.title || "Visa Consultant Islamabad" },
       { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, top travel agency pakistan, best in islamabad, travel agency` },
+      {
+        name: "keywords",
+        content: `${loaderData?.keywords || ""}, top travel agency pakistan, best in islamabad, travel agency`,
+      },
     ],
   }),
   component: NorthAfricaCountryPage,
@@ -120,8 +123,9 @@ function NorthAfricaCountryPage() {
                 Start Your {country.name} Journey Today
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Our team at Pakistan's no.1 travel agency and consultancy has extensive experience with North African visa protocols. We
-                ensure your application is professionally prepared to maximize approval chances.
+                Our team at Pakistan's no.1 travel agency and consultancy has extensive experience
+                with North African visa protocols. We ensure your application is professionally
+                prepared to maximize approval chances.
               </p>
 
               <div className="pt-6 flex flex-wrap gap-4">

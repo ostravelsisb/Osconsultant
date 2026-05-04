@@ -16,7 +16,10 @@ export const Route = createFileRoute("/countries/americas/$country")({
     meta: [
       { title: loaderData?.title || "Americas Visa Consultant Islamabad" },
       { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, americas visa, travel agency islamabad` },
+      {
+        name: "keywords",
+        content: `${loaderData?.keywords || ""}, americas visa, travel agency islamabad`,
+      },
     ],
   }),
   component: AmericasCountryPage,
@@ -75,7 +78,8 @@ function AmericasCountryPage() {
                 <h3 className="font-bold text-lg">Why {country.name}?</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Explore the wonders of {country.name}. Our consultants ensure your application meets all consular requirements.
+                Explore the wonders of {country.name}. Our consultants ensure your application meets
+                all consular requirements.
               </p>
             </div>
           </div>
@@ -90,7 +94,8 @@ function AmericasCountryPage() {
                 Plan Your {country.name} Trip Today
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Our team specializes in complex visa cases for the Americas. Let us help you succeed.
+                Our team specializes in complex visa cases for the Americas. Let us help you
+                succeed.
               </p>
               <div className="pt-6 flex flex-wrap gap-4">
                 <a

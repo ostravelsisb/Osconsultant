@@ -14,27 +14,49 @@ export const Route = createFileRoute("/countries/east-asia/$country")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.title || "East Asia Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026` },
-      { name: "description", content: loaderData?.description ? `${loaderData.description} OS Consultants Islamabad — Pakistan's #1 visa agency. 98% approval rate, IATA-accredited, Blue Area office.` : "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, best east asia visa consultant islamabad, top east asia visa agent pakistan, east asia visa success rate pakistan, east asia visa from pakistan 2026, os consultants east asia visa, blue area visa consultant` },
+      {
+        title: `${loaderData?.title || "East Asia Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026`,
+      },
+      {
+        name: "description",
+        content: loaderData?.description
+          ? `${loaderData.description} OS Consultants Islamabad — Pakistan's #1 visa agency. 98% approval rate, IATA-accredited, Blue Area office.`
+          : "",
+      },
+      {
+        name: "keywords",
+        content: `${loaderData?.keywords || ""}, best east asia visa consultant islamabad, top east asia visa agent pakistan, east asia visa success rate pakistan, east asia visa from pakistan 2026, os consultants east asia visa, blue area visa consultant`,
+      },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
       { name: "author", content: "OS Consultants" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: `${loaderData?.name || "East Asia"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants` },
+      {
+        property: "og:title",
+        content: `${loaderData?.name || "East Asia"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants`,
+      },
       { property: "og:description", content: loaderData?.description || "" },
-      { property: "og:url", content: `https://osconsultants.pk/countries/east-asia/${loaderData?.slug || ""}` },
+      {
+        property: "og:url",
+        content: `https://osconsultants.pk/countries/east-asia/${loaderData?.slug || ""}`,
+      },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_PK" },
       { property: "og:site_name", content: "OS Consultants — Pakistan's No.1 Travel Agency" },
       { property: "og:image", content: loaderData?.image || "" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: `${loaderData?.name || ""} Visa Consultant Islamabad | OS Consultants` },
+      {
+        name: "twitter:title",
+        content: `${loaderData?.name || ""} Visa Consultant Islamabad | OS Consultants`,
+      },
       { name: "twitter:description", content: loaderData?.description || "" },
       { name: "twitter:image", content: loaderData?.image || "" },
     ],
     links: [
-      { rel: "canonical", href: `https://osconsultants.pk/countries/east-asia/${loaderData?.slug || ""}` },
+      {
+        rel: "canonical",
+        href: `https://osconsultants.pk/countries/east-asia/${loaderData?.slug || ""}`,
+      },
     ],
   }),
   component: EastAsiaCountryPage,
@@ -121,7 +143,8 @@ function EastAsiaCountryPage() {
                 <h3 className="font-bold text-lg">Why {country.name}?</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                {country.name} is a key destination in East Asia. We ensure your application is processed with professional excellence.
+                {country.name} is a key destination in East Asia. We ensure your application is
+                processed with professional excellence.
               </p>
             </div>
           </div>

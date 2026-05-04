@@ -28,11 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { format, startOfToday, addDays } from "date-fns";
 import { cn } from "@/lib/utils";
@@ -50,7 +46,7 @@ import {
   AMERICAS_COUNTRIES,
   EAST_ASIA_COUNTRIES,
   EUROPE_OTHERS_COUNTRIES,
-  SOUTH_AMERICA_COUNTRIES
+  SOUTH_AMERICA_COUNTRIES,
 } from "@/data/site";
 import { DESTINATIONS } from "@/data/destinations";
 import logo from "@/assets/logo.png";
@@ -109,13 +105,13 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
   const [isLoadingAirports, setIsLoadingAirports] = useState(true);
 
   useEffect(() => {
-    fetch('/data/airports.json')
-      .then(res => res.json())
-      .then(data => {
+    fetch("/data/airports.json")
+      .then((res) => res.json())
+      .then((data) => {
         setAirports(data);
         setIsLoadingAirports(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("Failed to load airports:", err);
         setIsLoadingAirports(false);
       });
@@ -152,16 +148,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
 
     // Check for exact IATA match first (3 letters)
     if (s.length === 3) {
-      const exactIATA = airports.find(d => d.i?.toLowerCase() === s);
+      const exactIATA = airports.find((d) => d.i?.toLowerCase() === s);
       if (exactIATA) return [exactIATA];
     }
 
     return airports
-      .filter(d =>
-        (d.i && d.i.toLowerCase().includes(s)) ||
-        (d.n && d.n.toLowerCase().includes(s)) ||
-        (d.m && d.m.toLowerCase().includes(s)) ||
-        (d.c && d.c.toLowerCase().includes(s))
+      .filter(
+        (d) =>
+          (d.i && d.i.toLowerCase().includes(s)) ||
+          (d.n && d.n.toLowerCase().includes(s)) ||
+          (d.m && d.m.toLowerCase().includes(s)) ||
+          (d.c && d.c.toLowerCase().includes(s)),
       )
       .sort((a, b) => {
         if (a.i?.toLowerCase().startsWith(s)) return -1;
@@ -173,8 +170,14 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
       .slice(0, 40);
   };
 
-  const filteredFrom = useMemo(() => getFilteredAirports(debouncedFromSearch), [debouncedFromSearch, airports]);
-  const filteredTo = useMemo(() => getFilteredAirports(debouncedToSearch), [debouncedToSearch, airports]);
+  const filteredFrom = useMemo(
+    () => getFilteredAirports(debouncedFromSearch),
+    [debouncedFromSearch, airports],
+  );
+  const filteredTo = useMemo(
+    () => getFilteredAirports(debouncedToSearch),
+    [debouncedToSearch, airports],
+  );
 
   const filteredVisaCountries = useMemo(() => {
     const s = debouncedVisaSearch.toLowerCase();
@@ -206,28 +209,31 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
     // Combine with all countries, prioritizing featured
     const combined = [
       ...featuredDestinations,
-      ...ALL_COUNTRIES.filter(c => !featuredDestinations.some(fd => fd.name === c.name))
+      ...ALL_COUNTRIES.filter((c) => !featuredDestinations.some((fd) => fd.name === c.name)),
     ];
 
-    return combined.filter(c => c.name.toLowerCase().includes(s)).slice(0, 40);
+    return combined.filter((c) => c.name.toLowerCase().includes(s)).slice(0, 40);
   }, [debouncedVisaSearch]);
 
   const filteredHotelDestinations = useMemo(() => {
     if (!debouncedHotelSearch || debouncedHotelSearch.length < 2) return [];
     const s = debouncedHotelSearch.toLowerCase();
     return airports
-      .filter(a => a.m?.toLowerCase().includes(s) || a.n?.toLowerCase().includes(s))
+      .filter((a) => a.m?.toLowerCase().includes(s) || a.n?.toLowerCase().includes(s))
       .slice(0, 10);
   }, [debouncedHotelSearch, airports]);
 
-  const [activeMultiSearch, setActiveMultiSearch] = useState<{ id: number, field: 'from' | 'to' } | null>(null);
+  const [activeMultiSearch, setActiveMultiSearch] = useState<{
+    id: number;
+    field: "from" | "to";
+  } | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const addLeg = () => {
@@ -240,12 +246,14 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
     }
   };
 
-  const navigateToCountry = (country: { name: string, code?: string }) => {
+  const navigateToCountry = (country: { name: string; code?: string }) => {
     const name = country.name;
-    const slug = name.toLowerCase().replace(/\s+/g, '-');
+    const slug = name.toLowerCase().replace(/\s+/g, "-");
 
     // 1. Direct Hubs
-    const primary = DESTINATIONS.find(d => d.name.toLowerCase() === name.toLowerCase() || d.slug === slug);
+    const primary = DESTINATIONS.find(
+      (d) => d.name.toLowerCase() === name.toLowerCase() || d.slug === slug,
+    );
     if (primary) {
       navigate({ to: "/countries/$slug", params: { slug: primary.slug } });
       return;
@@ -265,7 +273,9 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
     ];
 
     for (const r of regions) {
-      const c = r.list.find(item => item.name.toLowerCase() === name.toLowerCase() || item.slug === slug);
+      const c = r.list.find(
+        (item) => item.name.toLowerCase() === name.toLowerCase() || item.slug === slug,
+      );
       if (c) {
         navigate({ to: `/countries/${r.path}/$country`, params: { country: c.slug } });
         return;
@@ -277,10 +287,10 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
     // we'll default to the general assessment if no specific page is found.
   };
 
-  const updateLeg = (id: number, field: 'from' | 'to' | 'date', value: any) => {
-    setMultiCityLegs(prev => prev.map(leg =>
-      leg.id === id ? { ...leg, [field]: value } : leg
-    ));
+  const updateLeg = (id: number, field: "from" | "to" | "date", value: any) => {
+    setMultiCityLegs((prev) =>
+      prev.map((leg) => (leg.id === id ? { ...leg, [field]: value } : leg)),
+    );
   };
 
   const tabs = [
@@ -295,32 +305,33 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
   const getInquiryMessage = (phone: string) => {
     let msg = `Hello ${COMPANY.name}! I would like to inquire about:\n\n`;
 
-    if (activeTab === 'flights') {
-      if (tripType === 'multi-city') {
+    if (activeTab === "flights") {
+      if (tripType === "multi-city") {
         msg += `✈️ *Multi-City Flight Inquiry*\n`;
         multiCityLegs.forEach((leg, i) => {
-          msg += `Leg ${i + 1}: ${leg.from || 'TBA'} to ${leg.to || 'TBA'} (${leg.date ? format(leg.date, 'dd MMM') : 'TBA'})\n`;
+          msg += `Leg ${i + 1}: ${leg.from || "TBA"} to ${leg.to || "TBA"} (${leg.date ? format(leg.date, "dd MMM") : "TBA"})\n`;
         });
       } else {
-        msg += `✈️ *${tripType === 'round-trip' ? 'Round-Trip' : 'One-Way'} Flight Inquiry*\n`;
-        msg += `From: ${fromSearch || 'TBA'}\nTo: ${toSearch || 'TBA'}\n`;
-        msg += `Departure: ${departureDate ? format(departureDate, 'dd MMM yyyy') : 'TBA'}\n`;
-        if (tripType === 'round-trip') msg += `Return: ${returnDate ? format(returnDate, 'dd MMM yyyy') : 'TBA'}\n`;
+        msg += `✈️ *${tripType === "round-trip" ? "Round-Trip" : "One-Way"} Flight Inquiry*\n`;
+        msg += `From: ${fromSearch || "TBA"}\nTo: ${toSearch || "TBA"}\n`;
+        msg += `Departure: ${departureDate ? format(departureDate, "dd MMM yyyy") : "TBA"}\n`;
+        if (tripType === "round-trip")
+          msg += `Return: ${returnDate ? format(returnDate, "dd MMM yyyy") : "TBA"}\n`;
       }
       msg += `Travellers: ${travellers.adults} Adults, ${travellers.children} Children, ${travellers.infants} Infants\n`;
-    } else if (activeTab === 'umrah') {
+    } else if (activeTab === "umrah") {
       msg += `🕋 *Umrah Inquiry*\n`;
       msg += `Stay Duration: ${umrahDuration} Days\n`;
-      msg += `Departure: ${departureDate ? format(departureDate, 'dd MMM yyyy') : 'TBA'}\n`;
+      msg += `Departure: ${departureDate ? format(departureDate, "dd MMM yyyy") : "TBA"}\n`;
       msg += `Travellers: ${travellers.adults} Adults, ${travellers.children} Children, ${travellers.infants} Infants\n`;
-    } else if (activeTab === 'visa') {
+    } else if (activeTab === "visa") {
       msg += `🛂 *Visa Assistance Inquiry*\n`;
-      msg += `Destination: ${visaSearch || 'TBA'}\n`;
-    } else if (activeTab === 'hotel') {
+      msg += `Destination: ${visaSearch || "TBA"}\n`;
+    } else if (activeTab === "hotel") {
       msg += `🏨 *Hotel Booking Inquiry*\n`;
-      msg += `Destination: ${hotelSearch || 'TBA'}\n`;
-      msg += `Dates: ${hotelRange?.from ? format(hotelRange.from, 'dd MMM') : 'TBA'} - ${hotelRange?.to ? format(hotelRange.to, 'dd MMM') : 'TBA'}\n`;
-      msg += `Category: ${hotelCategory.replace('-', ' ')}\n`;
+      msg += `Destination: ${hotelSearch || "TBA"}\n`;
+      msg += `Dates: ${hotelRange?.from ? format(hotelRange.from, "dd MMM") : "TBA"} - ${hotelRange?.to ? format(hotelRange.to, "dd MMM") : "TBA"}\n`;
+      msg += `Category: ${hotelCategory.replace("-", " ")}\n`;
       if (hotelBudget) msg += `Budget: PKR ${hotelBudget}\n`;
       msg += `Rooms: ${hotelRooms}, Guests: ${hotelGuests.adults + hotelGuests.children}\n`;
     }
@@ -328,17 +339,21 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
     if (userPhone) msg += `\nMy Contact: ${userPhone}\n`;
 
     msg += `\nPlease provide the best rates and details.`;
-    return `https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/${phone.replace(/\D/g, "")}?text=${encodeURIComponent(msg)}`;
   };
 
   const handleVisaInquiry = () => {
     triggerLiveNotification("You", "Your Location", `Visa Services for ${visaSearch}`);
-    window.open(`https://wa.me/923365500477?text=${encodeURIComponent(`Hello Mujtaba! I would like to inquire about visa services for ${visaSearch}.`)}`, "_blank");
+    window.open(
+      `https://wa.me/923365500477?text=${encodeURIComponent(`Hello Mujtaba! I would like to inquire about visa services for ${visaSearch}.`)}`,
+      "_blank",
+    );
   };
 
   const handleGeneralInquiry = () => {
     let serviceLabel = "Custom Query";
-    if (activeTab === "flights") serviceLabel = `${fromSearch || "Lahore"} to ${toSearch || "London"} Flight`;
+    if (activeTab === "flights")
+      serviceLabel = `${fromSearch || "Lahore"} to ${toSearch || "London"} Flight`;
     if (activeTab === "umrah") serviceLabel = "Umrah 15-Day Package";
     if (activeTab === "hotel") serviceLabel = `${hotelSearch || "Dubai"} Hotel Booking`;
 
@@ -346,13 +361,12 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
     window.open(getInquiryMessage("+923365500477"), "_blank");
   };
 
-
   const isFlightValid = () => {
-    if (tripType === 'multi-city') {
-      return multiCityLegs.every(leg => leg.from && leg.to && leg.date);
+    if (tripType === "multi-city") {
+      return multiCityLegs.every((leg) => leg.from && leg.to && leg.date);
     }
     const base = fromSearch && toSearch && departureDate;
-    if (tripType === 'round-trip') return base && returnDate;
+    if (tripType === "round-trip") return base && returnDate;
     return base;
   };
 
@@ -360,12 +374,11 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
   const isVisaValid = () => !!visaSearch;
   const isHotelValid = () => !!hotelSearch && !!hotelRange?.from && !!hotelRange?.to;
 
-
   // Sync tab with URL search params
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const tabParam = params.get('tab');
-    if (tabParam && ['flights', 'umrah', 'visa', 'hotel'].includes(tabParam)) {
+    const tabParam = params.get("tab");
+    if (tabParam && ["flights", "umrah", "visa", "hotel"].includes(tabParam)) {
       setActiveTab(tabParam);
     }
   }, []);
@@ -374,10 +387,10 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
     setActiveTab(tabId);
 
     const paths: Record<string, string> = {
-      flights: '/air-ticketing',
-      umrah: '/umrah',
-      visa: '/visa-services',
-      hotel: '/hotel-booking'
+      flights: "/air-ticketing",
+      umrah: "/umrah",
+      visa: "/visa-services",
+      hotel: "/hotel-booking",
     };
 
     const targetPath = paths[tabId];
@@ -391,37 +404,57 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
       {/* Expanded Scrolling Actual Size Cards Behind Widget */}
       {isHero && (
         <div className="absolute inset-x-[-15vw] top-[-3.5rem] bottom-[-3.5rem] z-0 opacity-15 pointer-events-none select-none overflow-hidden flex flex-col justify-around py-4">
-          <motion.div 
+          <motion.div
             className="flex gap-16 shrink-0 min-w-max"
             animate={{ x: ["0%", "-50%"] }}
             transition={{ repeat: Infinity, ease: "linear", duration: 55 }}
           >
             {[...SCHENGEN_COUNTRIES, ...SCHENGEN_COUNTRIES].map((c, i) => (
-              <div key={c.slug + i + "-ext-1"} className="relative w-56 h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/30 shrink-0 bg-slate-900/40 backdrop-blur-sm group select-none">
-                <img src={c.image} alt={c.name} className="absolute inset-0 w-full h-full object-cover opacity-60" />
+              <div
+                key={c.slug + i + "-ext-1"}
+                className="relative w-56 h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/30 shrink-0 bg-slate-900/40 backdrop-blur-sm group select-none"
+              >
+                <img
+                  src={c.image}
+                  alt={c.name}
+                  className="absolute inset-0 w-full h-full object-cover opacity-60"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 z-10">
-                  <span className="inline-block px-2.5 py-1 bg-white/10 backdrop-blur-md rounded-lg text-[10px] font-extrabold uppercase tracking-widest text-primary border border-white/10 mb-2">Schengen Area</span>
+                  <span className="inline-block px-2.5 py-1 bg-white/10 backdrop-blur-md rounded-lg text-[10px] font-extrabold uppercase tracking-widest text-primary border border-white/10 mb-2">
+                    Schengen Area
+                  </span>
                   <h4 className="text-lg font-black text-white tracking-wide">{c.name}</h4>
                 </div>
               </div>
             ))}
           </motion.div>
-          <motion.div 
+          <motion.div
             className="flex gap-16 shrink-0 min-w-max"
             animate={{ x: ["-50%", "0%"] }}
             transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
           >
-            {[...SCHENGEN_COUNTRIES.slice().reverse(), ...SCHENGEN_COUNTRIES.slice().reverse()].map((c, i) => (
-              <div key={c.slug + i + "-ext-2"} className="relative w-56 h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/30 shrink-0 bg-slate-900/40 backdrop-blur-sm group select-none">
-                <img src={c.image} alt={c.name} className="absolute inset-0 w-full h-full object-cover opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 z-10">
-                  <span className="inline-block px-2.5 py-1 bg-white/10 backdrop-blur-md rounded-lg text-[10px] font-extrabold uppercase tracking-widest text-primary border border-white/10 mb-2">Schengen Area</span>
-                  <h4 className="text-lg font-black text-white tracking-wide">{c.name}</h4>
+            {[...SCHENGEN_COUNTRIES.slice().reverse(), ...SCHENGEN_COUNTRIES.slice().reverse()].map(
+              (c, i) => (
+                <div
+                  key={c.slug + i + "-ext-2"}
+                  className="relative w-56 h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/30 shrink-0 bg-slate-900/40 backdrop-blur-sm group select-none"
+                >
+                  <img
+                    src={c.image}
+                    alt={c.name}
+                    className="absolute inset-0 w-full h-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 z-10">
+                    <span className="inline-block px-2.5 py-1 bg-white/10 backdrop-blur-md rounded-lg text-[10px] font-extrabold uppercase tracking-widest text-primary border border-white/10 mb-2">
+                      Schengen Area
+                    </span>
+                    <h4 className="text-lg font-black text-white tracking-wide">{c.name}</h4>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
           </motion.div>
         </div>
       )}
@@ -443,11 +476,21 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     onClick={() => handleTabClick(tab.id)}
                     className={cn(
                       "flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 md:px-6 py-3.5 transition-all duration-300 relative min-w-max",
-                      isActive ? "text-primary font-bold" : "text-muted-foreground hover:text-foreground"
+                      isActive
+                        ? "text-primary font-bold"
+                        : "text-muted-foreground hover:text-foreground",
                     )}
                   >
-                    <div className={cn("p-1.5 rounded-lg transition-colors", isActive ? tab.bg : "bg-transparent")}>
-                      <Icon size={18} className={cn(isActive ? tab.color : "text-muted-foreground")} />
+                    <div
+                      className={cn(
+                        "p-1.5 rounded-lg transition-colors",
+                        isActive ? tab.bg : "bg-transparent",
+                      )}
+                    >
+                      <Icon
+                        size={18}
+                        className={cn(isActive ? tab.color : "text-muted-foreground")}
+                      />
                     </div>
                     <span className="text-xs sm:text-sm md:text-base">{tab.label}</span>
                     {isActive && (
@@ -481,8 +524,12 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
               <div className="h-8 w-px bg-border/50 mx-2" />
               <img src={logo} alt={COMPANY.name} className="h-8 w-auto object-contain" />
               <div className="flex flex-col">
-                <span className="text-[9px] uppercase tracking-tighter text-muted-foreground font-black leading-none mb-0.5">Travel Portal</span>
-                <span className="text-[11px] font-black text-primary leading-tight">{COMPANY.name}</span>
+                <span className="text-[9px] uppercase tracking-tighter text-muted-foreground font-black leading-none mb-0.5">
+                  Travel Portal
+                </span>
+                <span className="text-[11px] font-black text-primary leading-tight">
+                  {COMPANY.name}
+                </span>
               </div>
             </div>
           </div>
@@ -509,17 +556,29 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                             "px-4 py-2 text-sm font-semibold rounded-lg transition-all",
                             tripType === type
                               ? "bg-[#FF7F11] text-white shadow-md font-bold"
-                              : "text-muted-foreground hover:text-foreground"
+                              : "text-muted-foreground hover:text-foreground",
                           )}
                         >
-                          {type === "round-trip" ? "Round Trip" : type === "one-way" ? "One Way" : "Multi-City"}
+                          {type === "round-trip"
+                            ? "Round Trip"
+                            : type === "one-way"
+                              ? "One Way"
+                              : "Multi-City"}
                         </button>
                       ))}
                     </div>
 
                     <div className="w-full flex flex-wrap items-center gap-2 md:gap-3">
                       <Select value={cabinClass || "economy"} onValueChange={setCabinClass}>
-                        <SelectTrigger aria-label="Select Cabin Class" className={cn("w-full sm:w-[130px] h-11 rounded-xl focus:ring-0 transition-all font-semibold", cabinClass !== "economy" ? "bg-blue-100/60 backdrop-blur-md border border-blue-200/50 text-blue-800" : "bg-secondary/50 border-none text-foreground")}>
+                        <SelectTrigger
+                          aria-label="Select Cabin Class"
+                          className={cn(
+                            "w-full sm:w-[130px] h-11 rounded-xl focus:ring-0 transition-all font-semibold",
+                            cabinClass !== "economy"
+                              ? "bg-blue-100/60 backdrop-blur-md border border-blue-200/50 text-blue-800"
+                              : "bg-secondary/50 border-none text-foreground",
+                          )}
+                        >
                           <SelectValue placeholder="Class" />
                         </SelectTrigger>
                         <SelectContent>
@@ -532,10 +591,21 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
 
                       <Popover>
                         <PopoverTrigger asChild>
-                          <Button aria-label="Select Travellers" variant="ghost" className={cn("h-11 px-4 rounded-xl w-full sm:w-auto justify-between sm:justify-start transition-all font-semibold", totalTravellers > 1 ? "bg-blue-100/60 backdrop-blur-md border border-blue-200/50 text-blue-800 hover:bg-blue-200/50" : "bg-secondary/50 border-none hover:bg-secondary/70")}>
+                          <Button
+                            aria-label="Select Travellers"
+                            variant="ghost"
+                            className={cn(
+                              "h-11 px-4 rounded-xl w-full sm:w-auto justify-between sm:justify-start transition-all font-semibold",
+                              totalTravellers > 1
+                                ? "bg-blue-100/60 backdrop-blur-md border border-blue-200/50 text-blue-800 hover:bg-blue-200/50"
+                                : "bg-secondary/50 border-none hover:bg-secondary/70",
+                            )}
+                          >
                             <div className="flex items-center">
                               <Users size={16} className="mr-2 text-muted-foreground" />
-                              <span className="text-sm font-semibold">{totalTravellers} Traveller{totalTravellers > 1 ? 's' : ''}</span>
+                              <span className="text-sm font-semibold">
+                                {totalTravellers} Traveller{totalTravellers > 1 ? "s" : ""}
+                              </span>
                             </div>
                             <ChevronDown size={14} className="ml-2 opacity-50" />
                           </Button>
@@ -555,14 +625,26 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                 </div>
                                 <div className="flex items-center gap-3">
                                   <button
-                                    onClick={() => setTravellers(prev => ({ ...prev, [item.key]: Math.max(0, (prev as any)[item.key] - 1) }))}
+                                    onClick={() =>
+                                      setTravellers((prev) => ({
+                                        ...prev,
+                                        [item.key]: Math.max(0, (prev as any)[item.key] - 1),
+                                      }))
+                                    }
                                     className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                                   >
                                     -
                                   </button>
-                                  <span className="text-sm font-bold w-4 text-center">{(travellers as any)[item.key]}</span>
+                                  <span className="text-sm font-bold w-4 text-center">
+                                    {(travellers as any)[item.key]}
+                                  </span>
                                   <button
-                                    onClick={() => setTravellers(prev => ({ ...prev, [item.key]: (prev as any)[item.key] + 1 }))}
+                                    onClick={() =>
+                                      setTravellers((prev) => ({
+                                        ...prev,
+                                        [item.key]: (prev as any)[item.key] + 1,
+                                      }))
+                                    }
                                     className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                                   >
                                     +
@@ -575,7 +657,15 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                       </Popover>
 
                       <Select value={flightStops || "direct"} onValueChange={setFlightStops}>
-                        <SelectTrigger aria-label="Select Flight Stops" className={cn("w-full sm:w-[145px] h-11 rounded-xl focus:ring-0 flex-1 sm:flex-none transition-all font-semibold", flightStops !== "direct" ? "bg-blue-100/60 backdrop-blur-md border border-blue-200/50 text-blue-800" : "bg-secondary/50 border-none text-foreground")}>
+                        <SelectTrigger
+                          aria-label="Select Flight Stops"
+                          className={cn(
+                            "w-full sm:w-[145px] h-11 rounded-xl focus:ring-0 flex-1 sm:flex-none transition-all font-semibold",
+                            flightStops !== "direct"
+                              ? "bg-blue-100/60 backdrop-blur-md border border-blue-200/50 text-blue-800"
+                              : "bg-secondary/50 border-none text-foreground",
+                          )}
+                        >
                           <SelectValue placeholder="Flight Stops" />
                         </SelectTrigger>
                         <SelectContent>
@@ -586,7 +676,15 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                       </Select>
 
                       <Select value={currency || "PKR"} onValueChange={setCurrency}>
-                        <SelectTrigger aria-label="Select Currency" className={cn("w-[90px] h-11 rounded-xl focus:ring-0 flex-1 sm:flex-none transition-all font-semibold", currency !== "PKR" ? "bg-blue-100/60 backdrop-blur-md border border-blue-200/50 text-blue-800" : "bg-secondary/50 border-none text-foreground")}>
+                        <SelectTrigger
+                          aria-label="Select Currency"
+                          className={cn(
+                            "w-[90px] h-11 rounded-xl focus:ring-0 flex-1 sm:flex-none transition-all font-semibold",
+                            currency !== "PKR"
+                              ? "bg-blue-100/60 backdrop-blur-md border border-blue-200/50 text-blue-800"
+                              : "bg-secondary/50 border-none text-foreground",
+                          )}
+                        >
                           <SelectValue placeholder="Currency" />
                         </SelectTrigger>
                         <SelectContent>
@@ -606,9 +704,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:col-span-2 gap-6 lg:gap-10 relative">
                           {/* Origin */}
                           <div className="relative group">
-                            <Label htmlFor="origin-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">From</Label>
+                            <Label
+                              htmlFor="origin-input"
+                              className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                            >
+                              From
+                            </Label>
                             <div className="relative">
-                              <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform" size={18} />
+                              <MapPin
+                                className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform"
+                                size={18}
+                              />
                               <Input
                                 id="origin-input"
                                 name="origin"
@@ -645,8 +751,12 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                       className="w-full px-4 py-2 text-left hover:bg-secondary/50 flex items-center justify-between group/item"
                                     >
                                       <div className="min-w-0">
-                                        <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">{d.i} - {d.n}</p>
-                                        <p className="text-[11px] text-muted-foreground truncate">{d.m}, {d.c}</p>
+                                        <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">
+                                          {d.i} - {d.n}
+                                        </p>
+                                        <p className="text-[11px] text-muted-foreground truncate">
+                                          {d.m}, {d.c}
+                                        </p>
                                       </div>
                                     </button>
                                   ))}
@@ -673,9 +783,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
 
                           {/* Destination */}
                           <div className="relative group">
-                            <Label htmlFor="destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">To</Label>
+                            <Label
+                              htmlFor="destination-input"
+                              className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                            >
+                              To
+                            </Label>
                             <div className="relative">
-                              <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform" size={18} />
+                              <MapPin
+                                className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform"
+                                size={18}
+                              />
                               <Input
                                 id="destination-input"
                                 name="destination"
@@ -712,8 +830,12 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                       className="w-full px-4 py-2 text-left hover:bg-secondary/50 flex items-center justify-between group/item"
                                     >
                                       <div className="min-w-0">
-                                        <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">{d.i} - {d.n}</p>
-                                        <p className="text-[11px] text-muted-foreground truncate">{d.m}, {d.c}</p>
+                                        <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">
+                                          {d.i} - {d.n}
+                                        </p>
+                                        <p className="text-[11px] text-muted-foreground truncate">
+                                          {d.m}, {d.c}
+                                        </p>
                                       </div>
                                     </button>
                                   ))}
@@ -724,9 +846,19 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                         </div>
 
                         {/* Date Pickers */}
-                        <div className={cn("grid gap-2", tripType === "round-trip" ? "lg:col-span-2 grid-cols-2" : "grid-cols-1")}>
+                        <div
+                          className={cn(
+                            "grid gap-2",
+                            tripType === "round-trip" ? "lg:col-span-2 grid-cols-2" : "grid-cols-1",
+                          )}
+                        >
                           <div className="relative group">
-                            <Label htmlFor="flight-departure-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Departure</Label>
+                            <Label
+                              htmlFor="flight-departure-btn"
+                              className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                            >
+                              Departure
+                            </Label>
                             <Popover open={flightDepOpen} onOpenChange={setFlightDepOpen}>
                               <PopoverTrigger asChild>
                                 <Button
@@ -734,18 +866,28 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                   variant="outline"
                                   className={cn(
                                     "w-full h-14 pl-10 md:pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30 text-xs md:text-sm",
-                                    !departureDate && "text-muted-foreground"
+                                    !departureDate && "text-muted-foreground",
                                   )}
                                 >
-                                  <Calendar className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform" size={16} />
-                                  <span className="truncate">{departureDate ? format(departureDate, "MMM dd, yyyy") : "Select date"}</span>
+                                  <Calendar
+                                    className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform"
+                                    size={16}
+                                  />
+                                  <span className="truncate">
+                                    {departureDate
+                                      ? format(departureDate, "MMM dd, yyyy")
+                                      : "Select date"}
+                                  </span>
                                 </Button>
                               </PopoverTrigger>
                               <PopoverContent className="w-auto p-0 rounded-2xl" align="start">
                                 <CalendarComponent
                                   mode="single"
                                   selected={departureDate}
-                                  onSelect={(date) => { setDepartureDate(date); setFlightDepOpen(false); }}
+                                  onSelect={(date) => {
+                                    setDepartureDate(date);
+                                    setFlightDepOpen(false);
+                                  }}
                                   initialFocus
                                   disabled={(date) => date < startOfToday()}
                                 />
@@ -755,7 +897,12 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
 
                           {tripType === "round-trip" && (
                             <div className="relative group">
-                              <Label htmlFor="flight-return-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Return</Label>
+                              <Label
+                                htmlFor="flight-return-btn"
+                                className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                              >
+                                Return
+                              </Label>
                               <Popover open={flightRetOpen} onOpenChange={setFlightRetOpen}>
                                 <PopoverTrigger asChild>
                                   <Button
@@ -763,20 +910,33 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                     variant="outline"
                                     className={cn(
                                       "w-full h-14 pl-10 md:pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30 text-xs md:text-sm",
-                                      !returnDate && "text-muted-foreground"
+                                      !returnDate && "text-muted-foreground",
                                     )}
                                   >
-                                    <Calendar className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform" size={16} />
-                                    <span className="truncate">{returnDate ? format(returnDate, "MMM dd, yyyy") : "Select date"}</span>
+                                    <Calendar
+                                      className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform"
+                                      size={16}
+                                    />
+                                    <span className="truncate">
+                                      {returnDate
+                                        ? format(returnDate, "MMM dd, yyyy")
+                                        : "Select date"}
+                                    </span>
                                   </Button>
                                 </PopoverTrigger>
                                 <PopoverContent className="w-auto p-0 rounded-2xl" align="start">
                                   <CalendarComponent
                                     mode="single"
                                     selected={returnDate}
-                                    onSelect={(date) => { setReturnDate(date); setFlightRetOpen(false); }}
+                                    onSelect={(date) => {
+                                      setReturnDate(date);
+                                      setFlightRetOpen(false);
+                                    }}
                                     initialFocus
-                                    disabled={(date) => date < startOfToday() || (!!departureDate && date < departureDate)}
+                                    disabled={(date) =>
+                                      date < startOfToday() ||
+                                      (!!departureDate && date < departureDate)
+                                    }
                                   />
                                 </PopoverContent>
                               </Popover>
@@ -786,9 +946,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
 
                         {/* Contact Info */}
                         <div className="relative group">
-                          <Label htmlFor="flight-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Contact No.</Label>
+                          <Label
+                            htmlFor="flight-contact-input"
+                            className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                          >
+                            Contact No.
+                          </Label>
                           <div className="relative">
-                            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform" size={18} />
+                            <Phone
+                              className="absolute left-4 top-1/2 -translate-y-1/2 text-primary group-hover:scale-110 transition-transform"
+                              size={18}
+                            />
                             <Input
                               id="flight-contact-input"
                               name="phone"
@@ -813,9 +981,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                             className="grid gap-3 lg:grid-cols-12 md:grid-cols-2 p-4 rounded-2xl bg-secondary/10 border border-border/50 relative"
                           >
                             <div className="lg:col-span-4 relative">
-                              <Label htmlFor={`multi-from-${leg.id}`} className="text-[10px] uppercase text-muted-foreground ml-1">Flight {i + 1} From</Label>
+                              <Label
+                                htmlFor={`multi-from-${leg.id}`}
+                                className="text-[10px] uppercase text-muted-foreground ml-1"
+                              >
+                                Flight {i + 1} From
+                              </Label>
                               <div className="relative">
-                                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-primary/60 z-10" size={16} />
+                                <MapPin
+                                  className="absolute left-3 top-1/2 -translate-y-1/2 text-primary/60 z-10"
+                                  size={16}
+                                />
                                 <Input
                                   id={`multi-from-${leg.id}`}
                                   name={`multi-from-${i}`}
@@ -823,44 +999,58 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                   placeholder="Origin"
                                   value={leg.from}
                                   onChange={(e) => {
-                                    updateLeg(leg.id, 'from', e.target.value);
-                                    setActiveMultiSearch({ id: leg.id, field: 'from' });
+                                    updateLeg(leg.id, "from", e.target.value);
+                                    setActiveMultiSearch({ id: leg.id, field: "from" });
                                   }}
                                   className="pl-10 h-12 rounded-xl bg-white pr-10"
                                 />
                                 {leg.from && (
                                   <button
-                                    onClick={() => updateLeg(leg.id, 'from', "")}
+                                    onClick={() => updateLeg(leg.id, "from", "")}
                                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-destructive transition-colors z-10"
                                   >
                                     <X size={14} />
                                   </button>
                                 )}
-                                {activeMultiSearch?.id === leg.id && activeMultiSearch?.field === 'from' && getFilteredAirports(leg.from).length > 0 && (
-                                  <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-border z-[100] overflow-hidden py-2 animate-in fade-in zoom-in duration-200 max-h-[300px] overflow-y-auto custom-scrollbar">
-                                    {getFilteredAirports(leg.from).map((d) => (
-                                      <button
-                                        key={`${d.i}-${d.n}`}
-                                        onClick={() => {
-                                          updateLeg(leg.id, 'from', `${d.i} (${d.m || d.n})`);
-                                          setActiveMultiSearch(null);
-                                        }}
-                                        className="w-full px-4 py-2 text-left hover:bg-secondary/50 flex items-center justify-between group/item"
-                                      >
-                                        <div className="min-w-0">
-                                          <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">{d.i} - {d.n}</p>
-                                          <p className="text-[11px] text-muted-foreground truncate">{d.m}, {d.c}</p>
-                                        </div>
-                                      </button>
-                                    ))}
-                                  </div>
-                                )}
+                                {activeMultiSearch?.id === leg.id &&
+                                  activeMultiSearch?.field === "from" &&
+                                  getFilteredAirports(leg.from).length > 0 && (
+                                    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-border z-[100] overflow-hidden py-2 animate-in fade-in zoom-in duration-200 max-h-[300px] overflow-y-auto custom-scrollbar">
+                                      {getFilteredAirports(leg.from).map((d) => (
+                                        <button
+                                          key={`${d.i}-${d.n}`}
+                                          onClick={() => {
+                                            updateLeg(leg.id, "from", `${d.i} (${d.m || d.n})`);
+                                            setActiveMultiSearch(null);
+                                          }}
+                                          className="w-full px-4 py-2 text-left hover:bg-secondary/50 flex items-center justify-between group/item"
+                                        >
+                                          <div className="min-w-0">
+                                            <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">
+                                              {d.i} - {d.n}
+                                            </p>
+                                            <p className="text-[11px] text-muted-foreground truncate">
+                                              {d.m}, {d.c}
+                                            </p>
+                                          </div>
+                                        </button>
+                                      ))}
+                                    </div>
+                                  )}
                               </div>
                             </div>
                             <div className="lg:col-span-4 relative">
-                              <Label htmlFor={`multi-to-${leg.id}`} className="text-[10px] uppercase text-muted-foreground ml-1">To</Label>
+                              <Label
+                                htmlFor={`multi-to-${leg.id}`}
+                                className="text-[10px] uppercase text-muted-foreground ml-1"
+                              >
+                                To
+                              </Label>
                               <div className="relative">
-                                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-primary/60 z-10" size={16} />
+                                <MapPin
+                                  className="absolute left-3 top-1/2 -translate-y-1/2 text-primary/60 z-10"
+                                  size={16}
+                                />
                                 <Input
                                   id={`multi-to-${leg.id}`}
                                   name={`multi-to-${i}`}
@@ -868,53 +1058,70 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                   placeholder="Destination"
                                   value={leg.to}
                                   onChange={(e) => {
-                                    updateLeg(leg.id, 'to', e.target.value);
-                                    setActiveMultiSearch({ id: leg.id, field: 'to' });
+                                    updateLeg(leg.id, "to", e.target.value);
+                                    setActiveMultiSearch({ id: leg.id, field: "to" });
                                   }}
                                   className="pl-10 h-12 rounded-xl bg-white pr-10"
                                 />
                                 {leg.to && (
                                   <button
-                                    onClick={() => updateLeg(leg.id, 'to', "")}
+                                    onClick={() => updateLeg(leg.id, "to", "")}
                                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-destructive transition-colors z-10"
                                   >
                                     <X size={14} />
                                   </button>
                                 )}
-                                {activeMultiSearch?.id === leg.id && activeMultiSearch?.field === 'to' && getFilteredAirports(leg.to).length > 0 && (
-                                  <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-border z-[100] overflow-hidden py-2 animate-in fade-in zoom-in duration-200 max-h-[300px] overflow-y-auto custom-scrollbar">
-                                    {getFilteredAirports(leg.to).map((d) => (
-                                      <button
-                                        key={`${d.i}-${d.n}`}
-                                        onClick={() => {
-                                          updateLeg(leg.id, 'to', `${d.i} (${d.m || d.n})`);
-                                          setActiveMultiSearch(null);
-                                        }}
-                                        className="w-full px-4 py-2 text-left hover:bg-secondary/50 flex items-center justify-between group/item"
-                                      >
-                                        <div className="min-w-0">
-                                          <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">{d.i} - {d.n}</p>
-                                          <p className="text-[11px] text-muted-foreground truncate">{d.m}, {d.c}</p>
-                                        </div>
-                                      </button>
-                                    ))}
-                                  </div>
-                                )}
+                                {activeMultiSearch?.id === leg.id &&
+                                  activeMultiSearch?.field === "to" &&
+                                  getFilteredAirports(leg.to).length > 0 && (
+                                    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-border z-[100] overflow-hidden py-2 animate-in fade-in zoom-in duration-200 max-h-[300px] overflow-y-auto custom-scrollbar">
+                                      {getFilteredAirports(leg.to).map((d) => (
+                                        <button
+                                          key={`${d.i}-${d.n}`}
+                                          onClick={() => {
+                                            updateLeg(leg.id, "to", `${d.i} (${d.m || d.n})`);
+                                            setActiveMultiSearch(null);
+                                          }}
+                                          className="w-full px-4 py-2 text-left hover:bg-secondary/50 flex items-center justify-between group/item"
+                                        >
+                                          <div className="min-w-0">
+                                            <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">
+                                              {d.i} - {d.n}
+                                            </p>
+                                            <p className="text-[11px] text-muted-foreground truncate">
+                                              {d.m}, {d.c}
+                                            </p>
+                                          </div>
+                                        </button>
+                                      ))}
+                                    </div>
+                                  )}
                               </div>
                             </div>
                             <div className="lg:col-span-3 relative">
-                              <Label htmlFor={`multi-date-${leg.id}`} className="text-[10px] uppercase text-muted-foreground ml-1">Departure</Label>
-                              <Popover open={multiDateOpen === leg.id} onOpenChange={(isOpen) => setMultiDateOpen(isOpen ? leg.id : null)}>
+                              <Label
+                                htmlFor={`multi-date-${leg.id}`}
+                                className="text-[10px] uppercase text-muted-foreground ml-1"
+                              >
+                                Departure
+                              </Label>
+                              <Popover
+                                open={multiDateOpen === leg.id}
+                                onOpenChange={(isOpen) => setMultiDateOpen(isOpen ? leg.id : null)}
+                              >
                                 <PopoverTrigger asChild>
                                   <Button
                                     id={`multi-date-${leg.id}`}
                                     variant="outline"
                                     className={cn(
                                       "w-full h-12 justify-start pl-10 rounded-xl bg-white text-xs font-medium",
-                                      !leg.date && "text-muted-foreground"
+                                      !leg.date && "text-muted-foreground",
                                     )}
                                   >
-                                    <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-primary/60" size={16} />
+                                    <Calendar
+                                      className="absolute left-3 top-1/2 -translate-y-1/2 text-primary/60"
+                                      size={16}
+                                    />
                                     {leg.date ? format(leg.date, "MMM dd, yyyy") : "Select Date"}
                                   </Button>
                                 </PopoverTrigger>
@@ -922,7 +1129,10 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                   <CalendarComponent
                                     mode="single"
                                     selected={leg.date}
-                                    onSelect={(date) => { updateLeg(leg.id, 'date', date); setMultiDateOpen(null); }}
+                                    onSelect={(date) => {
+                                      updateLeg(leg.id, "date", date);
+                                      setMultiDateOpen(null);
+                                    }}
                                     initialFocus
                                     disabled={(date) => date < startOfToday()}
                                   />
@@ -979,9 +1189,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                 >
                   <div className="grid gap-4 lg:grid-cols-5 md:grid-cols-2">
                     <div className="relative group">
-                      <Label htmlFor="umrah-package-select" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Package Type</Label>
+                      <Label
+                        htmlFor="umrah-package-select"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Package Type
+                      </Label>
                       <Select value={umrahPackage || "economy"} onValueChange={setUmrahPackage}>
-                        <SelectTrigger id="umrah-package-select" className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20">
+                        <SelectTrigger
+                          id="umrah-package-select"
+                          className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20"
+                        >
                           <SelectValue placeholder="Select Package" />
                         </SelectTrigger>
                         <SelectContent>
@@ -995,9 +1213,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="umrah-duration-select" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Stay Duration</Label>
+                      <Label
+                        htmlFor="umrah-duration-select"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Stay Duration
+                      </Label>
                       <Select value={umrahDuration || "15"} onValueChange={setUmrahDuration}>
-                        <SelectTrigger id="umrah-duration-select" className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20">
+                        <SelectTrigger
+                          id="umrah-duration-select"
+                          className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20"
+                        >
                           <SelectValue placeholder="Select Duration" />
                         </SelectTrigger>
                         <SelectContent>
@@ -1010,11 +1236,23 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="umrah-travel-date-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Travel Date</Label>
+                      <Label
+                        htmlFor="umrah-travel-date-btn"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Travel Date
+                      </Label>
                       <Popover open={umrahDateOpen} onOpenChange={setUmrahDateOpen}>
                         <PopoverTrigger asChild>
-                          <Button id="umrah-travel-date-btn" variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
-                            <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
+                          <Button
+                            id="umrah-travel-date-btn"
+                            variant="outline"
+                            className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30"
+                          >
+                            <Calendar
+                              className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                              size={18}
+                            />
                             {departureDate ? format(departureDate, "PPP") : "Select date"}
                           </Button>
                         </PopoverTrigger>
@@ -1022,7 +1260,10 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                           <CalendarComponent
                             mode="single"
                             selected={departureDate}
-                            onSelect={(date) => { setDepartureDate(date); setUmrahDateOpen(false); }}
+                            onSelect={(date) => {
+                              setDepartureDate(date);
+                              setUmrahDateOpen(false);
+                            }}
                             initialFocus
                             disabled={(date) => date < addDays(startOfToday(), 7)}
                           />
@@ -1031,12 +1272,26 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="umrah-travellers-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Travellers</Label>
+                      <Label
+                        htmlFor="umrah-travellers-btn"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Travellers
+                      </Label>
                       <Popover>
                         <PopoverTrigger asChild>
-                          <Button id="umrah-travellers-btn" variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
-                            <Users size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" />
-                            <span className="text-sm">{totalTravellers} Traveller{totalTravellers > 1 ? 's' : ''}</span>
+                          <Button
+                            id="umrah-travellers-btn"
+                            variant="outline"
+                            className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30"
+                          >
+                            <Users
+                              size={18}
+                              className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                            />
+                            <span className="text-sm">
+                              {totalTravellers} Traveller{totalTravellers > 1 ? "s" : ""}
+                            </span>
                             <ChevronDown size={14} className="ml-auto opacity-50" />
                           </Button>
                         </PopoverTrigger>
@@ -1055,14 +1310,29 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                 </div>
                                 <div className="flex items-center gap-3">
                                   <button
-                                    onClick={() => setTravellers(prev => ({ ...prev, [item.key]: Math.max(item.key === 'adults' ? 1 : 0, (prev as any)[item.key] - 1) }))}
+                                    onClick={() =>
+                                      setTravellers((prev) => ({
+                                        ...prev,
+                                        [item.key]: Math.max(
+                                          item.key === "adults" ? 1 : 0,
+                                          (prev as any)[item.key] - 1,
+                                        ),
+                                      }))
+                                    }
                                     className="w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                                   >
                                     -
                                   </button>
-                                  <span className="text-sm font-bold w-4 text-center">{(travellers as any)[item.key]}</span>
+                                  <span className="text-sm font-bold w-4 text-center">
+                                    {(travellers as any)[item.key]}
+                                  </span>
                                   <button
-                                    onClick={() => setTravellers(prev => ({ ...prev, [item.key]: (prev as any)[item.key] + 1 }))}
+                                    onClick={() =>
+                                      setTravellers((prev) => ({
+                                        ...prev,
+                                        [item.key]: (prev as any)[item.key] + 1,
+                                      }))
+                                    }
                                     className="w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                                   >
                                     +
@@ -1076,10 +1346,27 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="umrah-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Contact No.</Label>
+                      <Label
+                        htmlFor="umrah-contact-input"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Contact No.
+                      </Label>
                       <div className="relative">
-                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
-                        <Input id="umrah-contact-input" name="phone" autoComplete="tel" placeholder="+92 300 1234567" type="tel" value={userPhone} onChange={(e) => setUserPhone(e.target.value)} className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border focus-visible:ring-primary/20 transition-all text-sm font-medium" />
+                        <Phone
+                          className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                          size={18}
+                        />
+                        <Input
+                          id="umrah-contact-input"
+                          name="phone"
+                          autoComplete="tel"
+                          placeholder="+92 300 1234567"
+                          type="tel"
+                          value={userPhone}
+                          onChange={(e) => setUserPhone(e.target.value)}
+                          className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border focus-visible:ring-primary/20 transition-all text-sm font-medium"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1107,9 +1394,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                 >
                   <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2">
                     <div className="relative group lg:col-span-2">
-                      <Label htmlFor="visa-destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Destination Country</Label>
+                      <Label
+                        htmlFor="visa-destination-input"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Destination Country
+                      </Label>
                       <div className="relative">
-                        <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
+                        <MapPin
+                          className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                          size={18}
+                        />
                         <Input
                           id="visa-destination-input"
                           name="destination"
@@ -1151,7 +1446,9 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                   alt={country.name}
                                   className="w-6 h-4 object-cover rounded-sm shadow-sm border border-border/50 shrink-0"
                                 />
-                                <span className="text-sm font-bold group-hover/item:text-primary transition-colors">{country.name}</span>
+                                <span className="text-sm font-bold group-hover/item:text-primary transition-colors">
+                                  {country.name}
+                                </span>
                               </button>
                             ))}
                           </div>
@@ -1160,9 +1457,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="visa-type-select" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Visa Type</Label>
+                      <Label
+                        htmlFor="visa-type-select"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Visa Type
+                      </Label>
                       <Select value={visaType || "tourist"} onValueChange={setVisaType}>
-                        <SelectTrigger id="visa-type-select" className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20">
+                        <SelectTrigger
+                          id="visa-type-select"
+                          className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20"
+                        >
                           <SelectValue placeholder="Select Type" />
                         </SelectTrigger>
                         <SelectContent>
@@ -1175,10 +1480,27 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="visa-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Contact No.</Label>
+                      <Label
+                        htmlFor="visa-contact-input"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Contact No.
+                      </Label>
                       <div className="relative">
-                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
-                        <Input id="visa-contact-input" name="phone" autoComplete="tel" placeholder="+92 300 1234567" type="tel" value={userPhone} onChange={(e) => setUserPhone(e.target.value)} className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border" />
+                        <Phone
+                          className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                          size={18}
+                        />
+                        <Input
+                          id="visa-contact-input"
+                          name="phone"
+                          autoComplete="tel"
+                          placeholder="+92 300 1234567"
+                          type="tel"
+                          value={userPhone}
+                          onChange={(e) => setUserPhone(e.target.value)}
+                          className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1191,7 +1513,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                         "w-full md:w-auto h-14 px-8 rounded-2xl font-bold transition-all flex items-center gap-2 border-none",
                         isVisaValid()
                           ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-glow hover:scale-[1.02]"
-                          : "bg-muted text-muted-foreground cursor-not-allowed"
+                          : "bg-muted text-muted-foreground cursor-not-allowed",
                       )}
                     >
                       <MessageCircle size={18} />
@@ -1219,9 +1541,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                 >
                   <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2">
                     <div className="relative group lg:col-span-2">
-                      <Label htmlFor="hotel-destination-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Destination or Hotel Name</Label>
+                      <Label
+                        htmlFor="hotel-destination-input"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Destination or Hotel Name
+                      </Label>
                       <div className="relative">
-                        <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
+                        <MapPin
+                          className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                          size={18}
+                        />
                         <Input
                           id="hotel-destination-input"
                           name="hotel-search"
@@ -1258,8 +1588,12 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                 className="w-full px-4 py-3 text-left hover:bg-secondary/50 flex items-center gap-3 group/item transition-colors"
                               >
                                 <div className="min-w-0">
-                                  <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">{d.m || d.n}</p>
-                                  <p className="text-[11px] text-muted-foreground truncate">{d.c}</p>
+                                  <p className="text-sm font-bold group-hover/item:text-primary transition-colors truncate">
+                                    {d.m || d.n}
+                                  </p>
+                                  <p className="text-[11px] text-muted-foreground truncate">
+                                    {d.c}
+                                  </p>
                                 </div>
                               </button>
                             ))}
@@ -1269,19 +1603,36 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="hotel-dates-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Check-in / Check-out</Label>
+                      <Label
+                        htmlFor="hotel-dates-btn"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Check-in / Check-out
+                      </Label>
                       <Popover>
                         <PopoverTrigger asChild>
-                          <Button id="hotel-dates-btn" variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
-                            <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
+                          <Button
+                            id="hotel-dates-btn"
+                            variant="outline"
+                            className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30"
+                          >
+                            <Calendar
+                              className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                              size={18}
+                            />
                             <span className="text-xs">
-                              {hotelRange?.from ? (
-                                hotelRange.to ? `${format(hotelRange.from, "MMM dd")} - ${format(hotelRange.to, "MMM dd")}` : format(hotelRange.from, "MMM dd")
-                              ) : "Select Dates"}
+                              {hotelRange?.from
+                                ? hotelRange.to
+                                  ? `${format(hotelRange.from, "MMM dd")} - ${format(hotelRange.to, "MMM dd")}`
+                                  : format(hotelRange.from, "MMM dd")
+                                : "Select Dates"}
                             </span>
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0 rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-border" align="start">
+                        <PopoverContent
+                          className="w-auto p-0 rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-border"
+                          align="start"
+                        >
                           <CalendarComponent
                             initialFocus
                             mode="range"
@@ -1297,18 +1648,34 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="hotel-guests-btn" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Guests & Rooms</Label>
+                      <Label
+                        htmlFor="hotel-guests-btn"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Guests & Rooms
+                      </Label>
                       <Popover>
                         <PopoverTrigger asChild>
-                          <Button id="hotel-guests-btn" variant="outline" className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30">
-                            <Users size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" />
+                          <Button
+                            id="hotel-guests-btn"
+                            variant="outline"
+                            className="w-full h-14 pl-12 justify-start text-left font-medium rounded-2xl bg-secondary/20 border-border hover:bg-secondary/30"
+                          >
+                            <Users
+                              size={18}
+                              className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                            />
                             <span className="text-sm">
-                              {hotelGuests.adults + hotelGuests.children} Guests, {hotelRooms} Room{hotelRooms > 1 ? 's' : ''}
+                              {hotelGuests.adults + hotelGuests.children} Guests, {hotelRooms} Room
+                              {hotelRooms > 1 ? "s" : ""}
                             </span>
                             <ChevronDown size={14} className="ml-auto opacity-50" />
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-64 p-4 rounded-2xl bg-white shadow-2xl border-border" align="end">
+                        <PopoverContent
+                          className="w-64 p-4 rounded-2xl bg-white shadow-2xl border-border"
+                          align="end"
+                        >
                           <div className="space-y-4">
                             <p className="font-bold text-sm">Select Guests & Rooms</p>
 
@@ -1318,14 +1685,16 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                               </div>
                               <div className="flex items-center gap-3">
                                 <button
-                                  onClick={() => setHotelRooms(prev => Math.max(1, prev - 1))}
+                                  onClick={() => setHotelRooms((prev) => Math.max(1, prev - 1))}
                                   className="w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                                 >
                                   -
                                 </button>
-                                <span className="text-sm font-bold w-4 text-center">{hotelRooms}</span>
+                                <span className="text-sm font-bold w-4 text-center">
+                                  {hotelRooms}
+                                </span>
                                 <button
-                                  onClick={() => setHotelRooms(prev => prev + 1)}
+                                  onClick={() => setHotelRooms((prev) => prev + 1)}
                                   className="w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                                 >
                                   +
@@ -1344,14 +1713,29 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                                 </div>
                                 <div className="flex items-center gap-3">
                                   <button
-                                    onClick={() => setHotelGuests(prev => ({ ...prev, [item.key]: Math.max(item.key === 'adults' ? 1 : 0, (prev as any)[item.key] - 1) }))}
+                                    onClick={() =>
+                                      setHotelGuests((prev) => ({
+                                        ...prev,
+                                        [item.key]: Math.max(
+                                          item.key === "adults" ? 1 : 0,
+                                          (prev as any)[item.key] - 1,
+                                        ),
+                                      }))
+                                    }
                                     className="w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                                   >
                                     -
                                   </button>
-                                  <span className="text-sm font-bold w-4 text-center">{(hotelGuests as any)[item.key]}</span>
+                                  <span className="text-sm font-bold w-4 text-center">
+                                    {(hotelGuests as any)[item.key]}
+                                  </span>
                                   <button
-                                    onClick={() => setHotelGuests(prev => ({ ...prev, [item.key]: (prev as any)[item.key] + 1 }))}
+                                    onClick={() =>
+                                      setHotelGuests((prev) => ({
+                                        ...prev,
+                                        [item.key]: (prev as any)[item.key] + 1,
+                                      }))
+                                    }
                                     className="w-8 h-8 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
                                   >
                                     +
@@ -1367,9 +1751,17 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
 
                   <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 mt-4">
                     <div className="relative group">
-                      <Label htmlFor="hotel-category-select" className="text-[11px] uppercase tracking-wider text-muted-foreground  mb-1 block">Hotel Category</Label>
+                      <Label
+                        htmlFor="hotel-category-select"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground  mb-1 block"
+                      >
+                        Hotel Category
+                      </Label>
                       <Select value={hotelCategory || "4-star"} onValueChange={setHotelCategory}>
-                        <SelectTrigger id="hotel-category-select" className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20">
+                        <SelectTrigger
+                          id="hotel-category-select"
+                          className="w-full h-14 rounded-2xl bg-secondary/20 border-border focus:ring-primary/20"
+                        >
                           <SelectValue placeholder="Select Category" />
                         </SelectTrigger>
                         <SelectContent>
@@ -1385,9 +1777,16 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="hotel-budget-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Budget (Optional)</Label>
+                      <Label
+                        htmlFor="hotel-budget-input"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Budget (Optional)
+                      </Label>
                       <div className="relative">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary font-bold text-sm">PKR</div>
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary font-bold text-sm">
+                          PKR
+                        </div>
                         <Input
                           id="hotel-budget-input"
                           placeholder="e.g. 50,000"
@@ -1399,10 +1798,27 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     </div>
 
                     <div className="relative group">
-                      <Label htmlFor="hotel-contact-input" className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block">Contact No.</Label>
+                      <Label
+                        htmlFor="hotel-contact-input"
+                        className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1 block"
+                      >
+                        Contact No.
+                      </Label>
                       <div className="relative">
-                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={18} />
-                        <Input id="hotel-contact-input" name="phone" autoComplete="tel" placeholder="+92 300 1234567" type="tel" value={userPhone} onChange={(e) => setUserPhone(e.target.value)} className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border" />
+                        <Phone
+                          className="absolute left-4 top-1/2 -translate-y-1/2 text-primary"
+                          size={18}
+                        />
+                        <Input
+                          id="hotel-contact-input"
+                          name="phone"
+                          autoComplete="tel"
+                          placeholder="+92 300 1234567"
+                          type="tel"
+                          value={userPhone}
+                          onChange={(e) => setUserPhone(e.target.value)}
+                          className="pl-12 h-14 rounded-2xl bg-secondary/20 border-border"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1419,7 +1835,6 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                   </div>
                 </motion.div>
               )}
-
             </AnimatePresence>
           </div>
         </div>
@@ -1434,8 +1849,12 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
             className="h-10 w-auto opacity-100 group-hover:scale-110 transition-transform duration-500"
           />
           <div className="flex flex-col">
-            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/70 leading-none mb-1.5">Accredited Agent</span>
-            <span className="text-lg font-bold text-white tracking-tight leading-none">IATA Member</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/70 leading-none mb-1.5">
+              Accredited Agent
+            </span>
+            <span className="text-lg font-bold text-white tracking-tight leading-none">
+              IATA Member
+            </span>
           </div>
         </div>
       </div>
@@ -1458,7 +1877,9 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                   <X size={20} className="sm:w-6 sm:h-6" />
                 </button>
                 <h3 className="text-xl sm:text-2xl font-black mb-1 pr-6">Travel Inquiry</h3>
-                <p className="text-white/80 text-xs sm:text-sm">Send your details to our expert via WhatsApp</p>
+                <p className="text-white/80 text-xs sm:text-sm">
+                  Send your details to our expert via WhatsApp
+                </p>
               </div>
 
               <div className="p-4 sm:p-8 space-y-4 overflow-y-auto custom-scrollbar">
@@ -1467,33 +1888,67 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
                     Choose Your Travel Expert
                   </p>
                   <div className="space-y-3">
-                    {(activeTab === 'umrah' ? [
-                      { name: "Hammad Ahmed", role: "Umrah Specialist", phone: "+923325500377" }
-                    ] : activeTab === 'flights' ? [
-                      { name: "Hammad Ahmed", role: "Ticketing Officer", phone: "+923325500377" },
-                      { name: "Noor Ul Huda", role: "Ticketing Officer", phone: "+923315500177" }
-                    ] : [
-                      { name: "Hammad Ahmed", role: "Travel Specialist", phone: "+923325500377" },
-                      { name: "Noor Ul Huda", role: "Visa Expert", phone: "+923315500177" },
-                      { name: "Mujtaba", role: "Visa Representative", phone: "+923365500477" }
-                    ]).map((rep) => (
+                    {(activeTab === "umrah"
+                      ? [{ name: "Hammad Ahmed", role: "Umrah Specialist", phone: "+923325500377" }]
+                      : activeTab === "flights"
+                        ? [
+                            {
+                              name: "Hammad Ahmed",
+                              role: "Ticketing Officer",
+                              phone: "+923325500377",
+                            },
+                            {
+                              name: "Noor Ul Huda",
+                              role: "Ticketing Officer",
+                              phone: "+923315500177",
+                            },
+                          ]
+                        : [
+                            {
+                              name: "Hammad Ahmed",
+                              role: "Travel Specialist",
+                              phone: "+923325500377",
+                            },
+                            { name: "Noor Ul Huda", role: "Visa Expert", phone: "+923315500177" },
+                            {
+                              name: "Mujtaba",
+                              role: "Visa Representative",
+                              phone: "+923365500477",
+                            },
+                          ]
+                    ).map((rep) => (
                       <a
                         key={rep.name}
                         href={getInquiryMessage(rep.phone)}
                         onClick={() => {
                           setShowInquiryModal(false);
-                          triggerLiveNotification("You", "Your Location", activeTab === "umrah" ? "Umrah 15-Day Package" : activeTab === "flights" ? `${fromSearch || "Lahore"} to ${toSearch || "London"} Flight` : "New Query");
+                          triggerLiveNotification(
+                            "You",
+                            "Your Location",
+                            activeTab === "umrah"
+                              ? "Umrah 15-Day Package"
+                              : activeTab === "flights"
+                                ? `${fromSearch || "Lahore"} to ${toSearch || "London"} Flight`
+                                : "New Query",
+                          );
                         }}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 sm:gap-4 w-full p-3 sm:p-4 bg-white border border-border hover:border-emerald-500 rounded-2xl transition-all group/wa"
                       >
                         <div className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-full bg-emerald-50 flex items-center justify-center group-hover/wa:bg-emerald-500 group-hover/wa:text-white transition-colors">
-                          <MessageCircle size={20} className="text-emerald-600 group-hover/wa:text-white sm:w-6 sm:h-6" />
+                          <MessageCircle
+                            size={20}
+                            className="text-emerald-600 group-hover/wa:text-white sm:w-6 sm:h-6"
+                          />
                         </div>
                         <div className="flex-1 text-left min-w-0">
-                          <p className="text-[10px] sm:text-xs text-muted-foreground font-bold uppercase tracking-tighter truncate">{rep.role}</p>
-                          <p className="text-[15px] sm:text-lg font-black text-foreground truncate">{rep.name}</p>
+                          <p className="text-[10px] sm:text-xs text-muted-foreground font-bold uppercase tracking-tighter truncate">
+                            {rep.role}
+                          </p>
+                          <p className="text-[15px] sm:text-lg font-black text-foreground truncate">
+                            {rep.name}
+                          </p>
                         </div>
                         <div className="h-2 w-2 shrink-0 rounded-full bg-emerald-500 animate-pulse" />
                       </a>

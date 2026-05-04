@@ -404,4 +404,4 @@ export const AIRPORTS = [
   { code: "PBM", name: "Johan Adolf Pengel Intl", city: "Paramaribo" },
   // Guyana
   { code: "GEO", name: "Cheddi Jagan Intl", city: "Georgetown" },
-]
+];

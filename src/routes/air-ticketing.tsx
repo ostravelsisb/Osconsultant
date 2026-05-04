@@ -6,22 +6,57 @@ import { BookingWidget } from "@/components/site/BookingWidget";
 import { FAQAccordion } from "@/components/site/FAQAccordion";
 
 const TICKETING_FAQS = [
-  { q: "Is OS Consultants an IATA-authorized travel agency?", a: "Yes. OS Consultants holds full IATA accreditation, allowing us to issue tickets directly on 300+ airlines worldwide with guaranteed fare accuracy and instant e-ticket confirmation." },
-  { q: "How do I get cheap flights from Islamabad to London?", a: "Contact our ticketing desk via WhatsApp or visit our Blue Area office. We compare fares across Emirates, Turkish Airlines, PIA, Qatar Airways and more to find the lowest price with the best route for ISB to LHR flights." },
-  { q: "Can I book group flights for Umrah or Hajj from Islamabad?", a: "Absolutely. We specialize in group bookings for religious travel, weddings, and corporate teams. We can block seats with minimal deposits and offer flexible name-change policies." },
-  { q: "Do you offer student discount flights from Pakistan?", a: "Yes. We partner with airlines like British Airways, Etihad, and Virgin Atlantic that offer special student fares with extra baggage allowance. Bring your university offer letter for eligibility." },
-  { q: "What airlines can I book through OS Consultants?", a: "We issue tickets on all major carriers including PIA, Emirates, Qatar Airways, Turkish Airlines, Etihad, Saudi Airlines, British Airways, Air Canada, Lufthansa, Singapore Airlines, Thai Airways, and 290+ more." },
-  { q: "How fast can I get my e-ticket after booking?", a: "Instant. Once payment is confirmed, your e-ticket is issued within minutes and sent directly to your email and WhatsApp." },
-  { q: "Do you handle flight cancellations and date changes?", a: "Yes, our 24/7 support team handles all post-booking changes including cancellations, date changes, and name corrections as per airline policy." },
-  { q: "Where is your office located in Islamabad?", a: "Office #3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area, Islamabad 44000. We are open Monday to Saturday, 10 AM – 7 PM." },
+  {
+    q: "Is OS Consultants an IATA-authorized travel agency?",
+    a: "Yes. OS Consultants holds full IATA accreditation, allowing us to issue tickets directly on 300+ airlines worldwide with guaranteed fare accuracy and instant e-ticket confirmation.",
+  },
+  {
+    q: "How do I get cheap flights from Islamabad to London?",
+    a: "Contact our ticketing desk via WhatsApp or visit our Blue Area office. We compare fares across Emirates, Turkish Airlines, PIA, Qatar Airways and more to find the lowest price with the best route for ISB to LHR flights.",
+  },
+  {
+    q: "Can I book group flights for Umrah or Hajj from Islamabad?",
+    a: "Absolutely. We specialize in group bookings for religious travel, weddings, and corporate teams. We can block seats with minimal deposits and offer flexible name-change policies.",
+  },
+  {
+    q: "Do you offer student discount flights from Pakistan?",
+    a: "Yes. We partner with airlines like British Airways, Etihad, and Virgin Atlantic that offer special student fares with extra baggage allowance. Bring your university offer letter for eligibility.",
+  },
+  {
+    q: "What airlines can I book through OS Consultants?",
+    a: "We issue tickets on all major carriers including PIA, Emirates, Qatar Airways, Turkish Airlines, Etihad, Saudi Airlines, British Airways, Air Canada, Lufthansa, Singapore Airlines, Thai Airways, and 290+ more.",
+  },
+  {
+    q: "How fast can I get my e-ticket after booking?",
+    a: "Instant. Once payment is confirmed, your e-ticket is issued within minutes and sent directly to your email and WhatsApp.",
+  },
+  {
+    q: "Do you handle flight cancellations and date changes?",
+    a: "Yes, our 24/7 support team handles all post-booking changes including cancellations, date changes, and name corrections as per airline policy.",
+  },
+  {
+    q: "Where is your office located in Islamabad?",
+    a: "Office #3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area, Islamabad 44000. We are open Monday to Saturday, 10 AM – 7 PM.",
+  },
 ];
 
 export const Route = createFileRoute("/air-ticketing")({
   head: () => ({
     meta: [
-      { title: "Best Air Ticketing Agency in Islamabad 2026 — Cheap Flights, IATA Deals | OS Consultants" },
-      { name: "description", content: "OS Consultants is Islamabad's #1 IATA-authorized air ticketing agency in Blue Area. Book cheap flights to UK, USA, Canada, Dubai, Turkey & Australia. Instant e-tickets, group bookings, student discounts & 24/7 WhatsApp support. Call +92 51 2021700." },
-      { name: "keywords", content: "best air ticketing agency Islamabad, cheap flights from Islamabad, IATA authorized travel agent Islamabad, international flight booking Pakistan, cheap tickets to UK from Islamabad, USA flight booking ISB, airline reservation Islamabad Blue Area, last minute flights Pakistan, group flight booking Islamabad, student discount tickets Islamabad, business class deals ISB, Umrah flight booking Islamabad, cheap flights to Dubai from ISB, Toronto flight from Islamabad, PIA ticket agent Islamabad, Emirates ticket Islamabad, Qatar Airways booking Pakistan, Turkish Airlines Islamabad, flight booking near me Islamabad, travel agency Blue Area Islamabad, air ticket price Islamabad to London, Islamabad to Jeddah flight, best travel agent Pakistan 2026, OS Consultants air ticketing" },
+      {
+        title:
+          "Best Air Ticketing Agency in Islamabad 2026 — Cheap Flights, IATA Deals | OS Consultants",
+      },
+      {
+        name: "description",
+        content:
+          "OS Consultants is Islamabad's #1 IATA-authorized air ticketing agency in Blue Area. Book cheap flights to UK, USA, Canada, Dubai, Turkey & Australia. Instant e-tickets, group bookings, student discounts & 24/7 WhatsApp support. Call +92 51 2021700.",
+      },
+      {
+        name: "keywords",
+        content:
+          "best air ticketing agency Islamabad, cheap flights from Islamabad, IATA authorized travel agent Islamabad, international flight booking Pakistan, cheap tickets to UK from Islamabad, USA flight booking ISB, airline reservation Islamabad Blue Area, last minute flights Pakistan, group flight booking Islamabad, student discount tickets Islamabad, business class deals ISB, Umrah flight booking Islamabad, cheap flights to Dubai from ISB, Toronto flight from Islamabad, PIA ticket agent Islamabad, Emirates ticket Islamabad, Qatar Airways booking Pakistan, Turkish Airlines Islamabad, flight booking near me Islamabad, travel agency Blue Area Islamabad, air ticket price Islamabad to London, Islamabad to Jeddah flight, best travel agent Pakistan 2026, OS Consultants air ticketing",
+      },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
       { name: "author", content: "OS Consultants" },
       { name: "geo.region", content: "PK-IS" },
@@ -29,16 +64,26 @@ export const Route = createFileRoute("/air-ticketing")({
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_PK" },
       { property: "og:site_name", content: "OS Consultants" },
-      { property: "og:title", content: "Best Air Ticketing Agency in Islamabad — Cheap International Flights | OS Consultants" },
-      { property: "og:description", content: "Book the cheapest international flights from Islamabad with IATA-certified OS Consultants. Instant e-tickets on 300+ airlines. 24/7 WhatsApp support." },
+      {
+        property: "og:title",
+        content:
+          "Best Air Ticketing Agency in Islamabad — Cheap International Flights | OS Consultants",
+      },
+      {
+        property: "og:description",
+        content:
+          "Book the cheapest international flights from Islamabad with IATA-certified OS Consultants. Instant e-tickets on 300+ airlines. 24/7 WhatsApp support.",
+      },
       { property: "og:url", content: "https://www.ostravels.com/air-ticketing" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "#1 Air Ticketing Agency Islamabad — OS Consultants" },
-      { name: "twitter:description", content: "IATA-authorized. Cheapest flights from ISB to London, Dubai, Toronto, New York & more. Instant booking." },
+      {
+        name: "twitter:description",
+        content:
+          "IATA-authorized. Cheapest flights from ISB to London, Dubai, Toronto, New York & more. Instant booking.",
+      },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/air-ticketing" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/air-ticketing" }],
   }),
   component: AirTicketing,
 });
@@ -173,18 +218,42 @@ function AirTicketing() {
                   major hubs including London, New York, Toronto, Dubai, and Melbourne. We don't
                   just use automated tools; our expert ticketing officers manually audit routes to
                   find hidden savings, such as "split-ticketing" or choosing alternative hubs that
-                  can save you thousands of rupees on <strong>international flight bookings</strong>.
+                  can save you thousands of rupees on <strong>international flight bookings</strong>
+                  .
                 </p>
 
-                <h3 className="text-xl font-bold text-foreground">Complete Flight Ticket Booking & Pricing Guide in Pakistan</h3>
+                <h3 className="text-xl font-bold text-foreground">
+                  Complete Flight Ticket Booking & Pricing Guide in Pakistan
+                </h3>
                 <p>
-                  When looking to book <strong>flight tickets online in Pakistan</strong>, timing and platform expertise are crucial. To lock in the most competitive <strong>flight ticket price in Pakistan to London</strong>, New York, or anywhere across the globe, our expert systems track live trends to secure flash discounts and unadvertised airline deals.
+                  When looking to book <strong>flight tickets online in Pakistan</strong>, timing
+                  and platform expertise are crucial. To lock in the most competitive{" "}
+                  <strong>flight ticket price in Pakistan to London</strong>, New York, or anywhere
+                  across the globe, our expert systems track live trends to secure flash discounts
+                  and unadvertised airline deals.
                 </p>
                 <ul className="list-disc pl-5 space-y-2">
-                  <li><strong>Book Direct via IATA Agent:</strong> Eliminate middleman markup fees. As an authorized IATA agency, OS Consultants books <strong>flight tickets</strong> directly with the airline, guaranteeing transparent pricing and easy change policies.</li>
-                  <li><strong>Emirates and Qatar Airways Specials:</strong> Take advantage of our premium agreements to secure top-tier amenities and competitive rates on middle-east and international routes.</li>
-                  <li><strong>Last Minute Airline Tickets:</strong> Need to fly urgently from Islamabad? Our ticketing desk specializes in urgent, last-minute seat confirmations at the best possible price.</li>
-                  <li><strong>Discount Student Flight Tickets:</strong> We help students unlock special baggage allowances and reduced ticket rates to the UK, Canada, and Australia.</li>
+                  <li>
+                    <strong>Book Direct via IATA Agent:</strong> Eliminate middleman markup fees. As
+                    an authorized IATA agency, OS Consultants books <strong>flight tickets</strong>{" "}
+                    directly with the airline, guaranteeing transparent pricing and easy change
+                    policies.
+                  </li>
+                  <li>
+                    <strong>Emirates and Qatar Airways Specials:</strong> Take advantage of our
+                    premium agreements to secure top-tier amenities and competitive rates on
+                    middle-east and international routes.
+                  </li>
+                  <li>
+                    <strong>Last Minute Airline Tickets:</strong> Need to fly urgently from
+                    Islamabad? Our ticketing desk specializes in urgent, last-minute seat
+                    confirmations at the best possible price.
+                  </li>
+                  <li>
+                    <strong>Discount Student Flight Tickets:</strong> We help students unlock
+                    special baggage allowances and reduced ticket rates to the UK, Canada, and
+                    Australia.
+                  </li>
                 </ul>
 
                 <h3 className="text-xl font-bold text-foreground">Global Airline Partnerships</h3>
@@ -267,19 +336,44 @@ function AirTicketing() {
       {/* Popular Routes SEO Section */}
       <section className="bg-secondary/40 py-16">
         <div className="container-px mx-auto max-w-7xl">
-          <h2 className="text-2xl font-bold md:text-3xl mb-8 text-center">Popular Flight Routes from Islamabad</h2>
+          <h2 className="text-2xl font-bold md:text-3xl mb-8 text-center">
+            Popular Flight Routes from Islamabad
+          </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { route: "Islamabad → London", code: "ISB → LHR", airlines: "PIA, Emirates, Turkish" },
-              { route: "Islamabad → Dubai", code: "ISB → DXB", airlines: "Emirates, flydubai, PIA" },
-              { route: "Islamabad → Toronto", code: "ISB → YYZ", airlines: "Turkish, Emirates, Qatar" },
+              {
+                route: "Islamabad → London",
+                code: "ISB → LHR",
+                airlines: "PIA, Emirates, Turkish",
+              },
+              {
+                route: "Islamabad → Dubai",
+                code: "ISB → DXB",
+                airlines: "Emirates, flydubai, PIA",
+              },
+              {
+                route: "Islamabad → Toronto",
+                code: "ISB → YYZ",
+                airlines: "Turkish, Emirates, Qatar",
+              },
               { route: "Islamabad → Jeddah", code: "ISB → JED", airlines: "PIA, Saudi, flynas" },
-              { route: "Islamabad → New York", code: "ISB → JFK", airlines: "Emirates, Turkish, Qatar" },
+              {
+                route: "Islamabad → New York",
+                code: "ISB → JFK",
+                airlines: "Emirates, Turkish, Qatar",
+              },
               { route: "Islamabad → Istanbul", code: "ISB → IST", airlines: "Turkish Airlines" },
-              { route: "Islamabad → Melbourne", code: "ISB → MEL", airlines: "Emirates, Qatar, Thai" },
+              {
+                route: "Islamabad → Melbourne",
+                code: "ISB → MEL",
+                airlines: "Emirates, Qatar, Thai",
+              },
               { route: "Islamabad → Doha", code: "ISB → DOH", airlines: "Qatar Airways, PIA" },
-            ].map(r => (
-              <div key={r.code} className="rounded-2xl bg-card border border-border p-5 shadow-soft">
+            ].map((r) => (
+              <div
+                key={r.code}
+                className="rounded-2xl bg-card border border-border p-5 shadow-soft"
+              >
                 <p className="font-bold text-base">{r.route}</p>
                 <p className="text-xs text-muted-foreground mt-1">{r.code}</p>
                 <p className="text-xs text-primary font-medium mt-2">{r.airlines}</p>
@@ -291,56 +385,90 @@ function AirTicketing() {
 
       {/* FAQ Section with Schema */}
       <section className="container-px mx-auto max-w-4xl py-20">
-        <h2 className="text-2xl font-bold md:text-3xl mb-2 text-center">Frequently Asked Questions</h2>
-        <p className="text-muted-foreground text-center mb-10">Everything you need to know about booking flights with OS Consultants</p>
+        <h2 className="text-2xl font-bold md:text-3xl mb-2 text-center">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-muted-foreground text-center mb-10">
+          Everything you need to know about booking flights with OS Consultants
+        </p>
         <FAQAccordion items={TICKETING_FAQS} />
       </section>
 
       {/* JSON-LD Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "TravelAgency",
-            "name": "OS Consultants",
-            "alternateName": "OS Consultants Air Ticketing",
-            "url": "https://www.ostravels.com/air-ticketing",
-            "logo": "https://www.ostravels.com/logo.png",
-            "image": "https://www.ostravels.com/air_ticketing_lounge.png",
-            "description": "Islamabad's #1 IATA-authorized air ticketing agency. Cheap international flights, group bookings, student discounts, Umrah packages, and 24/7 WhatsApp support from Blue Area.",
-            "telephone": "+92-51-2021700",
-            "email": "info@osconsultants.pk",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Office #3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area",
-              "addressLocality": "Islamabad",
-              "addressRegion": "Islamabad Capital Territory",
-              "postalCode": "44000",
-              "addressCountry": "PK"
-            },
-            "geo": { "@type": "GeoCoordinates", "latitude": "33.7215", "longitude": "73.0433" },
-            "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "19:00" },
-            "priceRange": "$$",
-            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "847", "bestRating": "5" },
-            "sameAs": ["https://www.facebook.com/osconsultants01/","https://www.instagram.com/osconsultants.pk/","https://www.linkedin.com/company/os-consultants/"]
-          },
-          {
-            "@type": "FAQPage",
-            "mainEntity": TICKETING_FAQS.map(f => ({
-              "@type": "Question",
-              "name": f.q,
-              "acceptedAnswer": { "@type": "Answer", "text": f.a }
-            }))
-          },
-          {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ostravels.com" },
-              { "@type": "ListItem", "position": 2, "name": "Air Ticketing", "item": "https://www.ostravels.com/air-ticketing" }
-            ]
-          }
-        ]
-      })}} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "TravelAgency",
+                name: "OS Consultants",
+                alternateName: "OS Consultants Air Ticketing",
+                url: "https://www.ostravels.com/air-ticketing",
+                logo: "https://www.ostravels.com/logo.png",
+                image: "https://www.ostravels.com/air_ticketing_lounge.png",
+                description:
+                  "Islamabad's #1 IATA-authorized air ticketing agency. Cheap international flights, group bookings, student discounts, Umrah packages, and 24/7 WhatsApp support from Blue Area.",
+                telephone: "+92-51-2021700",
+                email: "info@osconsultants.pk",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Office #3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area",
+                  addressLocality: "Islamabad",
+                  addressRegion: "Islamabad Capital Territory",
+                  postalCode: "44000",
+                  addressCountry: "PK",
+                },
+                geo: { "@type": "GeoCoordinates", latitude: "33.7215", longitude: "73.0433" },
+                openingHoursSpecification: {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  opens: "10:00",
+                  closes: "19:00",
+                },
+                priceRange: "$$",
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "847",
+                  bestRating: "5",
+                },
+                sameAs: [
+                  "https://www.facebook.com/osconsultants01/",
+                  "https://www.instagram.com/osconsultants.pk/",
+                  "https://www.linkedin.com/company/os-consultants/",
+                ],
+              },
+              {
+                "@type": "FAQPage",
+                mainEntity: TICKETING_FAQS.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://www.ostravels.com",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Air Ticketing",
+                    item: "https://www.ostravels.com/air-ticketing",
+                  },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

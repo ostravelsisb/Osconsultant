@@ -19,7 +19,10 @@ import {
 export const Route = createFileRoute("/hotel-booking")({
   head: () => ({
     meta: [
-      { title: "Best Hotel Booking Agent in Islamabad 2026 — Cheap International Reservations | OS Consultants" },
+      {
+        title:
+          "Best Hotel Booking Agent in Islamabad 2026 — Cheap International Reservations | OS Consultants",
+      },
       {
         name: "description",
         content:
@@ -33,20 +36,25 @@ export const Route = createFileRoute("/hotel-booking")({
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: "Best Hotel Booking Agent Islamabad — Worldwide Reservations | OS Consultants" },
+      {
+        property: "og:title",
+        content: "Best Hotel Booking Agent Islamabad — Worldwide Reservations | OS Consultants",
+      },
       {
         property: "og:description",
-        content: "Global hotel partners. Best rates for visa applications & holidays. Luxury to budget worldwide.",
+        content:
+          "Global hotel partners. Best rates for visa applications & holidays. Luxury to budget worldwide.",
       },
       { property: "og:url", content: "https://osconsultants.pk/hotel-booking" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Hotel Booking Agent Islamabad | OS Consultants" },
-      { name: "twitter:description", content: "Cheapest hotel reservations for visas & holidays from Islamabad." },
+      {
+        name: "twitter:description",
+        content: "Cheapest hotel reservations for visas & holidays from Islamabad.",
+      },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/hotel-booking" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/hotel-booking" }],
   }),
   component: HotelBooking,
 });
@@ -158,9 +166,7 @@ function HotelBooking() {
                     {p.step}
                   </span>
                   <h3 className="text-xl font-bold mt-4">{p.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    {p.desc}
-                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -180,7 +186,8 @@ function HotelBooking() {
                 Global Hotel Partners & Direct Contracts
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base">
-                Our direct partnerships with global distribution systems and premium hotel chains enable us to provide verified, cheap hotel bookings for any location worldwide.
+                Our direct partnerships with global distribution systems and premium hotel chains
+                enable us to provide verified, cheap hotel bookings for any location worldwide.
               </p>
               <ul className="space-y-3.5">
                 {[
@@ -210,8 +217,11 @@ function HotelBooking() {
                 { label: "Europe & Schengen", count: "1200+ Partner Hotels" },
                 { label: "United Kingdom", count: "400+ Partner Hotels" },
                 { label: "USA & Canada", count: "800+ Partner Hotels" },
-              ].map(d => (
-                <div key={d.label} className="p-6 bg-card border border-border rounded-2xl shadow-soft">
+              ].map((d) => (
+                <div
+                  key={d.label}
+                  className="p-6 bg-card border border-border rounded-2xl shadow-soft"
+                >
                   <p className="text-sm font-bold text-foreground">{d.label}</p>
                   <p className="text-xl font-extrabold gradient-text mt-2">{d.count}</p>
                 </div>

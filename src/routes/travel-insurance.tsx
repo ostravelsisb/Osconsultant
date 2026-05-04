@@ -19,7 +19,10 @@ import {
 export const Route = createFileRoute("/travel-insurance")({
   head: () => ({
     meta: [
-      { title: "Best Travel Insurance in Pakistan 2026 — Schengen Compliant | OS Consultants Islamabad" },
+      {
+        title:
+          "Best Travel Insurance in Pakistan 2026 — Schengen Compliant | OS Consultants Islamabad",
+      },
       {
         name: "description",
         content:
@@ -33,16 +36,21 @@ export const Route = createFileRoute("/travel-insurance")({
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: "Best Travel Insurance Pakistan — Schengen Compliant | OS Consultants" },
-      { property: "og:description", content: "Instant Schengen-compliant travel insurance. €30,000+ medical cover from Islamabad." },
+      {
+        property: "og:title",
+        content: "Best Travel Insurance Pakistan — Schengen Compliant | OS Consultants",
+      },
+      {
+        property: "og:description",
+        content:
+          "Instant Schengen-compliant travel insurance. €30,000+ medical cover from Islamabad.",
+      },
       { property: "og:url", content: "https://osconsultants.pk/travel-insurance" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Travel Insurance Pakistan | OS Consultants" },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/travel-insurance" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/travel-insurance" }],
   }),
   component: TravelInsurance,
 });
@@ -154,9 +162,7 @@ function TravelInsurance() {
                     {p.step}
                   </span>
                   <h3 className="text-xl font-bold mt-4">{p.title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    {p.desc}
-                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -176,7 +182,8 @@ function TravelInsurance() {
                 The Top Travel Insurance Agent in Blue Area
               </h2>
               <p className="text-muted-foreground leading-relaxed text-base">
-                An exact match of dates and policy parameters is crucial to prevent visa rejection. We eliminate risk by cross-verifying your dates with your flight ticket.
+                An exact match of dates and policy parameters is crucial to prevent visa rejection.
+                We eliminate risk by cross-verifying your dates with your flight ticket.
               </p>
               <ul className="space-y-3.5">
                 {[
@@ -206,8 +213,11 @@ function TravelInsurance() {
                 { label: "Processing Speed", limit: "Under 5 Mins" },
                 { label: "Age Limits Supported", limit: "Up to 85 Yrs" },
                 { label: "Visa Approval Rate Link", limit: "98% Validated" },
-              ].map(d => (
-                <div key={d.label} className="p-6 bg-card border border-border rounded-2xl shadow-soft">
+              ].map((d) => (
+                <div
+                  key={d.label}
+                  className="p-6 bg-card border border-border rounded-2xl shadow-soft"
+                >
                   <p className="text-sm font-bold text-foreground">{d.label}</p>
                   <p className="text-xl font-extrabold gradient-text mt-2">{d.limit}</p>
                 </div>
@@ -290,16 +300,30 @@ function TravelInsurance() {
           </div>
 
           <div className="prose max-w-none prose-lg mt-10 border-t border-border pt-10">
-            <h3 className="text-2xl font-bold text-foreground">Relatable Insurance Coverage for Worldwide Journeys</h3>
+            <h3 className="text-2xl font-bold text-foreground">
+              Relatable Insurance Coverage for Worldwide Journeys
+            </h3>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              When planning an international trip, it is critical to protect yourself against unexpected circumstances. Travel emergencies can happen anywhere, and overseas medical costs can quickly escalate. With OS Consultants by your side, you can obtain high-quality policies tailored to your budget.
+              When planning an international trip, it is critical to protect yourself against
+              unexpected circumstances. Travel emergencies can happen anywhere, and overseas medical
+              costs can quickly escalate. With OS Consultants by your side, you can obtain
+              high-quality policies tailored to your budget.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Whether you are going on a short vacation to the UAE, a multi-city tour through Europe, or a student program in Canada or Australia, our plans are designed to match your itinerary exactly. We handle all paperwork instantly so you walk away with a ready-to-use printout or soft copy immediately.
+              Whether you are going on a short vacation to the UAE, a multi-city tour through
+              Europe, or a student program in Canada or Australia, our plans are designed to match
+              your itinerary exactly. We handle all paperwork instantly so you walk away with a
+              ready-to-use printout or soft copy immediately.
             </p>
-            <h4 className="text-xl font-bold text-foreground mt-6">Why It's Vital for Schengen, USA & Canada Visas</h4>
+            <h4 className="text-xl font-bold text-foreground mt-6">
+              Why It's Vital for Schengen, USA & Canada Visas
+            </h4>
             <p className="mt-2 text-muted-foreground leading-relaxed">
-              Consulates and embassies explicitly look for clear travel insurance validity dates that completely cover your journey. Having even a one-day gap can lead to visa refusal. We verify your dates to match your flights exactly, eliminating any risk of rejection. Trust OS Consultants to keep your travel fully covered from takeoff to landing.
+              Consulates and embassies explicitly look for clear travel insurance validity dates
+              that completely cover your journey. Having even a one-day gap can lead to visa
+              refusal. We verify your dates to match your flights exactly, eliminating any risk of
+              rejection. Trust OS Consultants to keep your travel fully covered from takeoff to
+              landing.
             </p>
           </div>
         </div>

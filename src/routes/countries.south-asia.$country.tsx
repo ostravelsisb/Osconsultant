@@ -14,27 +14,49 @@ export const Route = createFileRoute("/countries/south-asia/$country")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.title || "South Asia Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026` },
-      { name: "description", content: loaderData?.description ? `${loaderData.description} OS Consultants Islamabad — Pakistan's #1 visa agency. 98% approval rate, IATA-accredited, Blue Area office.` : "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, best south asia visa consultant islamabad, top south asia visa agent pakistan, south asia visa success rate pakistan, south asia visa from pakistan 2026, os consultants south asia visa, blue area visa consultant` },
+      {
+        title: `${loaderData?.title || "South Asia Visa Consultant Islamabad"} | Pakistan's #1 Visa Agency 2026`,
+      },
+      {
+        name: "description",
+        content: loaderData?.description
+          ? `${loaderData.description} OS Consultants Islamabad — Pakistan's #1 visa agency. 98% approval rate, IATA-accredited, Blue Area office.`
+          : "",
+      },
+      {
+        name: "keywords",
+        content: `${loaderData?.keywords || ""}, best south asia visa consultant islamabad, top south asia visa agent pakistan, south asia visa success rate pakistan, south asia visa from pakistan 2026, os consultants south asia visa, blue area visa consultant`,
+      },
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
       { name: "author", content: "OS Consultants" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: `${loaderData?.name || "South Asia"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants` },
+      {
+        property: "og:title",
+        content: `${loaderData?.name || "South Asia"} Visa Consultant Islamabad — Pakistan's #1 | OS Consultants`,
+      },
       { property: "og:description", content: loaderData?.description || "" },
-      { property: "og:url", content: `https://osconsultants.pk/countries/south-asia/${loaderData?.slug || ""}` },
+      {
+        property: "og:url",
+        content: `https://osconsultants.pk/countries/south-asia/${loaderData?.slug || ""}`,
+      },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_PK" },
       { property: "og:site_name", content: "OS Consultants — Pakistan's No.1 Travel Agency" },
       { property: "og:image", content: loaderData?.image || "" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: `${loaderData?.name || ""} Visa Consultant Islamabad | OS Consultants` },
+      {
+        name: "twitter:title",
+        content: `${loaderData?.name || ""} Visa Consultant Islamabad | OS Consultants`,
+      },
       { name: "twitter:description", content: loaderData?.description || "" },
       { name: "twitter:image", content: loaderData?.image || "" },
     ],
     links: [
-      { rel: "canonical", href: `https://osconsultants.pk/countries/south-asia/${loaderData?.slug || ""}` },
+      {
+        rel: "canonical",
+        href: `https://osconsultants.pk/countries/south-asia/${loaderData?.slug || ""}`,
+      },
     ],
   }),
   component: SouthAsiaCountryPage,
@@ -157,8 +179,8 @@ function SouthAsiaCountryPage() {
                 Start Your {country.name} Journey Today
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Our experts at Pakistan's no.1 travel agency and consultancy are ready to handle your {country.name} visa application
-                with speed and precision.
+                Our experts at Pakistan's no.1 travel agency and consultancy are ready to handle
+                your {country.name} visa application with speed and precision.
               </p>
 
               <div className="pt-6 flex flex-wrap gap-4">

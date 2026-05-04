@@ -9,17 +9,27 @@ export const Route = createFileRoute("/pakistan-visa")({
   head: () => ({
     meta: [
       { title: "Pakistan Visa Consultant Islamabad | Pakistan Inbound E-Visa 2026" },
-      { name: "description", content: "Expert assistance for Pakistan inbound visa (E-Visa, tourist, business, work) at OS Consultants Islamabad. 100% online, hassle-free processing." },
-      { name: "keywords", content: "pakistan inbound visa, pakistan e-visa islamabad, pakistan tourist visa, apply pakistan visa 2026, travel to pakistan visa consultancy, best visa agent pakistan" },
+      {
+        name: "description",
+        content:
+          "Expert assistance for Pakistan inbound visa (E-Visa, tourist, business, work) at OS Consultants Islamabad. 100% online, hassle-free processing.",
+      },
+      {
+        name: "keywords",
+        content:
+          "pakistan inbound visa, pakistan e-visa islamabad, pakistan tourist visa, apply pakistan visa 2026, travel to pakistan visa consultancy, best visa agent pakistan",
+      },
       { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Pakistan Inbound E-Visa Processing | OS Consultants" },
-      { property: "og:description", content: "Fast e-visa, business visa, and tourist visa services for traveling to Pakistan from anywhere globally." },
+      {
+        property: "og:description",
+        content:
+          "Fast e-visa, business visa, and tourist visa services for traveling to Pakistan from anywhere globally.",
+      },
       { property: "og:url", content: "https://osconsultants.pk/pakistan-visa" },
       { property: "og:type", content: "website" },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/pakistan-visa" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/pakistan-visa" }],
   }),
   component: PakistanVisaPage,
 });
@@ -72,11 +82,10 @@ function PakistanVisaPage() {
 
       <section className="container-px mx-auto max-w-5xl py-20">
         <div className="space-y-6 text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Inbound Pakistan Visa Processing
-          </h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Inbound Pakistan Visa Processing</h2>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            We provide fast, efficient end-to-end guidance for foreign nationals applying for Pakistan E-Visa, tourist visa, and business entry permits.
+            We provide fast, efficient end-to-end guidance for foreign nationals applying for
+            Pakistan E-Visa, tourist visa, and business entry permits.
           </p>
         </div>
 
@@ -109,7 +118,8 @@ function PakistanVisaPage() {
                 <h3 className="font-bold text-lg">Pakistan E-Visa Portal</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                The official Pakistan online visa system simplifies the process. We assemble your sponsor letters, hotel bookings, and required documentation for rapid approvals.
+                The official Pakistan online visa system simplifies the process. We assemble your
+                sponsor letters, hotel bookings, and required documentation for rapid approvals.
               </p>
             </div>
           </div>
@@ -124,7 +134,8 @@ function PakistanVisaPage() {
                 Start Your Pakistan Visa Application
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Our team at OS Consultants handles file compilation and official visa submissions smoothly.
+                Our team at OS Consultants handles file compilation and official visa submissions
+                smoothly.
               </p>
               <div className="pt-6 flex flex-wrap gap-4">
                 <a

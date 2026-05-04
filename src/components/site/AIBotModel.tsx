@@ -1,20 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { MessageSquare, Sparkles, X, Compass, Globe, Award, ShieldCheck, ExternalLink } from "lucide-react";
+import {
+  MessageSquare,
+  Sparkles,
+  X,
+  Compass,
+  Globe,
+  Award,
+  ShieldCheck,
+  ExternalLink,
+} from "lucide-react";
 
 const messages = [
   "Hi there! I am Sarah, your personal travel consultant. 😊",
   "Looking for the best visa options? Let me help guide you! 🌍",
   "We maintain a 98% success rate on visa applications. ✈️",
   "Need to secure IATA-exclusive flight deals? Let's check them. 🎟️",
-  "Planning Umrah? We offer tailored packages for ultimate comfort. 🕌"
+  "Planning Umrah? We offer tailored packages for ultimate comfort. 🕌",
 ];
 
 const HumanFaceAvatar = () => (
-  <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="scale-95 group-hover:scale-100 transition-transform duration-300">
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 100 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="scale-95 group-hover:scale-100 transition-transform duration-300"
+  >
     {/* Hair Back */}
-    <path d="M15 50 C 15 20, 85 20, 85 50" stroke="#3A2E2B" strokeWidth="12" strokeLinecap="round" />
+    <path
+      d="M15 50 C 15 20, 85 20, 85 50"
+      stroke="#3A2E2B"
+      strokeWidth="12"
+      strokeLinecap="round"
+    />
     {/* Face Head */}
     <circle cx="50" cy="50" r="32" fill="#FCDBB0" />
     {/* Hair Front / Bangs */}
@@ -30,13 +51,31 @@ const HumanFaceAvatar = () => (
     <circle cx="34" cy="54" r="3.5" fill="#FFB2A6" opacity="0.6" />
     <circle cx="66" cy="54" r="3.5" fill="#FFB2A6" opacity="0.6" />
     {/* Cute Smile */}
-    <path d="M42 58 Q 50 66, 58 58" stroke="#D32F2F" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+    <path
+      d="M42 58 Q 50 66, 58 58"
+      stroke="#D32F2F"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      fill="none"
+    />
     {/* Support Headset */}
     <path d="M24 50 Q 18 10, 50 14" stroke="#2563EB" strokeWidth="3" fill="none" />
     <circle cx="21" cy="48" r="4.5" fill="#1D4ED8" />
-    <path d="M21 48 Q 28 65, 38 65" stroke="#1D4ED8" strokeWidth="2" strokeLinecap="round" fill="none" />
+    <path
+      d="M21 48 Q 28 65, 38 65"
+      stroke="#1D4ED8"
+      strokeWidth="2"
+      strokeLinecap="round"
+      fill="none"
+    />
     {/* Nose */}
-    <path d="M49 51 Q 50 54, 51 51" stroke="#E0AC8B" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    <path
+      d="M49 51 Q 50 54, 51 51"
+      stroke="#E0AC8B"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      fill="none"
+    />
   </svg>
 );
 
@@ -96,7 +135,8 @@ export function AIBotModel() {
             {/* Conversation/Info Body */}
             <div className="p-4 bg-gradient-to-b from-sky-50/40 via-background to-background flex-1 flex flex-col gap-4 overflow-y-auto max-h-[360px] no-scrollbar">
               <p className="text-xs text-muted-foreground leading-relaxed bg-sky-50/50 p-3 rounded-2xl border border-sky-100/50">
-                Hi! Welcome to OS Consultants. I'm here to provide premium advice and take care of your complete travel & visa process. Let's make your journey unforgettable!
+                Hi! Welcome to OS Consultants. I'm here to provide premium advice and take care of
+                your complete travel & visa process. Let's make your journey unforgettable!
               </p>
 
               {/* Action Buttons */}
@@ -108,7 +148,9 @@ export function AIBotModel() {
                 >
                   <div className="flex items-center gap-3">
                     <Globe className="w-4 h-4 text-sky-600 group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-semibold text-foreground">Global Visa Services</span>
+                    <span className="text-xs font-semibold text-foreground">
+                      Global Visa Services
+                    </span>
                   </div>
                   <Compass className="w-3.5 h-3.5 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
                 </Link>
@@ -120,7 +162,9 @@ export function AIBotModel() {
                 >
                   <div className="flex items-center gap-3">
                     <Award className="w-4 h-4 text-sky-600 group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-semibold text-foreground">IATA Air Ticketing</span>
+                    <span className="text-xs font-semibold text-foreground">
+                      IATA Air Ticketing
+                    </span>
                   </div>
                   <Compass className="w-3.5 h-3.5 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
                 </Link>
@@ -132,7 +176,9 @@ export function AIBotModel() {
                 >
                   <div className="flex items-center gap-3">
                     <ShieldCheck className="w-4 h-4 text-sky-600 group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-semibold text-foreground">Premium Hotel Bookings</span>
+                    <span className="text-xs font-semibold text-foreground">
+                      Premium Hotel Bookings
+                    </span>
                   </div>
                   <Compass className="w-3.5 h-3.5 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
                 </Link>
@@ -187,13 +233,13 @@ export function AIBotModel() {
         <motion.div
           animate={{
             y: [0, -6, 0],
-            x: [0, 4, 0]
+            x: [0, 4, 0],
           }}
           transition={{
             repeat: Infinity,
             repeatType: "reverse",
             duration: 2.8,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           onClick={() => setIsOpen(!isOpen)}
           className="w-14 h-14 bg-gradient-to-br from-sky-500 via-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center cursor-pointer shadow-glow-primary border border-white/20 hover:scale-105 transition-all group relative active:scale-95 p-1 shrink-0"

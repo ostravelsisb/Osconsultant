@@ -8,7 +8,9 @@ import { DESTINATIONS } from "@/data/destinations";
 export const Route = createFileRoute("/countries/")({
   head: () => ({
     meta: [
-      { title: "50+ Visa Destinations Worldwide — Apply from Islamabad | Pakistan's #1 Visa Agency" },
+      {
+        title: "50+ Visa Destinations Worldwide — Apply from Islamabad | Pakistan's #1 Visa Agency",
+      },
       {
         name: "description",
         content:
@@ -22,7 +24,10 @@ export const Route = createFileRoute("/countries/")({
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad" },
-      { property: "og:title", content: "50+ Global Visa Destinations — OS Consultants | Pakistan's #1" },
+      {
+        property: "og:title",
+        content: "50+ Global Visa Destinations — OS Consultants | Pakistan's #1",
+      },
       {
         property: "og:description",
         content:
@@ -32,11 +37,12 @@ export const Route = createFileRoute("/countries/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "50+ Visa Destinations | OS Consultants Pakistan" },
-      { name: "twitter:description", content: "USA, UK, Canada, Schengen, Australia & 50+ more. Apply from Islamabad." },
+      {
+        name: "twitter:description",
+        content: "USA, UK, Canada, Schengen, Australia & 50+ more. Apply from Islamabad.",
+      },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/countries" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/countries" }],
   }),
   component: CountriesPage,
 });

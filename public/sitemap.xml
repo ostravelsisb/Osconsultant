@@ -71,26 +71,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://osconsultants.pk/countries/australia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/new-zealand</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/qatar</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/bahrain</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://osconsultants.pk/countries/middle-east</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -106,12 +86,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://osconsultants.pk/countries/east-asia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://osconsultants.pk/countries/north-africa</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/countries/southern-africa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://osconsultants.pk/countries/south-america</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://osconsultants.pk/countries/oceania</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -261,6 +256,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://osconsultants.pk/countries/south-asia/pakistan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://osconsultants.pk/countries/south-asia/thailand</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -367,6 +367,21 @@
   </url>
   <url>
     <loc>https://osconsultants.pk/countries/southern-africa/seychelles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://osconsultants.pk/countries/southern-africa/zimbabwe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://osconsultants.pk/countries/southern-africa/zambia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://osconsultants.pk/countries/southern-africa/tanzania</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

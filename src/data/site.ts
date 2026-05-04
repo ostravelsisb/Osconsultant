@@ -97,7 +97,8 @@ export const COUNTRIES = [
     slug: "east-asia",
     name: "East Asia",
     short: "China, Japan, South Korea & more.",
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
     accent: "Region",
   },
   {
@@ -118,7 +119,8 @@ export const COUNTRIES = [
     slug: "south-america",
     name: "South America",
     short: "Brazil, Argentina, Colombia & more.",
-    image: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=800",
     accent: "Region",
   },
   {
@@ -440,8 +442,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Austria",
     code: "at",
     title: "Austria Visa Consultant in Islamabad — Schengen Visa Expert",
-    description: "Expert Austria Schengen visa assistance from Islamabad. Tourist, business & family visit visas with 98% approval rate. Professional documentation by Pakistan's #1 visa agency.",
-    keywords: "Austria visa consultant Islamabad, Austria visit visa Pakistan, Austria Schengen visa requirements, Vienna visa from ISB, apply Austria visa Islamabad, Austria tourist visa Pakistan 2026",
+    description:
+      "Expert Austria Schengen visa assistance from Islamabad. Tourist, business & family visit visas with 98% approval rate. Professional documentation by Pakistan's #1 visa agency.",
+    keywords:
+      "Austria visa consultant Islamabad, Austria visit visa Pakistan, Austria Schengen visa requirements, Vienna visa from ISB, apply Austria visa Islamabad, Austria tourist visa Pakistan 2026",
     intro:
       "Austria, the heart of Europe, is famous for its alpine scenery, classical music heritage, and world-class cities like Vienna and Salzburg. The Austrian embassy in Islamabad requires precise documentation, especially regarding travel insurance and financial stability. As Pakistan's leading Austria visa consultant, OS Consultants ensures your application meets every requirement for a smooth approval.",
     docs: [
@@ -467,8 +471,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Belgium",
     code: "be",
     title: "Belgium Visa Consultant in Islamabad — Schengen Visa Expert",
-    description: "Apply for Belgium Schengen visa from Islamabad with Pakistan's #1 visa agency. Expert documentation for tourist, business & family visas. 98% approval rate.",
-    keywords: "Belgium visa consultant Islamabad, Belgium visit visa Pakistan, Belgium Schengen visa ISB, Brussels visa from Pakistan, apply Belgium visa Islamabad 2026",
+    description:
+      "Apply for Belgium Schengen visa from Islamabad with Pakistan's #1 visa agency. Expert documentation for tourist, business & family visas. 98% approval rate.",
+    keywords:
+      "Belgium visa consultant Islamabad, Belgium visit visa Pakistan, Belgium Schengen visa ISB, Brussels visa from Pakistan, apply Belgium visa Islamabad 2026",
     intro:
       "Belgium is known for its medieval towns, Renaissance architecture, and as the headquarters of the European Union. Applications for Belgium from Pakistan are handled with strict attention to the purpose of stay. OS Consultants ensures your documentation is robust and fully aligned with the Belgian embassy requirements in Islamabad.",
     docs: [
@@ -494,8 +500,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Denmark",
     code: "dk",
     title: "Denmark Visa Consultant in Islamabad — Schengen Visa Expert",
-    description: "Fast and reliable Denmark Schengen visa processing in Islamabad. Expert documentation for tourist & business visas via ApplyVisa portal. Pakistan's top visa agency.",
-    keywords: "Denmark visa consultant Islamabad, Denmark visit visa Pakistan, Copenhagen visa from ISB, Denmark Schengen visa requirements, apply Denmark visa Islamabad 2026",
+    description:
+      "Fast and reliable Denmark Schengen visa processing in Islamabad. Expert documentation for tourist & business visas via ApplyVisa portal. Pakistan's top visa agency.",
+    keywords:
+      "Denmark visa consultant Islamabad, Denmark visit visa Pakistan, Copenhagen visa from ISB, Denmark Schengen visa requirements, apply Denmark visa Islamabad 2026",
     intro:
       "Denmark, the land of the Vikings and modern Scandinavian design. The Danish embassy uses the ApplyVisa portal for applications from Pakistan. OS Consultants guides you through the complete digital submission and physical document gathering process, ensuring strong ties to Pakistan and a clear travel plan.",
     docs: [
@@ -521,8 +529,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Greece",
     code: "gr",
     title: "Greece Visa Consultant in Islamabad — Schengen Visa Expert",
-    description: "Secure your Greece Schengen visa from Pakistan with Pakistan's #1 visa consultant. Expert documentation for tourist & business visas. 98% approval rate from Blue Area, Islamabad.",
-    keywords: "Greece visa consultant Islamabad, Greece visit visa Pakistan, Athens visa from ISB, Greece Schengen visa requirements, apply Greece visa Islamabad 2026, Greek embassy visa Pakistan",
+    description:
+      "Secure your Greece Schengen visa from Pakistan with Pakistan's #1 visa consultant. Expert documentation for tourist & business visas. 98% approval rate from Blue Area, Islamabad.",
+    keywords:
+      "Greece visa consultant Islamabad, Greece visit visa Pakistan, Athens visa from ISB, Greece Schengen visa requirements, apply Greece visa Islamabad 2026, Greek embassy visa Pakistan",
     intro:
       "From the Acropolis to the stunning Aegean islands, Greece is a dream destination for Pakistani travelers. OS Consultants assists in preparing your Greece Schengen visa file for submission at GVCW centers, ensuring every document — from financial proofs to hotel confirmations — is in perfect order for maximum approval chances.",
     docs: [
@@ -547,8 +557,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Norway",
     code: "no",
     title: "Norway Visa Consultant in Islamabad — Schengen Visa Expert",
-    description: "Expert Norway Schengen visa assistance from Islamabad. UDI portal applications, tourist & business visas. Pakistan's #1 visa agency with 98% approval rate.",
-    keywords: "Norway visa consultant Islamabad, Norway visit visa Pakistan, Oslo visa from ISB, Norway Schengen visa requirements, UDI visa application Pakistan, apply Norway visa Islamabad 2026",
+    description:
+      "Expert Norway Schengen visa assistance from Islamabad. UDI portal applications, tourist & business visas. Pakistan's #1 visa agency with 98% approval rate.",
+    keywords:
+      "Norway visa consultant Islamabad, Norway visit visa Pakistan, Oslo visa from ISB, Norway Schengen visa requirements, UDI visa application Pakistan, apply Norway visa Islamabad 2026",
     intro:
       "Norway's stunning fjords and magical northern lights attract travelers worldwide. The Norwegian embassy uses the UDI portal for applications from Pakistan. OS Consultants guides you through the complete digital submission and physical document gathering process, ensuring your financial means and return ties are clearly demonstrated.",
     docs: [
@@ -579,8 +591,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Portugal",
     code: "pt",
     title: "Portugal Visa Consultant in Islamabad — Schengen Visa Expert",
-    description: "Apply for Portugal Schengen visa from Islamabad with Pakistan's top visa agency. Expert documentation for tourist & business visas. 98% approval rate.",
-    keywords: "Portugal visa consultant Islamabad, Portugal visit visa Pakistan, Lisbon visa from ISB, Portugal Schengen visa requirements, apply Portugal visa Islamabad 2026",
+    description:
+      "Apply for Portugal Schengen visa from Islamabad with Pakistan's top visa agency. Expert documentation for tourist & business visas. 98% approval rate.",
+    keywords:
+      "Portugal visa consultant Islamabad, Portugal visit visa Pakistan, Lisbon visa from ISB, Portugal Schengen visa requirements, apply Portugal visa Islamabad 2026",
     intro:
       "Portugal offers a rich history, stunning Algarve coastlines, and vibrant cities like Lisbon and Porto. OS Consultants provides expert help for Portugal Schengen visas, ensuring your documentation meets the exacting standards of the Portuguese consular section in Islamabad.",
     docs: [
@@ -611,8 +625,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Sweden",
     code: "se",
     title: "Sweden Visa Consultant in Islamabad — Schengen Visa Expert",
-    description: "Professional Sweden Schengen visa assistance in Islamabad. VFS Global submissions, tourist & business visas. Pakistan's #1 visa agency.",
-    keywords: "Sweden visa consultant Islamabad, Sweden visit visa Pakistan, Stockholm visa from ISB, Sweden Schengen visa requirements, VFS Sweden Islamabad, apply Sweden visa 2026",
+    description:
+      "Professional Sweden Schengen visa assistance in Islamabad. VFS Global submissions, tourist & business visas. Pakistan's #1 visa agency.",
+    keywords:
+      "Sweden visa consultant Islamabad, Sweden visit visa Pakistan, Stockholm visa from ISB, Sweden Schengen visa requirements, VFS Sweden Islamabad, apply Sweden visa 2026",
     intro:
       "Sweden, known for its innovation, stunning nature, and high quality of life. Applications are submitted through VFS Global. OS Consultants ensures your file is complete, with particular focus on financial means, ties to Pakistan, and clear purpose of visit.",
     docs: [
@@ -638,8 +654,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Czech Republic",
     code: "cz",
     title: "Czech Republic Visa Consultant in Islamabad — Schengen Expert",
-    description: "Apply for Czech Republic Schengen visa from Islamabad. Expert Prague visa documentation with 98% approval rate. Pakistan's #1 visa agency.",
-    keywords: "Czech Republic visa consultant Islamabad, Prague visa Pakistan, Czech Schengen visa ISB, Czech embassy Islamabad visa 2026, apply Czech visa Pakistan",
+    description:
+      "Apply for Czech Republic Schengen visa from Islamabad. Expert Prague visa documentation with 98% approval rate. Pakistan's #1 visa agency.",
+    keywords:
+      "Czech Republic visa consultant Islamabad, Prague visa Pakistan, Czech Schengen visa ISB, Czech embassy Islamabad visa 2026, apply Czech visa Pakistan",
     intro:
       "The Czech Republic, with its fairytale capital Prague, is a must-visit in Central Europe. The Czech embassy processes numerous applications and presenting a well-organized file is critical. OS Consultants specializes in Czech Republic Schengen visas with meticulous document preparation for maximum approval chances.",
     docs: [
@@ -664,8 +682,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Estonia",
     code: "ee",
     title: "Estonia Visa Consultant in Islamabad — Schengen Expert",
-    description: "Estonia Schengen visa assistance from Islamabad. Digital nomad, tourist & visit visa expertise. Pakistan's top visa agency with 98% approval rate.",
-    keywords: "Estonia visa consultant Islamabad, Estonia visit visa Pakistan, Tallinn visa from ISB, Estonia Schengen visa 2026, Estonia digital nomad visa Pakistan",
+    description:
+      "Estonia Schengen visa assistance from Islamabad. Digital nomad, tourist & visit visa expertise. Pakistan's top visa agency with 98% approval rate.",
+    keywords:
+      "Estonia visa consultant Islamabad, Estonia visit visa Pakistan, Tallinn visa from ISB, Estonia Schengen visa 2026, Estonia digital nomad visa Pakistan",
     intro:
       "Estonia is a digital leader with a beautiful medieval heart. Known for its advanced e-governance and charming Old Town Tallinn, Estonia attracts tech professionals and tourists alike. OS Consultants helps you navigate the Estonian visa process with precision, focusing on the specific requirements of the embassy.",
     docs: [
@@ -689,8 +709,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Finland",
     code: "fi",
     title: "Finland Visa Consultant in Islamabad — Schengen Expert",
-    description: "Expert Finland Schengen visa services in Islamabad for tourism, study & business. Professional documentation with 98% approval rate. Pakistan's #1 visa agency.",
-    keywords: "Finland visa consultant Islamabad, Finland visit visa Pakistan, Helsinki visa from ISB, Finland Schengen visa 2026, Finland student visa Pakistan, Lapland visa ISB",
+    description:
+      "Expert Finland Schengen visa services in Islamabad for tourism, study & business. Professional documentation with 98% approval rate. Pakistan's #1 visa agency.",
+    keywords:
+      "Finland visa consultant Islamabad, Finland visit visa Pakistan, Helsinki visa from ISB, Finland Schengen visa 2026, Finland student visa Pakistan, Lapland visa ISB",
     intro:
       "Finland, consistently rated the world's happiest country, offers stunning lakes, magical Northern Lights, and world-class education. OS Consultants provides meticulous file preparation for the Finnish embassy, ensuring your financial documents, travel insurance, and ties to Pakistan are clearly demonstrated.",
     docs: [
@@ -720,8 +742,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Hungary",
     code: "hu",
     title: "Hungary Visa Consultant in Islamabad — Schengen Expert",
-    description: "Secure your Hungary Schengen visa from Pakistan with Pakistan's top visa consultant. Expert Budapest visa documentation with 98% approval rate.",
-    keywords: "Hungary visa consultant Islamabad, Budapest visa Pakistan, Hungary Schengen visa ISB, Hungary visit visa 2026, apply Hungary visa Islamabad",
+    description:
+      "Secure your Hungary Schengen visa from Pakistan with Pakistan's top visa consultant. Expert Budapest visa documentation with 98% approval rate.",
+    keywords:
+      "Hungary visa consultant Islamabad, Budapest visa Pakistan, Hungary Schengen visa ISB, Hungary visit visa 2026, apply Hungary visa Islamabad",
     intro:
       "Hungary, known for its thermal baths, the majestic Danube, and the stunning Budapest Parliament building. OS Consultants ensures your application for the Hungarian embassy is flawless, with expert preparation of financial proofs, travel plans, and all supporting documents.",
     docs: [
@@ -752,8 +776,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Iceland",
     code: "is",
     title: "Iceland Visa Consultant in Islamabad — Schengen Expert",
-    description: "Expert Iceland Schengen visa assistance from Islamabad. Blue Lagoon, Golden Circle & Northern Lights trips. Pakistan's #1 visa agency.",
-    keywords: "Iceland visa consultant Islamabad, Iceland visit visa Pakistan, Reykjavik visa from ISB, Iceland Schengen visa 2026, apply Iceland visa Pakistan",
+    description:
+      "Expert Iceland Schengen visa assistance from Islamabad. Blue Lagoon, Golden Circle & Northern Lights trips. Pakistan's #1 visa agency.",
+    keywords:
+      "Iceland visa consultant Islamabad, Iceland visit visa Pakistan, Reykjavik visa from ISB, Iceland Schengen visa 2026, apply Iceland visa Pakistan",
     intro:
       "Iceland, the land of fire and ice, offers unparalleled natural wonders from the Blue Lagoon to the Golden Circle. OS Consultants guides you through the specific requirements for this unique Schengen destination, ensuring your financial stability and travel plans satisfy the Icelandic consular standards.",
     docs: [
@@ -779,8 +805,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Latvia",
     code: "lv",
     title: "Latvia Visa Consultant in Islamabad — Schengen Expert",
-    description: "Apply for Latvia Schengen visa from Islamabad. Expert Riga visa documentation. Pakistan's top visa agency with 98% approval rate.",
-    keywords: "Latvia visa consultant Islamabad, Riga visa Pakistan, Latvia Schengen visa ISB, Latvia visit visa 2026, apply Latvia visa Pakistan",
+    description:
+      "Apply for Latvia Schengen visa from Islamabad. Expert Riga visa documentation. Pakistan's top visa agency with 98% approval rate.",
+    keywords:
+      "Latvia visa consultant Islamabad, Riga visa Pakistan, Latvia Schengen visa ISB, Latvia visit visa 2026, apply Latvia visa Pakistan",
     intro:
       "Latvia offers a fascinating mix of art nouveau architecture, pristine nature, and a vibrant cultural scene in Riga. OS Consultants handles your Latvia Schengen visa application with care, ensuring precise documentation for the Latvian embassy.",
     docs: [
@@ -806,8 +834,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Lithuania",
     code: "lt",
     title: "Lithuania Visa Consultant in Islamabad — Schengen Expert",
-    description: "Lithuania Schengen visa services from Islamabad for tourism & business. Expert documentation by Pakistan's #1 visa agency. 98% approval rate.",
-    keywords: "Lithuania visa consultant Islamabad, Lithuania visit visa Pakistan, Vilnius visa from ISB, Lithuania Schengen visa 2026, apply Lithuania visa Pakistan",
+    description:
+      "Lithuania Schengen visa services from Islamabad for tourism & business. Expert documentation by Pakistan's #1 visa agency. 98% approval rate.",
+    keywords:
+      "Lithuania visa consultant Islamabad, Lithuania visit visa Pakistan, Vilnius visa from ISB, Lithuania Schengen visa 2026, apply Lithuania visa Pakistan",
     intro:
       "Lithuania is rich in history, Baltic charm, and UNESCO World Heritage sites. OS Consultants provides expert documentation support for the Lithuanian embassy, ensuring your visa file meets every requirement.",
     docs: [
@@ -837,8 +867,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Luxembourg",
     code: "lu",
     title: "Luxembourg Visa Consultant in Islamabad — Schengen Expert",
-    description: "Premium Luxembourg Schengen visa assistance from Islamabad. Expert documentation for this EU hub. Pakistan's #1 visa agency.",
-    keywords: "Luxembourg visa consultant Islamabad, Luxembourg visit visa Pakistan, Luxembourg Schengen visa ISB, Luxembourg visa 2026, apply Luxembourg visa Pakistan",
+    description:
+      "Premium Luxembourg Schengen visa assistance from Islamabad. Expert documentation for this EU hub. Pakistan's #1 visa agency.",
+    keywords:
+      "Luxembourg visa consultant Islamabad, Luxembourg visit visa Pakistan, Luxembourg Schengen visa ISB, Luxembourg visa 2026, apply Luxembourg visa Pakistan",
     intro:
       "Luxembourg, a tiny but prosperous country and a major financial hub of the European Union. OS Consultants assists in preparing high-quality visa files for Luxembourg, ensuring your financial documentation and travel plans meet the stringent embassy requirements.",
     docs: [
@@ -868,8 +900,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Malta",
     code: "mt",
     title: "Malta Visa Consultant in Islamabad — Schengen Expert",
-    description: "Secure your Malta Schengen visa from Pakistan with Pakistan's top visa consultant. Mediterranean island paradise. 98% approval rate.",
-    keywords: "Malta visa consultant Islamabad, Malta visit visa Pakistan, Valletta visa from ISB, Malta Schengen visa 2026, apply Malta visa Pakistan",
+    description:
+      "Secure your Malta Schengen visa from Pakistan with Pakistan's top visa consultant. Mediterranean island paradise. 98% approval rate.",
+    keywords:
+      "Malta visa consultant Islamabad, Malta visit visa Pakistan, Valletta visa from ISB, Malta Schengen visa 2026, apply Malta visa Pakistan",
     intro:
       "Malta, a sun-drenched Mediterranean archipelago with a rich history spanning millennia. OS Consultants helps you navigate the Maltese visa process smoothly, ensuring your documentation is complete and embassy-ready.",
     docs: [
@@ -895,8 +929,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Poland",
     code: "pl",
     title: "Poland Visa Consultant in Islamabad — Schengen Expert",
-    description: "Expert Poland Schengen visa assistance from Islamabad. Warsaw & Kraków visas with 98% approval rate. Pakistan's #1 visa agency.",
-    keywords: "Poland visa consultant Islamabad, Poland visit visa Pakistan, Warsaw visa from ISB, Krakow visa Pakistan, Poland Schengen visa 2026, apply Poland visa Islamabad",
+    description:
+      "Expert Poland Schengen visa assistance from Islamabad. Warsaw & Kraków visas with 98% approval rate. Pakistan's #1 visa agency.",
+    keywords:
+      "Poland visa consultant Islamabad, Poland visit visa Pakistan, Warsaw visa from ISB, Krakow visa Pakistan, Poland Schengen visa 2026, apply Poland visa Islamabad",
     intro:
       "Poland is a country of resilience, stunning architecture, and rich cultural heritage from Kraków's Main Square to Warsaw's rebuilt Old Town. OS Consultants provides comprehensive support for the Polish embassy in Islamabad, ensuring flawless documentation for your visa application.",
     docs: [
@@ -927,8 +963,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Slovakia",
     code: "sk",
     title: "Slovakia Visa Consultant in Islamabad — Schengen Expert",
-    description: "Apply for Slovakia Schengen visa from Islamabad. Expert Bratislava visa documentation. Pakistan's top visa agency. 98% approval rate.",
-    keywords: "Slovakia visa consultant Islamabad, Bratislava visa Pakistan, Slovakia Schengen visa ISB, Slovakia visit visa 2026, apply Slovakia visa Pakistan",
+    description:
+      "Apply for Slovakia Schengen visa from Islamabad. Expert Bratislava visa documentation. Pakistan's top visa agency. 98% approval rate.",
+    keywords:
+      "Slovakia visa consultant Islamabad, Bratislava visa Pakistan, Slovakia Schengen visa ISB, Slovakia visit visa 2026, apply Slovakia visa Pakistan",
     intro:
       "Slovakia, home to dramatic castles, the High Tatras mountains, and the charming capital Bratislava. OS Consultants ensures your application for the Slovakian embassy is perfectly assembled with all required documentation.",
     docs: [
@@ -953,8 +991,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Slovenia",
     code: "si",
     title: "Slovenia Visa Consultant in Islamabad — Schengen Expert",
-    description: "Expert Slovenia Schengen visa services from Islamabad. Lake Bled, Ljubljana & Alpine adventures. Pakistan's #1 visa agency.",
-    keywords: "Slovenia visa consultant Islamabad, Slovenia visit visa Pakistan, Ljubljana visa from ISB, Lake Bled visa Pakistan, Slovenia Schengen visa 2026",
+    description:
+      "Expert Slovenia Schengen visa services from Islamabad. Lake Bled, Ljubljana & Alpine adventures. Pakistan's #1 visa agency.",
+    keywords:
+      "Slovenia visa consultant Islamabad, Slovenia visit visa Pakistan, Ljubljana visa from ISB, Lake Bled visa Pakistan, Slovenia Schengen visa 2026",
     intro:
       "Slovenia, where the Alps meet the Mediterranean, offers breathtaking landscapes from Lake Bled to the charming streets of Ljubljana. OS Consultants provides meticulous file preparation for the Slovenian embassy, ensuring every document is perfect.",
     docs: [
@@ -980,8 +1020,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Liechtenstein",
     code: "li",
     title: "Liechtenstein Visa Consultant in Islamabad — Schengen Expert",
-    description: "Expert Liechtenstein Schengen visa assistance from Islamabad. Alpine principality visas with 98% approval rate. Pakistan's #1 visa agency.",
-    keywords: "Liechtenstein visa consultant Islamabad, Liechtenstein visit visa Pakistan, Vaduz visa from ISB, Liechtenstein Schengen visa 2026",
+    description:
+      "Expert Liechtenstein Schengen visa assistance from Islamabad. Alpine principality visas with 98% approval rate. Pakistan's #1 visa agency.",
+    keywords:
+      "Liechtenstein visa consultant Islamabad, Liechtenstein visit visa Pakistan, Vaduz visa from ISB, Liechtenstein Schengen visa 2026",
     intro:
       "Liechtenstein, a tiny alpine principality nestled between Switzerland and Austria, is one of Europe's most exclusive destinations. OS Consultants guides you through all requirements for this unique Schengen destination with expert document preparation.",
     docs: [
@@ -1007,8 +1049,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Croatia",
     code: "hr",
     title: "Croatia Visa Consultant in Islamabad — Schengen Expert 2026",
-    description: "Expert Croatia Schengen visa assistance from Islamabad. Dubrovnik, Split & Plitvice visas. Pakistan's #1 visa agency with 98% approval rate.",
-    keywords: "Croatia visa consultant Islamabad, Croatia visit visa Pakistan, Dubrovnik visa from ISB, Croatia Schengen visa 2026, apply Croatia visa Pakistan, Split visa ISB",
+    description:
+      "Expert Croatia Schengen visa assistance from Islamabad. Dubrovnik, Split & Plitvice visas. Pakistan's #1 visa agency with 98% approval rate.",
+    keywords:
+      "Croatia visa consultant Islamabad, Croatia visit visa Pakistan, Dubrovnik visa from ISB, Croatia Schengen visa 2026, apply Croatia visa Pakistan, Split visa ISB",
     intro:
       "Croatia, the newest member of the Schengen zone, is famous for its stunning Adriatic coastline, historic Dubrovnik, and the breathtaking Plitvice Lakes. OS Consultants handles your Croatia visa application with precision, ensuring every document meets the embassy's exacting standards.",
     docs: [
@@ -1038,8 +1082,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Bulgaria",
     code: "bg",
     title: "Bulgaria Visa Consultant in Islamabad — Schengen Expert 2026",
-    description: "Expert Bulgaria Schengen visa assistance from Islamabad. Sofia, Plovdiv & Black Sea coast visas. Pakistan's #1 visa agency. 98% approval rate.",
-    keywords: "Bulgaria visa consultant Islamabad, Bulgaria visit visa Pakistan, Sofia visa from ISB, Bulgaria Schengen visa 2026, apply Bulgaria visa Pakistan, Plovdiv visa ISB",
+    description:
+      "Expert Bulgaria Schengen visa assistance from Islamabad. Sofia, Plovdiv & Black Sea coast visas. Pakistan's #1 visa agency. 98% approval rate.",
+    keywords:
+      "Bulgaria visa consultant Islamabad, Bulgaria visit visa Pakistan, Sofia visa from ISB, Bulgaria Schengen visa 2026, apply Bulgaria visa Pakistan, Plovdiv visa ISB",
     intro:
       "Bulgaria joined the Schengen zone for air and sea travel in 2024, making it an exciting new European destination. From the ancient streets of Plovdiv to the stunning Black Sea coast, OS Consultants assists in preparing your file for this beautiful Balkan destination with expert documentation.",
     docs: [
@@ -1070,8 +1116,10 @@ export const SCHENGEN_COUNTRIES = [
     name: "Romania",
     code: "ro",
     title: "Romania Visa Consultant in Islamabad — Schengen Expert 2026",
-    description: "Expert Romania Schengen visa assistance from Islamabad. Bucharest, Transylvania & medieval cities. Pakistan's #1 visa agency. 98% approval rate.",
-    keywords: "Romania visa consultant Islamabad, Romania visit visa Pakistan, Bucharest visa from ISB, Romania Schengen visa 2026, Transylvania visa Pakistan, apply Romania visa Islamabad",
+    description:
+      "Expert Romania Schengen visa assistance from Islamabad. Bucharest, Transylvania & medieval cities. Pakistan's #1 visa agency. 98% approval rate.",
+    keywords:
+      "Romania visa consultant Islamabad, Romania visit visa Pakistan, Bucharest visa from ISB, Romania Schengen visa 2026, Transylvania visa Pakistan, apply Romania visa Islamabad",
     intro:
       "Romania, a land of legends, medieval architecture, and the mythical Transylvania, joined the Schengen zone for air and sea in 2024. OS Consultants handles your documentation end-to-end with expert precision, ensuring your application meets every embassy requirement.",
     docs: [
@@ -1101,7 +1149,8 @@ export const SOUTH_ASIA_COUNTRIES = [
     title: "Pakistan Visa Services in Islamabad",
     description: "Expert inbound visa consultancy for traveling to Pakistan.",
     keywords: "Pakistan visa, Pakistan inbound visa, Pakistan travel visa",
-    intro: "Explore the breathtaking northern areas and rich cultural heritage of Pakistan. We guide you through the inbound tourist, business, and e-visa process thoroughly.",
+    intro:
+      "Explore the breathtaking northern areas and rich cultural heritage of Pakistan. We guide you through the inbound tourist, business, and e-visa process thoroughly.",
     docs: [
       "Valid Passport Color Scan (Bio-data page, minimum 6-month validity)",
       "Recent Digital Photograph (White background, size 35x45mm, matte finish)",
@@ -1113,7 +1162,8 @@ export const SOUTH_ASIA_COUNTRIES = [
       "Proof of Return Travel & Day-by-day Itinerary",
     ],
     popularPlaces: ["Islamabad", "Lahore", "Hunza Valley"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/73/King_Faisal_Mosque.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=original",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/King_Faisal_Mosque.jpg?utm_source=en.wikivoyage.org&utm_campaign=index&utm_content=original",
   },
   {
     slug: "thailand",
@@ -1616,7 +1666,8 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
     title: "Zimbabwe Visa Consultant in Islamabad",
     description: "Professional assistance for Zimbabwe visit and business visas in Pakistan.",
     keywords: "Zimbabwe visa consultant Islamabad, Zimbabwe visit visa Pakistan",
-    intro: "Experience the majestic Victoria Falls and abundant wildlife in Zimbabwe. We provide complete visa application support.",
+    intro:
+      "Experience the majestic Victoria Falls and abundant wildlife in Zimbabwe. We provide complete visa application support.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -1625,7 +1676,8 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
       "Employment/Business Verification",
     ],
     popularPlaces: ["Victoria Falls", "Harare", "Hwange National Park"],
-    image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "zambia",
@@ -1634,15 +1686,12 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
     title: "Zambia Visa Consultant in Islamabad",
     description: "Expert assistance for Zambia e-visas and entry permits from Pakistan.",
     keywords: "Zambia visa consultant Islamabad, Zambia visit visa Pakistan",
-    intro: "Zambia is home to raw and authentic African safaris. We handle your e-visa process for a stress-free travel experience.",
-    docs: [
-      "Passport Scan",
-      "Digital Photo",
-      "Bank Statement",
-      "Confirmed Flight & Hotel Voucher",
-    ],
+    intro:
+      "Zambia is home to raw and authentic African safaris. We handle your e-visa process for a stress-free travel experience.",
+    docs: ["Passport Scan", "Digital Photo", "Bank Statement", "Confirmed Flight & Hotel Voucher"],
     popularPlaces: ["Livingstone", "Lusaka", "South Luangwa"],
-    image: "https://pohcdn.com/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Zambia-2.jpg",
+    image:
+      "https://pohcdn.com/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Zambia-2.jpg",
   },
   {
     slug: "tanzania",
@@ -1651,16 +1700,13 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
     title: "Tanzania eVisa Consultant in Islamabad",
     description: "Apply for Tanzania eVisas from Pakistan with expert guidance.",
     keywords: "Tanzania visa Pakistan, Tanzania eVisa consultant Islamabad",
-    intro: "Discover the magic of Zanzibar's white-sand beaches and the plains of the Serengeti. We ensure accurate file preparation for your Tanzania e-visa.",
-    docs: [
-      "Passport Copy",
-      "Digital Photo",
-      "Hotel Reservation",
-      "Confirmed Return Ticket",
-    ],
+    intro:
+      "Discover the magic of Zanzibar's white-sand beaches and the plains of the Serengeti. We ensure accurate file preparation for your Tanzania e-visa.",
+    docs: ["Passport Copy", "Digital Photo", "Hotel Reservation", "Confirmed Return Ticket"],
     popularPlaces: ["Zanzibar", "Mount Kilimanjaro", "Serengeti National Park"],
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800",
-  }
+    image:
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800",
+  },
 ];
 
 export const MIDDLE_EAST_COUNTRIES = [
@@ -1671,7 +1717,8 @@ export const MIDDLE_EAST_COUNTRIES = [
     title: "Dubai & UAE Visa Consultant in Islamabad",
     description: "Fast-track UAE and Dubai visit visas from Pakistan. 24-48 hour processing.",
     keywords: "Dubai visa consultant Islamabad, UAE visit visa Pakistan, Dubai visa price",
-    intro: "The UAE, particularly Dubai, is the most popular destination for Pakistanis. We provide instant e-visa services for 30, 60, and 90 days, handling all sponsorships and documentation for a guaranteed smooth entry.",
+    intro:
+      "The UAE, particularly Dubai, is the most popular destination for Pakistanis. We provide instant e-visa services for 30, 60, and 90 days, handling all sponsorships and documentation for a guaranteed smooth entry.",
     docs: [
       "Digital Color Scan of Passport (First 2 pages)",
       "Digital Photo (White background, high resolution)",
@@ -1680,16 +1727,19 @@ export const MIDDLE_EAST_COUNTRIES = [
       "Visa Fee: 30 Days (~$85), 60 Days (~$140)",
     ],
     popularPlaces: ["Dubai", "Abu Dhabi", "Sharjah"],
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "saudi-arabia",
     name: "Saudi Arabia",
     code: "sa",
     title: "Saudi Tourist & Umrah Visa Specialist Islamabad",
-    description: "Apply for Saudi Arabia tourist and Umrah visas from Pakistan. Instant processing.",
+    description:
+      "Apply for Saudi Arabia tourist and Umrah visas from Pakistan. Instant processing.",
     keywords: "Saudi visa consultant Islamabad, Umrah visa Pakistan, Saudi tourist visa ISB",
-    intro: "Saudi Arabia has opened its doors to the world with the new Tourist Visa. We process both Tourist and Umrah visas instantly, providing complete support for Nusuk registration and hotel bookings.",
+    intro:
+      "Saudi Arabia has opened its doors to the world with the new Tourist Visa. We process both Tourist and Umrah visas instantly, providing complete support for Nusuk registration and hotel bookings.",
     docs: [
       "Digital Scan of Passport (First page)",
       "Recent Digital Photo (White background)",
@@ -1698,7 +1748,8 @@ export const MIDDLE_EAST_COUNTRIES = [
       "Visa Fee: Approx $130 - $180 (Includes insurance)",
     ],
     popularPlaces: ["Riyadh", "Jeddah", "Makkah", "Medina"],
-    image: "https://qz.com/cdn-cgi/image/width=1920,quality=85,format=auto/https://assets.qz.com/media/3c14b8fe305cf9b3bb4f64c9103d09d8.jpg",
+    image:
+      "https://qz.com/cdn-cgi/image/width=1920,quality=85,format=auto/https://assets.qz.com/media/3c14b8fe305cf9b3bb4f64c9103d09d8.jpg",
   },
   {
     slug: "oman",
@@ -1707,7 +1758,8 @@ export const MIDDLE_EAST_COUNTRIES = [
     title: "Oman eVisa Services in Islamabad",
     description: "Apply for Oman eVisa from Pakistan. Quick processing and expert guidance.",
     keywords: "Oman visa consultant Islamabad, Oman eVisa Pakistan",
-    intro: "Explore the natural beauty of Oman. We handle the eVisa process through the Royal Oman Police portal, ensuring your application is approved without delay.",
+    intro:
+      "Explore the natural beauty of Oman. We handle the eVisa process through the Royal Oman Police portal, ensuring your application is approved without delay.",
     docs: [
       "Passport Scan (First 2 pages)",
       "Digital Photo (White background)",
@@ -1717,7 +1769,8 @@ export const MIDDLE_EAST_COUNTRIES = [
       "Visa Fee: $50 - $100 USD (depending on duration)",
     ],
     popularPlaces: ["Muscat", "Salalah", "Nizwa"],
-    image: "https://cdn.prod.website-files.com/64875621443d761c9809134e/677860c605bf69bf990045d8_oamn2.jpg",
+    image:
+      "https://cdn.prod.website-files.com/64875621443d761c9809134e/677860c605bf69bf990045d8_oamn2.jpg",
   },
   {
     slug: "kuwait",
@@ -1726,7 +1779,8 @@ export const MIDDLE_EAST_COUNTRIES = [
     title: "Kuwait Visa Consultant in Islamabad",
     description: "Professional assistance for Kuwait visit and business visas in Pakistan.",
     keywords: "Kuwait visa Pakistan, Kuwait visit visa Islamabad",
-    intro: "We provide expert guidance for Kuwait visa applications, ensuring all sponsorship and documentation requirements are met according to the latest regulations.",
+    intro:
+      "We provide expert guidance for Kuwait visa applications, ensuring all sponsorship and documentation requirements are met according to the latest regulations.",
     docs: [
       "Passport Copy",
       "Digital Photo",
@@ -1744,7 +1798,8 @@ export const MIDDLE_EAST_COUNTRIES = [
     title: "Qatar Visa Consultant in Islamabad",
     description: "Fast-track Qatar visit visas and Hayya card assistance from Pakistan.",
     keywords: "Qatar visa consultant Islamabad, Qatar visit visa Pakistan, Hayya card Pakistan",
-    intro: "Whether traveling to Doha for business, tourism, or transit, we provide swift processing for Qatar visas, including assistance with the Hayya platform and Discover Qatar hotel bookings.",
+    intro:
+      "Whether traveling to Doha for business, tourism, or transit, we provide swift processing for Qatar visas, including assistance with the Hayya platform and Discover Qatar hotel bookings.",
     docs: [
       "Valid Passport",
       "Confirmed Return Ticket",
@@ -1761,15 +1816,12 @@ export const MIDDLE_EAST_COUNTRIES = [
     title: "Bahrain eVisa Consultant in Islamabad",
     description: "Seamless Bahrain eVisa processing from Pakistan.",
     keywords: "Bahrain visa Pakistan, Bahrain eVisa consultant Islamabad",
-    intro: "Bahrain offers a straightforward eVisa system for eligible Pakistani citizens. We ensure your application is error-free, handling the online portal submission for rapid approvals.",
-    docs: [
-      "Passport Copy",
-      "Return Flight Ticket",
-      "Hotel Booking",
-      "Bank Statement",
-    ],
+    intro:
+      "Bahrain offers a straightforward eVisa system for eligible Pakistani citizens. We ensure your application is error-free, handling the online portal submission for rapid approvals.",
+    docs: ["Passport Copy", "Return Flight Ticket", "Hotel Booking", "Bank Statement"],
     popularPlaces: ["Manama", "Bab Al Bahrain", "Tree of Life"],
-    image: "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2019/05/Balance-in-Bahrain-feature.jpg",
+    image:
+      "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2019/05/Balance-in-Bahrain-feature.jpg",
   },
   {
     slug: "turkey",
@@ -1778,7 +1830,8 @@ export const MIDDLE_EAST_COUNTRIES = [
     title: "Turkey Visa Consultant in Islamabad",
     description: "Expert assistance for Turkey sticker and eVisas from Pakistan.",
     keywords: "Turkey visa consultant Islamabad, Turkey visit visa Pakistan",
-    intro: "Experience the incredible blend of cultures, historic landmarks, and stunning coastlines in Turkey. We assist you with complete file preparation for smooth processing.",
+    intro:
+      "Experience the incredible blend of cultures, historic landmarks, and stunning coastlines in Turkey. We assist you with complete file preparation for smooth processing.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -1788,7 +1841,8 @@ export const MIDDLE_EAST_COUNTRIES = [
       "Confirmed Flight & Hotel Reservation",
     ],
     popularPlaces: ["Istanbul", "Cappadocia", "Antalya"],
-    image: "https://www.newmarketholidays.co.uk/media/nrhl2qpg/1920-adobestock_231346803-suleymaniye-mosque-istanbul-turkey.jpeg?format=webp&v=1db1654e65fe5f0",
+    image:
+      "https://www.newmarketholidays.co.uk/media/nrhl2qpg/1920-adobestock_231346803-suleymaniye-mosque-istanbul-turkey.jpeg?format=webp&v=1db1654e65fe5f0",
   },
   {
     slug: "jordan",
@@ -1797,7 +1851,8 @@ export const MIDDLE_EAST_COUNTRIES = [
     title: "Jordan Visa Consultant in Islamabad",
     description: "Professional assistance for Jordan visit and tourist visas in Pakistan.",
     keywords: "Jordan visa consultant Islamabad, Jordan visit visa Pakistan",
-    intro: "Jordan is home to the breathtaking ancient city of Petra and spectacular desert landscapes. We ensure all your visa requirements are perfectly met.",
+    intro:
+      "Jordan is home to the breathtaking ancient city of Petra and spectacular desert landscapes. We ensure all your visa requirements are perfectly met.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -1806,7 +1861,8 @@ export const MIDDLE_EAST_COUNTRIES = [
       "Employment/Business Verification",
     ],
     popularPlaces: ["Petra", "Wadi Rum", "Dead Sea"],
-    image: "https://www.touristjordan.com/wp-content/uploads/2023/02/shutterstock_1289351245-1024x683.jpg",
+    image:
+      "https://www.touristjordan.com/wp-content/uploads/2023/02/shutterstock_1289351245-1024x683.jpg",
   },
   {
     slug: "lebanon",
@@ -1815,7 +1871,8 @@ export const MIDDLE_EAST_COUNTRIES = [
     title: "Lebanon Visa Specialist in Islamabad",
     description: "Seamless Lebanon visit visa processing from Pakistan.",
     keywords: "Lebanon visa Pakistan, Lebanon visit visa consultant Islamabad",
-    intro: "Visit Lebanon's historic ruins and beautiful coastal cities. We handle all your tourist visa paperwork flawlessly for easy travel.",
+    intro:
+      "Visit Lebanon's historic ruins and beautiful coastal cities. We handle all your tourist visa paperwork flawlessly for easy travel.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -1825,7 +1882,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     ],
     popularPlaces: ["Beirut", "Byblos", "Jeita Grotto"],
     image: "https://2021-2025.state.gov/wp-content/uploads/2022/02/Lebanon-2109x1406.png",
-  }
+  },
 ];
 
 export const EAST_ASIA_COUNTRIES = [
@@ -1836,7 +1893,8 @@ export const EAST_ASIA_COUNTRIES = [
     title: "China Visa Consultant in Islamabad",
     description: "Professional assistance for China visit and business visas in Pakistan.",
     keywords: "China visa consultant Islamabad, China visit visa Pakistan",
-    intro: "China is a major hub for business and tourism. We provide comprehensive support for China visa applications, including invitation letters and file preparation.",
+    intro:
+      "China is a major hub for business and tourism. We provide comprehensive support for China visa applications, including invitation letters and file preparation.",
     docs: [
       "Original Passport (Current & Previous)",
       "Two Photos (White background, 33x48mm)",
@@ -1847,7 +1905,8 @@ export const EAST_ASIA_COUNTRIES = [
       "NADRA FRC & Polio Certificate",
     ],
     popularPlaces: ["Beijing", "Great Wall", "Shanghai"],
-    image: "https://images.unsplash.com/photo-1508197149814-0cc02e8b7f74?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1508197149814-0cc02e8b7f74?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "japan",
@@ -1856,7 +1915,8 @@ export const EAST_ASIA_COUNTRIES = [
     title: "Japan Visa Consultant in Islamabad",
     description: "Expert assistance for Japan visit visas from Pakistan.",
     keywords: "Japan visa consultant Islamabad, Japan visit visa Pakistan",
-    intro: "Experience the unique blend of tradition and modernity in Japan. We handle the visa application process for the Japanese embassy in Islamabad.",
+    intro:
+      "Experience the unique blend of tradition and modernity in Japan. We handle the visa application process for the Japanese embassy in Islamabad.",
     docs: [
       "Original Passport (Current + Previous)",
       "Two Photos (White background, 45x45mm)",
@@ -1868,7 +1928,8 @@ export const EAST_ASIA_COUNTRIES = [
       "Detailed Travel Itinerary",
     ],
     popularPlaces: ["Tokyo", "Mount Fuji", "Kyoto"],
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "south-korea",
@@ -1877,7 +1938,8 @@ export const EAST_ASIA_COUNTRIES = [
     title: "South Korea Visa Consultant in Islamabad",
     description: "Expert assistance for South Korea visit visas from Pakistan.",
     keywords: "South Korea visa consultant Islamabad, South Korea visit visa Pakistan",
-    intro: "South Korea is a fascinating blend of ancient traditions and futuristic technology. We assist with the complete documentation and filing for your South Korean visa application.",
+    intro:
+      "South Korea is a fascinating blend of ancient traditions and futuristic technology. We assist with the complete documentation and filing for your South Korean visa application.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -1888,7 +1950,8 @@ export const EAST_ASIA_COUNTRIES = [
       "Confirmed Flight & Hotel Reservation",
     ],
     popularPlaces: ["Seoul", "Jeju Island", "Busan"],
-    image: "https://images.unsplash.com/photo-1538681105587-85640961bf8b?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1538681105587-85640961bf8b?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "taiwan",
@@ -1897,7 +1960,8 @@ export const EAST_ASIA_COUNTRIES = [
     title: "Taiwan Visa Consultant in Islamabad",
     description: "Professional assistance for Taiwan visit and business visas in Pakistan.",
     keywords: "Taiwan visa consultant Islamabad, Taiwan visit visa Pakistan",
-    intro: "Taiwan offers stunning landscapes and a bustling tech economy. We guide you through the complete visa application process, ensuring your documentation meets the embassy's rigorous standards.",
+    intro:
+      "Taiwan offers stunning landscapes and a bustling tech economy. We guide you through the complete visa application process, ensuring your documentation meets the embassy's rigorous standards.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -1908,7 +1972,8 @@ export const EAST_ASIA_COUNTRIES = [
       "Confirmed Flight & Hotel Reservation",
     ],
     popularPlaces: ["Taipei 101", "Taroko Gorge", "Kaohsiung"],
-    image: "https://lp-cms-production.imgix.net/2023-03/shutterstockRF_606645959.jpg?auto=format,compress&q=72&w=1920&fit=crop&crop=faces,edges",
+    image:
+      "https://lp-cms-production.imgix.net/2023-03/shutterstockRF_606645959.jpg?auto=format,compress&q=72&w=1920&fit=crop&crop=faces,edges",
   },
   {
     slug: "hong-kong",
@@ -1917,7 +1982,8 @@ export const EAST_ASIA_COUNTRIES = [
     title: "Hong Kong Visa Consultant in Islamabad",
     description: "Apply for Hong Kong visit visas from Pakistan with expert assistance.",
     keywords: "Hong Kong visa Pakistan, Hong Kong visit visa consultant",
-    intro: "Hong Kong is a premier global financial hub and tourist hotspot. We assist Pakistani citizens with online visa applications and thorough documentation review for smooth entry.",
+    intro:
+      "Hong Kong is a premier global financial hub and tourist hotspot. We assist Pakistani citizens with online visa applications and thorough documentation review for smooth entry.",
     docs: [
       "Passport Copy (All used pages)",
       "Digital Photo",
@@ -1927,7 +1993,8 @@ export const EAST_ASIA_COUNTRIES = [
       "Detailed Travel Itinerary",
     ],
     popularPlaces: ["Victoria Peak", "Disneyland", "Tsim Sha Tsui"],
-    image: "https://images.goway.com/production/featured_images/Hong%20Kong%20Skyline%20Kowloon%20from%20Fei%20Ngo%20Shan%20Hill%20sunset_shutterstock_213021286.jpg?VersionId=h9UH95UG_HR9HmVfKg3ZPgERx9AB2MTe",
+    image:
+      "https://images.goway.com/production/featured_images/Hong%20Kong%20Skyline%20Kowloon%20from%20Fei%20Ngo%20Shan%20Hill%20sunset_shutterstock_213021286.jpg?VersionId=h9UH95UG_HR9HmVfKg3ZPgERx9AB2MTe",
   },
   {
     slug: "mongolia",
@@ -1936,7 +2003,8 @@ export const EAST_ASIA_COUNTRIES = [
     title: "Mongolia Visa Consultant in Islamabad",
     description: "Expert assistance for Mongolia visit visas from Pakistan.",
     keywords: "Mongolia visa consultant Islamabad, Mongolia visit visa Pakistan",
-    intro: "Explore the vast steppes and unique nomadic culture of Mongolia. We handle your visa application process smoothly and efficiently, organizing all necessary invitations and paperwork.",
+    intro:
+      "Explore the vast steppes and unique nomadic culture of Mongolia. We handle your visa application process smoothly and efficiently, organizing all necessary invitations and paperwork.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -1946,7 +2014,8 @@ export const EAST_ASIA_COUNTRIES = [
       "Employment Verification",
     ],
     popularPlaces: ["Ulaanbaatar", "Gobi Desert", "Terelj National Park"],
-    image: "https://www.wendywutours.com.au/resource/upload/3116/25c16eca74cf4fb9af8f75d5e401d4d0.jpg.webp",
+    image:
+      "https://www.wendywutours.com.au/resource/upload/3116/25c16eca74cf4fb9af8f75d5e401d4d0.jpg.webp",
   },
   {
     slug: "macau",
@@ -1955,7 +2024,8 @@ export const EAST_ASIA_COUNTRIES = [
     title: "Macau Visa Consultant in Islamabad",
     description: "Expert assistance for Macau visit visas from Pakistan.",
     keywords: "Macau visa consultant Islamabad, Macau visit visa Pakistan",
-    intro: "Experience the vibrant mix of Portuguese and Chinese cultures in Macau. We assist you through the complete visa application process for easy entry.",
+    intro:
+      "Experience the vibrant mix of Portuguese and Chinese cultures in Macau. We assist you through the complete visa application process for easy entry.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -1964,8 +2034,9 @@ export const EAST_ASIA_COUNTRIES = [
       "Employment/Business Documents",
     ],
     popularPlaces: ["Senado Square", "Ruins of St. Paul's", "Cotai Strip"],
-    image: "https://images.theconversation.com/files/251285/original/file-20181218-27770-7c5266.jpg?ixlib=rb-4.1.0&q=50&auto=format&w=768&h=512&fit=crop&dpr=2",
-  }
+    image:
+      "https://images.theconversation.com/files/251285/original/file-20181218-27770-7c5266.jpg?ixlib=rb-4.1.0&q=50&auto=format&w=768&h=512&fit=crop&dpr=2",
+  },
 ];
 
 export const AMERICAS_COUNTRIES = [
@@ -1976,7 +2047,8 @@ export const AMERICAS_COUNTRIES = [
     title: "Mexico Visa Consultant in Islamabad",
     description: "Apply for Mexico visit and business visas from Pakistan.",
     keywords: "Mexico visa consultant Islamabad, Mexico visit visa Pakistan",
-    intro: "Mexico offers a rich cultural experience. We assist in preparing your visa application for the Mexican embassy, ensuring all documentation is perfectly in order.",
+    intro:
+      "Mexico offers a rich cultural experience. We assist in preparing your visa application for the Mexican embassy, ensuring all documentation is perfectly in order.",
     docs: [
       "Passport with at least 6 months validity",
       "Two Photos (White background, 35x45mm)",
@@ -1985,7 +2057,8 @@ export const AMERICAS_COUNTRIES = [
       "Employment Letter / Salary Slips OR Business Docs",
       "NADRA Family Registration Certificate (FRC)",
     ],
-    image: "https://images.unsplash.com/photo-1518105779142-d975fb23a3db?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1518105779142-d975fb23a3db?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "brazil",
@@ -1994,7 +2067,8 @@ export const AMERICAS_COUNTRIES = [
     title: "Brazil Visa Consultant in Islamabad",
     description: "Expert assistance for Brazil visit visas from Pakistan.",
     keywords: "Brazil visa consultant Islamabad, Brazil visit visa Pakistan",
-    intro: "Explore the vibrant culture of Brazil. We handle the visa application process, ensuring your documentation meets the standards of the Brazilian embassy in Islamabad.",
+    intro:
+      "Explore the vibrant culture of Brazil. We handle the visa application process, ensuring your documentation meets the standards of the Brazilian embassy in Islamabad.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -2004,8 +2078,9 @@ export const AMERICAS_COUNTRIES = [
       "NADRA Family Registration Certificate (FRC)",
       "Confirmed Flight & Hotel Reservation",
     ],
-    image: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=800",
-  }
+    image:
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=800",
+  },
 ];
 
 export const EUROPE_OTHERS_COUNTRIES = [
@@ -2016,7 +2091,8 @@ export const EUROPE_OTHERS_COUNTRIES = [
     title: "Ireland Visa Consultant in Islamabad",
     description: "Professional assistance for Ireland visit and study visas in Pakistan.",
     keywords: "Ireland visa consultant Islamabad, Ireland visit visa Pakistan",
-    intro: "Explore the Emerald Isle. We provide expert guidance for Ireland visa applications, ensuring all documentation meets the Irish Naturalisation and Immigration Service standards.",
+    intro:
+      "Explore the Emerald Isle. We provide expert guidance for Ireland visa applications, ensuring all documentation meets the Irish Naturalisation and Immigration Service standards.",
     docs: [
       "Passport (Current & Old)",
       "Two Photos (White background, 35x45mm)",
@@ -2026,8 +2102,9 @@ export const EUROPE_OTHERS_COUNTRIES = [
       "NADRA Family Registration Certificate (FRC)",
       "Polio Vaccination Certificate",
     ],
-    image: "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&q=80&w=800",
-  }
+    image:
+      "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&q=80&w=800",
+  },
 ];
 
 export const SOUTH_AMERICA_COUNTRIES = [
@@ -2038,7 +2115,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Brazil Visa Consultant in Islamabad",
     description: "Expert assistance for Brazil visit visas from Pakistan.",
     keywords: "Brazil visa consultant Islamabad, Brazil visit visa Pakistan",
-    intro: "Explore the vibrant culture of Brazil. We handle the visa application process, ensuring your documentation meets the standards of the Brazilian embassy in Islamabad.",
+    intro:
+      "Explore the vibrant culture of Brazil. We handle the visa application process, ensuring your documentation meets the standards of the Brazilian embassy in Islamabad.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -2049,7 +2127,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Confirmed Flight & Hotel Reservation",
     ],
     popularPlaces: ["Rio de Janeiro", "São Paulo", "Iguazu Falls"],
-    image: "https://www.travelhealth.com.au/wp-content/uploads/2019/05/Brazil_travel_doctor_optimized.jpg",
+    image:
+      "https://www.travelhealth.com.au/wp-content/uploads/2019/05/Brazil_travel_doctor_optimized.jpg",
   },
   {
     slug: "argentina",
@@ -2058,7 +2137,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Argentina Visa Consultant in Islamabad",
     description: "Professional assistance for Argentina visit and business visas in Pakistan.",
     keywords: "Argentina visa consultant Islamabad, Argentina visit visa Pakistan",
-    intro: "Discover the wonders of Argentina, from tango in Buenos Aires to the glaciers of Patagonia. We help you prepare your visa application thoroughly.",
+    intro:
+      "Discover the wonders of Argentina, from tango in Buenos Aires to the glaciers of Patagonia. We help you prepare your visa application thoroughly.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -2067,7 +2147,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Hotel Reservation & Flight Booking",
     ],
     popularPlaces: ["Buenos Aires", "Patagonia", "Iguazu Falls"],
-    image: "https://images.squarespace-cdn.com/content/v1/52efc94ae4b01409c74273d6/1585836711975-N7XHQ1OEB1VT1Q28Y0NP/BuenosAires-1815x1200.jpg",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/52efc94ae4b01409c74273d6/1585836711975-N7XHQ1OEB1VT1Q28Y0NP/BuenosAires-1815x1200.jpg",
   },
   {
     slug: "colombia",
@@ -2076,7 +2157,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Colombia Visa Services in Islamabad",
     description: "Seamless Colombia visit visa processing from Pakistan.",
     keywords: "Colombia visa Pakistan, Colombia visit visa consultant Islamabad",
-    intro: "Experience Colombia's rich history, coffee regions, and beautiful landscapes. We ensure all your visa documents are in order.",
+    intro:
+      "Experience Colombia's rich history, coffee regions, and beautiful landscapes. We ensure all your visa documents are in order.",
     docs: [
       "Passport Copy",
       "Digital Photo",
@@ -2085,7 +2167,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Flight & Hotel Booking",
     ],
     popularPlaces: ["Bogotá", "Medellín", "Cartagena"],
-    image: "https://cdn.prod.website-files.com/673c64315f9aff3dac8ef938/6845e2172aedf007088f925c_cartegena-colombia-luxury-travel.jpg",
+    image:
+      "https://cdn.prod.website-files.com/673c64315f9aff3dac8ef938/6845e2172aedf007088f925c_cartegena-colombia-luxury-travel.jpg",
   },
   {
     slug: "peru",
@@ -2094,7 +2177,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Peru Visa Consultant in Islamabad",
     description: "Expert assistance for Peru visit visas from Pakistan.",
     keywords: "Peru visa consultant Islamabad, Peru visit visa Pakistan",
-    intro: "Discover the historic Machu Picchu, ancient ruins, and rich culinary heritage of Peru. We handle your documentation smoothly.",
+    intro:
+      "Discover the historic Machu Picchu, ancient ruins, and rich culinary heritage of Peru. We handle your documentation smoothly.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -2103,7 +2187,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Hotel Reservation & Flight Booking",
     ],
     popularPlaces: ["Machu Picchu", "Lima", "Cusco"],
-    image: "https://www.peru.travel/Contenido/AcercaDePeru/Imagen/en/6/0.0/Principal/Machu%20Picchu.jpg",
+    image:
+      "https://www.peru.travel/Contenido/AcercaDePeru/Imagen/en/6/0.0/Principal/Machu%20Picchu.jpg",
   },
   {
     slug: "chile",
@@ -2112,7 +2197,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Chile Visa Consultant in Islamabad",
     description: "Expert assistance for Chile tourist and business visas from Pakistan.",
     keywords: "Chile visa Pakistan, Chile visit visa consultant Islamabad",
-    intro: "Experience Chile's varied geography, from coastal cities to desert landscapes and snow-capped peaks. We guide you thoroughly.",
+    intro:
+      "Experience Chile's varied geography, from coastal cities to desert landscapes and snow-capped peaks. We guide you thoroughly.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -2121,7 +2207,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Employment Letter OR Business Verification",
     ],
     popularPlaces: ["Santiago", "San Pedro de Atacama", "Torres del Paine"],
-    image: "https://internationalliving.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fwv75stsetqy3%2F4Dbcf17ULwlk8ce5Thh035%2F468c91e6519bfc486408f0258d817bc9%2FChile.jpg%3Fq%3D60%26fit%3Dfill%26fm%3Dwebp&w=3840&q=60",
+    image:
+      "https://internationalliving.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fwv75stsetqy3%2F4Dbcf17ULwlk8ce5Thh035%2F468c91e6519bfc486408f0258d817bc9%2FChile.jpg%3Fq%3D60%26fit%3Dfill%26fm%3Dwebp&w=3840&q=60",
   },
   {
     slug: "ecuador",
@@ -2130,7 +2217,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Ecuador Visa Services in Islamabad",
     description: "Reliable guidance for securing an Ecuador visit visa from Pakistan.",
     keywords: "Ecuador visa Pakistan, Ecuador visit visa consultant Islamabad",
-    intro: "Ecuador offers breathtaking colonial history and the world-renowned Galapagos Islands. We ensure your application is perfect.",
+    intro:
+      "Ecuador offers breathtaking colonial history and the world-renowned Galapagos Islands. We ensure your application is perfect.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -2147,7 +2235,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Bolivia Visa Consultant in Islamabad",
     description: "Seamless Bolivia visit visa processing from Pakistan.",
     keywords: "Bolivia visa consultant Islamabad, Bolivia visit visa Pakistan",
-    intro: "Bolivia is home to the spectacular Salar de Uyuni and high Andean landscapes. We assist in preparing your complete file.",
+    intro:
+      "Bolivia is home to the spectacular Salar de Uyuni and high Andean landscapes. We assist in preparing your complete file.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -2155,7 +2244,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Hotel & Flight Reservation",
     ],
     popularPlaces: ["Salar de Uyuni", "La Paz", "Sucre"],
-    image: "https://res.cloudinary.com/odysseytraveller/image/fetch/f_auto,q_auto,dpr_auto,r_4,w_765,h_535.5,c_limit/https://cdn.odysseytraveller.com/app/uploads/2019/02/GettyImages-941272674.jpg",
+    image:
+      "https://res.cloudinary.com/odysseytraveller/image/fetch/f_auto,q_auto,dpr_auto,r_4,w_765,h_535.5,c_limit/https://cdn.odysseytraveller.com/app/uploads/2019/02/GettyImages-941272674.jpg",
   },
   {
     slug: "uruguay",
@@ -2164,7 +2254,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Uruguay Visa Consultant in Islamabad",
     description: "Professional assistance for Uruguay visit visas from Pakistan.",
     keywords: "Uruguay visa Pakistan, Uruguay visit visa consultant Islamabad",
-    intro: "Uruguay boasts a beautiful coastal plain and distinct cultural highlights. We help assemble your documentation impeccably.",
+    intro:
+      "Uruguay boasts a beautiful coastal plain and distinct cultural highlights. We help assemble your documentation impeccably.",
     docs: [
       "Original Passport",
       "Two Photos (White background)",
@@ -2172,7 +2263,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Employment Verification",
     ],
     popularPlaces: ["Montevideo", "Punta del Este", "Colonia"],
-    image: "https://images.squarespace-cdn.com/content/v1/52efc94ae4b01409c74273d6/1585834171615-UL7OJYX14WAZC26CASHB/montevideo_grande.jpg?format=1500w",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/52efc94ae4b01409c74273d6/1585834171615-UL7OJYX14WAZC26CASHB/montevideo_grande.jpg?format=1500w",
   },
   {
     slug: "venezuela",
@@ -2181,15 +2273,12 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Venezuela Visa Services in Islamabad",
     description: "Seamless Venezuela visit visa processing from Pakistan.",
     keywords: "Venezuela visa Pakistan, Venezuela visa consultant Islamabad",
-    intro: "Experience the gorgeous Caribbean coast and the highest waterfall, Angel Falls. We help you prepare your visa paperwork.",
-    docs: [
-      "Passport Copy",
-      "Two Photos (White background)",
-      "Bank Statement",
-      "Hotel Voucher",
-    ],
+    intro:
+      "Experience the gorgeous Caribbean coast and the highest waterfall, Angel Falls. We help you prepare your visa paperwork.",
+    docs: ["Passport Copy", "Two Photos (White background)", "Bank Statement", "Hotel Voucher"],
     popularPlaces: ["Caracas", "Angel Falls", "Los Roques"],
-    image: "https://globalsanctions.com/wp-content/uploads/2014/10/Caracas-Venezuela-Editorial_yordanka-caridad-almaguer.jpg",
+    image:
+      "https://globalsanctions.com/wp-content/uploads/2014/10/Caracas-Venezuela-Editorial_yordanka-caridad-almaguer.jpg",
   },
   {
     slug: "paraguay",
@@ -2198,7 +2287,8 @@ export const SOUTH_AMERICA_COUNTRIES = [
     title: "Paraguay Visa Specialist in Islamabad",
     description: "Expert assistance for Paraguay tourist visas from Pakistan.",
     keywords: "Paraguay visa consultant Islamabad, Paraguay visit visa Pakistan",
-    intro: "Explore Paraguay's unique nature, historic ruins, and culture. We guide you on the complete visa application process.",
+    intro:
+      "Explore Paraguay's unique nature, historic ruins, and culture. We guide you on the complete visa application process.",
     docs: [
       "Passport Copy",
       "Two Photos",
@@ -2206,8 +2296,9 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Job Letter / Business verification",
     ],
     popularPlaces: ["Asunción", "Encarnación", "Ciudad del Este"],
-    image: "https://pre-webunwto.s3.eu-west-1.amazonaws.com/styles/webp/s3/2025-12/paraguay-investment.jpg.webp?VersionId=.rr3BXqM86y8dp2YRZkcHkGvTSOcrfO.&itok=ZLskNYgN",
-  }
+    image:
+      "https://pre-webunwto.s3.eu-west-1.amazonaws.com/styles/webp/s3/2025-12/paraguay-investment.jpg.webp?VersionId=.rr3BXqM86y8dp2YRZkcHkGvTSOcrfO.&itok=ZLskNYgN",
+  },
 ];
 
 export const OCEANIA_COUNTRIES = [
@@ -2216,9 +2307,11 @@ export const OCEANIA_COUNTRIES = [
     name: "Australia",
     code: "au",
     title: "Australia Visa Consultant in Islamabad",
-    description: "Expert assistance for Australian tourist, student, and skilled visas from Pakistan.",
+    description:
+      "Expert assistance for Australian tourist, student, and skilled visas from Pakistan.",
     keywords: "Australia visa consultant Islamabad, Australia visit visa Pakistan",
-    intro: "Australia offers magnificent beaches, unique wildlife, and vibrant multicultural cities. We guide you thoroughly through the online application for subclass 600 visitor visas.",
+    intro:
+      "Australia offers magnificent beaches, unique wildlife, and vibrant multicultural cities. We guide you thoroughly through the online application for subclass 600 visitor visas.",
     docs: [
       "Original Passport (Valid for at least 6 months)",
       "Two Photos (White background, 35x45mm, matte finish)",
@@ -2230,7 +2323,8 @@ export const OCEANIA_COUNTRIES = [
       "Detailed Cover Letter & Day-by-day Itinerary",
     ],
     popularPlaces: ["Sydney", "Melbourne", "Great Barrier Reef"],
-    image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800",
   },
   {
     slug: "new-zealand",
@@ -2239,7 +2333,8 @@ export const OCEANIA_COUNTRIES = [
     title: "New Zealand Visa Consultant in Islamabad",
     description: "Professional assistance for New Zealand visitor visas from Pakistan.",
     keywords: "New Zealand visa Pakistan, New Zealand visit visa consultant",
-    intro: "Explore the breathtaking fjords, mountains, and Maori culture of New Zealand. We help you submit a solid visitor visa application.",
+    intro:
+      "Explore the breathtaking fjords, mountains, and Maori culture of New Zealand. We help you submit a solid visitor visa application.",
     docs: [
       "Current Valid Passport and All Previous Passports",
       "Two Recent Passport-size Photos (White background)",
@@ -2250,7 +2345,8 @@ export const OCEANIA_COUNTRIES = [
       "Confirmed Hotel Bookings & Detailed Round-trip Itinerary",
     ],
     popularPlaces: ["Auckland", "Queenstown", "Milford Sound"],
-    image: "https://afar.brightspotcdn.com/dims4/default/b2f5cec/2147483647/strip/true/crop/3000x1592+0+342/resize/1440x764!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F07%2F6a%2F49c8995449aab970530b5dc69fb4%2Ftravelguides-auckland-miloszmaslanka-shutterstock.jpg",
+    image:
+      "https://afar.brightspotcdn.com/dims4/default/b2f5cec/2147483647/strip/true/crop/3000x1592+0+342/resize/1440x764!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2F07%2F6a%2F49c8995449aab970530b5dc69fb4%2Ftravelguides-auckland-miloszmaslanka-shutterstock.jpg",
   },
   {
     slug: "fiji",
@@ -2259,7 +2355,8 @@ export const OCEANIA_COUNTRIES = [
     title: "Fiji Visa Consultant in Islamabad",
     description: "Expert assistance for Fiji tourist visas from Pakistan.",
     keywords: "Fiji visa Pakistan, Fiji visit visa consultant",
-    intro: "Enjoy the tropical blue waters, coral reefs, and island vibes of Fiji. We process your visa application seamlessly.",
+    intro:
+      "Enjoy the tropical blue waters, coral reefs, and island vibes of Fiji. We process your visa application seamlessly.",
     docs: [
       "Valid Passport Scan (All relevant pages)",
       "Digital Photograph (White background)",
@@ -2268,7 +2365,7 @@ export const OCEANIA_COUNTRIES = [
       "Verifiable Hotel Reservations or Invitation Letter",
     ],
     popularPlaces: ["Nadi", "Suva", "Mamanuca Islands"],
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/8e/70/88/aerial-view-of-fiji-marriott.jpg?w=1200&h=-1&s=1",
-  }
+    image:
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/8e/70/88/aerial-view-of-fiji-marriott.jpg?w=1200&h=-1&s=1",
+  },
 ];
-

@@ -44,7 +44,10 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OS Consultants — Pakistan's No.1 Travel Agency & Best Visa Consultant 2026 | Islamabad" },
+      {
+        title:
+          "OS Consultants — Pakistan's No.1 Travel Agency & Best Visa Consultant 2026 | Islamabad",
+      },
       {
         name: "description",
         content:
@@ -55,7 +58,10 @@ export const Route = createFileRoute("/")({
         content:
           "best travel agency in pakistan 2026, pakistan no 1 travel agency, top travel agency islamabad, #1 visa consultant pakistan, best visa agency islamabad blue area, top tour operator pakistan, cheap flights from pakistan, schengen visa consultant islamabad, uk visa agent islamabad, usa visa consultant pakistan, canada immigration consultant islamabad, australia student visa islamabad, corporate travel agency pakistan, reliable travel agents in pakistan, flight booking pakistan, hotel reservation islamabad, best travel and tours pakistan, top immigration consultant pakistan, IATA accredited travel agent islamabad, umrah packages from pakistan 2026, cheap umrah packages islamabad, travel insurance islamabad, passport services islamabad, world best travel agency, international visa consultant, visa success rate pakistan, affordable travel agency islamabad, online travel booking pakistan, multi city flights islamabad, business class deals pakistan, economy flights islamabad to london, islamabad to dubai cheap tickets, best visa approval rate pakistan, trusted visa consultant near me islamabad",
       },
-      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      },
       { name: "author", content: "OS Consultants" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad, Pakistan" },
@@ -81,7 +87,8 @@ export const Route = createFileRoute("/")({
       { property: "og:locale", content: "en_PK" },
       { property: "og:site_name", content: "OS Consultants — Pakistan's No.1 Travel Agency" },
       {
-        name: "twitter:card", content: "summary_large_image",
+        name: "twitter:card",
+        content: "summary_large_image",
       },
       {
         name: "twitter:title",
@@ -347,7 +354,10 @@ function Home() {
       {/* Testimonials */}
       <section className="bg-secondary/40 py-20 md:py-28">
         <div className="container-px mx-auto max-w-7xl">
-          <SectionHeader eyebrow="Testimonials" title="Trusted & Recommended by Travelers across Pakistan" />
+          <SectionHeader
+            eyebrow="Testimonials"
+            title="Trusted & Recommended by Travelers across Pakistan"
+          />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.slice(0, 6).map((t, i) => (
               <Reveal key={t.name} delay={i * 0.05}>

@@ -622,11 +622,11 @@ export const DESTINATIONS: Destination[] = [
   {
     slug: "east-asia",
     name: "East Asia",
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
     shortDesc: "China, Japan, and South Korea visa assistance.",
     seoTitle: "East Asia Visa Consultant Islamabad | Japan & South Korea",
-    seoDescription:
-      "Reliable visa processing for Japan, South Korea, and China from Pakistan.",
+    seoDescription: "Reliable visa processing for Japan, South Korea, and China from Pakistan.",
     keywords: "Japan visa Pakistan, South Korea visa consultant Islamabad",
     intro:
       "East Asia is a hub of technological advancement and rich cultural heritage. We provide expert assistance for securing visas to Japan, South Korea, and China.",
@@ -658,11 +658,11 @@ export const DESTINATIONS: Destination[] = [
   {
     slug: "south-america",
     name: "South America",
-    image: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=1200",
+    image:
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=1200",
     shortDesc: "Brazil, Argentina, Colombia & more.",
     seoTitle: "South America Visa Agent Islamabad | Brazil & Argentina",
-    seoDescription:
-      "Reliable visa processing for Brazil, Argentina, Colombia from Pakistan.",
+    seoDescription: "Reliable visa processing for Brazil, Argentina, Colombia from Pakistan.",
     keywords: "Brazil visa Pakistan, Argentina visa consultant Islamabad",
     intro:
       "Explore the diverse cultures and landscapes of South America. We provide expert assistance for securing tourist and business visas.",
@@ -696,8 +696,7 @@ export const DESTINATIONS: Destination[] = [
     image: "https://beantowntraveller.com/wp-content/uploads/2018/07/IMG_2484-scaled.jpg",
     shortDesc: "Australia, New Zealand, Fiji & more.",
     seoTitle: "Oceania Visa Agent Islamabad | Australia & New Zealand",
-    seoDescription:
-      "Expert visa assistance for Australia and New Zealand from Pakistan.",
+    seoDescription: "Expert visa assistance for Australia and New Zealand from Pakistan.",
     keywords: "Australia visa Pakistan, New Zealand visa consultant Islamabad",
     intro:
       "From pristine beaches and coral reefs to magnificent mountains, Oceania has it all. We provide comprehensive visa assistance.",

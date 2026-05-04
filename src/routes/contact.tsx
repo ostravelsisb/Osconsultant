@@ -35,11 +35,12 @@ export const Route = createFileRoute("/contact")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Contact Pakistan's #1 Visa Agency | OS Consultants" },
-      { name: "twitter:description", content: "Blue Area, Islamabad. Phone, WhatsApp & walk-in consultations available." },
+      {
+        name: "twitter:description",
+        content: "Blue Area, Islamabad. Phone, WhatsApp & walk-in consultations available.",
+      },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/contact" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/contact" }],
   }),
   component: Contact,
 });

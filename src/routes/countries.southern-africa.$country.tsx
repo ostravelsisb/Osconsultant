@@ -16,7 +16,10 @@ export const Route = createFileRoute("/countries/southern-africa/$country")({
     meta: [
       { title: loaderData?.title || "Visa Consultant Islamabad" },
       { name: "description", content: loaderData?.description || "" },
-      { name: "keywords", content: `${loaderData?.keywords || ""}, top travel agency pakistan, best in islamabad, travel agency` },
+      {
+        name: "keywords",
+        content: `${loaderData?.keywords || ""}, top travel agency pakistan, best in islamabad, travel agency`,
+      },
     ],
   }),
   component: SouthernAfricaCountryPage,
@@ -120,8 +123,9 @@ function SouthernAfricaCountryPage() {
                 Start Your {country.name} Journey Today
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Our experts at Pakistan's no.1 travel agency and consultancy are ready to handle your {country.name} visa application
-                with speed and precision, ensuring a stress-free start to your African adventure.
+                Our experts at Pakistan's no.1 travel agency and consultancy are ready to handle
+                your {country.name} visa application with speed and precision, ensuring a
+                stress-free start to your African adventure.
               </p>
 
               <div className="pt-6 flex flex-wrap gap-4">

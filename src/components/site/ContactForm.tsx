@@ -32,8 +32,21 @@ ${data.message}`;
     >
       <div className="grid gap-4 md:grid-cols-2">
         <Field label="Full Name" name="name" placeholder="Your name" required autoComplete="name" />
-        <Field label="Email" name="email" type="email" placeholder="you@email.com" required autoComplete="email" />
-        <Field label="Phone / WhatsApp" name="phone" placeholder="+92 ..." required autoComplete="tel" />
+        <Field
+          label="Email"
+          name="email"
+          type="email"
+          placeholder="you@email.com"
+          required
+          autoComplete="email"
+        />
+        <Field
+          label="Phone / WhatsApp"
+          name="phone"
+          placeholder="+92 ..."
+          required
+          autoComplete="tel"
+        />
         <Field
           label="Destination Country"
           name="country"

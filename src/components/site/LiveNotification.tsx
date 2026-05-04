@@ -9,8 +9,27 @@ interface QueryNotification {
   time: string;
 }
 
-const mockNames = ["Hammad", "Ayesha", "Muhammad", "Sana", "Kamran", "Zoya", "Zain", "Farhan", "Maria", "Bilal"];
-const mockCities = ["Islamabad", "Rawalpindi", "Lahore", "Karachi", "Faisalabad", "Peshawar", "Multan"];
+const mockNames = [
+  "Hammad",
+  "Ayesha",
+  "Muhammad",
+  "Sana",
+  "Kamran",
+  "Zoya",
+  "Zain",
+  "Farhan",
+  "Maria",
+  "Bilal",
+];
+const mockCities = [
+  "Islamabad",
+  "Rawalpindi",
+  "Lahore",
+  "Karachi",
+  "Faisalabad",
+  "Peshawar",
+  "Multan",
+];
 const mockServices = [
   "Schengen Visa Consultation",
   "UK Standard Visitor Visa",
@@ -92,15 +111,14 @@ export function LiveNotification() {
           </div>
           <div className="flex flex-col">
             <div className="flex items-center justify-between gap-2">
-              <p className="text-xs font-bold tracking-tight text-foreground/90">
-                Live Query
-              </p>
+              <p className="text-xs font-bold tracking-tight text-foreground/90">Live Query</p>
               <span className="flex items-center gap-1 text-[10px] font-semibold bg-primary/10 text-primary px-2 py-0.5 rounded-full">
                 <CheckCircle2 size={10} /> Verified
               </span>
             </div>
             <p className="mt-1 text-xs text-muted-foreground leading-normal">
-              <strong className="text-foreground">{current.name}</strong> from {current.city} just inquired about{" "}
+              <strong className="text-foreground">{current.name}</strong> from {current.city} just
+              inquired about{" "}
               <strong className="text-primary font-semibold">{current.service}</strong>.
             </p>
             <p className="mt-1.5 text-[10px] text-muted-foreground/75 font-medium">

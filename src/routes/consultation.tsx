@@ -14,21 +14,21 @@ export const Route = createFileRoute("/consultation")({
       },
       {
         name: "keywords",
-        content: "free visa consultation islamabad, book visa appointment pakistan, visa expert consultation blue area, free immigration advice islamabad, os consultants consultation, visa pathway assessment pakistan",
+        content:
+          "free visa consultation islamabad, book visa appointment pakistan, visa expert consultation blue area, free immigration advice islamabad, os consultants consultation, visa pathway assessment pakistan",
       },
       { name: "robots", content: "index, follow" },
       { name: "geo.region", content: "PK-IS" },
       { property: "og:title", content: "Free Visa Consultation — Pakistan's #1 Visa Expert" },
       {
         property: "og:description",
-        content: "15 minutes with a senior visa consultant — no obligation. Expert pathway & document checklist.",
+        content:
+          "15 minutes with a senior visa consultant — no obligation. Expert pathway & document checklist.",
       },
       { property: "og:url", content: "https://osconsultants.pk/consultation" },
       { property: "og:type", content: "website" },
     ],
-    links: [
-      { rel: "canonical", href: "https://osconsultants.pk/consultation" },
-    ],
+    links: [{ rel: "canonical", href: "https://osconsultants.pk/consultation" }],
   }),
   component: Consultation,
 });
