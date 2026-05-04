@@ -112,7 +112,7 @@ function AirTicketing() {
           <div className="grid lg:grid-cols-2">
             <div className="relative h-[300px] lg:h-auto overflow-hidden">
               <img
-                src="/air_ticketing_hero_1777294022698.png"
+                src="/air_ticketing_lounge.png"
                 alt="Modern Aviation"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105"
               />
@@ -173,9 +173,20 @@ function AirTicketing() {
                   major hubs including London, New York, Toronto, Dubai, and Melbourne. We don't
                   just use automated tools; our expert ticketing officers manually audit routes to
                   find hidden savings, such as "split-ticketing" or choosing alternative hubs that
-                  can save you thousands of rupees on <strong>international flight bookings</strong>
-                  .
+                  can save you thousands of rupees on <strong>international flight bookings</strong>.
                 </p>
+
+                <h3 className="text-xl font-bold text-foreground">Complete Flight Ticket Booking & Pricing Guide in Pakistan</h3>
+                <p>
+                  When looking to book <strong>flight tickets online in Pakistan</strong>, timing and platform expertise are crucial. To lock in the most competitive <strong>flight ticket price in Pakistan to London</strong>, New York, or anywhere across the globe, our expert systems track live trends to secure flash discounts and unadvertised airline deals.
+                </p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li><strong>Book Direct via IATA Agent:</strong> Eliminate middleman markup fees. As an authorized IATA agency, OS Consultants books <strong>flight tickets</strong> directly with the airline, guaranteeing transparent pricing and easy change policies.</li>
+                  <li><strong>Emirates and Qatar Airways Specials:</strong> Take advantage of our premium agreements to secure top-tier amenities and competitive rates on middle-east and international routes.</li>
+                  <li><strong>Last Minute Airline Tickets:</strong> Need to fly urgently from Islamabad? Our ticketing desk specializes in urgent, last-minute seat confirmations at the best possible price.</li>
+                  <li><strong>Discount Student Flight Tickets:</strong> We help students unlock special baggage allowances and reduced ticket rates to the UK, Canada, and Australia.</li>
+                </ul>
+
                 <h3 className="text-xl font-bold text-foreground">Global Airline Partnerships</h3>
                 <p>
                   We are proud partners with the world's leading carriers. Whether you prefer the
@@ -295,7 +306,7 @@ function AirTicketing() {
             "alternateName": "OS Consultants Air Ticketing",
             "url": "https://www.ostravels.com/air-ticketing",
             "logo": "https://www.ostravels.com/logo.png",
-            "image": "https://www.ostravels.com/air_ticketing_hero_1777294022698.png",
+            "image": "https://www.ostravels.com/air_ticketing_lounge.png",
             "description": "Islamabad's #1 IATA-authorized air ticketing agency. Cheap international flights, group bookings, student discounts, Umrah packages, and 24/7 WhatsApp support from Blue Area.",
             "telephone": "+92-51-2021700",
             "email": "info@osconsultants.pk",

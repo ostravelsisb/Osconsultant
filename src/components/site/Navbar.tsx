@@ -1,20 +1,41 @@
 import { Link, useLocation } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { Menu, X, Globe2, ChevronRight } from "lucide-react";
+import { useEffect, useState, Fragment } from "react";
+import { Menu, X, ChevronDown, ChevronRight, Plane } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS, COMPANY } from "@/data/site";
 import logo from "@/assets/logo.png";
 
+const DESKTOP_LINKS = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  {
+    label: "Services",
+    children: [
+      { to: "/visa-services", label: "Visa Services" },
+      { to: "/countries", label: "Countries" },
+      { to: "/air-ticketing", label: "Air Ticketing" },
+      { to: "/umrah", label: "Umrah" },
+      { to: "/travel-insurance", label: "Insurance" },
+      { to: "/passport-services", label: "Passport" },
+    ],
+  },
+  { to: "/profile-assessment", label: "Free Assessment" },
+  { to: "/contact", label: "Contact" },
+];
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -24,67 +45,89 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-[100] transition-all duration-300 ${scrolled ? "glass shadow-soft border-b" : "bg-background/95 lg:bg-background/60 backdrop-blur-md"}`}
+        className={`z-[100] transition-all duration-500 ${scrolled
+            ? "fixed top-4 left-1/2 -translate-x-1/2 max-w-7xl rounded-full bg-sky-100/70 dark:bg-blue-950/70 backdrop-blur-xl border border-sky-400/50 shadow-elevated h-16 w-[96%] px-1 duration-300 ease-in-out"
+            : "sticky top-0 w-full bg-sky-500/10 backdrop-blur-md border-b border-sky-400/20 shadow-sm h-20"
+          }`}
       >
-        <div className="container-px mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 lg:gap-4 xl:gap-8">
+
+        <div className={`container-px mx-auto flex items-center justify-between gap-2 lg:gap-4 xl:gap-8 transition-all duration-300 h-full max-w-7xl px-4 ${scrolled ? "px-6" : ""}`}>
           <Link to="/" className="group flex flex-shrink-0 items-center gap-3">
             <img
               src={logo}
               alt={COMPANY.name}
               className="h-11 w-auto object-contain transition-transform group-hover:scale-105"
             />
-            <div className="hidden sm:block border-l border-border h-8 mx-1" />
-            <span className="leading-tight">
+            <div className="hidden sm:block border-l border-border h-6 mx-1" />
+            <span className="hidden sm:block leading-tight">
               <span className="block text-sm md:text-base xl:text-lg font-bold italic tracking-tight whitespace-nowrap uppercase" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 OS <span className="gradient-text-accent">Consultants</span>
-              </span>
-              <span className="hidden xl:block text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground/80 whitespace-nowrap">
-                Visa & Travel · Islamabad
               </span>
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-px xl:gap-1">
-            {NAV_LINKS.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                activeOptions={{ exact: l.to === "/" }}
-                className={`group relative px-1.5 xl:px-2.5 py-2 text-[11px] xl:text-[13px] font-semibold text-foreground/70 hover:text-primary transition-all duration-300 data-[status=active]:text-primary whitespace-nowrap ${
-                  l.label === "Insurance" || l.label === "Passport"
-                    ? "hidden 2xl:block"
-                    : l.label === "Air Ticketing"
-                      ? "hidden xl:block"
-                      : ""
-                }`}
-                activeProps={{ className: "text-primary" }}
-              >
-                <span className="relative z-10">
-                  {l.label === "Visa Services" ? (
-                    <>
-                      <span className="xl:hidden">Visas</span>
-                      <span className="hidden xl:inline">Visa Services</span>
-                    </>
-                  ) : (
-                    l.label
-                  )}
-                </span>
-                {/* Hover Pill Background */}
-                <span className="absolute inset-0 z-0 scale-95 rounded-full bg-primary/5 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
-                {/* Active/Hover Underline */}
-                <span className="absolute inset-x-2 xl:inset-x-3 -bottom-1 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-primary to-accent transition-transform duration-300 group-hover:scale-x-100" />
-              </Link>
-            ))}
+          {/* Ultra-Clean Desktop Dropdown Menu */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {DESKTOP_LINKS.map((l) =>
+              l.children ? (
+                <div
+                  key={l.label}
+                  className="relative group"
+                  onMouseEnter={() => setActiveDropdown(l.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <button className="flex items-center gap-1 px-3 py-2 text-sm font-bold text-foreground/80 hover:text-primary transition-all rounded-full hover:bg-primary/5 select-none whitespace-nowrap">
+                    {l.label}
+                    <ChevronDown size={14} className="opacity-60 transition-transform group-hover:rotate-180" />
+                  </button>
+                  <AnimatePresence>
+                    {activeDropdown === l.label && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.12 }}
+                        className="absolute top-full left-0 mt-1 w-56 bg-white/95 backdrop-blur-md rounded-2xl border border-sky-200/50 p-2 shadow-elevated z-50 flex flex-col gap-1"
+                      >
+                        {l.children.map((c, idx) => (
+                          <Fragment key={c.to}>
+                            {idx > 0 && <div className="mx-2 my-1 h-[1.5px] bg-gradient-to-r from-blue-500 to-orange-500 opacity-70" />}
+                            <Link
+                              to={c.to}
+                              activeOptions={{ exact: c.to === "/" }}
+                              activeProps={{ className: "bg-primary/5 text-primary" }}
+                              className="px-4 py-2.5 text-xs font-semibold text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-xl transition-all flex items-center justify-between whitespace-nowrap"
+                            >
+                              {c.label}
+                              <ChevronRight size={14} className="opacity-0 group-hover:opacity-40 transition-opacity" />
+                            </Link>
+                          </Fragment>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  activeOptions={{ exact: l.to === "/" }}
+                  className="px-3 py-2 text-sm font-bold text-foreground/80 hover:text-primary hover:bg-primary/5 rounded-full transition-all whitespace-nowrap"
+                  activeProps={{ className: "text-primary bg-primary/5" }}
+                >
+                  {l.label}
+                </Link>
+              )
+            )}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-4 shrink-0">
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
             <Link
               to="/consultation"
-              className="relative inline-flex items-center gap-1 xl:gap-2 overflow-hidden rounded-full bg-primary px-4 xl:px-5 2xl:px-6 py-2.5 text-[11px] xl:text-sm font-bold text-primary-foreground shadow-soft transition-all hover:shadow-elevated hover:-translate-y-0.5 active:translate-y-0 shine whitespace-nowrap"
+              className="relative inline-flex items-center gap-1 overflow-hidden rounded-full bg-primary px-4 py-2 text-[11px] xl:text-xs font-bold text-primary-foreground shadow-soft transition-all hover:shadow-elevated hover:-translate-y-0.5 active:translate-y-0 shine whitespace-nowrap"
             >
               <span className="relative z-10">
-                <span className="2xl:hidden">Consultation</span>
-                <span className="hidden 2xl:inline">Free Consultation</span>
+                <span>Free Consultation</span>
               </span>
               <ChevronRight size={14} className="relative z-10" />
             </Link>

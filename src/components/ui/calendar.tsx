@@ -40,25 +40,25 @@ function Calendar({
         months: cn("relative flex flex-col gap-4 md:flex-row", defaultClassNames.months),
         month: cn("flex w-full flex-col gap-4", defaultClassNames.month),
         nav: cn(
-          "absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1",
+          "absolute inset-x-0.5 top-0 flex justify-between items-center h-9 pointer-events-none z-30",
           defaultClassNames.nav,
         ),
         button_previous: cn(
           buttonVariants({ variant: buttonVariant }),
-          "h-(--cell-size) w-(--cell-size) select-none p-0 aria-disabled:opacity-50 text-primary hover:bg-primary/10 hover:text-primary",
+          "h-8 w-8 select-none p-0 aria-disabled:opacity-50 text-blue-600 bg-blue-50 border border-blue-200 hover:bg-blue-100 hover:text-blue-700 font-bold rounded-full pointer-events-auto flex items-center justify-center transition-all",
           defaultClassNames.button_previous,
         ),
         button_next: cn(
           buttonVariants({ variant: buttonVariant }),
-          "h-(--cell-size) w-(--cell-size) select-none p-0 aria-disabled:opacity-50 text-primary hover:bg-primary/10 hover:text-primary",
+          "h-8 w-8 select-none p-0 aria-disabled:opacity-50 text-blue-600 bg-blue-50 border border-blue-200 hover:bg-blue-100 hover:text-blue-700 font-bold rounded-full pointer-events-auto flex items-center justify-center transition-all",
           defaultClassNames.button_next,
         ),
         month_caption: cn(
-          "flex h-(--cell-size) w-full items-center justify-center px-(--cell-size)",
+          "flex h-(--cell-size) w-full items-center justify-center px-(--cell-size) font-black text-blue-600 bg-slate-800/10 backdrop-blur-sm rounded-full mb-1",
           defaultClassNames.month_caption,
         ),
         dropdowns: cn(
-          "flex h-(--cell-size) w-full items-center justify-center gap-1.5 text-sm font-medium",
+          "flex h-(--cell-size) w-full items-center justify-center gap-1.5 text-sm font-black text-blue-600",
           defaultClassNames.dropdowns,
         ),
         dropdown_root: cn(
@@ -67,16 +67,16 @@ function Calendar({
         ),
         dropdown: cn("bg-popover absolute inset-0 opacity-0", defaultClassNames.dropdown),
         caption_label: cn(
-          "select-none font-medium",
+          "select-none font-bold text-blue-600",
           captionLayout === "label"
-            ? "text-sm font-bold text-primary"
+            ? "text-sm font-bold text-blue-600"
             : "[&>svg]:text-muted-foreground flex h-8 items-center gap-1 rounded-md pl-2 pr-1 text-sm [&>svg]:size-3.5",
           defaultClassNames.caption_label,
         ),
         table: "w-full border-collapse",
         weekdays: cn("flex", defaultClassNames.weekdays),
         weekday: cn(
-          "text-primary/60 flex-1 select-none rounded-md text-[0.8rem] font-semibold",
+          "text-blue-500 flex-1 select-none rounded-md text-[0.8rem] font-black",
           defaultClassNames.weekday,
         ),
         week: cn("mt-2 flex w-full", defaultClassNames.week),

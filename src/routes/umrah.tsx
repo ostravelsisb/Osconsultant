@@ -59,31 +59,31 @@ export const Route = createFileRoute("/umrah")({
 
 const UMRAH_PACKAGES = [
   {
-    title: "Economy Package",
-    price: "From PKR 185,000",
-    rating: "3.5",
-    features: ["15 Days Duration", "Standard Hotels (1km+)", "Shared Transport", "Visa Processing", "Return Flights"],
+    title: "Silver Package",
+    price: "From PKR 139,000",
+    rating: "4.5",
+    features: ["15 Days Duration", "Without Air Ticket", "Makkah: Voco Hotel", "Madinah: Zawar Int.", "Umrah Visa Included"],
     icon: Moon,
     color: "text-slate-500",
     bg: "bg-slate-50"
   },
   {
-    title: "3 Star Package",
-    price: "From PKR 225,000",
-    rating: "4.2",
-    features: ["15 Days Duration", "3 Star Hotels (600m)", "Luxury Transport", "Visa Processing", "Breakfast Included"],
+    title: "Gold Package",
+    price: "From PKR 250,000",
+    rating: "4.8",
+    features: ["15 Days Duration", "Without Air Ticket", "Makkah: DoubleTree", "Madinah: Waqf Bin Usman", "Umrah Visa Included"],
     icon: Star,
     color: "text-amber-500",
     bg: "bg-amber-50"
   },
   {
-    title: "4 Star Package",
-    price: "From PKR 285,000",
-    rating: "4.8",
-    features: ["10-15 Days Duration", "4 Star Hotels (Walking Distance)", "Private Transport", "Visa & Insurance", "Breakfast & Ziarat"],
+    title: "Platinum Package",
+    price: "From PKR 275,000",
+    rating: "4.9",
+    features: ["15 Days Duration", "Without Air Ticket", "Makkah: Hilton Convention", "Madinah: Saja Al Madinah", "Umrah Visa Included"],
     icon: Sparkles,
-    color: "text-blue-500",
-    bg: "bg-blue-50"
+    color: "text-indigo-500",
+    bg: "bg-indigo-50"
   },
   {
     title: "5 Star Luxury",
@@ -118,9 +118,230 @@ function UmrahPage() {
       <section className="container-px mx-auto max-w-7xl py-12 md:py-24">
         <Reveal>
           <SectionHeader
-            eyebrow="Our Packages"
-            title="Choose the package that fits your journey"
-            subtitle="We offer a variety of pre-designed packages and fully customizable options to suit your preferences."
+            eyebrow="Special Offers"
+            title="Exclusive Umrah Packages"
+            subtitle="Explore our limited-time Umrah packages offering top-tier hotel options in Makkah & Madinah."
+          />
+        </Reveal>
+
+        {/* Featured Silver, Gold & Platinum Packages Side by Side */}
+        <div className="mt-12 mb-20 grid gap-8 lg:grid-cols-3">
+          {/* Silver Package */}
+          <Reveal delay={0.1}>
+            <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-slate-200 bg-white p-6 md:p-8 shadow-glow h-full flex flex-col justify-between hover:border-primary/40 transition-all group">
+              <div className="absolute top-0 right-0 p-8 opacity-5">
+                <Star size={120} className="text-slate-400" />
+              </div>
+              <div className="space-y-5 flex-1">
+                <span className="inline-block px-3 py-1 bg-slate-100 text-slate-800 font-black uppercase text-xs rounded-xl tracking-wider border border-slate-200">
+                  Popular
+                </span>
+                <h2 className="text-2xl md:text-3xl font-black text-foreground tracking-tight flex items-center justify-between gap-2">
+                  Silver
+                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">15 Days</span>
+                </h2>
+                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">Without Air Ticket</p>
+
+                <div className="grid gap-2 sm:grid-cols-3 pt-1">
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex flex-col gap-1 hover:bg-white hover:border-primary/20 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Quad</span>
+                    <p className="text-base font-black text-primary">139,000</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex flex-col gap-1 hover:bg-white hover:border-primary/20 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Triple</span>
+                    <p className="text-base font-black text-primary">159,000</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex flex-col gap-1 hover:bg-white hover:border-primary/20 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Double</span>
+                    <p className="text-base font-black text-primary">199,000</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-3 pt-4 border-t border-slate-100">
+                  <div className="flex items-start gap-3">
+                    <div className="h-8 w-8 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div>
+                      <h4 className="font-bold text-sm">Makkah 6+4 Nights</h4>
+                      <p className="text-xs text-slate-500 font-bold">Voco Hotel (Room Only)</p>
+                      <span className="text-[10px] text-amber-500">★★★★</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="h-8 w-8 shrink-0 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div>
+                      <h4 className="font-bold text-sm">Madinah 4 Nights</h4>
+                      <p className="text-xs text-slate-500 font-bold">Zawar International</p>
+                      <span className="text-[10px] text-amber-500">★★★</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground pt-4 border-t border-slate-100">
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Visa</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)</span>
+                </div>
+              </div>
+
+              <div className="w-full mt-6">
+                <a
+                  href="https://wa.me/923325500377?text=Assalamu%20Alaikum%20Hammad%20Ahmed,%20I'm%20interested%20in%20booking%20the%20Silver%20Package%20for%20Umrah%20Packages%202026.%20Please%20guide%20me%20further."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary py-3 px-6 text-sm font-black text-white shadow-elevated transition-transform hover:-translate-y-1 hover:bg-primary/90"
+                >
+                  Book Silver <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Gold Package */}
+          <Reveal delay={0.2}>
+            <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-amber-200 bg-white p-6 md:p-8 shadow-glow h-full flex flex-col justify-between hover:border-amber-400 transition-all group">
+              <div className="absolute top-0 right-0 p-8 opacity-5">
+                <Sparkles size={120} className="text-amber-400" />
+              </div>
+              <div className="space-y-5 flex-1">
+                <span className="inline-block px-3 py-1 bg-amber-50 text-amber-800 font-black uppercase text-xs rounded-xl tracking-wider border border-amber-100">
+                  Premium
+                </span>
+                <h2 className="text-2xl md:text-3xl font-black text-foreground tracking-tight flex items-center justify-between gap-2">
+                  Gold
+                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">15 Days</span>
+                </h2>
+                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">Without Air Ticket</p>
+
+                <div className="grid gap-2 sm:grid-cols-3 pt-1">
+                  <div className="p-3 rounded-xl bg-amber-50/30 border border-amber-100/40 flex flex-col gap-1 hover:bg-white hover:border-amber-300 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Quad</span>
+                    <p className="text-base font-black text-amber-600">250,000</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-amber-50/30 border border-amber-100/40 flex flex-col gap-1 hover:bg-white hover:border-amber-300 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Triple</span>
+                    <p className="text-base font-black text-amber-600">285,000</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-amber-50/30 border border-amber-100/40 flex flex-col gap-1 hover:bg-white hover:border-amber-300 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Double</span>
+                    <p className="text-base font-black text-amber-600">355,000</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-3 pt-4 border-t border-slate-100">
+                  <div className="flex items-start gap-3">
+                    <div className="h-8 w-8 shrink-0 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div>
+                      <h4 className="font-bold text-sm">Makkah 6+4 Nights</h4>
+                      <p className="text-xs text-slate-500 font-bold">DoubleTree by Hilton</p>
+                      <span className="text-[10px] text-amber-500">★★★★</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="h-8 w-8 shrink-0 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div>
+                      <h4 className="font-bold text-sm">Madinah 4 Nights</h4>
+                      <p className="text-xs text-slate-500 font-bold">Waqf Bin Usman</p>
+                      <span className="text-[10px] text-amber-500">★★★★</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground pt-4 border-t border-slate-100">
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Visa</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)</span>
+                </div>
+              </div>
+
+              <div className="w-full mt-6">
+                <a
+                  href="https://wa.me/923325500377?text=Assalamu%20Alaikum%20Hammad%20Ahmed,%20I'm%20interested%20in%20booking%20the%20Gold%20Package%20for%20Umrah%20Packages%202026.%20Please%20guide%20me%20further."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-600 py-3 px-6 text-sm font-black text-white shadow-elevated transition-transform hover:-translate-y-1 hover:bg-amber-700"
+                >
+                  Book Gold <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Platinum Package */}
+          <Reveal delay={0.3}>
+            <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-indigo-200 bg-white p-6 md:p-8 shadow-glow h-full flex flex-col justify-between hover:border-indigo-400 transition-all group">
+              <div className="absolute top-0 right-0 p-8 opacity-5">
+                <Sparkles size={120} className="text-indigo-400" />
+              </div>
+              <div className="space-y-5 flex-1">
+                <span className="inline-block px-3 py-1 bg-indigo-50 text-indigo-800 font-black uppercase text-xs rounded-xl tracking-wider border border-indigo-100">
+                  Elite
+                </span>
+                <h2 className="text-2xl md:text-3xl font-black text-foreground tracking-tight flex items-center justify-between gap-2">
+                  Platinum
+                  <span className="text-xs bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 px-2 py-1 rounded-lg">15 Days</span>
+                </h2>
+                <p className="text-sm font-bold text-red-600 uppercase tracking-wide">Without Air Ticket</p>
+
+                <div className="grid gap-2 sm:grid-cols-3 pt-1">
+                  <div className="p-3 rounded-xl bg-indigo-50/30 border border-indigo-100/40 flex flex-col gap-1 hover:bg-white hover:border-indigo-300 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Quad</span>
+                    <p className="text-base font-black text-indigo-600">275,000</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-indigo-50/30 border border-indigo-100/40 flex flex-col gap-1 hover:bg-white hover:border-indigo-300 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Triple</span>
+                    <p className="text-base font-black text-indigo-600">315,000</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-indigo-50/30 border border-indigo-100/40 flex flex-col gap-1 hover:bg-white hover:border-indigo-300 transition-all text-center">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">Double</span>
+                    <p className="text-base font-black text-indigo-600">399,000</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-3 pt-4 border-t border-slate-100">
+                  <div className="flex items-start gap-3">
+                    <div className="h-8 w-8 shrink-0 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div>
+                      <h4 className="font-bold text-sm">Makkah 6+4 Nights</h4>
+                      <p className="text-xs text-slate-500 font-bold">Hilton Convention</p>
+                      <span className="text-[10px] text-amber-500">★★★★</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="h-8 w-8 shrink-0 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center font-extrabold text-sm">M</div>
+                    <div>
+                      <h4 className="font-bold text-sm">Madinah 4 Nights</h4>
+                      <p className="text-xs text-slate-500 font-bold">Saja Al Madinah</p>
+                      <span className="text-[10px] text-amber-500">★★★★</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground pt-4 border-t border-slate-100">
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Visa</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Bus Transport</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 size={12} className="text-emerald-600" /> Breakfast (Makkah)</span>
+                </div>
+              </div>
+
+              <div className="w-full mt-6">
+                <a
+                  href="https://wa.me/923325500377?text=Assalamu%20Alaikum%20Hammad%20Ahmed,%20I'm%20interested%20in%20booking%20the%20Platinum%20Package%20for%20Umrah%20Packages%202026.%20Please%20guide%20me%20further."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-indigo-600 py-3 px-6 text-sm font-black text-white shadow-elevated transition-transform hover:-translate-y-1 hover:bg-indigo-700"
+                >
+                  Book Platinum <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal>
+          <SectionHeader
+            eyebrow="Other Plans"
+            title="All Our Standard Packages"
+            subtitle="Explore all our spiritual journey plans designed for peace of mind."
           />
         </Reveal>
 
@@ -143,12 +364,14 @@ function UmrahPage() {
                   ))}
                 </div>
 
-                <Link
-                  to="/consultation"
+                <a
+                  href={`https://wa.me/923325500377?text=Assalamu%20Alaikum%20Hammad%20Ahmed,%20I'm%20interested%20in%20booking%20the%20${pkg.title}%20package%20for%20Umrah%20Packages%202026.%20Please%20guide%20me%20further.`}
+                  target="_blank"
+                  rel="noreferrer"
                   className="mt-8 flex w-full items-center justify-center gap-2 rounded-2xl bg-secondary/50 py-4 text-sm font-bold transition-colors hover:bg-primary hover:text-white"
                 >
                   Book Now <ArrowRight size={16} />
-                </Link>
+                </a>
               </div>
             </Reveal>
           ))}

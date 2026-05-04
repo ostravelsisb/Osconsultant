@@ -1,9 +1,13 @@
-import { Outlet, Link, createRootRoute, HeadContent } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, useLocation } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { Navbar } from "@/components/site/Navbar";
 import { TopBar } from "@/components/site/TopBar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { LiveNotification } from "@/components/site/LiveNotification";
+import { AIBotModel } from "@/components/site/AIBotModel";
 import { COMPANY } from "@/data/site";
 
 function NotFoundComponent() {
@@ -117,6 +121,65 @@ function RootComponent() {
     knowsAbout: ["Visa Processing", "Immigration Consultancy", "IATA Air Ticketing", "Umrah Packages", "Travel Insurance", "Hotel Bookings", "Passport Services"],
   };
 
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+    };
+
+    const handleCopy = (e: ClipboardEvent) => {
+      e.preventDefault();
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Prevent Ctrl+C, Ctrl+U, Ctrl+Shift+I, F12
+      if (
+        (e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s" || e.key === "a")) ||
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C" || e.key === "i")) ||
+        e.key === "F12"
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("contextmenu", handleContextMenu);
+    document.addEventListener("copy", handleCopy);
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Dynamic High-Intent Keyword Injector for automatic Google SEO
+    const routeKeywords: Record<string, string> = {
+      "/": "best travel agency in pakistan 2026, top visa consultant pakistan, top rated travel agency islamabad, cheap international flights islamabad",
+      "/about": "about os consultants, trusted visa agency islamabad, experienced tour operator pakistan, best visa company blue area islamabad",
+      "/umrah": "best umrah packages pakistan 2026, cheap umrah deals islamabad, 5 star luxury umrah makkah madinah, trusted umrah visa agent",
+      "/visa-services": "schengen visa consultant islamabad, uk student visa consultant, usa tourist visa agent pakistan, canada trv processing",
+      "/countries": "schengen country visa requirements 2026, europe tourist visa agent, best travel and tours islamabad",
+      "/air-ticketing": "cheap airline tickets islamabad, book online flights pakistan, iata accredited air travel agent, business class deals",
+      "/contact": "contact os consultants, travel agency office blue area, visa office phone number islamabad, whatsapp os travel"
+    };
+
+    const activeKeywords = routeKeywords[location.pathname] || "best travel agency in pakistan 2026, no 1 visa consultant pakistan, leading travel agent islamabad";
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', activeKeywords);
+
+    // Auto update page titles for maximum Google search relevance
+    if (document.title && !document.title.includes("OS Consultants")) {
+      document.title = `${document.title} | OS Consultants - #1 Travel Agency Pakistan`;
+    }
+
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+      document.removeEventListener("copy", handleCopy);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [location.pathname]);
+
   return (
     <div className="flex min-h-screen flex-col w-full max-w-full overflow-x-hidden">
       <HeadContent />
@@ -124,10 +187,22 @@ function RootComponent() {
       <TopBar />
       <Navbar />
       <main className="flex-1">
-        <Outlet />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+          >
+            <Outlet />
+          </motion.div>
+        </AnimatePresence>
       </main>
       <Footer />
       <WhatsAppButton />
+      <LiveNotification />
+      <AIBotModel />
     </div>
   );
 }

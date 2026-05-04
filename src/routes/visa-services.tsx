@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { Reveal } from "@/components/site/Reveal";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { BookingWidget } from "@/components/site/BookingWidget";
+import { FAQAccordion } from "@/components/site/FAQAccordion";
 import {
   Briefcase,
   GraduationCap,
@@ -13,6 +14,10 @@ import {
   Users,
   CheckCircle2,
   ArrowRight,
+  ClipboardList,
+  ShieldCheck,
+  Award,
+  BookOpen,
 } from "lucide-react";
 import { VISA_SERVICES } from "@/data/site";
 
@@ -132,8 +137,101 @@ function VisaServices() {
         </div>
       </section>
 
+      {/* Detailed Visa Application Procedure */}
+      <section className="bg-secondary/20 py-20 border-t border-border/50">
+        <div className="container-px mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="Application Workflow"
+            title="Our Comprehensive Visa Procedure"
+            subtitle="We break down each embassy's requirements into simple, transparent steps to ensure a flawless application."
+          />
+          <div className="grid gap-8 md:grid-cols-4">
+            {[
+              {
+                step: "01",
+                title: "Initial Assessment",
+                desc: "We analyze your profile, career background, financial standings, and intended travel to recommend the strongest visa category.",
+              },
+              {
+                step: "02",
+                title: "Document Compilation",
+                desc: "Our experts compile, verify, and translate your files, from bank statements and tax records to travel insurance.",
+              },
+              {
+                step: "03",
+                title: "Form Filling & Submission",
+                desc: "We complete the official visa applications perfectly to prevent errors, pay processing fees, and secure embassy slots.",
+              },
+              {
+                step: "04",
+                title: "Coaching & Interview Prep",
+                desc: "We provide comprehensive 1-on-1 coaching for US, UK, and Schengen interviews to ensure maximum success.",
+              },
+            ].map((p, i) => (
+              <Reveal key={p.step} delay={i * 0.1}>
+                <div className="relative p-6 bg-card border border-border rounded-2xl shadow-soft h-full hover:border-primary/40 transition-colors">
+                  <span className="absolute top-4 right-4 text-4xl font-extrabold text-primary/10 tracking-wider">
+                    {p.step}
+                  </span>
+                  <h3 className="text-xl font-bold mt-4">{p.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {p.desc}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Visa Categories & Procedures */}
+      <section className="container-px mx-auto max-w-7xl py-20 border-t border-border/50">
+        <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <Reveal>
+            <div className="space-y-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                Gulf & Middle East Visas
+              </span>
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                Dubai, UAE & Saudi Arabia Visas From Pakistan
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-base">
+                Navigating middle east work or tourist requirements shouldn't be confusing. We provide express e-visa and direct embassy services for quick travel.
+              </p>
+              <ul className="space-y-3.5">
+                {[
+                  "Complete Dubai E-Visas (30 & 60 days) with instant approvals.",
+                  "Saudi Arabia Umrah and Tourist visas for individuals and groups.",
+                  "Work & employment visa document attestation and embassy processing.",
+                  "Qatar and Bahrain tourist and business visa assistance.",
+                ].map((item, idx) => (
+                  <li key={idx} className="flex gap-3 text-sm font-medium">
+                    <CheckCircle2 className="text-primary mt-0.5 shrink-0" size={18} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="p-6 bg-card border border-border rounded-2xl shadow-soft">
+                <BookOpen className="text-primary" size={32} />
+                <h4 className="text-lg font-bold mt-4">Document Checklists</h4>
+                <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">Exact checklists for all major embassies tailored to your employment and business profile.</p>
+              </div>
+              <div className="p-6 bg-card border border-border rounded-2xl shadow-soft">
+                <ShieldCheck className="text-primary" size={32} />
+                <h4 className="text-lg font-bold mt-4">Safe Tracking</h4>
+                <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">Direct end-to-end tracking of application status with direct embassy notifications.</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Comprehensive Visa Information (SEO Optimized) */}
-      <section className="container-px mx-auto max-w-5xl py-20 md:py-28">
+      <section className="container-px mx-auto max-w-5xl py-20 md:py-28 border-t border-border/50">
         <div className="space-y-16">
           <div className="space-y-6 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -242,6 +340,35 @@ function VisaServices() {
             </div>
           </Reveal>
         </div>
+      </section>
+
+      {/* Comprehensive Visa FAQ Section */}
+      <section className="container-px mx-auto max-w-7xl py-20 bg-secondary/10 border-t border-border/50">
+        <SectionHeader
+          eyebrow="Quick Answers"
+          title="Visa Processing FAQs"
+          subtitle="Discover clear, precise answers to common queries regarding global visa applications and procedures."
+        />
+        <FAQAccordion
+          items={[
+            {
+              q: "What is the average processing time for a Schengen visa in Islamabad?",
+              a: "Standard processing times for Schengen visas generally take 15 to 20 calendar days from the date of appointment. We suggest beginning your application at least 1 month prior to departure.",
+            },
+            {
+              q: "What documents are most important for visa approvals?",
+              a: "Consular officers closely examine your financial standing (6-month bank statement), proof of employment or business ownership, valid ties to Pakistan, and exactly matching itineraries.",
+            },
+            {
+              q: "Do I need travel insurance for a UK or US visa?",
+              a: "While travel insurance is mandatory for Schengen visas, it is highly recommended for the UK and USA to show emergency financial coverage during the trip.",
+            },
+            {
+              q: "How can OS Consultants help with previous visa rejections?",
+              a: "We analyze the refusal letter to understand why the visa was denied, rebuild and strengthen the relevant areas of your profile, and craft a strong letter of explanation for your reapplication.",
+            },
+          ]}
+        />
       </section>
     </>
   );

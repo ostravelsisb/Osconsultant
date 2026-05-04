@@ -10,11 +10,11 @@ import { BookingWidget } from "./BookingWidget";
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.18_0.05_260)] via-[oklch(0.22_0.08_258)] to-[oklch(0.30_0.14_30)] overflow-hidden" />
-      <div className="absolute inset-0 mesh-bg opacity-50" />
-      <div className="absolute -top-32 -left-32 h-[36rem] w-[36rem] rounded-full bg-primary-glow/30 blur-3xl animate-blob" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FF7F11]/35 via-[#0c142b] to-[#00B4D8]/35 overflow-hidden" />
+      <div className="absolute inset-0 mesh-bg opacity-40" />
+      <div className="absolute -top-32 -left-32 h-[44rem] w-[44rem] rounded-full bg-[#FF7F11]/35 blur-[120px] animate-blob" />
       <div
-        className="absolute -bottom-40 -right-32 h-[36rem] w-[36rem] rounded-full bg-accent/30 blur-3xl animate-blob"
+        className="absolute -bottom-40 -right-32 h-[44rem] w-[44rem] rounded-full bg-[#00B4D8]/35 blur-[120px] animate-blob"
         style={{ animationDelay: "3s" }}
       />
 

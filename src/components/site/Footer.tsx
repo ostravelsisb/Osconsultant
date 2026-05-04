@@ -6,7 +6,8 @@ import logo from "@/assets/logo.png";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative mt-24 overflow-hidden bg-gradient-to-br from-[oklch(0.18_0.05_260)] via-[oklch(0.16_0.04_258)] to-[oklch(0.20_0.06_265)] text-white/85">
+    <footer className="relative mt-24 overflow-hidden bg-gradient-to-br from-[#0c142b] via-[#080d1e] to-[#0a1128] border-t border-white/10 text-white/85">
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF7F11] via-[#FF7F11]/80 to-[#00B4D8] z-20" />
       <div className="absolute inset-0 mesh-bg opacity-30 pointer-events-none" />
       <div className="container-px mx-auto max-w-7xl py-16 relative">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-12">

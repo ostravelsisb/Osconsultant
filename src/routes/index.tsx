@@ -170,8 +170,8 @@ function Home() {
       <section className="container-px mx-auto max-w-7xl py-20 md:py-28">
         <SectionHeader
           eyebrow="Visa Services"
-          title="Visas to anywhere you want to go"
-          subtitle="Hand-crafted documentation, embassy expertise and dedicated case officers for every application."
+          title="Best Visa Consultant in Islamabad for Worldwide Visas"
+          subtitle="Hand-crafted documentation, embassy expertise, and dedicated case officers for every single application."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {VISA_SERVICES.map((s: { title: string; desc: string }, i: number) => (
@@ -193,8 +193,8 @@ function Home() {
         <div className="container-px relative mx-auto max-w-7xl">
           <SectionHeader
             eyebrow="Destinations"
-            title="Iconic destinations, simplified"
-            subtitle="From Schengen Europe to North America, Oceania, Middle East, and beyond."
+            title="Schengen, UK & USA Visa Destinations in Pakistan"
+            subtitle="From Schengen Europe to North America, Oceania, the Middle East, and beyond."
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {DESTINATIONS.slice(0, 8).map((c, i) => (
@@ -227,7 +227,7 @@ function Home() {
             <SectionHeader
               center={false}
               eyebrow="Why Choose Us"
-              title="A premium consultancy you can trust"
+              title="Pakistan's No. 1 Travel Agency in Islamabad"
               subtitle="We combine deep embassy expertise with a personal, transparent process — so your application stands out."
             />
             <div className="grid gap-4 sm:grid-cols-2">
@@ -332,8 +332,8 @@ function Home() {
       <section className="container-px mx-auto max-w-7xl py-20 md:py-28">
         <SectionHeader
           eyebrow="Travel Services"
-          title="Beyond visas — your complete travel partner"
-          subtitle="One team for every travel need: tickets, hotels, insurance and passports."
+          title="Cheap Air Ticketing & Global Hotel Booking in Pakistan"
+          subtitle="One team for every travel need: tickets, hotels, insurance, and passports."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {TRAVEL_SERVICES.map((s: { title: string; desc: string; to: string }, i: number) => (
@@ -347,7 +347,7 @@ function Home() {
       {/* Testimonials */}
       <section className="bg-secondary/40 py-20 md:py-28">
         <div className="container-px mx-auto max-w-7xl">
-          <SectionHeader eyebrow="Testimonials" title="Loved by travelers across Pakistan" />
+          <SectionHeader eyebrow="Testimonials" title="Trusted & Recommended by Travelers across Pakistan" />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.slice(0, 6).map((t, i) => (
               <Reveal key={t.name} delay={i * 0.05}>
@@ -360,7 +360,7 @@ function Home() {
 
       {/* FAQ */}
       <section className="container-px mx-auto max-w-7xl py-20 md:py-28">
-        <SectionHeader eyebrow="FAQ" title="Quick answers to common questions" />
+        <SectionHeader eyebrow="FAQ" title="Frequently Asked Questions about Visas & Travel" />
         <FAQAccordion items={FAQS.slice(0, 5)} />
       </section>
 
