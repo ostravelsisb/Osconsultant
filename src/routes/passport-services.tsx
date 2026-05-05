@@ -57,12 +57,34 @@ export const Route = createFileRoute("/passport-services")({
 });
 
 function PassportServices() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Passport Services",
+        item: "https://osconsultants.pk/passport-services",
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
         eyebrow="Passport Services"
         title="Your passport, our priority"
         subtitle="From new applications to renewals and USA passports — we handle the paperwork so you don't have to."
+        backTo="/"
+        backLabel="Back to Home"
       />
 
       {/* Integrated Booking Widget */}

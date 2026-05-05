@@ -128,13 +128,59 @@ const UMRAH_PACKAGES = [
 ];
 
 function UmrahPage() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Umrah Packages 2026",
+        item: "https://osconsultants.pk/umrah",
+      },
+    ],
+  };
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Umrah Packages 2026",
+    description: "Best economy and luxury Umrah packages from Islamabad with visa, hotels and flights.",
+    brand: {
+      "@type": "Brand",
+      name: "OS Consultants"
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: "139000",
+      highPrice: "395000",
+      priceCurrency: "PKR",
+      offerCount: "4"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "842"
+    }
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
       <div className="relative">
         <PageHero
           eyebrow="Spiritual Journey"
           title="Umrah Packages Designed for Peace of Mind"
           subtitle="From budget-friendly economy stays to premium 5-star luxury experiences — we handle every detail of your sacred pilgrimage."
+          backTo="/"
+          backLabel="Back to Home"
           backgroundImage={umrahHero}
         />
 

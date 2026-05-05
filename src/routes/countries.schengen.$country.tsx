@@ -92,14 +92,80 @@ function SchengenCountryPage() {
     serviceType: `${country.name} Schengen Visa Consultancy`,
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Destinations",
+        item: "https://osconsultants.pk/countries",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Schengen Area",
+        item: "https://osconsultants.pk/countries/schengen",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: country.name,
+        item: `https://osconsultants.pk/countries/schengen/${country.slug}`,
+      },
+    ],
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `How long does a ${country.name} visa take from Pakistan?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Processing for a ${country.name} Schengen visa typically takes 10–15 working days after your appointment at the embassy or VFS/BLS center in Islamabad.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `What is the success rate for ${country.name} visas at OS Consultants?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `We maintain a 98% approval rate for Schengen visa applications, including ${country.name}, by ensuring meticulous documentation and professional file assembly.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Where is the ${country.name} visa center in Islamabad?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Most ${country.name} applications are processed through specialized centers like VFS Global or BLS in Islamabad. OS Consultants handles all appointment bookings and document preparation for you.`,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       <PageHero
         eyebrow="Schengen Area"
         title={country.name}
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
+        backTo="/countries/schengen"
+        backLabel="Back to Schengen"
       />
 
       <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">

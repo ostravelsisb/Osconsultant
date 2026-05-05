@@ -27,9 +27,47 @@ export const Route = createFileRoute("/countries/$slug_/visa/$visaType")({
 function VisaSubPage() {
   const { destination, visa } = Route.useLoaderData();
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Destinations",
+        item: "https://osconsultants.pk/countries",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: destination.name,
+        item: `https://osconsultants.pk/countries/${destination.slug}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: visa.name,
+        item: `https://osconsultants.pk/countries/${destination.slug}/visa/${visa.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
-      <PageHero eyebrow={`${destination.name} Visas`} title={visa.name} subtitle={visa.heroText} />
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+      <PageHero
+        eyebrow={`${destination.name} Visas`}
+        title={visa.name}
+        subtitle={visa.heroText}
+        backTo={`/countries/${destination.slug}`}
+        backLabel={`Back to ${destination.name}`}
+      />
 
       <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">
         <BookingWidget initialTab="visa" />

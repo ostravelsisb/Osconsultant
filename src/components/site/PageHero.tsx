@@ -1,6 +1,6 @@
 import { Reveal } from "./Reveal";
 import { Link } from "@tanstack/react-router";
-import { Home, ChevronRight } from "lucide-react";
+import { Home, ChevronRight, ArrowLeft } from "lucide-react";
 
 export function PageHero({
   eyebrow,
@@ -8,12 +8,16 @@ export function PageHero({
   subtitle,
   breadcrumb,
   backgroundImage,
+  backTo,
+  backLabel,
 }: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   breadcrumb?: string;
   backgroundImage?: string;
+  backTo?: string;
+  backLabel?: string;
 }) {
   return (
     <section
@@ -41,15 +45,29 @@ export function PageHero({
         </div>
       )}
 
-      <div className="container-px relative z-10 mx-auto max-w-7xl py-20 md:py-28">
+      <div className="container-px relative z-10 mx-auto max-w-7xl pt-28 pb-20 md:pt-36 md:pb-28">
         <Reveal>
-          <nav className="mb-4 flex items-center gap-1.5 text-xs text-white/70">
-            <Link to="/" className="inline-flex items-center gap-1 hover:text-white">
-              <Home size={12} /> Home
-            </Link>
-            <ChevronRight size={12} />
-            <span className="text-white">{breadcrumb || title}</span>
-          </nav>
+          <div className="flex flex-col gap-3 mb-8 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+            {backTo && (
+              <Link
+                to={backTo}
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-bold text-white backdrop-blur-xl transition-all hover:bg-white/20 hover:border-white/40 active:scale-[0.98] group w-fit order-1 sm:order-2 shadow-md sm:shadow-none sm:text-xs sm:px-4 sm:py-2"
+              >
+                <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-1 sm:w-4 sm:h-4" />
+                <span>{backLabel || "Back to Menu"}</span>
+              </Link>
+            )}
+            
+            <nav className="flex items-center gap-1.5 text-[10px] sm:text-xs text-white/50 order-2 sm:order-1 px-1 sm:px-0">
+              <Link to="/" className="inline-flex items-center gap-1 hover:text-white transition-colors">
+                <Home size={12} /> Home
+              </Link>
+              <ChevronRight size={10} className="opacity-40" />
+              <span className="text-white/80 truncate max-w-[200px] sm:max-w-none">
+                {breadcrumb || title}
+              </span>
+            </nav>
+          </div>
         </Reveal>
         {eyebrow && (
           <Reveal>

@@ -59,12 +59,34 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About Us",
+        item: "https://osconsultants.pk/about",
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
         eyebrow="Our Story"
         title="Premium visa consultancy from the heart of Islamabad"
         subtitle="Since 2009, OS Consultants has helped over 20,000 travelers secure visas, flights and travel solutions to 50+ destinations worldwide."
+        backTo="/"
+        backLabel="Back to Home"
       />
 
       <section className="container-px mx-auto max-w-7xl py-20">

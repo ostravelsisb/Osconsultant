@@ -37,111 +37,98 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": ["TravelAgency", "LocalBusiness", "ProfessionalService"],
-    name: COMPANY.name,
-    alternateName: ["OS Travels", "OS Consultants Islamabad", "OS Consultants Pakistan"],
-    description:
-      "Pakistan's No.1 Travel Agency & World-Class Visa Consultant. IATA-accredited, 15+ years of excellence, 98% approval rate. Expert in Schengen, USA, UK, Canada, Australia visas, cheap flights, Umrah packages & hotel bookings from Islamabad.",
-    slogan: "Pakistan's No.1 Travel Agency — Your Gateway to the World",
-    image: "/images/img_5f78d2f1fc.jpg",
-    logo: "/images/img_c7c7a77ed6.png",
-    "@id": "https://osconsultants.pk",
-    url: "https://osconsultants.pk",
-    telephone: COMPANY.phone,
-    email: COMPANY.email,
-    priceRange: "$$",
-    currenciesAccepted: "PKR, USD, EUR, GBP",
-    paymentAccepted: "Cash, Bank Transfer, JazzCash, EasyPaisa",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Office # 3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area",
-      addressLocality: "Islamabad",
-      addressRegion: "Islamabad Capital Territory",
-      postalCode: "44000",
-      addressCountry: "PK",
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": ["TravelAgency", "LocalBusiness", "ProfessionalService"],
+      "@id": "https://osconsultants.pk/#localbusiness",
+      name: COMPANY.name,
+      alternateName: ["OS Travels", "OS Consultants Islamabad", "OS Consultants Pakistan"],
+      description:
+        "Pakistan's No.1 Travel Agency & World-Class Visa Consultant. IATA-accredited, 15+ years of excellence, 98% approval rate. Expert in Schengen, USA, UK, Canada, Australia visas, cheap flights, Umrah packages & hotel bookings from Islamabad.",
+      slogan: "Pakistan's No.1 Travel Agency — Your Gateway to the World",
+      image: "https://osconsultants.pk/images/img_5f78d2f1fc.jpg",
+      logo: {
+        "@type": "ImageObject",
+        "url": "https://osconsultants.pk/images/img_c7c7a77ed6.png"
+      },
+      url: "https://osconsultants.pk",
+      telephone: COMPANY.phone,
+      email: COMPANY.email,
+      priceRange: "$$",
+      currenciesAccepted: "PKR, USD, EUR, GBP",
+      paymentAccepted: "Cash, Bank Transfer, JazzCash, EasyPaisa",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Office # 3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area",
+        addressLocality: "Islamabad",
+        addressRegion: "Islamabad Capital Territory",
+        postalCode: "44000",
+        addressCountry: "PK",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 33.7135,
+        longitude: 73.0673,
+      },
+      areaServed: [
+        { "@type": "Country", name: "Pakistan" },
+        { "@type": "City", name: "Islamabad" },
+        { "@type": "City", name: "Rawalpindi" },
+        { "@type": "City", name: "Lahore" },
+        { "@type": "City", name: "Karachi" },
+      ],
+      sameAs: [
+        COMPANY.socials.facebook,
+        COMPANY.socials.instagram,
+        COMPANY.socials.linkedin,
+        COMPANY.socials.twitter,
+      ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        bestRating: "5",
+        ratingCount: "2847",
+        reviewCount: "1523",
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "10:00",
+        closes: "19:00",
+      },
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 33.7135,
-      longitude: 73.0673,
-    },
-    areaServed: [
-      { "@type": "Country", name: "Pakistan" },
-      { "@type": "City", name: "Islamabad" },
-      { "@type": "City", name: "Rawalpindi" },
-      { "@type": "City", name: "Lahore" },
-      { "@type": "City", name: "Karachi" },
-      { "@type": "Continent", name: "Asia" },
-      { "@type": "Continent", name: "Europe" },
-      { "@type": "Continent", name: "North America" },
-      { "@type": "Continent", name: "Oceania" },
-    ],
-    sameAs: [
-      COMPANY.socials.facebook,
-      COMPANY.socials.instagram,
-      COMPANY.socials.linkedin,
-      COMPANY.socials.twitter,
-      "https://osconsultants.pk",
-      "https://ostravels.com",
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      bestRating: "5",
-      ratingCount: "2847",
-      reviewCount: "1523",
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Travel & Visa Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: "Schengen Visa Consultancy" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: "USA B1/B2 & F1 Visa Processing" },
-        },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "UK Standard Visitor Visa" } },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: "Canada TRV & Study Permit" },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: "Australia Subclass 600 Visa" },
-        },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "IATA Air Ticketing" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Umrah Packages 2026" } },
-        {
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: "International Hotel Bookings" },
-        },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Travel Insurance" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Passport Services" } },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://osconsultants.pk/#organization",
+      name: COMPANY.name,
+      url: "https://osconsultants.pk",
+      logo: "https://osconsultants.pk/images/img_c7c7a77ed6.png",
+      sameAs: [
+        COMPANY.socials.facebook,
+        COMPANY.socials.instagram,
+        COMPANY.socials.linkedin,
+        COMPANY.socials.twitter,
       ],
     },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "10:00",
-      closes: "19:00",
-    },
-    foundingDate: "2009",
-    numberOfEmployees: { "@type": "QuantitativeValue", value: "25+" },
-    knowsAbout: [
-      "Visa Processing",
-      "Immigration Consultancy",
-      "IATA Air Ticketing",
-      "Umrah Packages",
-      "Travel Insurance",
-      "Hotel Bookings",
-      "Passport Services",
-    ],
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://osconsultants.pk/#website",
+      url: "https://osconsultants.pk",
+      name: COMPANY.name,
+      publisher: { "@id": "https://osconsultants.pk/#organization" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://osconsultants.pk/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ];
 
   const location = useLocation();
 

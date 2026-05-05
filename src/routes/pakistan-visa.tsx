@@ -67,13 +67,35 @@ function PakistanVisaPage() {
     "Proof of Return Travel & Day-by-day Itinerary",
   ];
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Pakistan Visa",
+        item: "https://osconsultants.pk/pakistan-visa",
+      },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
         eyebrow="Inbound Visa"
         title="Pakistan Visa Services"
         subtitle="Complete assistance for Tourist, Business, and E-Visas to Pakistan."
+        backTo="/"
+        backLabel="Back to Home"
       />
 
       <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">

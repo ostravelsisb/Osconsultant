@@ -4,6 +4,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { Plane, Globe2, BadgeCheck, Banknote, Clock4, ArrowRight, Star } from "lucide-react";
 import { BookingWidget } from "@/components/site/BookingWidget";
 import { FAQAccordion } from "@/components/site/FAQAccordion";
+import { AirlineSlider } from "@/components/site/AirlineSlider";
+
 
 const TICKETING_FAQS = [
   {
@@ -89,12 +91,34 @@ export const Route = createFileRoute("/air-ticketing")({
 });
 
 function AirTicketing() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Air Ticketing",
+        item: "https://osconsultants.pk/air-ticketing",
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
-        eyebrow="Air Ticketing"
-        title="IATA-authorized tickets at the best fares"
-        subtitle="Instant booking on every major airline — domestic and international — backed by 24/7 support."
+        eyebrow="Aviation Services"
+        title="Fly with Confidence"
+        subtitle="Exclusive fares on all major airlines with 24/7 dedicated support for your global travels."
+        backTo="/"
+        backLabel="Back to Home"
       />
 
       {/* Integrated Booking Widget */}
@@ -150,6 +174,9 @@ function AirTicketing() {
           </div>
         </div>
       </section>
+
+      {/* Premium Airline Partners Slider */}
+      <AirlineSlider />
 
       {/* Premium Visual Section */}
       <section className="container-px mx-auto max-w-7xl py-20">

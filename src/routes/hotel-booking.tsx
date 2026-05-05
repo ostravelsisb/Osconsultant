@@ -66,6 +66,8 @@ function HotelBooking() {
         eyebrow="Hotels"
         title="Stay where you love, save where it matters"
         subtitle="From 5-star icons to boutique gems and value stays — we book it all."
+        backTo="/"
+        backLabel="Back to Home"
       />
 
       {/* Integrated Booking Widget */}

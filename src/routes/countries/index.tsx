@@ -54,6 +54,8 @@ function CountriesPage() {
         eyebrow="Destinations"
         title="Visa support across every continent"
         subtitle="From iconic European capitals to vibrant Middle Eastern hubs and Oceania's natural wonders."
+        backTo="/"
+        backLabel="Back to Home"
       />
 
       <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">

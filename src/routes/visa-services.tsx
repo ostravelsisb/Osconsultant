@@ -71,12 +71,34 @@ export const Route = createFileRoute("/visa-services")({
 const ICONS = [Plane, Heart, Users, Globe2, GraduationCap, Briefcase];
 
 function VisaServices() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Visa Services",
+        item: "https://osconsultants.pk/visa-services",
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
         eyebrow="Visa Services"
         title="Visas tailored to your journey"
         subtitle="Whether you're visiting family, studying abroad or expanding your business — our expert team handles every detail."
+        backTo="/"
+        backLabel="Back to Home"
       />
 
       {/* Integrated Booking Widget */}

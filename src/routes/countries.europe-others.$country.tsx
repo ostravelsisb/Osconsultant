@@ -28,8 +28,40 @@ export const Route = createFileRoute("/countries/europe-others/$country")({
 function EuropeOthersCountryPage() {
   const country = Route.useLoaderData();
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Destinations",
+        item: "https://osconsultants.pk/countries",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Europe",
+        item: "https://osconsultants.pk/countries/europe-others",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: country.name,
+        item: `https://osconsultants.pk/countries/europe-others/${country.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
         eyebrow="Europe"
         title={country.name}

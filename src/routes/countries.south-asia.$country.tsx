@@ -92,14 +92,48 @@ function SouthAsiaCountryPage() {
     serviceType: `${country.name} South Asia Visa Consultancy`,
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Destinations",
+        item: "https://osconsultants.pk/countries",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "South Asia",
+        item: "https://osconsultants.pk/countries/south-asia",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: country.name,
+        item: `https://osconsultants.pk/countries/south-asia/${country.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
         eyebrow="South Asia & Beyond"
         title={country.name}
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
+        backTo="/countries/south-asia"
+        backLabel="Back to South Asia"
       />
 
       <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">

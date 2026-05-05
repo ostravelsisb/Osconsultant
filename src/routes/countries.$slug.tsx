@@ -107,13 +107,55 @@ function DestinationRegionPage() {
   const dest = Route.useLoaderData();
   const subCountries = REGION_COUNTRIES[dest.slug] || [];
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Destinations",
+        item: "https://osconsultants.pk/countries",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: dest.name,
+        item: `https://osconsultants.pk/countries/${dest.slug}`,
+      },
+    ],
+  };
+
+  const faqJsonLd = dest.faqs && dest.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: dest.faqs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a
+      }
+    }))
+  } : null;
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
+      {faqJsonLd && <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>}
       <PageHero
         eyebrow="Region Overview"
         title={dest.name}
         subtitle={dest.shortDesc}
         backgroundImage={dest.image}
+        backTo="/countries"
+        backLabel="Back to Destinations"
       />
 
       <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">
@@ -248,7 +290,7 @@ function DestinationRegionPage() {
                 <h3 className="text-xl font-bold">General Requirements</h3>
               </div>
               <ul className="space-y-4">
-                {dest.generalRequirements.map((req, idx) => (
+                {dest.generalRequirements.map((req: string, idx: number) => (
                   <li key={idx} className="flex items-start gap-4">
                     <span className="mt-0.5 flex shrink-0 h-6 w-6 items-center justify-center rounded-full bg-accent/20 text-accent">
                       <CheckCircle2 size={14} />
@@ -274,7 +316,7 @@ function DestinationRegionPage() {
           />
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-12">
-            {dest.visas.map((visa, idx) => (
+            {dest.visas.map((visa: any, idx: number) => (
               <Reveal key={visa.slug} delay={idx * 0.05}>
                 <div className="bg-card border border-border rounded-2xl p-6 shadow-soft h-full flex flex-col hover:border-primary/40 transition-colors">
                   <h4 className="text-lg font-bold mb-2">{visa.name}</h4>
@@ -308,7 +350,7 @@ function DestinationRegionPage() {
           subtitle="Our streamlined process ensures maximum approval chances."
         />
         <div className="grid gap-6 md:grid-cols-4 mt-12">
-          {dest.stepByStep.map((step, idx) => (
+          {dest.stepByStep.map((step: any, idx: number) => (
             <Reveal key={step.title} delay={idx * 0.1}>
               <div className="relative p-6 bg-card border border-border rounded-2xl shadow-soft h-full hover:-translate-y-1 transition-transform">
                 <span className="absolute top-4 right-4 text-4xl font-extrabold text-primary/10 tracking-wider">

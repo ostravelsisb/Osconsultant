@@ -104,24 +104,24 @@ export function LiveNotification() {
           animate={{ opacity: 1, x: 0, y: 0 }}
           exit={{ opacity: 0, x: -50, y: 20 }}
           transition={{ type: "spring", stiffness: 120, damping: 16 }}
-          className="fixed bottom-6 left-6 z-[9999] bg-card/95 backdrop-blur-md border border-border shadow-elevated rounded-2xl p-4 max-w-xs flex items-start gap-3.5 select-none hover:border-primary/40 transition-colors"
+          className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[9999] bg-card/95 backdrop-blur-md border border-border shadow-elevated rounded-xl sm:rounded-2xl p-2.5 sm:p-4 max-w-[240px] sm:max-w-xs flex items-start gap-2.5 sm:gap-3.5 select-none hover:border-primary/40 transition-colors"
         >
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary-glow text-primary-foreground shadow-soft">
-            <Flame className="animate-pulse" size={18} />
+          <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-primary to-primary-glow text-primary-foreground shadow-soft">
+            <Flame size={14} className="animate-pulse sm:w-5 sm:h-5" />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center justify-between gap-2">
-              <p className="text-xs font-bold tracking-tight text-foreground/90">Live Query</p>
-              <span className="flex items-center gap-1 text-[10px] font-semibold bg-primary/10 text-primary px-2 py-0.5 rounded-full">
-                <CheckCircle2 size={10} /> Verified
+              <p className="text-[10px] sm:text-xs font-bold tracking-tight text-foreground/90">Live Query</p>
+              <span className="flex items-center gap-1 text-[8px] sm:text-[10px] font-semibold bg-primary/10 text-primary px-1.5 py-0.5 rounded-full">
+                <CheckCircle2 size={8} className="sm:w-3 sm:h-3" /> Verified
               </span>
             </div>
-            <p className="mt-1 text-xs text-muted-foreground leading-normal">
+            <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs text-muted-foreground leading-tight sm:leading-normal">
               <strong className="text-foreground">{current.name}</strong> from {current.city} just
               inquired about{" "}
               <strong className="text-primary font-semibold">{current.service}</strong>.
             </p>
-            <p className="mt-1.5 text-[10px] text-muted-foreground/75 font-medium">
+            <p className="mt-1 text-[8px] sm:text-[10px] text-muted-foreground/75 font-medium">
               {current.time}
             </p>
           </div>

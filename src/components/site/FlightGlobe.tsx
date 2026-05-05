@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Globe from 'react-globe.gl';
 
 export function FlightGlobe() {
-  const globeRef = useRef<any>();
+  const globeRef = useRef<any>(null);
   const [arcsData, setArcsData] = useState<any[]>([]);
 
   useEffect(() => {
@@ -39,7 +39,6 @@ export function FlightGlobe() {
         backgroundColor="rgba(0,0,0,0)"
         showAtmosphere={true}
         atmosphereColor="#00B4D8"
-        atmosphereDaylightOpacity={0.3}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
         pointsData={arcsData.map(d => ({ lat: d.startLat, lng: d.startLng }))}

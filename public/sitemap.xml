@@ -1,388 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
   <url>
     <loc>https://osconsultants.pk/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/visa-services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/air-ticketing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://osconsultants.pk/umrah</loc>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/hotel-booking</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/travel-insurance</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/passport-services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://osconsultants.pk/consultation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://osconsultants.pk/pakistan-visa</loc>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.80</priority>
   </url>
+
+  <!-- Region Hubs -->
   <url>
     <loc>https://osconsultants.pk/countries/schengen</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/united-states</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/united-kingdom</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/canada</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/countries/middle-east</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://osconsultants.pk/countries/americas</loc>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/countries/south-asia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/countries/central-asia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/countries/east-asia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/north-africa</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/southern-africa</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-america</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/oceania</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/germany</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/france</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/italy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/spain</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/netherlands</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/switzerland</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/austria</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/belgium</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/denmark</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/greece</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/norway</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/portugal</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/sweden</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/czech-republic</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/estonia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/finland</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/hungary</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/iceland</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/latvia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/lithuania</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/luxembourg</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/malta</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/poland</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/slovakia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/slovenia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/liechtenstein</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/croatia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/bulgaria</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen/romania</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/pakistan</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/thailand</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/malaysia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/sri-lanka</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/maldives</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/nepal</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/indonesia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/vietnam</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/bangladesh</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia/cambodia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/central-asia/turkey</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/central-asia/azerbaijan</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/central-asia/uzbekistan</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/central-asia/kazakhstan</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/central-asia/kyrgyzstan</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/north-africa/egypt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/north-africa/morocco</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/north-africa/tunisia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/north-africa/algeria</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/southern-africa/south-africa</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/southern-africa/mauritius</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/southern-africa/kenya</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/southern-africa/seychelles</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/southern-africa/zimbabwe</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/southern-africa/zambia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/southern-africa/tanzania</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- ALL 29 SCHENGEN COUNTRIES -->
+  <url><loc>https://osconsultants.pk/countries/schengen/germany</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/france</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/italy</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/spain</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/netherlands</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/switzerland</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/austria</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/belgium</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/denmark</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/greece</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/norway</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/portugal</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/sweden</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/czech-republic</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/estonia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/finland</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/hungary</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/iceland</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/latvia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/lithuania</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/luxembourg</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/malta</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/poland</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/slovakia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/slovenia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/liechtenstein</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/croatia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/bulgaria</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/romania</loc><priority>0.70</priority></url>
+
+  <!-- Asian Countries -->
+  <url><loc>https://osconsultants.pk/countries/south-asia/thailand</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/malaysia</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/vietnam</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/central-asia/turkey</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/central-asia/azerbaijan</loc><priority>0.75</priority></url>
 </urlset>

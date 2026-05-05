@@ -92,14 +92,48 @@ function MiddleEastCountryPage() {
     serviceType: `${country.name} Middle East Visa Consultancy`,
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Destinations",
+        item: "https://osconsultants.pk/countries",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Middle East",
+        item: "https://osconsultants.pk/countries/middle-east",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: country.name,
+        item: `https://osconsultants.pk/countries/middle-east/${country.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
         eyebrow="Middle East"
         title={country.name}
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
+        backTo="/countries/middle-east"
+        backLabel="Back to Middle East"
       />
 
       <div className="-mt-20 relative z-50 container-px mx-auto max-w-7xl">

@@ -46,12 +46,33 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://osconsultants.pk/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: "https://osconsultants.pk/contact",
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
-        eyebrow="Contact"
-        title="We'd love to hear from you"
-        subtitle="Walk in, call, email or message us on WhatsApp. We typically reply within 1 business hour."
+        title="Get in Touch"
+        subtitle="Our team is ready to assist you with your global travel and visa needs. Contact us today for expert guidance."
+        backTo="/"
+        backLabel="Back to Home"
       />
       <section className="container-px mx-auto max-w-7xl py-20">
         <div className="grid gap-10 lg:grid-cols-2">
