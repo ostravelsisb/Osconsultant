@@ -30,7 +30,7 @@ export const Route = createFileRoute("/contact")({
         content:
           "Visit us at Blue Area, Islamabad. Expert help for Schengen, UK, USA, Canada & Australia visas. WhatsApp, phone & walk-in available.",
       },
-      { property: "og:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { property: "og:image", content: "/images/img_5f78d2f1fc.jpg" },
       { property: "og:url", content: "https://osconsultants.pk/contact" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -87,7 +87,9 @@ function Contact() {
             ].map((b) => (
               <a
                 key={b.t}
-                href={b.href || "#"}
+                href={b.href || (b.t === "Office" ? "https://maps.app.goo.gl/Yyv9M5uR2VzJjYwV9" : "#")}
+                target={b.t === "Office" ? "_blank" : undefined}
+                rel={b.t === "Office" ? "noopener noreferrer" : undefined}
                 className="card-3d flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-soft hover-lift"
               >
                 <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary-glow text-primary-foreground">
@@ -102,7 +104,7 @@ function Contact() {
             <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
               <iframe
                 title="OS Consultants office in Blue Area, Islamabad"
-                src="https://www.google.com/maps?q=Office%20%23%203%2C%20Aaly%20Plaza%2C%20Fazal-e-Haq%20Road%2C%20Block%20E%20G%206%2F2%20Blue%20Area%2C%20Islamabad%2C%2044000&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.6560234251097!2d73.0732239!3d33.717848599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf9b090fffff:0xf2f8c892ac3fd679!2sOs%20Consultant!5e0!3m2!1sen!2s!4v1777971120345!5m2!1sen!2s"
                 loading="lazy"
                 className="h-72 w-full"
               />

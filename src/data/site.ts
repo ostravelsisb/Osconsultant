@@ -98,7 +98,7 @@ export const COUNTRIES = [
     name: "East Asia",
     short: "China, Japan, South Korea & more.",
     image:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
+      "/images/img_9190f20f71.jpg",
     accent: "Region",
   },
   {
@@ -120,14 +120,14 @@ export const COUNTRIES = [
     name: "South America",
     short: "Brazil, Argentina, Colombia & more.",
     image:
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=800",
+      "/images/img_89f28f9017.jpg",
     accent: "Region",
   },
   {
     slug: "oceania",
     name: "Oceania",
     short: "Australia, New Zealand, Fiji & more.",
-    image: "https://beantowntraveller.com/wp-content/uploads/2018/07/IMG_2484-scaled.jpg",
+    image: "/images/img_73cf6a7246.jpg",
     accent: "Region",
   },
 ];
@@ -271,7 +271,7 @@ export const SCHENGEN_COUNTRIES = [
       "Black Forest",
     ],
     image:
-      "https://cdn.sanity.io/images/nxpteyfv/goguides/2bf36f0d5bb919b4772603e6d8852f3fdc4bdd96-1600x1066.jpg",
+      "/images/img_336389a0b5.jpg",
   },
   {
     slug: "france",
@@ -304,7 +304,7 @@ export const SCHENGEN_COUNTRIES = [
       "Loire Valley Castles",
     ],
     image:
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800",
+      "/images/img_65a04c58e4.jpg",
   },
   {
     slug: "italy",
@@ -333,7 +333,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Rome (Colosseum)", "Venice (Grand Canal)", "Florence (Duomo)", "Amalfi Coast"],
     image:
-      "https://plus.unsplash.com/premium_photo-1661962723801-1015e61ec340?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cm9tZSUyMGl0YWx5fGVufDB8fDB8fHww",
+      "/images/img_177ae3a7a4.jpg",
   },
   {
     slug: "spain",
@@ -367,7 +367,7 @@ export const SCHENGEN_COUNTRIES = [
       "Ibiza / Mallorca",
     ],
     image:
-      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&q=80&w=800",
+      "/images/img_74bfe51e2f.jpg",
   },
   {
     slug: "netherlands",
@@ -401,7 +401,7 @@ export const SCHENGEN_COUNTRIES = [
       "The Hague",
     ],
     image:
-      "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&q=80&w=800",
+      "/images/img_b723ee4cf3.jpg",
   },
   {
     slug: "switzerland",
@@ -435,7 +435,7 @@ export const SCHENGEN_COUNTRIES = [
       "Geneva (Jet d'Eau)",
     ],
     image:
-      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&q=80&w=800",
+      "/images/img_a53f0fe3aa.jpg",
   },
   {
     slug: "austria",
@@ -464,7 +464,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Vienna (Schönbrunn Palace)", "Salzburg (Old Town)", "Hallstatt", "Innsbruck"],
     image:
-      "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&q=80&w=800",
+      "/images/img_2db79fcc2e.jpg",
   },
   {
     slug: "belgium",
@@ -522,7 +522,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Copenhagen (Nyhavn)", "Tivoli Gardens", "Little Mermaid Statue", "Skagen"],
     image:
-      "https://www.wanderlustmagazine.com/wp-content/uploads/2023/10/shutterstock_2088468043-scaled.jpg",
+      "/images/img_b58414952a.jpg",
   },
   {
     slug: "greece",
@@ -550,7 +550,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Athens (Acropolis)", "Santorini (Oia)", "Mykonos", "Meteora Monasteries"],
     image:
-      "https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&q=80&w=800",
+      "/images/img_bacef8264c.jpg",
   },
   {
     slug: "norway",
@@ -618,7 +618,7 @@ export const SCHENGEN_COUNTRIES = [
       "Sintra (Pena Palace)",
     ],
     image:
-      "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&q=80&w=800",
+      "/images/img_91a130a181.jpg",
   },
   {
     slug: "sweden",
@@ -647,7 +647,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Stockholm (Gamla Stan)", "Gothenburg", "Icehotel (Kiruna)", "Vasa Museum"],
     image:
-      "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&q=80&w=800",
+      "/images/img_e293531f17.jpg",
   },
   {
     slug: "czech-republic",
@@ -675,7 +675,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Prague (Old Town Square)", "Charles Bridge", "Prague Castle", "Český Krumlov"],
     image:
-      "https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&q=80&w=800",
+      "/images/img_724a4ba6fc.jpg",
   },
   {
     slug: "estonia",
@@ -702,7 +702,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Tallinn Old Town", "Lahemaa National Park", "Saaremaa Island", "Pärnu"],
     image:
-      "https://www.lot.com/content/dam/lot/lot-com/destination-photos/estonia/Tallin-3.coreimg.jpg/1723626011079/Tallin-3.jpg",
+      "/images/img_a4a978ec1a.jpg",
   },
   {
     slug: "finland",
@@ -735,7 +735,7 @@ export const SCHENGEN_COUNTRIES = [
       "Lapland",
       "Suomenlinna",
     ],
-    image: "https://nordivatours.com/wp-content/uploads/2025/03/Finland.jpg",
+    image: "/images/img_2c5129476b.jpg",
   },
   {
     slug: "hungary",
@@ -769,7 +769,7 @@ export const SCHENGEN_COUNTRIES = [
       "Eger Castle",
     ],
     image:
-      "https://images.unsplash.com/photo-1551867633-194f125bddfa?auto=format&fit=crop&q=80&w=800",
+      "/images/img_ed939a2e0f.jpg",
   },
   {
     slug: "iceland",
@@ -798,7 +798,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Blue Lagoon", "Golden Circle", "Reykjavík", "Vatnajökull Glacier"],
     image:
-      "https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&q=80&w=800",
+      "/images/img_ba0a694179.jpg",
   },
   {
     slug: "latvia",
@@ -827,7 +827,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Riga (Old Town)", "Jūrmala Beach", "Gauja National Park", "Rundāle Palace"],
     image:
-      "https://www.baltictravelservices.com/BalticTravelBlog/wp-content/uploads/2016/04/Tour_to_RIGA_LATVIA.jpg",
+      "/images/img_d26531bc65.jpg",
   },
   {
     slug: "lithuania",
@@ -860,7 +860,7 @@ export const SCHENGEN_COUNTRIES = [
       "Curonian Spit",
       "Hill of Crosses",
     ],
-    image: "https://images.trvl-media.com/place/2167/ec8f2543-aeb2-4765-a5af-7961e748ce4e.jpg",
+    image: "/images/img_61a5b51eff.jpg",
   },
   {
     slug: "luxembourg",
@@ -893,7 +893,7 @@ export const SCHENGEN_COUNTRIES = [
       "The Grund",
       "Mullerthal Trail",
     ],
-    image: "https://images.trvl-media.com/place/2167/ec8f2543-aeb2-4765-a5af-7961e748ce4e.jpg",
+    image: "/images/img_61a5b51eff.jpg",
   },
   {
     slug: "malta",
@@ -956,7 +956,7 @@ export const SCHENGEN_COUNTRIES = [
       "Tatra Mountains",
     ],
     image:
-      "https://images.unsplash.com/photo-1519197924294-4ba991a11128?auto=format&fit=crop&q=80&w=800",
+      "/images/img_47448876ef.jpg",
   },
   {
     slug: "slovakia",
@@ -1013,7 +1013,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Lake Bled", "Ljubljana", "Postojna Cave", "Piran"],
     image:
-      "https://res.cloudinary.com/eurocamp/image/upload/v1753797470/Slovenia_Krki-Medieval_Town_Kostanjevica_FI_pxe4is.jpg",
+      "/images/img_444738d49f.jpg",
   },
   {
     slug: "liechtenstein",
@@ -1042,7 +1042,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Vaduz Castle", "Malbun", "Gutenberg Castle", "Schloss Vaduz"],
     image:
-      "https://www.travelandleisure.com/thmb/C-RFiEPiso8zwYNCyBjaFcM24iI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-how-to-get-there-LIECHTENSTEIN0724-9e26935e378641a889889c73109e8bb0.jpg",
+      "/images/img_043aa12edc.jpg",
   },
   {
     slug: "croatia",
@@ -1075,7 +1075,7 @@ export const SCHENGEN_COUNTRIES = [
       "Split (Diocletian's Palace)",
       "Hvar Island",
     ],
-    image: "https://i.natgeofe.com/n/a53f21b1-5025-47fc-bd1b-3b2da933f763/croatia.jpg",
+    image: "/images/img_a62f168aa1.jpg",
   },
   {
     slug: "bulgaria",
@@ -1137,7 +1137,7 @@ export const SCHENGEN_COUNTRIES = [
     ],
     popularPlaces: ["Bucharest", "Transylvania (Bran Castle)", "Sighişoara", "Sibiu"],
     image:
-      "https://pohcdn.com/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Romania.jpg-2.jpg",
+      "/images/img_9befe7a914.jpg",
   },
 ];
 
@@ -1211,7 +1211,7 @@ export const SOUTH_ASIA_COUNTRIES = [
       "Visa Fee: Approx 12,000 - 15,000 PKR (eVisa)",
     ],
     popularPlaces: ["Kuala Lumpur (Petronas Towers)", "Langkawi", "Genting Highlands", "Penang"],
-    image: "https://ychef.files.bbci.co.uk/1920x1080/p0g712th.png",
+    image: "/images/img_f8e7bf4b92.png",
   },
   {
     slug: "sri-lanka",
@@ -1231,7 +1231,7 @@ export const SOUTH_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Colombo", "Kandy", "Bentota", "Sigiriya"],
     image:
-      "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&q=80&w=800",
+      "/images/img_24186b0cbd.jpg",
   },
   {
     slug: "maldives",
@@ -1252,7 +1252,7 @@ export const SOUTH_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Male", "Maafushi", "Luxury Resorts", "Baa Atoll"],
     image:
-      "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800",
+      "/images/img_b05426dbf4.jpg",
   },
   {
     slug: "nepal",
@@ -1274,7 +1274,7 @@ export const SOUTH_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Kathmandu", "Pokhara", "Everest Base Camp", "Lumbini"],
     image:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800",
+      "/images/img_eb045d8957.jpg",
   },
   {
     slug: "indonesia",
@@ -1298,7 +1298,7 @@ export const SOUTH_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Bali (Ubud & Seminyak)", "Jakarta", "Gili Islands", "Mount Bromo"],
     image:
-      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&q=80&w=800",
+      "/images/img_0f3fbe4290.jpg",
   },
   {
     slug: "vietnam",
@@ -1318,7 +1318,7 @@ export const SOUTH_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Halong Bay", "Hanoi", "Ho Chi Minh City", "Da Nang"],
     image:
-      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=800",
+      "/images/img_10a421bb5d.jpg",
   },
   {
     slug: "bangladesh",
@@ -1340,7 +1340,7 @@ export const SOUTH_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Dhaka", "Cox's Bazar", "Sylhet", "Sundarbans"],
     image:
-      "https://images.unsplash.com/photo-1585938389612-a552a28d6914?auto=format&fit=crop&q=80&w=800",
+      "/images/img_a4de4f8f80.jpg",
   },
   {
     slug: "cambodia",
@@ -1360,7 +1360,7 @@ export const SOUTH_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Angkor Wat", "Phnom Penh", "Siem Reap", "Koh Rong"],
     image:
-      "https://images.unsplash.com/photo-1500049242364-5f500807cdd7?auto=format&fit=crop&q=80&w=800",
+      "/images/img_d7d1cdb91d.jpg",
   },
 ];
 
@@ -1387,7 +1387,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
       "Visa Fee: Approx 45,000 - 65,000 PKR (via Anatolia/Gerry's)",
     ],
     popularPlaces: ["Istanbul (Hagia Sophia)", "Cappadocia", "Antalya", "Pamukkale"],
-    image: "https://cdn-imgix.headout.com/media/images/2235bf02e2ee0df7ea93f34d3cada1a6-Banner.jpg",
+    image: "/images/img_77a446cf0f.jpg",
   },
   {
     slug: "azerbaijan",
@@ -1404,7 +1404,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
       "Visa Fee: $26 USD (Standard) / $60 USD (Urgent)",
     ],
     popularPlaces: ["Baku (Flame Towers)", "Old City (Icherisheher)", "Gobustan", "Gabala"],
-    image: "https://assets.micontenthub.com/traveloffers/travel-tips/baku_OIPJAbO-S.jpg",
+    image: "/images/img_6b95d93dde.jpg",
   },
   {
     slug: "uzbekistan",
@@ -1424,7 +1424,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Samarkand (Registan)", "Bukhara", "Tashkent", "Khiva"],
     image:
-      "https://www.wendywutours.co.uk/resource/upload/2006/adobe-express-file-2026-01-13t105042-393.jpg.webp",
+      "/images/img_0095b4d839.webp",
   },
   {
     slug: "kazakhstan",
@@ -1444,7 +1444,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Almaty", "Astana", "Charyn Canyon", "Big Almaty Lake"],
     image:
-      "https://pohcdn.com/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Kazakhstan-3.jpg",
+      "/images/img_bdb58549db.jpg",
   },
   {
     slug: "kyrgyzstan",
@@ -1463,7 +1463,7 @@ export const CENTRAL_ASIA_COUNTRIES = [
       "Visa Fee: $50 USD (approx)",
     ],
     popularPlaces: ["Bishkek", "Issyk-Kul Lake", "Ala Archa National Park", "Osh"],
-    image: "https://globalcio.com/upload/iblock/0b8/ti2m5uxafsm5lwb70gtlxca97eq9ofkd/1920_1080.png",
+    image: "/images/img_b274ca9ac6.png",
   },
 ];
 
@@ -1497,7 +1497,7 @@ export const NORTH_AFRICA_COUNTRIES = [
       "Alexandria",
     ],
     image:
-      "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&q=80&w=800",
+      "/images/img_5f274d0404.jpg",
   },
   {
     slug: "morocco",
@@ -1519,7 +1519,7 @@ export const NORTH_AFRICA_COUNTRIES = [
     ],
     popularPlaces: ["Marrakesh", "Casablanca", "Fes", "Chefchaouen (Blue City)"],
     image:
-      "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&q=80&w=800",
+      "/images/img_89aa20b71a.jpg",
   },
   {
     slug: "tunisia",
@@ -1541,7 +1541,7 @@ export const NORTH_AFRICA_COUNTRIES = [
     ],
     popularPlaces: ["Tunis", "Carthage", "Sidi Bou Said", "Djerba Island"],
     image:
-      "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&q=80&w=800",
+      "/images/img_c0b4c74682.jpg",
   },
   {
     slug: "algeria",
@@ -1561,7 +1561,7 @@ export const NORTH_AFRICA_COUNTRIES = [
       "Visa Fee: $100 USD (approx)",
     ],
     popularPlaces: ["Algiers", "Constantine", "Oran", "Sahara Desert"],
-    image: "https://gfmag.com/wp-content/uploads/2025/11/shutterstock_2466084797-scaled.jpg",
+    image: "/images/img_fdff1152ec.jpg",
   },
 ];
 
@@ -1592,7 +1592,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
       "Garden Route",
     ],
     image:
-      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=800",
+      "/images/img_cd27a01743.jpg",
   },
   {
     slug: "mauritius",
@@ -1617,7 +1617,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
       "Chamarel Seven Coloured Earths",
     ],
     image:
-      "https://pohcdn.com/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Mauritius-2.jpg",
+      "/images/img_717e04c070.jpg",
   },
   {
     slug: "kenya",
@@ -1637,7 +1637,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
     ],
     popularPlaces: ["Maasai Mara", "Nairobi", "Mombasa", "Amboseli National Park"],
     image:
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800",
+      "/images/img_b7daef7da6.jpg",
   },
   {
     slug: "seychelles",
@@ -1657,7 +1657,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
     ],
     popularPlaces: ["Mahé", "Praslin", "La Digue", "Anse Source d'Argent"],
     image:
-      "https://cdn.conscious-explorer.com/keycdn/file/a51da0068065eaead885f44f4e029d36835038a5d42082201d17f28559b2d4b5/SJoUTslQaytZjQm0.webp",
+      "/images/img_167d3497c2.webp",
   },
   {
     slug: "zimbabwe",
@@ -1677,7 +1677,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
     ],
     popularPlaces: ["Victoria Falls", "Harare", "Hwange National Park"],
     image:
-      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=800",
+      "/images/img_cd27a01743.jpg",
   },
   {
     slug: "zambia",
@@ -1691,7 +1691,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
     docs: ["Passport Scan", "Digital Photo", "Bank Statement", "Confirmed Flight & Hotel Voucher"],
     popularPlaces: ["Livingstone", "Lusaka", "South Luangwa"],
     image:
-      "https://pohcdn.com/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Zambia-2.jpg",
+      "/images/img_97d1206d2d.jpg",
   },
   {
     slug: "tanzania",
@@ -1705,7 +1705,7 @@ export const SOUTHERN_AFRICA_COUNTRIES = [
     docs: ["Passport Copy", "Digital Photo", "Hotel Reservation", "Confirmed Return Ticket"],
     popularPlaces: ["Zanzibar", "Mount Kilimanjaro", "Serengeti National Park"],
     image:
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800",
+      "/images/img_b7daef7da6.jpg",
   },
 ];
 
@@ -1728,7 +1728,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     ],
     popularPlaces: ["Dubai", "Abu Dhabi", "Sharjah"],
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800",
+      "/images/img_6c3994af1f.jpg",
   },
   {
     slug: "saudi-arabia",
@@ -1770,7 +1770,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     ],
     popularPlaces: ["Muscat", "Salalah", "Nizwa"],
     image:
-      "https://cdn.prod.website-files.com/64875621443d761c9809134e/677860c605bf69bf990045d8_oamn2.jpg",
+      "/images/img_2b46afe296.jpg",
   },
   {
     slug: "kuwait",
@@ -1789,7 +1789,7 @@ export const MIDDLE_EAST_COUNTRIES = [
       "Job/Business Documentation",
     ],
     popularPlaces: ["Kuwait City", "The Avenues", "Al Hamra Tower"],
-    image: "https://images.trvl-media.com/place/6144602/8c3d0d17-b5c2-4d5b-b3ea-a66b228beaf8.jpg",
+    image: "/images/img_a7a3006382.jpg",
   },
   {
     slug: "qatar",
@@ -1807,7 +1807,7 @@ export const MIDDLE_EAST_COUNTRIES = [
       "Polio Certificate",
     ],
     popularPlaces: ["Doha", "The Pearl", "Katara Cultural Village"],
-    image: "https://images.trvl-media.com/place/6361053/b3f7cfde-2031-4df4-8afc-4db6d101ae6b.jpg",
+    image: "/images/img_6b163c97a3.jpg",
   },
   {
     slug: "bahrain",
@@ -1821,7 +1821,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     docs: ["Passport Copy", "Return Flight Ticket", "Hotel Booking", "Bank Statement"],
     popularPlaces: ["Manama", "Bab Al Bahrain", "Tree of Life"],
     image:
-      "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2019/05/Balance-in-Bahrain-feature.jpg",
+      "/images/img_2448b3a87e.jpg",
   },
   {
     slug: "turkey",
@@ -1862,7 +1862,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     ],
     popularPlaces: ["Petra", "Wadi Rum", "Dead Sea"],
     image:
-      "https://www.touristjordan.com/wp-content/uploads/2023/02/shutterstock_1289351245-1024x683.jpg",
+      "/images/img_6eb88f4ea0.jpg",
   },
   {
     slug: "lebanon",
@@ -1881,7 +1881,7 @@ export const MIDDLE_EAST_COUNTRIES = [
       "Employment Letter",
     ],
     popularPlaces: ["Beirut", "Byblos", "Jeita Grotto"],
-    image: "https://2021-2025.state.gov/wp-content/uploads/2022/02/Lebanon-2109x1406.png",
+    image: "/images/img_9d9c9358e0.png",
   },
 ];
 
@@ -1906,7 +1906,7 @@ export const EAST_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Beijing", "Great Wall", "Shanghai"],
     image:
-      "https://images.unsplash.com/photo-1508197149814-0cc02e8b7f74?auto=format&fit=crop&q=80&w=800",
+      "/images/img_ca78fc9521.jpg",
   },
   {
     slug: "japan",
@@ -1929,7 +1929,7 @@ export const EAST_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Tokyo", "Mount Fuji", "Kyoto"],
     image:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
+      "/images/img_9190f20f71.jpg",
   },
   {
     slug: "south-korea",
@@ -1951,7 +1951,7 @@ export const EAST_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Seoul", "Jeju Island", "Busan"],
     image:
-      "https://images.unsplash.com/photo-1538681105587-85640961bf8b?auto=format&fit=crop&q=80&w=800",
+      "/images/img_2996419cfa.jpg",
   },
   {
     slug: "taiwan",
@@ -2015,7 +2015,7 @@ export const EAST_ASIA_COUNTRIES = [
     ],
     popularPlaces: ["Ulaanbaatar", "Gobi Desert", "Terelj National Park"],
     image:
-      "https://www.wendywutours.com.au/resource/upload/3116/25c16eca74cf4fb9af8f75d5e401d4d0.jpg.webp",
+      "/images/img_d37b53d263.webp",
   },
   {
     slug: "macau",
@@ -2079,7 +2079,7 @@ export const AMERICAS_COUNTRIES = [
       "Confirmed Flight & Hotel Reservation",
     ],
     image:
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=800",
+      "/images/img_89f28f9017.jpg",
   },
 ];
 
@@ -2103,7 +2103,7 @@ export const EUROPE_OTHERS_COUNTRIES = [
       "Polio Vaccination Certificate",
     ],
     image:
-      "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&q=80&w=800",
+      "/images/img_b393bd8d52.jpg",
   },
 ];
 
@@ -2128,7 +2128,7 @@ export const SOUTH_AMERICA_COUNTRIES = [
     ],
     popularPlaces: ["Rio de Janeiro", "São Paulo", "Iguazu Falls"],
     image:
-      "https://www.travelhealth.com.au/wp-content/uploads/2019/05/Brazil_travel_doctor_optimized.jpg",
+      "/images/img_79124dec4f.jpg",
   },
   {
     slug: "argentina",
@@ -2148,7 +2148,7 @@ export const SOUTH_AMERICA_COUNTRIES = [
     ],
     popularPlaces: ["Buenos Aires", "Patagonia", "Iguazu Falls"],
     image:
-      "https://images.squarespace-cdn.com/content/v1/52efc94ae4b01409c74273d6/1585836711975-N7XHQ1OEB1VT1Q28Y0NP/BuenosAires-1815x1200.jpg",
+      "/images/img_ea7f486387.jpg",
   },
   {
     slug: "colombia",
@@ -2168,7 +2168,7 @@ export const SOUTH_AMERICA_COUNTRIES = [
     ],
     popularPlaces: ["Bogotá", "Medellín", "Cartagena"],
     image:
-      "https://cdn.prod.website-files.com/673c64315f9aff3dac8ef938/6845e2172aedf007088f925c_cartegena-colombia-luxury-travel.jpg",
+      "/images/img_4f9678fc4d.jpg",
   },
   {
     slug: "peru",
@@ -2226,7 +2226,7 @@ export const SOUTH_AMERICA_COUNTRIES = [
       "Hotel & Flight Reservations",
     ],
     popularPlaces: ["Quito", "Galapagos Islands", "Cuenca"],
-    image: "https://irff.undp.org/sites/default/files/2024/Oct/Ecuador.jpg",
+    image: "/images/img_3e8d9f9d37.jpg",
   },
   {
     slug: "bolivia",
@@ -2245,7 +2245,7 @@ export const SOUTH_AMERICA_COUNTRIES = [
     ],
     popularPlaces: ["Salar de Uyuni", "La Paz", "Sucre"],
     image:
-      "https://res.cloudinary.com/odysseytraveller/image/fetch/f_auto,q_auto,dpr_auto,r_4,w_765,h_535.5,c_limit/https://cdn.odysseytraveller.com/app/uploads/2019/02/GettyImages-941272674.jpg",
+      "/images/img_29a8ca7d64.jpg",
   },
   {
     slug: "uruguay",
@@ -2278,7 +2278,7 @@ export const SOUTH_AMERICA_COUNTRIES = [
     docs: ["Passport Copy", "Two Photos (White background)", "Bank Statement", "Hotel Voucher"],
     popularPlaces: ["Caracas", "Angel Falls", "Los Roques"],
     image:
-      "https://globalsanctions.com/wp-content/uploads/2014/10/Caracas-Venezuela-Editorial_yordanka-caridad-almaguer.jpg",
+      "/images/img_d41ff19670.jpg",
   },
   {
     slug: "paraguay",
@@ -2324,7 +2324,7 @@ export const OCEANIA_COUNTRIES = [
     ],
     popularPlaces: ["Sydney", "Melbourne", "Great Barrier Reef"],
     image:
-      "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800",
+      "/images/img_b85c11d707.jpg",
   },
   {
     slug: "new-zealand",

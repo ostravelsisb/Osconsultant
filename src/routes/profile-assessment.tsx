@@ -29,7 +29,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
+import React, { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { COMPANY } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -295,7 +295,7 @@ function ProfileAssessment() {
                         isInvalid("name") && "ring-2 ring-destructive",
                       )}
                       value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("name", e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -316,7 +316,7 @@ function ProfileAssessment() {
                         isInvalid("age") && "ring-2 ring-destructive",
                       )}
                       value={formData.age}
-                      onChange={(e) => handleInputChange("age", e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("age", e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -363,7 +363,7 @@ function ProfileAssessment() {
                         isInvalid("phone") && "ring-2 ring-destructive",
                       )}
                       value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("phone", e.target.value)}
                     />
                   </div>
                 </div>
@@ -412,7 +412,7 @@ function ProfileAssessment() {
                         isInvalid("occupation") && "ring-2 ring-destructive",
                       )}
                       value={formData.occupation}
-                      onChange={(e) => handleInputChange("occupation", e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("occupation", e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -433,7 +433,7 @@ function ProfileAssessment() {
                         isInvalid("experience") && "ring-2 ring-destructive",
                       )}
                       value={formData.experience}
-                      onChange={(e) => handleInputChange("experience", e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("experience", e.target.value)}
                     />
                   </div>
                 </div>
@@ -457,7 +457,7 @@ function ProfileAssessment() {
                         isInvalid("income") && "ring-2 ring-destructive",
                       )}
                       value={formData.income}
-                      onChange={(e) => handleInputChange("income", e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("income", e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -476,7 +476,7 @@ function ProfileAssessment() {
                         isInvalid("bankBalance") && "ring-2 ring-destructive",
                       )}
                       value={formData.bankBalance}
-                      onChange={(e) => handleInputChange("bankBalance", e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("bankBalance", e.target.value)}
                     />
                   </div>
                   <div className="bg-primary/5 rounded-2xl p-6 md:col-span-2 border border-primary/10">
@@ -761,7 +761,7 @@ function ProfileAssessment() {
                           isInvalid("stamps") && "ring-2 ring-destructive",
                         )}
                         value={formData.stamps}
-                        onChange={(e) => handleInputChange("stamps", e.target.value)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("stamps", e.target.value)}
                       />
                     </div>
                     <div className="space-y-2">
@@ -782,7 +782,7 @@ function ProfileAssessment() {
                           isInvalid("refusals") && "ring-2 ring-destructive",
                         )}
                         value={formData.refusals}
-                        onChange={(e) => handleInputChange("refusals", e.target.value)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("refusals", e.target.value)}
                       />
                     </div>
                     <div className="space-y-2 md:col-span-2">

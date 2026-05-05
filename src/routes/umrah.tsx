@@ -540,7 +540,7 @@ function UmrahPage() {
 
                 <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl isolate transform translate-z-0">
                   <img
-                    src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1000"
+                    src="/images/img_4a9f854652.jpg"
                     alt="Pilgrims at Makkah"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

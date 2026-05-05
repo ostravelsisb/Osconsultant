@@ -52,7 +52,7 @@ export const Route = createFileRoute("/visa-services")({
         content:
           "Expert visa consultancy for UK, USA, Canada, Schengen, Australia & 50+ countries. High approval rates and professional documentation from Blue Area, Islamabad.",
       },
-      { property: "og:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { property: "og:image", content: "/images/img_5f78d2f1fc.jpg" },
       { property: "og:url", content: "https://osconsultants.pk/visa-services" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_PK" },

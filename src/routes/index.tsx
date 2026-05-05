@@ -81,7 +81,7 @@ export const Route = createFileRoute("/")({
         content:
           "IATA-accredited travel agency in Islamabad. Expert Schengen, USA, UK, Canada & Australia visa consultancy. Cheap flights, Umrah packages & hotel bookings. 98% approval rate.",
       },
-      { property: "og:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { property: "og:image", content: "/images/img_5f78d2f1fc.jpg" },
       { property: "og:url", content: "https://osconsultants.pk/" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_PK" },
@@ -99,7 +99,7 @@ export const Route = createFileRoute("/")({
         content:
           "IATA-accredited. 98% visa approval rate. Schengen, UK, USA, Canada & Australia visas from Islamabad. Cheap flights & Umrah packages.",
       },
-      { name: "twitter:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { name: "twitter:image", content: "/images/img_5f78d2f1fc.jpg" },
     ],
     links: [
       { rel: "canonical", href: "https://osconsultants.pk/" },
@@ -155,7 +155,7 @@ function Home() {
     "@type": "TravelAgency",
     name: "OS Consultants",
     url: "https://osconsultants.pk/",
-    logo: "https://osconsultants.pk/logo.png",
+    logo: "/images/img_c7c7a77ed6.png",
     description: "Top Travel Agency & Visa Consultant in Pakistan.",
     address: {
       "@type": "PostalAddress",
@@ -386,7 +386,15 @@ function Home() {
             />
             <ul className="space-y-3 text-sm">
               <li className="flex gap-3">
-                <MapPin className="text-primary mt-0.5" size={18} /> Blue Area, Islamabad, Pakistan
+                <MapPin className="text-primary mt-0.5" size={18} /> 
+                <a 
+                  href="https://maps.app.goo.gl/Yyv9M5uR2VzJjYwV9" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Blue Area, Islamabad, Pakistan
+                </a>
               </li>
               <li className="flex gap-3">
                 <Phone className="text-primary mt-0.5" size={18} />{" "}
@@ -414,8 +422,8 @@ function Home() {
             </ul>
             <div className="mt-6 overflow-hidden rounded-2xl border border-border shadow-soft">
               <iframe
-                title="Office location"
-                src="https://www.google.com/maps?q=Blue%20Area%2C%20Islamabad&output=embed"
+                title="OS Consultants office in Blue Area, Islamabad"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.6560234251097!2d73.0732239!3d33.717848599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf9b090fffff:0xf2f8c892ac3fd679!2sOs%20Consultant!5e0!3m2!1sen!2s!4v1777971120345!5m2!1sen!2s"
                 loading="lazy"
                 className="h-64 w-full"
               />

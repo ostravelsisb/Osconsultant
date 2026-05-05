@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      OS Consultants — Pakistan's No.1 Travel Agency & Best Visa Consultant 2026 | Islamabad
+    </title>
+    <meta
+      name="description"
+      content="OS Consultants is Pakistan's #1 travel agency & best visa consultant in Islamabad. IATA-accredited experts for Schengen, USA, UK, Canada & Australia visas. Cheap flights, Umrah packages, hotel bookings & travel insurance. 98% approval rate."
+    />
+    <meta
+      name="keywords"
+      content="visa consultant islamabad, schengen visa pakistan, uk visa islamabad, usa visa pakistan, canada visa islamabad, australia visa pakistan, travel agency islamabad, iata authorized travel agent pakistan, best visa agency islamabad, pakistan no.1 travel agency and consultancy, top travel agency pakistan, best in islamabad, travel agency"
+    />
+    <link rel="canonical" href="https://osconsultants.pk/" />
+    <link rel="alternate" hreflang="en-PK" href="https://osconsultants.pk/" />
+    <link rel="alternate" hreflang="en" href="https://osconsultants.pk/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://osconsultants.pk/" />
+    <meta
+      property="og:title"
+      content="OS Consultants — Pakistan's No.1 Travel Agency & Best Visa Consultant 2026"
+    />
+    <meta
+      property="og:description"
+      content="Pakistan's #1 travel agency & visa consultant. IATA-accredited. 98% approval rate for Schengen, UK, USA, Canada & Australia visas from Islamabad."
+    />
+    <meta property="og:image" content="https://osconsultants.pk/logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://osconsultants.pk/" />
+    <meta
+      property="twitter:title"
+      content="OS Consultants — Pakistan's #1 Travel Agency & Visa Consultant 2026"
+    />
+    <meta
+      property="twitter:description"
+      content="IATA-accredited. 98% visa approval rate. Schengen, UK, USA, Canada & Australia visas from Islamabad. Cheap flights & Umrah packages."
+    />
+    <meta property="twitter:image" content="https://osconsultants.pk/logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="https://osconsultants.pk/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="https://osconsultants.pk/favicon.png" />
+    <link rel="apple-touch-icon" href="https://osconsultants.pk/favicon.png" />
+    <meta name="theme-color" content="#1a1a2e" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      // fbq('init', 'XXXXXXXXXXXXXXX');
+      // fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <!-- LocalBusiness Schema (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "OS Consultants",
+        "image": "https://osconsultants.pk/logo.png",
+        "@id": "https://osconsultants.pk/",
+        "url": "https://osconsultants.pk/",
+        "telephone": "+92 51 2021700",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office # 3, Aaly Plaza, Fazal-e-Haq Road, Block E G 6/2 Blue Area",
+          "addressLocality": "Islamabad",
+          "postalCode": "44000",
+          "addressCountry": "PK"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 33.729388,
+          "longitude": 73.093146
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        "sameAs": [
+          "https://www.facebook.com/osconsultants01/",
+          "https://www.instagram.com/osconsultants.pk/",
+          "https://www.linkedin.com/company/os-consultants/",
+          "https://twitter.com/osconsultants"
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-zxBLB4Ry.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Csb06gUJ.css">
+  </head>
+
+  <body>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
+        alt="Facebook Pixel"
+    /></noscript>
+    <div id="root"></div>
+  </body>
+</html>

@@ -623,7 +623,7 @@ export const DESTINATIONS: Destination[] = [
     slug: "east-asia",
     name: "East Asia",
     image:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=800",
+      "/images/img_9190f20f71.jpg",
     shortDesc: "China, Japan, and South Korea visa assistance.",
     seoTitle: "East Asia Visa Consultant Islamabad | Japan & South Korea",
     seoDescription: "Reliable visa processing for Japan, South Korea, and China from Pakistan.",
@@ -659,7 +659,7 @@ export const DESTINATIONS: Destination[] = [
     slug: "south-america",
     name: "South America",
     image:
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&q=80&w=1200",
+      "/images/img_031f66d520.jpg",
     shortDesc: "Brazil, Argentina, Colombia & more.",
     seoTitle: "South America Visa Agent Islamabad | Brazil & Argentina",
     seoDescription: "Reliable visa processing for Brazil, Argentina, Colombia from Pakistan.",
@@ -693,7 +693,7 @@ export const DESTINATIONS: Destination[] = [
   {
     slug: "oceania",
     name: "Oceania",
-    image: "https://beantowntraveller.com/wp-content/uploads/2018/07/IMG_2484-scaled.jpg",
+    image: "/images/img_73cf6a7246.jpg",
     shortDesc: "Australia, New Zealand, Fiji & more.",
     seoTitle: "Oceania Visa Agent Islamabad | Australia & New Zealand",
     seoDescription: "Expert visa assistance for Australia and New Zealand from Pakistan.",

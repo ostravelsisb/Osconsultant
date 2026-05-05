@@ -45,8 +45,8 @@ function RootComponent() {
     description:
       "Pakistan's No.1 Travel Agency & World-Class Visa Consultant. IATA-accredited, 15+ years of excellence, 98% approval rate. Expert in Schengen, USA, UK, Canada, Australia visas, cheap flights, Umrah packages & hotel bookings from Islamabad.",
     slogan: "Pakistan's No.1 Travel Agency — Your Gateway to the World",
-    image: "https://osconsultants.pk/src/assets/hero-travel.jpg",
-    logo: "https://osconsultants.pk/logo.png",
+    image: "/images/img_5f78d2f1fc.jpg",
+    logo: "/images/img_c7c7a77ed6.png",
     "@id": "https://osconsultants.pk",
     url: "https://osconsultants.pk",
     telephone: COMPANY.phone,
@@ -234,6 +234,9 @@ function RootComponent() {
       <Footer />
       <WhatsAppButton />
       <LiveNotification />
+      
+      {/* Premium Viewport Frame - Blue Shade Border */}
+      <div className="fixed inset-0 pointer-events-none z-[9999] border-[1px] md:border-[2px] border-blue-400/20 shadow-[inset_0_0_30px_rgba(0,180,216,0.1)] rounded-[0px]" />
     </div>
   );
 }

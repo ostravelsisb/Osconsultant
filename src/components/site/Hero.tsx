@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Plane, Award, Sparkles, FileText } from "lucide-react";
 import heroImg from "@/assets/hero-travel.jpg";
 import { SEOBlock } from "./SEOBlock";
-import { COUNTRIES } from "@/data/site";
-import { CountryCard } from "./CountryCard";
 import { BookingWidget } from "./BookingWidget";
+import { useState, useEffect, lazy, Suspense } from "react";
+
+const FlightGlobe = lazy(() => import("./FlightGlobe").then(m => ({ default: m.FlightGlobe })));
 
 export function Hero() {
   return (
@@ -19,6 +20,15 @@ export function Hero() {
       />
 
       <div className="container-px relative mx-auto pt-20 lg:pt-28 pb-12">
+        {/* 3D Flight Globe Background - Centered behind widget */}
+        <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[600px] pointer-events-none z-0 opacity-40 overflow-visible">
+          <div className="absolute inset-0 flex items-center justify-center scale-[1.5] md:scale-[2] lg:scale-[2.5]">
+             <Suspense fallback={null}>
+                <FlightGlobe />
+             </Suspense>
+          </div>
+        </div>
+
         {/* Booking Widget Implementation - Now on Top with higher Z-index */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -44,10 +54,15 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="text-white"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white/90 backdrop-blur">
+            <a
+              href="https://maps.app.goo.gl/Yyv9M5uR2VzJjYwV9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white/90 backdrop-blur hover:bg-white/20 transition-colors"
+            >
               <Sparkles size={12} className="text-accent-glow" /> Pakistan&apos;s Trusted Visa
-              Consultancy · Islamabad
-            </span>
+              Consultancy · <span className="underline underline-offset-4 decoration-accent/50">Islamabad</span>
+            </a>
             <h2 className="mt-5 text-4xl font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
               Your Gateway to <span className="gradient-text-accent">the World</span>
             </h2>
@@ -99,34 +114,7 @@ export function Hero() {
           </motion.div>
 
           <div className="flex flex-col gap-6 lg:gap-8 w-full max-w-full overflow-hidden">
-            {/* Top Right: Country Card Slider */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full overflow-hidden"
-              style={{
-                maskImage:
-                  "linear-gradient(to right, transparent, black 2%, black 98%, transparent)",
-                WebkitMaskImage:
-                  "linear-gradient(to right, transparent, black 2%, black 98%, transparent)",
-              }}
-            >
-              <motion.div
-                className="flex gap-4 w-max"
-                animate={{ x: ["0%", "-50%"] }}
-                transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
-              >
-                {[...COUNTRIES, ...COUNTRIES].map((country, idx) => (
-                  <div
-                    key={`slide-${country.slug}-${idx}`}
-                    className="w-[240px] md:w-[280px] flex-shrink-0"
-                  >
-                    <CountryCard {...country} />
-                  </div>
-                ))}
-              </motion.div>
-            </motion.div>
+
 
             {/* Bottom Right: Hero Image */}
             <motion.div

@@ -401,63 +401,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 md:px-6 relative z-50">
-      {/* Expanded Scrolling Actual Size Cards Behind Widget */}
-      {isHero && (
-        <div className="absolute inset-x-[-15vw] top-[-3.5rem] bottom-[-3.5rem] z-0 opacity-15 pointer-events-none select-none overflow-hidden flex flex-col justify-around py-4">
-          <motion.div
-            className="flex gap-16 shrink-0 min-w-max"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 55 }}
-          >
-            {[...SCHENGEN_COUNTRIES, ...SCHENGEN_COUNTRIES].map((c, i) => (
-              <div
-                key={c.slug + i + "-ext-1"}
-                className="relative w-56 h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/30 shrink-0 bg-slate-900/40 backdrop-blur-sm group select-none"
-              >
-                <img
-                  src={c.image}
-                  alt={c.name}
-                  className="absolute inset-0 w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 z-10">
-                  <span className="inline-block px-2.5 py-1 bg-white/10 backdrop-blur-md rounded-lg text-[10px] font-extrabold uppercase tracking-widest text-primary border border-white/10 mb-2">
-                    Schengen Area
-                  </span>
-                  <h4 className="text-lg font-black text-white tracking-wide">{c.name}</h4>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-          <motion.div
-            className="flex gap-16 shrink-0 min-w-max"
-            animate={{ x: ["-50%", "0%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
-          >
-            {[...SCHENGEN_COUNTRIES.slice().reverse(), ...SCHENGEN_COUNTRIES.slice().reverse()].map(
-              (c, i) => (
-                <div
-                  key={c.slug + i + "-ext-2"}
-                  className="relative w-56 h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/30 shrink-0 bg-slate-900/40 backdrop-blur-sm group select-none"
-                >
-                  <img
-                    src={c.image}
-                    alt={c.name}
-                    className="absolute inset-0 w-full h-full object-cover opacity-60"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 z-10">
-                    <span className="inline-block px-2.5 py-1 bg-white/10 backdrop-blur-md rounded-lg text-[10px] font-extrabold uppercase tracking-widest text-primary border border-white/10 mb-2">
-                      Schengen Area
-                    </span>
-                    <h4 className="text-lg font-black text-white tracking-wide">{c.name}</h4>
-                  </div>
-                </div>
-              ),
-            )}
-          </motion.div>
-        </div>
-      )}
+
 
       <div className="bg-sky-50/75 rounded-3xl shadow-glow border border-sky-200/50 backdrop-blur-xl relative overflow-visible z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] rounded-b-full overflow-hidden pointer-events-none z-50">
@@ -1844,7 +1788,7 @@ export function BookingWidget({ initialTab = "flights" }: { initialTab?: string 
       <div className="mt-8 flex flex-wrap items-center justify-center gap-6 md:gap-12 transition-all duration-500 px-4 pb-4">
         <div className="flex items-center gap-4 sm:gap-6 bg-slate-900 px-5 sm:px-8 py-4 sm:py-5 rounded-[2rem] border border-white/10 shadow-glow group hover:bg-slate-800 transition-all cursor-default">
           <img
-            src="https://developer.iata.org/globalassets/iata/general/brand_icons/white_iata_logo_rgb.png"
+            src="/images/img_c895fcdcd1.png"
             alt="IATA Authorized Agent"
             className="h-10 w-auto opacity-100 group-hover:scale-110 transition-transform duration-500"
           />

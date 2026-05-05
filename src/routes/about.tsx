@@ -42,7 +42,7 @@ export const Route = createFileRoute("/about")({
         content:
           "15+ years of excellence. 20,000+ happy clients. 98% approval rate. Learn about Pakistan's most trusted visa consultancy.",
       },
-      { property: "og:image", content: "https://osconsultants.pk/src/assets/hero-travel.jpg" },
+      { property: "og:image", content: "/images/img_5f78d2f1fc.jpg" },
       { property: "og:url", content: "https://osconsultants.pk/about" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
