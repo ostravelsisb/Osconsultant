@@ -19,7 +19,7 @@ export function Footer() {
                 loading="lazy"
                 className="h-10 w-auto brightness-0 invert"
               />
-              <span className="text-lg font-bold text-white uppercase tracking-tight">
+              <span className="text-base sm:text-lg font-bold text-white uppercase tracking-tight">
                 OS <span className="text-accent-glow">Consultants</span>
               </span>
             </div>

@@ -7,7 +7,6 @@ import { TopBar } from "@/components/site/TopBar";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { LiveNotification } from "@/components/site/LiveNotification";
-import { AIBotModel } from "@/components/site/AIBotModel";
 import { COMPANY } from "@/data/site";
 
 function NotFoundComponent() {
@@ -235,7 +234,6 @@ function RootComponent() {
       <Footer />
       <WhatsAppButton />
       <LiveNotification />
-      <AIBotModel />
     </div>
   );
 }

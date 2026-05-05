@@ -10,73 +10,26 @@ import {
   Award,
   ShieldCheck,
   ExternalLink,
+  Bot,
 } from "lucide-react";
+import sarahBot from "@/assets/sarah-bot.png";
 
 const messages = [
-  "Hi there! I am Sarah, your personal travel consultant. 😊",
+  "Hi there! I am Oxie, your personal travel consultant. 😊",
   "Looking for the best visa options? Let me help guide you! 🌍",
   "We maintain a 98% success rate on visa applications. ✈️",
   "Need to secure IATA-exclusive flight deals? Let's check them. 🎟️",
   "Planning Umrah? We offer tailored packages for ultimate comfort. 🕌",
 ];
 
-const HumanFaceAvatar = () => (
-  <svg
-    width="100%"
-    height="100%"
-    viewBox="0 0 100 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="scale-95 group-hover:scale-100 transition-transform duration-300"
-  >
-    {/* Hair Back */}
-    <path
-      d="M15 50 C 15 20, 85 20, 85 50"
-      stroke="#3A2E2B"
-      strokeWidth="12"
-      strokeLinecap="round"
+const RobotAvatar = () => (
+  <div className="w-full h-full rounded-full overflow-hidden border border-white/20 shadow-inner group-hover:scale-110 transition-transform duration-500">
+    <img
+      src={sarahBot}
+      alt="Oxie AI"
+      className="w-full h-full object-cover"
     />
-    {/* Face Head */}
-    <circle cx="50" cy="50" r="32" fill="#FCDBB0" />
-    {/* Hair Front / Bangs */}
-    <path d="M22 34 C 35 15, 65 15, 78 34" fill="#3A2E2B" />
-    <path d="M18 38 C 22 26, 32 26, 36 34" fill="#3A2E2B" />
-    {/* Eyes */}
-    <circle cx="39" cy="48" r="3" fill="#1C1B1B" />
-    <circle cx="61" cy="48" r="3" fill="#1C1B1B" />
-    {/* Eyelashes / Eye glint */}
-    <circle cx="40" cy="47" r="1" fill="#FFFFFF" />
-    <circle cx="62" cy="47" r="1" fill="#FFFFFF" />
-    {/* Cheeks */}
-    <circle cx="34" cy="54" r="3.5" fill="#FFB2A6" opacity="0.6" />
-    <circle cx="66" cy="54" r="3.5" fill="#FFB2A6" opacity="0.6" />
-    {/* Cute Smile */}
-    <path
-      d="M42 58 Q 50 66, 58 58"
-      stroke="#D32F2F"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      fill="none"
-    />
-    {/* Support Headset */}
-    <path d="M24 50 Q 18 10, 50 14" stroke="#2563EB" strokeWidth="3" fill="none" />
-    <circle cx="21" cy="48" r="4.5" fill="#1D4ED8" />
-    <path
-      d="M21 48 Q 28 65, 38 65"
-      stroke="#1D4ED8"
-      strokeWidth="2"
-      strokeLinecap="round"
-      fill="none"
-    />
-    {/* Nose */}
-    <path
-      d="M49 51 Q 50 54, 51 51"
-      stroke="#E0AC8B"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      fill="none"
-    />
-  </svg>
+  </div>
 );
 
 export function AIBotModel() {
@@ -112,14 +65,14 @@ export function AIBotModel() {
             {/* Top Bar */}
             <div className="bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 p-4 flex items-center justify-between text-white">
               <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center relative shadow-glow p-0.5">
-                  <HumanFaceAvatar />
+                <div className="w-10 h-10 rounded-full bg-[#1e293b] flex items-center justify-center relative shadow-glow p-0.5 border border-white/20">
+                  <RobotAvatar />
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-400 rounded-full border border-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base leading-tight">Sarah from OS Consultants</h3>
+                  <h3 className="font-bold text-base leading-tight">Oxie AI Assistant</h3>
                   <p className="text-[10px] text-sky-100 opacity-90 flex items-center gap-1 mt-0.5">
-                    <Sparkles className="w-3 h-3" /> Senior Travel Consultant — Online
+                    <Bot className="w-3 h-3" /> Advanced Neural Network — OS Consultants
                   </p>
                 </div>
               </div>
@@ -184,7 +137,7 @@ export function AIBotModel() {
                 </Link>
 
                 <a
-                  href="https://wa.me/923315222030"
+                  href="https://wa.me/923365500477"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
@@ -242,12 +195,12 @@ export function AIBotModel() {
             ease: "easeInOut",
           }}
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 bg-gradient-to-br from-sky-500 via-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center cursor-pointer shadow-glow-primary border border-white/20 hover:scale-105 transition-all group relative active:scale-95 p-1 shrink-0"
-          title="Talk to Sarah from OS"
+          className="w-14 h-14 bg-[#0f172a] rounded-full flex items-center justify-center cursor-pointer shadow-glow-primary border border-white/20 hover:scale-105 transition-all group relative active:scale-95 p-1 shrink-0"
+          title="Talk to Oxie from OS"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FF7F11] via-[#FF7F11]/20 to-[#00B4D8] rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur duration-500" />
-          <div className="w-full h-full rounded-full flex items-center justify-center relative bg-gradient-to-br from-sky-500 via-indigo-600 to-purple-600 p-0.5">
-            <HumanFaceAvatar />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#10b981] via-[#3b82f6] to-[#6366f1] rounded-full opacity-40 group-hover:opacity-80 transition-opacity blur duration-500" />
+          <div className="w-full h-full rounded-full flex items-center justify-center relative bg-[#0f172a] p-0.5">
+            <RobotAvatar />
           </div>
           <span className="absolute -top-1 -right-1 flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-300 opacity-75"></span>

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState, Fragment } from "react";
-import { Menu, X, ChevronDown, ChevronRight, Plane } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, Plane, Instagram, Youtube, Twitter } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS, COMPANY } from "@/data/site";
 import logo from "@/assets/logo.png";
@@ -54,14 +54,14 @@ export function Navbar() {
         <div
           className={`container-px mx-auto flex items-center justify-between gap-2 lg:gap-4 xl:gap-8 transition-all duration-300 h-full max-w-7xl px-4 ${scrolled ? "px-6" : ""}`}
         >
-          <Link to="/" className="group flex flex-shrink-0 items-center gap-3">
+          <Link to="/" className="group flex flex-shrink-0 items-center gap-2 sm:gap-3">
             <img
               src={logo}
               alt={COMPANY.name}
-              className="h-11 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105"
             />
-            <div className="hidden sm:block border-l border-border h-6 mx-1" />
-            <span className="hidden sm:block leading-tight">
+            <div className="border-l border-border h-6 mx-0.5 opacity-40 sm:opacity-100" />
+            <span className="leading-tight">
               <span
                 className="block text-sm md:text-base xl:text-lg font-bold italic tracking-tight whitespace-nowrap uppercase"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -170,7 +170,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 240 }}
-              className="absolute right-0 top-0 h-full w-[86%] max-w-sm bg-background shadow-elevated z-[151]"
+              className="absolute right-0 top-0 h-full w-[88%] max-w-sm bg-background shadow-elevated z-[151] rounded-l-[3.5rem] border-l border-white/20"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col h-full">
@@ -205,30 +205,54 @@ export function Navbar() {
                         <Link
                           to={l.to}
                           activeOptions={{ exact: l.to === "/" }}
-                          activeProps={{ className: "bg-primary/5 text-primary" }}
-                          className="flex items-center justify-between rounded-xl px-5 py-4 text-sm font-semibold text-foreground/80 transition-colors hover:bg-muted"
+                          activeProps={{ className: "text-primary" }}
+                          className="group flex items-center justify-between px-6 py-5 transition-all"
                         >
-                          {l.label}
-                          <ChevronRight size={18} className="opacity-40" />
+                          <div className="flex items-baseline gap-4">
+                            <span className="text-[10px] font-bold text-muted-foreground/60 tabular-nums">
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <span className="text-2xl font-bold tracking-tight text-foreground/90 group-hover:text-primary transition-colors">
+                              {l.label}
+                            </span>
+                          </div>
+                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1e293b] text-white shadow-lg transition-transform group-hover:translate-x-1">
+                            <ChevronRight size={18} />
+                          </div>
                         </Link>
                       </motion.div>
                     ))}
                   </div>
                 </nav>
 
-                <div className="p-6 border-t border-border bg-muted/30">
-                  <Link
-                    to="/consultation"
-                    className="flex items-center justify-center gap-2 rounded-2xl bg-primary px-4 py-4 text-sm font-bold text-primary-foreground shadow-soft transition-transform active:scale-[0.98]"
-                  >
-                    Free Consultation <ChevronRight size={18} />
-                  </Link>
-                  <div className="mt-6 space-y-3">
-                    <div className="text-xs font-medium text-muted-foreground flex items-center gap-2">
-                      <div className="h-1 w-1 rounded-full bg-primary" /> {COMPANY.address}
-                    </div>
-                    <p className="text-[10px] text-muted-foreground/60 text-center uppercase tracking-widest font-bold">
-                      &copy; {new Date().getFullYear()} {COMPANY.name}
+                <div className="p-8 border-t border-border/50 bg-muted/20">
+                  <div className="flex gap-3 mb-8">
+                    {[
+                      { Icon: Instagram, href: COMPANY.socials.instagram },
+                      { Icon: Youtube, href: "#" },
+                      { Icon: Twitter, href: COMPANY.socials.twitter },
+                    ].map(({ Icon, href }, i) => (
+                      <a
+                        key={i}
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1e293b] text-white shadow-md transition-transform active:scale-95"
+                      >
+                        <Icon size={18} />
+                      </a>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4">
+                    <a
+                      href={`mailto:${COMPANY.email}`}
+                      className="block text-sm font-bold text-foreground/80 hover:text-primary transition-colors"
+                    >
+                      {COMPANY.email}
+                    </a>
+                    <p className="text-[11px] font-medium text-muted-foreground/60">
+                      © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
                     </p>
                   </div>
                 </div>
