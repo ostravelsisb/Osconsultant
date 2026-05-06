@@ -1,22 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   User,
   GraduationCap,
   Briefcase,
   Wallet,
   Globe,
-  Send,
   CheckCircle2,
   Info,
   ChevronRight,
   ShieldCheck,
   MessageCircle,
-  FileText,
-  Zap,
-  MapPin,
-  Calendar,
-  Award,
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,7 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { COMPANY } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -38,752 +32,255 @@ import { Suspense, lazy } from "react";
 
 const ProfileAssessmentSEO = lazy(() => import("@/components/site/ProfileAssessmentSEO").then(m => ({ default: m.ProfileAssessmentSEO })));
 
+// Memoized Step 1
+const Step1 = React.memo(({ formData, onChange, isInvalid }: any) => (
+  <div className="grid gap-6 md:grid-cols-2">
+    <div className="space-y-2">
+      <Label htmlFor="pa-name" className="text-xs uppercase font-bold text-muted-foreground ml-1">Full Name</Label>
+      <Input
+        id="pa-name"
+        placeholder="Enter your full name"
+        className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid("name") && "ring-2 ring-destructive")}
+        value={formData.name}
+        onChange={(e) => onChange("name", e.target.value)}
+      />
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="pa-age" className="text-xs uppercase font-bold text-muted-foreground ml-1">Age</Label>
+      <Input
+        id="pa-age"
+        placeholder="e.g. 28"
+        type="number"
+        className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid("age") && "ring-2 ring-destructive")}
+        value={formData.age}
+        onChange={(e) => onChange("age", e.target.value)}
+      />
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="pa-marital-status" className="text-xs uppercase font-bold text-muted-foreground ml-1">Marital Status</Label>
+      <Select value={formData.maritalStatus || ""} onValueChange={(v) => onChange("maritalStatus", v)}>
+        <SelectTrigger id="pa-marital-status" className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid("maritalStatus") && "ring-2 ring-destructive")}>
+          <SelectValue placeholder="Select Status" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="single">Single</SelectItem>
+          <SelectItem value="married">Married</SelectItem>
+          <SelectItem value="divorced">Divorced / Widowed</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="pa-phone" className="text-xs uppercase font-bold text-muted-foreground ml-1">Phone Number</Label>
+      <Input
+        id="pa-phone"
+        placeholder="+92 300 1234567"
+        className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid("phone") && "ring-2 ring-destructive")}
+        value={formData.phone}
+        onChange={(e) => onChange("phone", e.target.value)}
+      />
+    </div>
+  </div>
+));
+
+// Memoized Step 2
+const Step2 = React.memo(({ formData, onChange, isInvalid }: any) => (
+  <div className="grid gap-6 md:grid-cols-2">
+    <div className="space-y-2 md:col-span-2">
+      <Label htmlFor="pa-education" className="text-xs uppercase font-bold text-muted-foreground ml-1">Highest Education</Label>
+      <Select value={formData.education || ""} onValueChange={(v) => onChange("education", v)}>
+        <SelectTrigger className="h-14 rounded-2xl bg-secondary/10 border-none px-6">
+          <SelectValue placeholder="Select Education" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="masters">Masters or Higher</SelectItem>
+          <SelectItem value="bachelors">Bachelors Degree</SelectItem>
+          <SelectItem value="diploma">Diploma / Associate</SelectItem>
+          <SelectItem value="intermediate">Intermediate / A-Levels</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="pa-occupation" className="text-xs uppercase font-bold text-muted-foreground ml-1">Occupation</Label>
+      <Input
+        id="pa-occupation"
+        placeholder="e.g. Software Engineer"
+        className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid("occupation") && "ring-2 ring-destructive")}
+        value={formData.occupation}
+        onChange={(e) => onChange("occupation", e.target.value)}
+      />
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="pa-experience" className="text-xs uppercase font-bold text-muted-foreground ml-1">Experience (Years)</Label>
+      <Input
+        id="pa-experience"
+        type="number"
+        className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid("experience") && "ring-2 ring-destructive")}
+        value={formData.experience}
+        onChange={(e) => onChange("experience", e.target.value)}
+      />
+    </div>
+  </div>
+));
+
+// Memoized Step 3
+const Step3 = React.memo(({ formData, onChange, isInvalid }: any) => (
+  <div className="grid gap-6 md:grid-cols-2">
+    <div className="space-y-2">
+      <Label htmlFor="pa-income" className="text-xs uppercase font-bold text-muted-foreground ml-1">Monthly Income (PKR)</Label>
+      <Input
+        id="pa-income"
+        placeholder="e.g. 150,000"
+        className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid("income") && "ring-2 ring-destructive")}
+        value={formData.income}
+        onChange={(e) => onChange("income", e.target.value)}
+      />
+    </div>
+    <div className="space-y-2">
+      <Label htmlFor="pa-balance" className="text-xs uppercase font-bold text-muted-foreground ml-1">Bank Balance (PKR)</Label>
+      <Input
+        id="pa-balance"
+        placeholder="e.g. 2,000,000"
+        className={cn("h-14 rounded-2xl bg-secondary/10 border-none px-6", isInvalid("bankBalance") && "ring-2 ring-destructive")}
+        value={formData.bankBalance}
+        onChange={(e) => onChange("bankBalance", e.target.value)}
+      />
+    </div>
+    <div className="md:col-span-2 bg-primary/5 p-6 rounded-2xl border border-primary/10 flex gap-4">
+      <Info className="text-primary shrink-0" size={20} />
+      <p className="text-xs text-muted-foreground">Financial stability is the most critical factor for Tier 1 visa approvals. Please provide realistic estimates.</p>
+    </div>
+  </div>
+));
+
+// Memoized Step 4
+const Step4 = React.memo(({ formData, onChange, isInvalid }: any) => (
+  <div className="space-y-10">
+    <div className="grid gap-4 md:grid-cols-3">
+      {[
+        { id: "tier1", label: "Tier 1", c: "USA, UK, CA, AU, EU", color: "bg-red-500" },
+        { id: "tier2", label: "Tier 2", c: "NZ, JP, KR, IE", color: "bg-amber-500" },
+        { id: "tier3", label: "Tier 3", c: "TR, AE, MY, TH", color: "bg-emerald-500" },
+      ].map((t) => (
+        <button
+          key={t.id}
+          onClick={() => onChange("destination", t.id)}
+          className={cn("p-4 rounded-2xl border-2 text-left transition-all", formData.destination === t.id ? "border-primary bg-primary/5" : "border-border bg-white")}
+        >
+          <div className={cn("h-1 w-8 rounded-full mb-2", t.color)} />
+          <p className="font-bold text-sm">{t.label}</p>
+          <p className="text-[10px] text-muted-foreground">{t.c}</p>
+        </button>
+      ))}
+    </div>
+
+    <div className="grid gap-4 md:grid-cols-2">
+      {[
+        { id: "tourist", label: "Tourist", icon: Sparkles },
+        { id: "business", label: "Business", icon: Briefcase },
+      ].map((p) => (
+        <button
+          key={p.id}
+          onClick={() => onChange("visaType", p.id)}
+          className={cn("p-5 rounded-2xl border-2 flex items-center gap-4 text-left transition-all", formData.visaType === p.id ? "border-primary bg-primary/5" : "border-border bg-white")}
+        >
+          <div className={cn("h-10 w-10 rounded-xl flex items-center justify-center", formData.visaType === p.id ? "bg-primary text-white" : "bg-secondary text-muted-foreground")}>
+            <p.icon size={20} />
+          </div>
+          <p className="font-bold">{p.label}</p>
+        </button>
+      ))}
+    </div>
+
+    <VisaSuccessGauge 
+      income={formData.income} 
+      stamps={formData.stamps} 
+      refusals={formData.refusals} 
+      destination={formData.destination} 
+    />
+
+    <div className="grid gap-4 md:grid-cols-2 bg-secondary/10 p-6 rounded-2xl">
+      <Input placeholder="Stamps" type="number" value={formData.stamps} onChange={(e) => onChange("stamps", e.target.value)} className="bg-white rounded-xl" />
+      <Input placeholder="Refusals" type="number" value={formData.refusals} onChange={(e) => onChange("refusals", e.target.value)} className="bg-white rounded-xl" />
+      <Input placeholder="Travel History (e.g. Dubai, Turkey)" value={formData.travelHistory} onChange={(e) => onChange("travelHistory", e.target.value)} className="md:col-span-2 bg-white rounded-xl" />
+    </div>
+  </div>
+));
+
 export const Route = createFileRoute("/profile-assessment")({
   head: () => ({
     meta: [
-      { title: "Visa Success Probability AI | Global Passport Strength Audit | OS Consultants" },
-      {
-        name: "description",
-        content:
-          "Calculate your visa approval chances instantly with the World's #1 Visa Success Probability AI. Comprehensive profile assessment for USA, UK, Canada, Australia, and Schengen. Global Passport Strength Audit by OS Consultants Islamabad.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Visa Success Probability, Global Passport Strength Audit, US Visa Eligibility Checker, UK Visa Success Rate, Schengen Visa Assessment Pakistan, Free Visa Evaluation Islamabad, OS Consultants Visa AI, Travel History Building Strategy",
-      },
-      // OpenGraph
-      {
-        property: "og:title",
-        content: "World's #1 Visa Success Probability AI | Profile Assessment",
-      },
-      {
-        property: "og:description",
-        content:
-          "Don't risk a refusal. Run your profile through our Global Visa Audit AI before applying to USA, UK, or Schengen.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://osconsultants.pk/profile-assessment" },
-      // Twitter
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Visa Success Probability AI | Global Audit" },
-      { name: "twitter:description", content: "Assess your global visa chances in 60 seconds." },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          name: "OS Consultants Visa Success AI",
-          operatingSystem: "All",
-          applicationCategory: "TravelApplication",
-          description:
-            "Artificial Intelligence driven visa eligibility and success probability assessment tool for global travel destinations.",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            reviewCount: "12500",
-          },
-          offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "PKR",
-          },
-          author: {
-            "@type": "Organization",
-            name: "OS Consultants",
-            url: "https://osconsultants.pk",
-          },
-        }),
-      },
-    ],
+      { title: "Visa Success AI | Profile Audit | OS Consultants" },
+      { name: "description", content: "Professional visa eligibility assessment tool." }
+    ]
   }),
   component: ProfileAssessment,
 });
 
 function ProfileAssessment() {
   const [step, setStep] = useState(1);
-  const totalSteps = 4;
-
-  const [formData, setFormData] = useState({
-    name: "",
-    age: "",
-    maritalStatus: "",
-    education: "",
-    occupation: "",
-    experience: "",
-    income: "",
-    bankBalance: "",
-    travelHistory: "",
-    stamps: "",
-    refusals: "",
-    destination: "",
-    visaType: "tourist",
-    phone: "",
-  });
   const [triedNext, setTriedNext] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "", age: "", maritalStatus: "", phone: "",
+    education: "", occupation: "", experience: "",
+    income: "", bankBalance: "",
+    destination: "tier1", visaType: "tourist", stamps: "", refusals: "", travelHistory: ""
+  });
 
-  const handleInputChange = (field: string, value: string) => {
-    // Prevent negative numbers for specific fields
-    if (["age", "experience", "stamps", "refusals"].includes(field)) {
-      if (value !== "" && (parseInt(value) < 0 || value.startsWith("-"))) return;
-    }
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
+  const onChange = useCallback((field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  }, []);
+
+  const isInvalid = useCallback((field: keyof typeof formData) => {
+    return triedNext && !formData[field];
+  }, [triedNext, formData]);
 
   const isStepValid = () => {
-    if (step === 1)
-      return !!(formData.name && formData.age && formData.maritalStatus && formData.phone);
-    if (step === 2) return !!(formData.occupation && formData.experience);
-    if (step === 3) return !!(formData.income && formData.bankBalance);
-    if (step === 4)
-      return !!(
-        formData.destination &&
-        formData.visaType &&
-        formData.stamps !== "" &&
-        formData.refusals !== "" &&
-        formData.travelHistory
-      );
+    if (step === 1) return !!(formData.name && formData.age && formData.phone);
+    if (step === 2) return !!(formData.occupation);
+    if (step === 3) return !!(formData.income);
     return true;
-  };
-
-  const isInvalid = (field: keyof typeof formData) => {
-    if (!triedNext) return false;
-    if (field === "education") return false; // "except study"
-    return formData[field] === "";
   };
 
   const nextStep = () => {
     if (isStepValid()) {
-      setStep((s) => Math.min(s + 1, totalSteps));
+      setStep(s => Math.min(s + 1, 4));
       setTriedNext(false);
     } else {
       setTriedNext(true);
     }
   };
 
-  const prevStep = () => {
-    setStep((s) => Math.max(s - 1, 1));
-    setTriedNext(false);
-  };
-
-  const generateWhatsAppLink = () => {
-    const visaTypeLabels: Record<string, string> = {
-      tourist: "Tourist / Visit",
-      business: "Business / Conference",
-      student: "Study Visa",
-      family: "Family Reunification",
-      b1: "US Business (B1 Focus)",
-      b2: "US Tourist (B2 Focus)",
-      b1b2: "US Combined (B1/B2)",
-      "me-evisa": "ME E-Visa / On-Arrival Check",
-      "me-title": "ME Profession Title Eligibility",
-      "me-long": "ME Long-Term Stay Assessment",
-      "la-waiver": "Latin America Visa Waiver Check",
-      "la-financial": "Latin America Financial Evaluation",
-      "la-interview": "Latin America Consular Strategy",
-      "nz-bonafide": "NZ Bona Fide Applicant Assessment",
-      "nz-health": "NZ Health & Character Review",
-      "nz-financial": "NZ Financial Support Evaluation",
-      "ru-loi": "Russia/Central Asia Voucher/LOI Assessment",
-      "ru-itinerary": "Russia/Central Asia Itinerary Review",
-      "ru-clearance": "Russia/Central Asia Professional Clearance",
-      "gs-strength": "Global Passport Strength Assessment",
-      "gs-regions": "Easy Entry Region Identification",
-      "gs-roadmap": "6-Month UK/US Roadmap Plan",
-    };
-    const visaLabel = visaTypeLabels[formData.visaType] || formData.visaType;
-
-    const msg =
-      `*New Profile Assessment Request*\n\n` +
-      `*Personal Info*\n` +
-      `Name: ${formData.name}\n` +
-      `Age: ${formData.age}\n` +
-      `Marital Status: ${formData.maritalStatus}\n\n` +
-      `*Professional Profile*\n` +
-      `Education: ${formData.education}\n` +
-      `Occupation: ${formData.occupation}\n` +
-      `Experience: ${formData.experience} years\n\n` +
-      `*Financials*\n` +
-      `Monthly Income: ${formData.income}\n` +
-      `Bank Balance: ${formData.bankBalance}\n\n` +
-      `*Travel Details*\n` +
-      `Destination: ${formData.destination}\n` +
-      `Assessment Focus: ${visaLabel}\n\n` +
-      `*Travel History*\n` +
-      `Visa Stamps: ${formData.stamps}\n` +
-      `Total Refusals: ${formData.refusals}\n` +
-      `Summary: ${formData.travelHistory}\n\n` +
-      `*Contact:* ${formData.phone}`;
-
-    return `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(msg)}`;
-  };
-
   return (
     <div className="bg-secondary/20 min-h-screen pb-20">
-      <PageHero
-        eyebrow="Evaluation"
-        title="Visa Profile Assessment"
-        subtitle="Provide your details for a professional evaluation of your visa eligibility. Our experts will analyze your profile and guide you on the best path forward."
-      />
+      <PageHero eyebrow="Evaluation" title="Profile Assessment" subtitle="Instantly check your visa approval probability with our AI-driven tool." />
 
       <div className="container-px mx-auto max-w-4xl -mt-12 relative z-10">
         <div className="bg-white rounded-3xl shadow-elevated border border-border overflow-hidden">
-          {/* Progress Bar */}
-          <div className="bg-secondary/30 h-2 w-full">
-            <motion.div
-              className="bg-primary h-full"
-              initial={{ width: "0%" }}
-              animate={{ width: `${(step / totalSteps) * 100}%` }}
-              transition={{ duration: 0.5 }}
-            />
-          </div>
-
+          <div className="bg-secondary/30 h-1 w-full"><motion.div className="bg-primary h-full" animate={{ width: `${(step / 4) * 100}%` }} /></div>
+          
           <div className="p-8 md:p-12">
-            {/* Step Indicators */}
-            <div className="flex justify-between mb-12 overflow-x-auto no-scrollbar pb-2">
-              {[
-                { id: 1, label: "Basic Info", icon: User },
-                { id: 2, label: "Professional", icon: Briefcase },
-                { id: 3, label: "Financials", icon: Wallet },
-                { id: 4, label: "Travel Plan", icon: Globe },
-              ].map((s) => (
-                <div
-                  key={s.id}
-                  className={cn(
-                    "flex flex-col items-center gap-2 min-w-[80px] transition-all duration-500",
-                    step >= s.id ? "text-primary" : "text-muted-foreground opacity-50",
-                  )}
-                >
-                  <div
-                    className={cn(
-                      "h-12 w-12 rounded-2xl flex items-center justify-center transition-all duration-500",
-                      step >= s.id
-                        ? "bg-primary text-white shadow-glow"
-                        : "bg-secondary text-muted-foreground",
-                    )}
-                  >
-                    <s.icon size={20} />
-                  </div>
-                  <span className="text-[10px] uppercase font-black tracking-tighter">
-                    {s.label}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div key={step} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }}>
+                {step === 1 && <Step1 formData={formData} onChange={onChange} isInvalid={isInvalid} />}
+                {step === 2 && <Step2 formData={formData} onChange={onChange} isInvalid={isInvalid} />}
+                {step === 3 && <Step3 formData={formData} onChange={onChange} isInvalid={isInvalid} />}
+                {step === 4 && <Step4 formData={formData} onChange={onChange} isInvalid={isInvalid} />}
+              </motion.div>
+            </AnimatePresence>
 
-            <motion.div
-              key={step}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4 }}
-              className="space-y-8"
-            >
-              {step === 1 && (
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="pa-name"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Full Name
-                    </Label>
-                    <Input
-                      id="pa-name"
-                      name="name"
-                      placeholder="Enter your full name"
-                      className={cn(
-                        "h-14 rounded-2xl bg-secondary/10 border-none px-6",
-                        isInvalid("name") && "ring-2 ring-destructive",
-                      )}
-                      value={formData.name}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("name", e.target.value)}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="pa-age"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Age
-                    </Label>
-                    <Input
-                      id="pa-age"
-                      name="age"
-                      placeholder="e.g. 28"
-                      type="number"
-                      min="0"
-                      className={cn(
-                        "h-14 rounded-2xl bg-secondary/10 border-none px-6",
-                        isInvalid("age") && "ring-2 ring-destructive",
-                      )}
-                      value={formData.age}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("age", e.target.value)}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="pa-marital-status"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Marital Status
-                    </Label>
-                    <Select
-                      value={formData.maritalStatus || ""}
-                      onValueChange={(v) => handleInputChange("maritalStatus", v)}
-                    >
-                      <SelectTrigger
-                        id="pa-marital-status"
-                        className={cn(
-                          "h-14 rounded-2xl bg-secondary/10 border-none px-6",
-                          isInvalid("maritalStatus") && "ring-2 ring-destructive",
-                        )}
-                      >
-                        <SelectValue placeholder="Select Status" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="single">Single</SelectItem>
-                        <SelectItem value="married">Married</SelectItem>
-                        <SelectItem value="divorced">Divorced / Widowed</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="pa-phone"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Phone Number
-                    </Label>
-                    <Input
-                      id="pa-phone"
-                      name="phone"
-                      autoComplete="tel"
-                      placeholder="+92 300 1234567"
-                      className={cn(
-                        "h-14 rounded-2xl bg-secondary/10 border-none px-6",
-                        isInvalid("phone") && "ring-2 ring-destructive",
-                      )}
-                      value={formData.phone}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("phone", e.target.value)}
-                    />
-                  </div>
-                </div>
-              )}
-
-              {step === 2 && (
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="space-y-2 md:col-span-2">
-                    <Label
-                      htmlFor="pa-education"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Highest Education
-                    </Label>
-                    <Select
-                      value={formData.education || ""}
-                      onValueChange={(v) => handleInputChange("education", v)}
-                    >
-                      <SelectTrigger
-                        id="pa-education"
-                        className="h-14 rounded-2xl bg-secondary/10 border-none px-6"
-                      >
-                        <SelectValue placeholder="Select Education" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="masters">Masters or Higher</SelectItem>
-                        <SelectItem value="bachelors">Bachelors Degree</SelectItem>
-                        <SelectItem value="diploma">Diploma / Associate</SelectItem>
-                        <SelectItem value="intermediate">Intermediate / A-Levels</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="pa-occupation"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Occupation
-                    </Label>
-                    <Input
-                      id="pa-occupation"
-                      name="occupation"
-                      placeholder="e.g. Software Engineer"
-                      className={cn(
-                        "h-14 rounded-2xl bg-secondary/10 border-none px-6",
-                        isInvalid("occupation") && "ring-2 ring-destructive",
-                      )}
-                      value={formData.occupation}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("occupation", e.target.value)}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="pa-experience"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Work Experience (Years)
-                    </Label>
-                    <Input
-                      id="pa-experience"
-                      name="experience"
-                      placeholder="e.g. 5"
-                      type="number"
-                      min="0"
-                      className={cn(
-                        "h-14 rounded-2xl bg-secondary/10 border-none px-6",
-                        isInvalid("experience") && "ring-2 ring-destructive",
-                      )}
-                      value={formData.experience}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("experience", e.target.value)}
-                    />
-                  </div>
-                </div>
-              )}
-
-              {step === 3 && (
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="pa-income"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Monthly Income (PKR)
-                    </Label>
-                    <Input
-                      id="pa-income"
-                      name="income"
-                      placeholder="e.g. 150,000"
-                      className={cn(
-                        "h-14 rounded-2xl bg-secondary/10 border-none px-6",
-                        isInvalid("income") && "ring-2 ring-destructive",
-                      )}
-                      value={formData.income}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("income", e.target.value)}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="pa-bank-balance"
-                      className="text-xs uppercase font-bold text-muted-foreground ml-1"
-                    >
-                      Approx Bank Balance (PKR)
-                    </Label>
-                    <Input
-                      id="pa-bank-balance"
-                      name="bankBalance"
-                      placeholder="e.g. 2,500,000"
-                      className={cn(
-                        "h-14 rounded-2xl bg-secondary/10 border-none px-6",
-                        isInvalid("bankBalance") && "ring-2 ring-destructive",
-                      )}
-                      value={formData.bankBalance}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("bankBalance", e.target.value)}
-                    />
-                  </div>
-                  <div className="bg-primary/5 rounded-2xl p-6 md:col-span-2 border border-primary/10">
-                    <div className="flex gap-4 items-start">
-                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-1">
-                        <Info className="text-primary" size={20} />
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        <strong className="text-primary">Why financials matter?</strong> Most
-                        embassies require proof of strong financial ties to your home country.
-                        Accurate details help us provide a more realistic assessment of your success
-                        chances.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {step === 4 && (
-                <div className="space-y-12">
-                  <div className="space-y-6">
-                    <Label className="text-xs uppercase font-black text-primary tracking-[0.2em] ml-1 block">
-                      Step 1: Select Destination Tier
-                    </Label>
-                    <div className="grid gap-4 md:grid-cols-3">
-                      {[
-                        {
-                          id: "tier1",
-                          label: "Tier 1 (High Scrutiny)",
-                          countries: "USA, UK, Canada, Australia, Schengen",
-                          color: "bg-red-500",
-                          border: "border-red-200",
-                          text: "text-red-700",
-                          bg: "bg-red-50/50",
-                        },
-                        {
-                          id: "tier2",
-                          label: "Tier 2 (Medium)",
-                          countries: "Japan, S. Korea, NZ, Ireland",
-                          color: "bg-amber-500",
-                          border: "border-amber-200",
-                          text: "text-amber-700",
-                          bg: "bg-amber-50/50",
-                        },
-                        {
-                          id: "tier3",
-                          label: "Tier 3 (E-Visa/Easy)",
-                          countries: "Turkey, GCC, SE Asia, Central Asia",
-                          color: "bg-emerald-500",
-                          border: "border-emerald-200",
-                          text: "text-emerald-700",
-                          bg: "bg-emerald-50/50",
-                        },
-                      ].map((tier) => (
-                        <button
-                          key={tier.id}
-                          onClick={() => handleInputChange("destination", tier.id)}
-                          className={cn(
-                            "text-left p-6 rounded-[2rem] border-2 transition-all group relative overflow-hidden",
-                            formData.destination === tier.id
-                              ? `${tier.border} ${tier.bg} shadow-md scale-[1.02]`
-                              : "border-border bg-white hover:border-primary/30",
-                            isInvalid("destination") &&
-                              "ring-2 ring-destructive border-destructive/20",
-                          )}
-                        >
-                          <div className={cn("h-1 w-12 rounded-full mb-4", tier.color)} />
-                          <p
-                            className={cn(
-                              "text-sm font-black mb-1 uppercase tracking-tight",
-                              formData.destination === tier.id ? tier.text : "text-foreground",
-                            )}
-                          >
-                            {tier.label}
-                          </p>
-                          <p className="text-[10px] text-muted-foreground font-medium leading-relaxed uppercase">
-                            {tier.countries}
-                          </p>
-                          {formData.destination === tier.id && (
-                            <div className="absolute top-4 right-4 h-6 w-6 rounded-full bg-white shadow-sm flex items-center justify-center">
-                              <CheckCircle2 size={14} className={tier.text} />
-                            </div>
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="space-y-6">
-                    <Label className="text-xs uppercase font-black text-primary tracking-[0.2em] ml-1 block">
-                      Step 2: Select Purpose
-                    </Label>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      {[
-                        {
-                          id: "tourist",
-                          label: "Tourist Visit",
-                          desc: "Focus on family, fun, and funds.",
-                          icon: Sparkles,
-                        },
-                        {
-                          id: "business",
-                          label: "Business / Official",
-                          desc: "Focus on company, conferences, and contracts.",
-                          icon: Briefcase,
-                        },
-                      ].map((p) => (
-                        <button
-                          key={p.id}
-                          onClick={() => handleInputChange("visaType", p.id)}
-                          className={cn(
-                            "text-left p-6 rounded-[2.5rem] border-2 transition-all flex items-center gap-6 group",
-                            formData.visaType === p.id
-                              ? "border-primary bg-primary/5 shadow-md scale-[1.02]"
-                              : "border-border bg-white hover:border-primary/30",
-                            isInvalid("visaType") &&
-                              "ring-2 ring-destructive border-destructive/20",
-                          )}
-                        >
-                          <div
-                            className={cn(
-                              "h-16 w-16 rounded-2xl flex items-center justify-center transition-colors shrink-0",
-                              formData.visaType === p.id
-                                ? "bg-primary text-white shadow-glow"
-                                : "bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary",
-                            )}
-                          >
-                            <p.icon size={28} />
-                          </div>
-                          <div>
-                            <p className="text-lg font-black uppercase tracking-tight mb-1">
-                              {p.label}
-                            </p>
-                            <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-[0.1em]">
-                              {p.desc}
-                            </p>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="space-y-6">
-                    <div className="flex items-center justify-between px-1">
-                      <Label className="text-xs uppercase font-black text-primary tracking-[0.2em]">
-                        Step 3: Run Assessment
-                      </Label>
-                      <div className="flex items-center gap-2 text-[10px] font-black text-muted-foreground uppercase tracking-widest">
-                        <Info size={12} /> Success Probability Score
-                      </div>
-                    </div>
-
-                    <VisaSuccessGauge 
-                      income={formData.income}
-                      stamps={formData.stamps}
-                      refusals={formData.refusals}
-                      destination={formData.destination}
-                    />
-                  </div>
-
-                  <div className="grid gap-6 md:grid-cols-2 bg-secondary/10 p-8 rounded-[2.5rem]">
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="pa-stamps"
-                        className="text-xs uppercase font-black text-muted-foreground/60 tracking-widest ml-1"
-                      >
-                        Visa Stamps
-                      </Label>
-                      <Input
-                        id="pa-stamps"
-                        name="stamps"
-                        placeholder="Total Stamps"
-                        type="number"
-                        className={cn(
-                          "h-14 rounded-2xl bg-white border-none px-6 font-bold",
-                          isInvalid("stamps") && "ring-2 ring-destructive",
-                        )}
-                        value={formData.stamps}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("stamps", e.target.value)}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="pa-refusals"
-                        className="text-xs uppercase font-black text-destructive/50 tracking-widest ml-1"
-                      >
-                        Total Refusals
-                      </Label>
-                      <Input
-                        id="pa-refusals"
-                        name="refusals"
-                        placeholder="Total Refusals"
-                        type="number"
-                        min="0"
-                        className={cn(
-                          "h-14 rounded-2xl bg-white border-none px-6 font-bold",
-                          isInvalid("refusals") && "ring-2 ring-destructive",
-                        )}
-                        value={formData.refusals}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("refusals", e.target.value)}
-                      />
-                    </div>
-                    <div className="space-y-2 md:col-span-2">
-                      <Label
-                        htmlFor="pa-travel-history"
-                        className="text-xs uppercase font-black text-muted-foreground/60 tracking-widest ml-1"
-                      >
-                        Travel Countries
-                      </Label>
-                      <Input
-                        id="pa-travel-history"
-                        name="travelHistory"
-                        placeholder="UAE, Turkey, Thailand etc."
-                        className={cn(
-                          "h-14 rounded-2xl bg-white border-none px-6 font-bold",
-                          isInvalid("travelHistory") && "ring-2 ring-destructive",
-                        )}
-                        value={formData.travelHistory}
-                        onChange={(e) => handleInputChange("travelHistory", e.target.value)}
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-            </motion.div>
-
-            <div className="mt-12 pt-8 border-t border-border flex flex-wrap gap-4 items-center justify-between">
-              <Button
-                variant="ghost"
-                onClick={prevStep}
-                disabled={step === 1}
-                className="h-14 px-8 rounded-2xl font-bold"
-              >
-                Back
-              </Button>
-
-              {step < totalSteps ? (
-                <Button
-                  onClick={nextStep}
-                  disabled={!isStepValid()}
-                  className={cn(
-                    "h-14 px-10 rounded-2xl font-bold transition-all flex items-center",
-                    isStepValid()
-                      ? "bg-primary text-white shadow-glow hover:scale-[1.02]"
-                      : "bg-muted text-muted-foreground cursor-not-allowed",
-                  )}
-                >
-                  Continue
-                  <ChevronRight className="ml-2" size={20} />
-                </Button>
+            <div className="mt-12 flex justify-between border-t pt-8">
+              <Button variant="ghost" onClick={() => setStep(s => Math.max(1, s - 1))} disabled={step === 1}>Back</Button>
+              {step < 4 ? (
+                <Button onClick={nextStep} className="bg-primary text-white px-8 rounded-xl font-bold">Continue <ChevronRight className="ml-2" size={16} /></Button>
               ) : (
-                <a
-                  href={generateWhatsAppLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-14 px-10 rounded-2xl text-white font-bold bg-emerald-600 hover:bg-emerald-700 shadow-glow-emerald hover:scale-[1.02] transition-all flex items-center gap-2"
-                >
-                  <MessageCircle size={20} />
-                  Submit Assessment
-                </a>
+                <a href={`https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`} className="bg-emerald-600 text-white px-8 h-10 flex items-center rounded-xl font-bold">Submit Via WhatsApp</a>
               )}
             </div>
           </div>
         </div>
 
-        {/* Benefits Section */}
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              icon: ShieldCheck,
-              t: "Expert Analysis",
-              d: "Your profile is reviewed by senior visa consultants.",
-            },
-            {
-              icon: CheckCircle2,
-              t: "High Accuracy",
-              d: "We provide realistic success probability estimates.",
-            },
-            {
-              icon: Sparkles,
-              t: "Free Consultation",
-              d: "No hidden charges for initial profile evaluation.",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i }}
-              className="bg-white/50 backdrop-blur-sm p-6 rounded-3xl border border-white/50 shadow-soft"
-            >
-              <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                <item.icon className="text-primary" size={24} />
-              </div>
-              <h4 className="text-lg font-bold mb-2">{item.t}</h4>
-              <p className="text-sm text-muted-foreground">{item.d}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Global SEO Content Hub - Lazy Loaded for performance */}
         <Suspense fallback={<div className="h-40" />}>
-           <ProfileAssessmentSEO />
+          <ProfileAssessmentSEO />
         </Suspense>
       </div>
     </div>
