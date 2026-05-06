@@ -147,9 +147,9 @@ export const DESTINATIONS: Destination[] = [
     image: schengenImg,
     shortDesc:
       "Visit 29 European countries on a single visa. Expert documentation and appointments.",
-    seoTitle: "Schengen Visa Consultant Islamabad | Top Europe Visa Agency",
+    seoTitle: "Schengen Visa Consultant Islamabad — 98% Approval | OS Consultants",
     seoDescription:
-      "Apply for Schengen visa from Pakistan. OS Consultants provides expert documentation, fast processing, and high approval rates for all 29 European countries.",
+      "Apply for a Schengen visa from Pakistan with 98% success rate. Expert documentation, VFS appointments, and file preparation for all 29 European countries in Islamabad.",
     keywords:
       "Schengen visa Islamabad, best visa consultant Islamabad, Europe visa from Pakistan, apply Schengen visit visa ISB",
     intro:
@@ -194,9 +194,9 @@ export const DESTINATIONS: Destination[] = [
     name: "United States",
     image: usaImg,
     shortDesc: "B1/B2 tourist, business, and F1 student visa processing and interview prep.",
-    seoTitle: "USA Visa Consultant Islamabad | B1/B2 & F1 Student Visa",
+    seoTitle: "USA Visa Consultant Islamabad — DS-160 & Interview Prep | 98% Success",
     seoDescription:
-      "Expert USA visa consultants in Islamabad. We handle DS-160 forms, appointment scheduling, and provide intensive interview preparation.",
+      "Expert USA visa consultants in Islamabad. We handle DS-160 forms, secure early appointments, and provide intensive mock interview preparation with a 98% success rate.",
     keywords:
       "USA visa consultant Pakistan, US visa Islamabad, B1/B2 visa Pakistan, F1 student visa consultant ISB",
     intro:
@@ -283,9 +283,9 @@ export const DESTINATIONS: Destination[] = [
     name: "United Kingdom",
     image: ukImg,
     shortDesc: "Standard Visitor, Tier 4 Student, and Work visa expertise.",
-    seoTitle: "UK Visa Consultant Islamabad | Best Visa Consultancy ISB",
+    seoTitle: "UK Visa Consultant Islamabad — Standard Visitor & Study | 98% Approval",
     seoDescription:
-      "Apply for a UK visa from Islamabad. Expert processing for UK standard visitor, study, and work visas with high success rates.",
+      "Apply for a UK visa from Islamabad with 98% success rate. Expert processing for UK standard visitor, study, and work visas at the best consultancy in Pakistan.",
     keywords:
       "UK visa consultant Islamabad, UK visit visa Pakistan, apply UK visa ISB, UK student visa consultant",
     intro:
@@ -367,9 +367,9 @@ export const DESTINATIONS: Destination[] = [
     name: "Canada",
     image: canadaImg,
     shortDesc: "Visit visas, Study Permits, and PR pathway guidance.",
-    seoTitle: "Canada Immigration Consultant ISB | Canada Visa Pakistan",
+    seoTitle: "Canada Visa Consultant Islamabad — Visit & Study Permits | 98% Success",
     seoDescription:
-      "Top Canada visa consultant in Islamabad. We assist with Canada visit visas, Study Permits, and provide expert immigration guidance.",
+      "Top-rated Canada visa consultant in Islamabad. We assist with Canada visit visas (TRV), Study Permits, and PR pathways with a 98% success rate.",
     keywords:
       "Canada immigration consultant ISB, Canada visa Islamabad, Canada study permit Pakistan, IRCC authorized consultant",
     intro:

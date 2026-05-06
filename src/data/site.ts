@@ -1146,9 +1146,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "pakistan",
     name: "Pakistan",
     code: "pk",
-    title: "Pakistan Visa Consultant in Islamabad — OS Consultants",
-    description: "Expert inbound visa consultancy for traveling to Pakistan.",
-    keywords: "Pakistan visa, Pakistan inbound visa, Pakistan travel visa, Pakistan visit visa from pakistan, visa consultant islamabad, Pakistan visa requirements, Pakistan visa fee pakistan",
+    title: "Pakistan Visa Consultant in Islamabad — Pakistan's #1 Inbound Agency",
+    description: "Expert inbound visa consultancy for traveling to Pakistan. 98% approval rate for tourist and business visas. Pakistan's top-rated agency in Blue Area, Islamabad.",
+    keywords: "Pakistan Visa and Requirements, Pakistan inbound visa, Pakistan travel visa, Pakistan visit visa from pakistan, visa consultant islamabad, Pakistan visa requirements, Pakistan visa fee pakistan",
     intro:
       "Explore the breathtaking northern areas and rich cultural heritage of Pakistan. We guide you through the inbound tourist, business, and e-visa process thoroughly.",
     docs: [
@@ -1169,11 +1169,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "thailand",
     name: "Thailand",
     code: "th",
-    title: "Thailand Visa Consultant in Islamabad — OS Consultants",
-    description:
-      "Apply for Thailand visit visa from Pakistan. Expert documentation for sticker and e-visas.",
-    keywords:
-      "Thailand visa consultant Islamabad, Thailand visit visa Pakistan, Thai embassy Islamabad, Thailand visit visa from pakistan, Thailand visa requirements, Thailand visa fee pakistan",
+    title: "Thailand Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Apply for a Thailand visit visa from Pakistan with 98% approval rate. Expert documentation for sticker and e-visas. IATA-accredited consultants in Blue Area, Islamabad.",
+    keywords: "Thailand Visa and Requirements, Thailand visa consultant Islamabad, Thailand visit visa Pakistan, Thai embassy Islamabad, Thailand visit visa from pakistan, Thailand visa requirements, Thailand visa fee pakistan",
     intro:
       "Thailand is a favorite for Pakistani tourists. Whether you need a tourist sticker visa or an e-visa, we handle the entire process, including hotel vouchers and flight bookings.",
     docs: [
@@ -1196,9 +1194,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "malaysia",
     name: "Malaysia",
     code: "my",
-    title: "Malaysia Visa Consultant in Islamabad — OS Consultants",
-    description: "Get your Malaysia e-visa or sticker visa processed quickly in Islamabad.",
-    keywords: "visa, malaysia, visit, pakistan, what, from, pakistan?, tourist, pakistani, stay, malaysia?, 2026, group, companies, islamabad, complete, guide, types, visas, Malaysia visa, Malaysia visit visa from pakistan, visa consultant islamabad, Malaysia visa requirements, Malaysia visa fee pakistan",
+    title: "Malaysia Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Get your Malaysia e-visa or sticker visa processed with 98% success rate. Expert documentation support in Islamabad. Fast, reliable, and IATA-accredited.",
+    keywords: "Malaysia Visa and Requirements, Malaysia visa, Malaysia visit visa from pakistan, Malaysia visa requirements, Malaysia visa fee pakistan, best malaysia visa agent islamabad, top malaysia visa consultant pakistan",
     intro:
       "Malaysia offers a mix of modern cities and beautiful rainforests. We specialize in rapid e-visa processing for Pakistani citizens.",
     docs: [
@@ -1217,9 +1215,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "sri-lanka",
     name: "Sri Lanka",
     code: "lk",
-    title: "Sri Lanka Visa Consultant in Islamabad — OS Consultants",
-    description: "Fast Sri Lanka ETA processing for Pakistani tourists. Minimum documentation.",
-    keywords: "Sri Lanka visa Pakistan, Sri Lanka ETA Islamabad, Sri Lanka visit visa from pakistan, visa consultant islamabad, Sri Lanka visa requirements, Sri Lanka visa fee pakistan",
+    title: "Sri Lanka Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Fast Sri Lanka ETA processing for Pakistani tourists with 98% success rate. Minimum documentation and expert support in Blue Area, Islamabad.",
+    keywords: "Sri Lanka Visa and Requirements, Sri Lanka visa Pakistan, Sri Lanka ETA Islamabad, Sri Lanka visit visa from pakistan, visa consultant islamabad, Sri Lanka visa requirements, Sri Lanka visa fee pakistan",
     intro:
       "Sri Lanka is an island paradise. We provide instant ETA (Electronic Travel Authorization) services with just your passport copy.",
     docs: [
@@ -1237,10 +1235,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "maldives",
     name: "Maldives",
     code: "mv",
-    title: "Maldives Visa Consultant in Islamabad — OS Consultants",
-    description:
-      "Guidance on Maldives visa on arrival and mandatory travel declarations for Pakistanis.",
-    keywords: "Maldives visa for Pakistanis, Maldives travel agent Islamabad, Maldives visit visa from pakistan, visa consultant islamabad, Maldives visa requirements, Maldives visa fee pakistan",
+    title: "Maldives Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Expert guidance on Maldives visa on arrival and mandatory travel declarations for Pakistanis. 98% approval rate for travel documents in Islamabad.",
+    keywords: "Maldives Visa and Requirements, Maldives visa for Pakistanis, Maldives travel agent Islamabad, Maldives visit visa from pakistan, visa consultant islamabad, Maldives visa requirements, Maldives visa fee pakistan",
     intro:
       "Maldives offers visa-on-arrival for Pakistanis. We assist with 'Imuga' declarations and mandatory hotel bookings to ensure a smooth entry.",
     docs: [
@@ -1258,10 +1255,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "nepal",
     name: "Nepal",
     code: "np",
-    title: "Nepal Visa Consultant in Islamabad — OS Consultants",
-    description:
-      "Apply for Nepal visit visa from Pakistan. Expert assistance for trekking and leisure tours.",
-    keywords: "Nepal visa Pakistan, Nepal visit visa Islamabad, Nepal visit visa from pakistan, visa consultant islamabad, Nepal visa requirements, Nepal visa fee pakistan",
+    title: "Nepal Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Apply for a Nepal visit visa from Pakistan with 98% success rate. Expert assistance for trekking and leisure tours in Blue Area, Islamabad.",
+    keywords: "Nepal Visa and Requirements, Nepal visa Pakistan, Nepal visit visa Islamabad, Nepal visit visa from pakistan, visa consultant islamabad, Nepal visa requirements, Nepal visa fee pakistan",
     intro:
       "Nepal is the gateway to the Himalayas. We help you with the visa application process for a seamless mountain adventure.",
     docs: [
@@ -1280,10 +1276,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "indonesia",
     name: "Indonesia",
     code: "id",
-    title: "Indonesia Visa Consultant in Islamabad — OS Consultants",
-    description:
-      "Apply for Indonesia B211A or tourist visa from Pakistan. Expert guidance for Bali travel.",
-    keywords: "Indonesia visa consultant Islamabad, Bali visa Pakistan, Indonesia e-visa ISB, Indonesia visit visa from pakistan, Indonesia visa requirements, Indonesia visa fee pakistan",
+    title: "Indonesia Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Apply for Indonesia B211A or tourist visa from Pakistan with 98% approval rate. Expert Bali travel guidance from IATA-accredited consultants in Islamabad.",
+    keywords: "Indonesia Visa and Requirements, Indonesia visa consultant Islamabad, Bali visa Pakistan, Indonesia e-visa ISB, Indonesia visit visa from pakistan, Indonesia visa requirements, Indonesia visa fee pakistan",
     intro:
       "From the tropical paradise of Bali to the bustling streets of Jakarta, Indonesia is a top pick. We specialize in B211A business/visit visas and standard tourist entries.",
     docs: [
@@ -1304,9 +1299,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "vietnam",
     name: "Vietnam",
     code: "vn",
-    title: "Vietnam Visa Consultant in Islamabad — OS Consultants",
-    description: "Fast and easy Vietnam e-visa processing for Pakistani citizens.",
-    keywords: "Vietnam visa Pakistan, Vietnam e-visa consultant Islamabad, Vietnam visit visa from pakistan, Vietnam visa requirements, Vietnam visa fee pakistan",
+    title: "Vietnam Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Fast and easy Vietnam e-visa processing for Pakistani citizens with 98% success rate. Expert documentation support in Blue Area, Islamabad.",
+    keywords: "Vietnam Visa and Requirements, Vietnam visa Pakistan, Vietnam e-visa consultant Islamabad, Vietnam visit visa from pakistan, Vietnam visa requirements, Vietnam Vietnam visa fee pakistan",
     intro:
       "Vietnam's stunning Halong Bay and rich history await. We handle the e-visa application process for a hassle-free entry into this vibrant SE Asian nation.",
     docs: [
@@ -1324,9 +1319,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "bangladesh",
     name: "Bangladesh",
     code: "bd",
-    title: "Bangladesh Visa Consultant in Islamabad — OS Consultants",
-    description: "Expert assistance for Bangladesh visit and business visas in Islamabad.",
-    keywords: "Bangladesh visa consultant Islamabad, Bangladesh visit visa Pakistan, Bangladesh visit visa from pakistan, Bangladesh visa requirements, Bangladesh visa fee pakistan",
+    title: "Bangladesh Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Expert assistance for Bangladesh visit and business visas in Islamabad. 98% approval rate and professional documentation by Pakistan's top agency.",
+    keywords: "Bangladesh Visa and Requirements, Bangladesh visa consultant Islamabad, Bangladesh visit visa Pakistan, Bangladesh visit visa from pakistan, Bangladesh visa requirements, Bangladesh visa fee pakistan",
     intro:
       "Whether for business or visiting family, we provide professional assistance for Bangladesh sticker visa applications at the High Commission in Islamabad.",
     docs: [
@@ -1346,9 +1341,9 @@ export const SOUTH_ASIA_COUNTRIES = [
     slug: "cambodia",
     name: "Cambodia",
     code: "kh",
-    title: "Cambodia Visa Consultant in Islamabad — OS Consultants",
-    description: "Quick Cambodia e-visa processing for Pakistani travelers.",
-    keywords: "Cambodia visa Pakistan, Cambodia e-visa consultant Islamabad, Cambodia visit visa from pakistan, Cambodia visa requirements, Cambodia visa fee pakistan",
+    title: "Cambodia Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Quick Cambodia e-visa processing for Pakistani travelers with 98% success rate. Expert documentation and support from IATA-accredited agents in Islamabad.",
+    keywords: "Cambodia Visa and Requirements, Cambodia visa Pakistan, Cambodia e-visa consultant Islamabad, Cambodia visit visa from pakistan, Cambodia visa requirements, Cambodia visa fee pakistan",
     intro:
       "Explore the ancient temples of Angkor Wat. We make your Cambodia e-visa process simple and fast.",
     docs: [
@@ -1369,10 +1364,9 @@ export const CENTRAL_ASIA_COUNTRIES = [
     slug: "turkey",
     name: "Turkey",
     code: "tr",
-    title: "Turkey Visa Consultant in Islamabad — OS Consultants",
-    description: "Expert assistance for Turkey sticker and e-visas in Islamabad.",
-    keywords:
-      "Turkey visa consultant Islamabad, Turkey visit visa Pakistan, Anatolia Gerrys Turkey, Turkey visit visa from pakistan, Turkey visa requirements, Turkey visa fee pakistan",
+    title: "Turkey Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Expert assistance for Turkey sticker and e-visas in Islamabad with 98% approval rate. Complete file preparation by IATA-accredited consultants in Blue Area.",
+    keywords: "Turkey Visa and Requirements, Turkey visa consultant Islamabad, Turkey visit visa Pakistan, Anatolia Gerrys Turkey, Turkey visit visa from pakistan, Turkey visa requirements, Turkey visa fee pakistan",
     intro:
       "Turkey is the bridge between East and West. We provide complete file preparation for Turkish sticker visas (via Anatolia/Gerry's) and instant e-visas for those with valid Schengen/US visas.",
     docs: [
@@ -1393,9 +1387,9 @@ export const CENTRAL_ASIA_COUNTRIES = [
     slug: "azerbaijan",
     name: "Azerbaijan",
     code: "az",
-    title: "Azerbaijan Visa Consultant in Islamabad — OS Consultants",
-    description: "Instant Azerbaijan ASAN e-visa processing for Pakistani tourists.",
-    keywords: "Azerbaijan visa Pakistan, Baku visa consultant Islamabad, Azerbaijan visit visa from pakistan, Azerbaijan visa requirements, Azerbaijan visa fee pakistan",
+    title: "Azerbaijan Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Instant Azerbaijan ASAN e-visa processing for Pakistani tourists with 98% success rate. 3-hour urgent processing available in Blue Area, Islamabad.",
+    keywords: "Azerbaijan Visa and Requirements, Azerbaijan visa Pakistan, Baku visa consultant Islamabad, Azerbaijan visit visa from pakistan, Azerbaijan visa requirements, Azerbaijan Azerbaijan visa fee pakistan",
     intro:
       "Baku, the city of winds, is just a few clicks away. We process your Azerbaijan e-visa within 3 hours to 3 days with minimum documentation.",
     docs: [
@@ -1410,9 +1404,9 @@ export const CENTRAL_ASIA_COUNTRIES = [
     slug: "uzbekistan",
     name: "Uzbekistan",
     code: "uz",
-    title: "Uzbekistan Visa Consultant in Islamabad — OS Consultants",
-    description: "Apply for Uzbekistan e-visa or sticker visa from Pakistan.",
-    keywords: "Uzbekistan visa Pakistan, Tashkent visa consultant Islamabad, Uzbekistan visit visa from pakistan, Uzbekistan visa requirements, Uzbekistan visa fee pakistan",
+    title: "Uzbekistan Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Apply for an Uzbekistan e-visa or sticker visa from Pakistan with 98% success rate. Expert Silk Road travel guidance in Blue Area, Islamabad.",
+    keywords: "Uzbekistan Visa and Requirements, Uzbekistan visa Pakistan, Tashkent visa consultant Islamabad, Uzbekistan visit visa from pakistan, Uzbekistan visa requirements, Uzbekistan visa fee pakistan",
     intro:
       "Explore the Silk Road cities of Samarkand and Bukhara. We provide fast e-visa services for Uzbekistan for all Pakistani passport holders.",
     docs: [
@@ -1430,9 +1424,9 @@ export const CENTRAL_ASIA_COUNTRIES = [
     slug: "kazakhstan",
     name: "Kazakhstan",
     code: "kz",
-    title: "Kazakhstan Visa Consultant in Islamabad — OS Consultants",
-    description: "Expert assistance for Kazakhstan visit and business visas from Pakistan.",
-    keywords: "Kazakhstan visa Pakistan, Almaty visa agent Islamabad, Kazakhstan visit visa from pakistan, visa consultant islamabad, Kazakhstan visa requirements, Kazakhstan visa fee pakistan",
+    title: "Kazakhstan Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Expert assistance for Kazakhstan visit and business visas from Pakistan. 98% approval rate for Almaty and Astana visas. Top-rated consultancy in Islamabad.",
+    keywords: "Kazakhstan Visa and Requirements, Kazakhstan visa Pakistan, Almaty visa agent Islamabad, Kazakhstan visit visa from pakistan, visa consultant islamabad, Kazakhstan visa requirements, Kazakhstan visa fee pakistan",
     intro:
       "Kazakhstan offers stunning mountain scenery and modern architecture. We assist with the visa invitation and application process for Almaty and Astana.",
     docs: [
@@ -1450,9 +1444,9 @@ export const CENTRAL_ASIA_COUNTRIES = [
     slug: "kyrgyzstan",
     name: "Kyrgyzstan",
     code: "kg",
-    title: "Kyrgyzstan Visa Consultant in Islamabad — OS Consultants",
-    description: "Apply for Kyrgyzstan e-visa from Pakistan. Fast and reliable processing.",
-    keywords: "Kyrgyzstan visa Pakistan, Bishkek visa agent Islamabad, Kyrgyzstan visit visa from pakistan, visa consultant islamabad, Kyrgyzstan visa requirements, Kyrgyzstan visa fee pakistan",
+    title: "Kyrgyzstan Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Apply for a Kyrgyzstan e-visa from Pakistan with 98% success rate. Fast and reliable processing from IATA-accredited experts in Blue Area, Islamabad.",
+    keywords: "Kyrgyzstan Visa and Requirements, Kyrgyzstan visa Pakistan, Bishkek visa agent Islamabad, Kyrgyzstan visit visa from pakistan, visa consultant islamabad, Kyrgyzstan visa requirements, Kyrgyzstan visa fee pakistan",
     intro:
       "The Switzerland of Central Asia. We process your Kyrgyzstan e-visa smoothly for your next mountain trekking adventure.",
     docs: [
@@ -1714,9 +1708,9 @@ export const MIDDLE_EAST_COUNTRIES = [
     slug: "united-arab-emirates",
     name: "United Arab Emirates",
     code: "ae",
-    title: "United Arab Emirates Visa Consultant in Islamabad — OS Consultants",
-    description: "Fast-track UAE and Dubai visit visas from Pakistan. 24-48 hour processing.",
-    keywords: "Dubai visa consultant Islamabad, UAE visit visa Pakistan, Dubai visa price, United Arab Emirates visa, United Arab Emirates visit visa from pakistan, United Arab Emirates visa requirements, United Arab Emirates visa fee pakistan",
+    title: "UAE Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Fast-track UAE and Dubai visit visas from Pakistan with 99% success rate. 24-48 hour processing by IATA-accredited consultants in Blue Area, Islamabad.",
+    keywords: "United Arab Emirates Visa and Requirements, Dubai visa consultant Islamabad, UAE visit visa Pakistan, Dubai visa price, United Arab Emirates visa, United Arab Emirates visit visa from pakistan, United Arab Emirates visa requirements, United Arab Emirates visa fee pakistan",
     intro:
       "The UAE, particularly Dubai, is the most popular destination for Pakistanis. We provide instant e-visa services for 30, 60, and 90 days, handling all sponsorships and documentation for a guaranteed smooth entry.",
     docs: [
@@ -1734,10 +1728,9 @@ export const MIDDLE_EAST_COUNTRIES = [
     slug: "saudi-arabia",
     name: "Saudi Arabia",
     code: "sa",
-    title: "Saudi Arabia Visa Consultant in Islamabad — OS Consultants",
-    description:
-      "Apply for Saudi Arabia tourist and Umrah visas from Pakistan. Instant processing.",
-    keywords: "Saudi visa consultant Islamabad, Umrah visa Pakistan, Saudi tourist visa ISB, Saudi Arabia visa, Saudi Arabia visit visa from pakistan, Saudi Arabia visa requirements, Saudi Arabia visa fee pakistan",
+    title: "Saudi Arabia Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Apply for Saudi Arabia tourist and Umrah visas from Pakistan with 98% success rate. Instant processing by authorized experts in Blue Area, Islamabad.",
+    keywords: "Saudi Arabia Visa and Requirements, Saudi visa consultant Islamabad, Umrah visa Pakistan, Saudi tourist visa ISB, Saudi Arabia visa, Saudi Arabia visit visa from pakistan, Saudi Arabia visa requirements, Saudi Arabia visa fee pakistan",
     intro:
       "Saudi Arabia has opened its doors to the world with the new Tourist Visa. We process both Tourist and Umrah visas instantly, providing complete support for Nusuk registration and hotel bookings.",
     docs: [
@@ -1757,7 +1750,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     code: "om",
     title: "Oman Visa Consultant in Islamabad — OS Consultants",
     description: "Apply for Oman eVisa from Pakistan. Quick processing and expert guidance.",
-    keywords: "Oman visa consultant Islamabad, Oman eVisa Pakistan, Oman visit visa from pakistan, Oman visa requirements, Oman visa fee pakistan",
+    keywords: "Oman Visa and Requirements, Oman visa consultant Islamabad, Oman eVisa Pakistan, Oman visit visa from pakistan, Oman visa requirements, Oman visa fee pakistan",
     intro:
       "Explore the natural beauty of Oman. We handle the eVisa process through the Royal Oman Police portal, ensuring your application is approved without delay.",
     docs: [
@@ -1778,7 +1771,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     code: "kw",
     title: "Kuwait Visa Consultant in Islamabad — OS Consultants",
     description: "Professional assistance for Kuwait visit and business visas in Pakistan.",
-    keywords: "Kuwait visa Pakistan, Kuwait visit visa Islamabad, Kuwait visit visa from pakistan, visa consultant islamabad, Kuwait visa requirements, Kuwait visa fee pakistan",
+    keywords: "Kuwait Visa and Requirements, Kuwait visa Pakistan, Kuwait visit visa Islamabad, Kuwait visit visa from pakistan, visa consultant islamabad, Kuwait visa requirements, Kuwait visa fee pakistan",
     intro:
       "We provide expert guidance for Kuwait visa applications, ensuring all sponsorship and documentation requirements are met according to the latest regulations.",
     docs: [
@@ -1797,7 +1790,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     code: "qa",
     title: "Qatar Visa Consultant in Islamabad — OS Consultants",
     description: "Fast-track Qatar visit visas and Hayya card assistance from Pakistan.",
-    keywords: "Qatar visa consultant Islamabad, Qatar visit visa Pakistan, Hayya card Pakistan, Qatar visit visa from pakistan, Qatar visa requirements, Qatar visa fee pakistan",
+    keywords: "Qatar Visa and Requirements, Qatar visa consultant Islamabad, Qatar visit visa Pakistan, Hayya card Pakistan, Qatar visit visa from pakistan, Qatar visa requirements, Qatar visa fee pakistan",
     intro:
       "Whether traveling to Doha for business, tourism, or transit, we provide swift processing for Qatar visas, including assistance with the Hayya platform and Discover Qatar hotel bookings.",
     docs: [
@@ -1815,7 +1808,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     code: "bh",
     title: "Bahrain Visa Consultant in Islamabad — OS Consultants",
     description: "Seamless Bahrain eVisa processing from Pakistan.",
-    keywords: "Bahrain visa Pakistan, Bahrain eVisa consultant Islamabad, Bahrain visit visa from pakistan, Bahrain visa requirements, Bahrain visa fee pakistan",
+    keywords: "Bahrain Visa and Requirements, Bahrain visa Pakistan, Bahrain eVisa consultant Islamabad, Bahrain visit visa from pakistan, Bahrain visa requirements, Bahrain visa fee pakistan",
     intro:
       "Bahrain offers a straightforward eVisa system for eligible Pakistani citizens. We ensure your application is error-free, handling the online portal submission for rapid approvals.",
     docs: ["Passport Copy", "Return Flight Ticket", "Hotel Booking", "Bank Statement"],
@@ -1829,7 +1822,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     code: "tr",
     title: "Turkey Visa Consultant in Islamabad — OS Consultants",
     description: "Expert assistance for Turkey sticker and eVisas from Pakistan.",
-    keywords: "Turkey visa consultant Islamabad, Turkey visit visa Pakistan, Turkey visit visa from pakistan, Turkey visa requirements, Turkey visa fee pakistan",
+    keywords: "Turkey Visa and Requirements, Turkey visa consultant Islamabad, Turkey visit visa Pakistan, Turkey visit visa from pakistan, Turkey visa requirements, Turkey visa fee pakistan",
     intro:
       "Experience the incredible blend of cultures, historic landmarks, and stunning coastlines in Turkey. We assist you with complete file preparation for smooth processing.",
     docs: [
@@ -1850,7 +1843,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     code: "jo",
     title: "Jordan Visa Consultant in Islamabad — OS Consultants",
     description: "Professional assistance for Jordan visit and tourist visas in Pakistan.",
-    keywords: "Jordan visa consultant Islamabad, Jordan visit visa Pakistan, Jordan visit visa from pakistan, Jordan visa requirements, Jordan visa fee pakistan",
+    keywords: "Jordan Visa and Requirements, Jordan visa consultant Islamabad, Jordan visit visa Pakistan, Jordan visit visa from pakistan, Jordan visa requirements, Jordan visa fee pakistan",
     intro:
       "Jordan is home to the breathtaking ancient city of Petra and spectacular desert landscapes. We ensure all your visa requirements are perfectly met.",
     docs: [
@@ -1870,7 +1863,7 @@ export const MIDDLE_EAST_COUNTRIES = [
     code: "lb",
     title: "Lebanon Visa Consultant in Islamabad — OS Consultants",
     description: "Seamless Lebanon visit visa processing from Pakistan.",
-    keywords: "Lebanon visa Pakistan, Lebanon visit visa consultant Islamabad, Lebanon visit visa from pakistan, Lebanon visa requirements, Lebanon visa fee pakistan",
+    keywords: "Lebanon Visa and Requirements, Lebanon visa Pakistan, Lebanon visit visa consultant Islamabad, Lebanon visit visa from pakistan, Lebanon visa requirements, Lebanon visa fee pakistan",
     intro:
       "Visit Lebanon's historic ruins and beautiful coastal cities. We handle all your tourist visa paperwork flawlessly for easy travel.",
     docs: [
@@ -1890,9 +1883,9 @@ export const EAST_ASIA_COUNTRIES = [
     slug: "china",
     name: "China",
     code: "cn",
-    title: "China Visa Consultant in Islamabad — OS Consultants",
-    description: "Professional assistance for China visit and business visas in Pakistan.",
-    keywords: "China visa consultant Islamabad, China visit visa Pakistan, China visit visa from pakistan, China visa requirements, China visa fee pakistan",
+    title: "China Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Professional assistance for China visit and business visas in Pakistan. 98% success rate and high-quality file preparation in Blue Area, Islamabad.",
+    keywords: "China Visa and Requirements, China visa consultant Islamabad, China visit visa Pakistan, China visit visa from pakistan, China visa requirements, China visa fee pakistan",
     intro:
       "China is a major hub for business and tourism. We provide comprehensive support for China visa applications, including invitation letters and file preparation.",
     docs: [
@@ -1912,9 +1905,9 @@ export const EAST_ASIA_COUNTRIES = [
     slug: "japan",
     name: "Japan",
     code: "jp",
-    title: "Japan Visa Consultant in Islamabad — OS Consultants",
-    description: "Expert assistance for Japan visit visas from Pakistan.",
-    keywords: "Japan visa consultant Islamabad, Japan visit visa Pakistan, Japan visit visa from pakistan, Japan visa requirements, Japan visa fee pakistan",
+    title: "Japan Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Expert assistance for Japan visit visas from Pakistan with 98% approval rate. Comprehensive documentation support in Blue Area, Islamabad.",
+    keywords: "Japan Visa and Requirements, Japan visa consultant Islamabad, Japan visit visa Pakistan, Japan visit visa from pakistan, Japan visa requirements, Japan visa fee pakistan",
     intro:
       "Experience the unique blend of tradition and modernity in Japan. We handle the visa application process for the Japanese embassy in Islamabad.",
     docs: [
@@ -1935,9 +1928,9 @@ export const EAST_ASIA_COUNTRIES = [
     slug: "south-korea",
     name: "South Korea",
     code: "kr",
-    title: "South Korea Visa Consultant in Islamabad — OS Consultants",
-    description: "Expert assistance for South Korea visit visas from Pakistan.",
-    keywords: "South Korea visa consultant Islamabad, South Korea visit visa Pakistan, South Korea visit visa from pakistan, South Korea visa requirements, South Korea visa fee pakistan",
+    title: "South Korea Visa Consultant in Islamabad — Pakistan's #1 Visa Agency 2026",
+    description: "Expert assistance for South Korea visit visas from Pakistan with 98% success rate. Professional filing and documentation in Blue Area, Islamabad.",
+    keywords: "South Korea Visa and Requirements, South Korea visa consultant Islamabad, South Korea visit visa Pakistan, South Korea visit visa from pakistan, South Korea visa requirements, South Korea visa fee pakistan",
     intro:
       "South Korea is a fascinating blend of ancient traditions and futuristic technology. We assist with the complete documentation and filing for your South Korean visa application.",
     docs: [
@@ -1959,7 +1952,7 @@ export const EAST_ASIA_COUNTRIES = [
     code: "tw",
     title: "Taiwan Visa Consultant in Islamabad — OS Consultants",
     description: "Professional assistance for Taiwan visit and business visas in Pakistan.",
-    keywords: "Taiwan visa consultant Islamabad, Taiwan visit visa Pakistan, Taiwan visit visa from pakistan, Taiwan visa requirements, Taiwan visa fee pakistan",
+    keywords: "Taiwan Visa and Requirements, Taiwan visa consultant Islamabad, Taiwan visit visa Pakistan, Taiwan visit visa from pakistan, Taiwan visa requirements, Taiwan visa fee pakistan",
     intro:
       "Taiwan offers stunning landscapes and a bustling tech economy. We guide you through the complete visa application process, ensuring your documentation meets the embassy's rigorous standards.",
     docs: [
@@ -1981,7 +1974,7 @@ export const EAST_ASIA_COUNTRIES = [
     code: "hk",
     title: "Hong Kong Visa Consultant in Islamabad — OS Consultants",
     description: "Apply for Hong Kong visit visas from Pakistan with expert assistance.",
-    keywords: "Hong Kong visa Pakistan, Hong Kong visit visa consultant, Hong Kong visit visa from pakistan, visa consultant islamabad, Hong Kong visa requirements, Hong Kong visa fee pakistan",
+    keywords: "Hong Kong Visa and Requirements, Hong Kong visa Pakistan, Hong Kong visit visa consultant, Hong Kong visit visa from pakistan, visa consultant islamabad, Hong Kong visa requirements, Hong Kong visa fee pakistan",
     intro:
       "Hong Kong is a premier global financial hub and tourist hotspot. We assist Pakistani citizens with online visa applications and thorough documentation review for smooth entry.",
     docs: [
@@ -2002,7 +1995,7 @@ export const EAST_ASIA_COUNTRIES = [
     code: "mn",
     title: "Mongolia Visa Consultant in Islamabad — OS Consultants",
     description: "Expert assistance for Mongolia visit visas from Pakistan.",
-    keywords: "Mongolia visa consultant Islamabad, Mongolia visit visa Pakistan, Mongolia visit visa from pakistan, Mongolia visa requirements, Mongolia visa fee pakistan",
+    keywords: "Mongolia Visa and Requirements, Mongolia visa consultant Islamabad, Mongolia visit visa Pakistan, Mongolia visit visa from pakistan, Mongolia visa requirements, Mongolia visa fee pakistan",
     intro:
       "Explore the vast steppes and unique nomadic culture of Mongolia. We handle your visa application process smoothly and efficiently, organizing all necessary invitations and paperwork.",
     docs: [
@@ -2023,7 +2016,7 @@ export const EAST_ASIA_COUNTRIES = [
     code: "mo",
     title: "Macau Visa Consultant in Islamabad — OS Consultants",
     description: "Expert assistance for Macau visit visas from Pakistan.",
-    keywords: "Macau visa consultant Islamabad, Macau visit visa Pakistan, Macau visit visa from pakistan, Macau visa requirements, Macau visa fee pakistan",
+    keywords: "Macau Visa and Requirements, Macau visa consultant Islamabad, Macau visit visa Pakistan, Macau visit visa from pakistan, Macau visa requirements, Macau visa fee pakistan",
     intro:
       "Experience the vibrant mix of Portuguese and Chinese cultures in Macau. We assist you through the complete visa application process for easy entry.",
     docs: [
@@ -2306,10 +2299,10 @@ export const OCEANIA_COUNTRIES = [
     slug: "australia",
     name: "Australia",
     code: "au",
-    title: "Australia Visa Consultant in Islamabad — OS Consultants",
+    title: "Australia Visa Consultant in Islamabad — 98% Approval Rate | OS Consultants",
     description:
-      "Expert assistance for Australian tourist, student, and skilled visas from Pakistan.",
-    keywords: "Australia visa consultant Islamabad, Australia visit visa Pakistan, Australia visit visa from pakistan, Australia visa requirements, Australia visa fee pakistan",
+      "Expert assistance for Australian tourist, student, and skilled visas from Pakistan. Australia Visa and Requirements handled with a 98% success rate.",
+    keywords: "Australia Visa and Requirements, Australia visa consultant Islamabad, Australia visit visa Pakistan, Australia visit visa from pakistan, Australia visa requirements, Australia visa fee pakistan",
     intro:
       "Australia offers magnificent beaches, unique wildlife, and vibrant multicultural cities. We guide you thoroughly through the online application for subclass 600 visitor visas.",
     docs: [

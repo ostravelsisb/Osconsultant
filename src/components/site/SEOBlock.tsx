@@ -50,47 +50,17 @@ export function SEOBlock() {
       {/* Hidden Keywords & Backlinks for SEO */}
       <div className="sr-only" aria-hidden="true">
         <p>{keywords}</p>
+        <p>
+          Best visa agent Islamabad, top immigration consultant Pakistan, cheap flights from Islamabad to London, UK, USA, Canada, Australia.
+          Schengen visa requirements for Pakistani citizens 2026. Top rated travel agency in Blue Area Islamabad.
+          IATA authorized travel agent near me. Best Umrah packages from Islamabad, Rawalpindi, Lahore.
+          OS Consultants address Aaly Plaza Blue Area Islamabad.
+        </p>
         <div className="flex flex-col gap-1 mt-2">
-          <a
-            href="https://ostravel.pk"
-            title="OS Travel Pakistan"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            OS Travel Pakistan
-          </a>
-          <a
-            href="https://ostravels.com"
-            title="OS Travels"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            OS Travels
-          </a>
-          <a
-            href="https://www.facebook.com/osconsultants01/"
-            title="OS Consultants Facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            OS Consultants Facebook
-          </a>
-          <a
-            href="https://www.instagram.com/osconsultants.pk/"
-            title="OS Consultants Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            OS Consultants Instagram
-          </a>
-          <a
-            href="https://www.linkedin.com/company/os-consultants/"
-            title="OS Consultants LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            OS Consultants LinkedIn
-          </a>
+          <a href="https://osconsultants.pk/countries/schengen" title="Schengen Visa Consultant Islamabad">Schengen Visa Consultant Islamabad</a>
+          <a href="https://osconsultants.pk/countries/united-states" title="USA Visa Consultant Islamabad">USA Visa Consultant Islamabad</a>
+          <a href="https://osconsultants.pk/countries/united-kingdom" title="UK Visa Consultant Islamabad">UK Visa Consultant Islamabad</a>
+          <a href="https://osconsultants.pk/visa-services" title="Best Visa Services Pakistan">Best Visa Services Pakistan</a>
         </div>
       </div>
     </div>

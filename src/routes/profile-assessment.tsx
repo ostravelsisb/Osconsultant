@@ -33,6 +33,10 @@ import React, { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { COMPANY } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { VisaSuccessGauge } from "@/components/site/VisaSuccessGauge";
+import { Suspense, lazy } from "react";
+
+const ProfileAssessmentSEO = lazy(() => import("@/components/site/ProfileAssessmentSEO").then(m => ({ default: m.ProfileAssessmentSEO })));
 
 export const Route = createFileRoute("/profile-assessment")({
   head: () => ({
@@ -629,118 +633,12 @@ function ProfileAssessment() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-secondary/40 to-white p-8 md:p-10 rounded-[3rem] border-2 border-border/50 relative overflow-hidden group">
-                      <div className="absolute top-0 right-0 h-40 w-40 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-primary/10 transition-colors" />
-
-                      <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
-                        {/* Probability Gauge */}
-                        {(() => {
-                          const incomeVal = parseInt(formData.income.replace(/\D/g, "")) || 0;
-                          const stampsVal = parseInt(formData.stamps) || 0;
-                          const refusalsVal = parseInt(formData.refusals) || 0;
-
-                          const score = Math.max(
-                            5,
-                            Math.min(
-                              98,
-                              (incomeVal > 300000 ? 35 : incomeVal > 150000 ? 20 : 5) +
-                                stampsVal * 12 -
-                                refusalsVal * 20 +
-                                (formData.destination === "tier3"
-                                  ? 35
-                                  : formData.destination === "tier2"
-                                    ? 15
-                                    : 5),
-                            ),
-                          );
-
-                          const status =
-                            score > 75 ? "Optimistic" : score > 45 ? "Moderate" : "Challenging";
-                          const colorClass =
-                            score > 75
-                              ? "text-emerald-500"
-                              : score > 45
-                                ? "text-amber-500"
-                                : "text-red-500";
-
-                          return (
-                            <>
-                              <div className="relative h-40 w-40 shrink-0">
-                                <svg className="h-full w-full -rotate-90" viewBox="0 0 100 100">
-                                  <circle
-                                    className="text-secondary stroke-current"
-                                    strokeWidth="10"
-                                    fill="transparent"
-                                    r="40"
-                                    cx="50"
-                                    cy="50"
-                                  />
-                                  <motion.circle
-                                    className={cn(
-                                      "stroke-current transition-all duration-1000",
-                                      colorClass,
-                                    )}
-                                    strokeWidth="10"
-                                    strokeDasharray="251"
-                                    strokeDashoffset={251 - (251 * score) / 100}
-                                    strokeLinecap="round"
-                                    fill="transparent"
-                                    r="40"
-                                    cx="50"
-                                    cy="50"
-                                  />
-                                </svg>
-                                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                  <span className="text-3xl font-black tracking-tighter">
-                                    {score}%
-                                  </span>
-                                  <span className="text-[8px] font-black uppercase text-muted-foreground tracking-[0.2em] mt-1">
-                                    Probability
-                                  </span>
-                                </div>
-                              </div>
-
-                              <div className="space-y-5 text-center md:text-left flex-1">
-                                <h4 className="text-2xl font-black uppercase tracking-tight">
-                                  AI Success Audit
-                                </h4>
-                                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                                  {stampsVal > 3 && (
-                                    <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-[9px] font-black rounded-lg uppercase tracking-wider">
-                                      Elite Traveler
-                                    </span>
-                                  )}
-                                  {incomeVal > 200000 && (
-                                    <span className="px-3 py-1 bg-blue-100 text-blue-700 text-[9px] font-black rounded-lg uppercase tracking-wider">
-                                      High Stability
-                                    </span>
-                                  )}
-                                  {refusalsVal > 0 && (
-                                    <span className="px-3 py-1 bg-red-100 text-red-700 text-[9px] font-black rounded-lg uppercase tracking-wider">
-                                      Refusal Mitigation
-                                    </span>
-                                  )}
-                                  {formData.destination === "tier1" && (
-                                    <span className="px-3 py-1 bg-slate-100 text-slate-700 text-[9px] font-black rounded-lg uppercase tracking-wider">
-                                      Tier 1 Scrutiny
-                                    </span>
-                                  )}
-                                </div>
-                                <p className="text-sm text-muted-foreground font-bold leading-relaxed uppercase tracking-tight opacity-80">
-                                  Based on your profile ({stampsVal} stamps,{" "}
-                                  {incomeVal.toLocaleString()} PKR income), your probability for{" "}
-                                  {formData.destination === "tier1" ? "Tier 1" : "this"} region is{" "}
-                                  <span className={cn("font-black", colorClass)}>{status}</span>.{" "}
-                                  {refusalsVal > 0
-                                    ? "Address previous refusals carefully."
-                                    : "Focus on demonstrating strong ties."}
-                                </p>
-                              </div>
-                            </>
-                          );
-                        })()}
-                      </div>
-                    </div>
+                    <VisaSuccessGauge 
+                      income={formData.income}
+                      stamps={formData.stamps}
+                      refusals={formData.refusals}
+                      destination={formData.destination}
+                    />
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-2 bg-secondary/10 p-8 rounded-[2.5rem]">
@@ -883,90 +781,10 @@ function ProfileAssessment() {
           ))}
         </div>
 
-        {/* Global SEO Content Hub - Optimized for Global Rankings */}
-        <section className="mt-32 border-t border-border pt-20 pb-32">
-          <div className="max-w-4xl mx-auto space-y-16 px-6">
-            <div className="space-y-4 text-center">
-              <h2 className="text-3xl font-black uppercase tracking-tight text-foreground/80">
-                Expert Global Visa Strategy Hub
-              </h2>
-              <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
-              <p className="text-muted-foreground font-medium uppercase text-xs tracking-widest">
-                Advanced Profile Auditing for Tier 1 Destinations
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 text-left">
-              <div className="space-y-4">
-                <h3 className="text-lg font-bold text-primary flex items-center gap-2">
-                  <ShieldCheck size={18} /> USA B1/B2 Success Probability
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Our AI-driven assessment focuses on Section 214(b) compliance—the most common
-                  reason for US visa refusals in Pakistan. We evaluate your "Home Ties,"
-                  professional stability, and travel intent to maximize your approval chances for B1
-                  Business and B2 Tourist visas.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-bold text-primary flex items-center gap-2">
-                  <Globe size={18} /> Schengen & UK Visa Evaluation
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Navigate the complex requirements of the UK Standard Visitor Visa and Schengen
-                  (Germany, France, Italy, etc.) applications. We audit your financial
-                  documentation, sponsorship letters, and itinerary consistency to meet strict
-                  consular standards.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-bold text-primary flex items-center gap-2">
-                  <Award size={18} /> Global Passport Strategy
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Not ready for a Tier 1 visa? Our "Passport Strength Audit" identifies high-value
-                  "Bridge Countries" (like Turkey, Japan, or South Korea) that help build the travel
-                  history needed for 5-year USA or UK visa success.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-bold text-primary flex items-center gap-2">
-                  <FileText size={18} /> Document Integrity Audit
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  From bank statement analysis to employment verification and hotel voucher
-                  consistency, OS Consultants Islamabad ensures your application is "decision-ready"
-                  for embassy officers.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-secondary/20 p-10 rounded-[2.5rem] border border-border/50 text-center space-y-6">
-              <h3 className="text-xl font-black uppercase">
-                Why OS Consultants is Pakistan's #1 Visa Expert?
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                With over 15 years of field experience in Islamabad and a 98% success rate, we don't
-                just fill forms—we build profiles. Whether you are a solo traveler, a business
-                professional, or a family seeking reunification, our consultative approach minimizes
-                risk and maximizes global mobility.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                {["IATA Authorized", "Islamabad Chamber of Commerce Member"].map((badge) => (
-                  <span
-                    key={badge}
-                    className="px-4 py-2 bg-white rounded-full text-[10px] font-bold border border-border uppercase tracking-widest"
-                  >
-                    {badge}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Global SEO Content Hub - Lazy Loaded for performance */}
+        <Suspense fallback={<div className="h-40" />}>
+           <ProfileAssessmentSEO />
+        </Suspense>
       </div>
     </div>
   );

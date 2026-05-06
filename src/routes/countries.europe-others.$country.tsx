@@ -64,7 +64,7 @@ function EuropeOthersCountryPage() {
       <script type="application/ld+json">{JSON.stringify(breadcrumbJsonLd)}</script>
       <PageHero
         eyebrow="Europe"
-        title={country.name}
+        title={`${country.name} Visa Consultant in Islamabad`}
         subtitle={`Expert visa consultancy for ${country.name} in Islamabad.`}
         backgroundImage={country.image}
       />
@@ -76,7 +76,7 @@ function EuropeOthersCountryPage() {
       <section className="container-px mx-auto max-w-5xl py-20">
         <div className="space-y-6 text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-3xl font-bold md:text-4xl">
-            {country.name} Visa Services in Islamabad
+            {country.name} Visa Requirements from Pakistan 2026
           </h2>
           <p className="text-muted-foreground leading-relaxed text-lg">{country.intro}</p>
         </div>

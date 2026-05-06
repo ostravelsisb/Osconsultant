@@ -6,8 +6,12 @@ import logo from "@/assets/logo.png";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative mt-24 overflow-hidden bg-gradient-to-br from-[#0c142b] via-[#080d1e] to-[#0a1128] border-t border-white/10 text-white/85">
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF7F11] via-[#FF7F11]/80 to-[#00B4D8] z-20" />
+    <footer className="relative mt-24 overflow-hidden bg-gradient-to-br from-[#0c142b] via-[#0b1731] to-[#0a1b3a] border-t border-white/10 text-white/85 shadow-[0_-10px_40px_rgba(0,180,216,0.1)]">
+      {/* Intense Gradient Overlays */}
+      <div className="absolute top-0 right-0 h-full w-1/2 bg-[#00B4D8]/10 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 h-full w-1/2 bg-[#FF7F11]/10 blur-[100px] pointer-events-none" />
+      
+      <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#FF7F11] via-[#FF7F11]/80 to-[#00B4D8] z-20 shadow-[0_0_15px_rgba(255,127,17,0.4)]" />
       <div className="absolute inset-0 mesh-bg opacity-30 pointer-events-none" />
       <div className="container-px mx-auto max-w-7xl py-16 relative">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-12">
@@ -195,6 +199,32 @@ export function Footer() {
             © {year} {COMPANY.name}. All rights reserved.
           </p>
           <p>Crafted with care in Islamabad · IATA Authorized Agent</p>
+        </div>
+
+        {/* Global SEO Footer - Invisible to users but fully indexed by Search Engines */}
+        <div className="sr-only" aria-hidden="true">
+           <h5>Search Engine Indexing — Local Services</h5>
+           <p>
+             OS Consultants is the top-rated visa consultant in Islamabad, serving clients across Pakistan including 
+             Rawalpindi, Lahore, Karachi, Peshawar, Faisalabad, Gujranwala, Sialkot, and Multan. We specialize in 
+             UK Standard Visitor Visas, USA B1/B2 tourist visas, Schengen visa processing (Germany, France, Italy, Spain), 
+             Canada visit visas, and Australia subclass 600. Located in Blue Area, Islamabad, we are the most 
+             trusted travel agency in Islamabad for cheap air ticketing, luxury Umrah packages 2026, 
+             hotel reservations, and travel insurance. Our expert immigration consultants in Islamabad 
+             provide 100% professional documentation for student visas and work permits. Visit our office at Aaly Plaza, 
+             Fazal-e-Haq Road for the best visa services in Pakistan.
+           </p>
+           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+              <span><strong>Trending:</strong></span>
+              <span>Thailand Visa from Pakistan</span>
+              <span>Malaysia E-Visa Islamabad</span>
+              <span>Turkey Visa Agent ISB</span>
+              <span>Azerbaijan ASAN Visa ISB</span>
+              <span>Dubai 30 Days Visa Price</span>
+              <span>Schengen Visa Appointment Pakistan</span>
+              <span>USA Visa Interview Preparation</span>
+              <span>UK Student Visa Guidance ISB</span>
+           </div>
         </div>
       </div>
     </footer>

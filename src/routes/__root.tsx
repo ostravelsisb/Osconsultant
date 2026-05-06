@@ -116,16 +116,57 @@ function RootComponent() {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "@id": "https://osconsultants.pk/#website",
-      url: "https://osconsultants.pk",
-      name: COMPANY.name,
-      publisher: { "@id": "https://osconsultants.pk/#organization" },
-      potentialAction: {
+      "url": "https://osconsultants.pk",
+      "name": "OS Consultants — #1 Visa Consultant in Pakistan",
+      "publisher": { "@id": "https://osconsultants.pk/#organization" },
+      "potentialAction": {
         "@type": "SearchAction",
-        target: {
+        "target": {
           "@type": "EntryPoint",
-          urlTemplate: "https://osconsultants.pk/search?q={search_term_string}"
+          "urlTemplate": "https://osconsultants.pk/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://osconsultants.pk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Visa Services",
+          "item": "https://osconsultants.pk/visa-services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Countries",
+          "item": "https://osconsultants.pk/countries"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Visa Consultancy & Immigration Support",
+      "provider": { "@id": "https://osconsultants.pk/#localbusiness" },
+      "areaServed": { "@type": "Country", "name": "Pakistan" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Visa Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Schengen Visa Consultation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "USA B1/B2 & F1 Visa Assistance" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UK Standard Visitor Visa Processing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Canada Visit & Student Visa Support" } }
+        ]
       }
     }
   ];
@@ -189,8 +230,28 @@ function RootComponent() {
 
     // Auto update page titles for maximum Google search relevance
     if (document.title && !document.title.includes("OS Consultants")) {
-      document.title = `${document.title} | OS Consultants - #1 Travel Agency Pakistan`;
+      document.title = `${document.title} | OS Consultants — #1 Visa Consultant in Pakistan 2026`;
     }
+
+    // Site-wide Meta Tag Boosters
+    const boostMeta = [
+      { name: "rating", content: "general" },
+      { name: "revisit-after", content: "1 days" },
+      { name: "expires", content: "never" },
+      { name: "distribution", content: "global" },
+      { name: "target", content: "all" },
+      { name: "HandheldFriendly", content: "True" },
+    ];
+
+    boostMeta.forEach(meta => {
+      let el = document.querySelector(`meta[name="${meta.name}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute("name", meta.name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", meta.content);
+    });
 
     return () => {
       document.removeEventListener("contextmenu", handleContextMenu);

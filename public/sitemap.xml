@@ -3,88 +3,74 @@
   <!-- Core Pages -->
   <url>
     <loc>https://osconsultants.pk/</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/about</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/visa-services</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/air-ticketing</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/umrah</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/hotel-booking</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/travel-insurance</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/passport-services</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/contact</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://osconsultants.pk/pakistan-visa</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.80</priority>
   </url>
 
   <!-- Region Hubs -->
-  <url>
-    <loc>https://osconsultants.pk/countries/schengen</loc>
-    <lastmod>2026-05-05</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/middle-east</loc>
-    <lastmod>2026-05-05</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/americas</loc>
-    <lastmod>2026-05-05</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/south-asia</loc>
-    <lastmod>2026-05-05</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/central-asia</loc>
-    <lastmod>2026-05-05</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://osconsultants.pk/countries/east-asia</loc>
-    <lastmod>2026-05-05</lastmod>
-    <priority>0.85</priority>
-  </url>
+  <url><loc>https://osconsultants.pk/countries/schengen</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/middle-east</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/americas</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/central-asia</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/east-asia</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/north-africa</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/southern-africa</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/oceania</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/europe-others</loc><priority>0.85</priority></url>
 
-  <!-- ALL 29 SCHENGEN COUNTRIES -->
+  <!-- Core Country Pages -->
+  <url><loc>https://osconsultants.pk/countries/united-states</loc><priority>0.90</priority></url>
+  <url><loc>https://osconsultants.pk/countries/united-kingdom</loc><priority>0.90</priority></url>
+  <url><loc>https://osconsultants.pk/countries/canada</loc><priority>0.90</priority></url>
+
+  <!-- Schengen Countries -->
   <url><loc>https://osconsultants.pk/countries/schengen/germany</loc><priority>0.80</priority></url>
   <url><loc>https://osconsultants.pk/countries/schengen/france</loc><priority>0.80</priority></url>
   <url><loc>https://osconsultants.pk/countries/schengen/italy</loc><priority>0.80</priority></url>
@@ -115,10 +101,77 @@
   <url><loc>https://osconsultants.pk/countries/schengen/bulgaria</loc><priority>0.70</priority></url>
   <url><loc>https://osconsultants.pk/countries/schengen/romania</loc><priority>0.70</priority></url>
 
-  <!-- Asian Countries -->
-  <url><loc>https://osconsultants.pk/countries/south-asia/thailand</loc><priority>0.75</priority></url>
-  <url><loc>https://osconsultants.pk/countries/south-asia/malaysia</loc><priority>0.75</priority></url>
+  <!-- South Asia Countries -->
+  <url><loc>https://osconsultants.pk/countries/south-asia/pakistan</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/thailand</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/malaysia</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/sri-lanka</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/maldives</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/nepal</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/indonesia</loc><priority>0.75</priority></url>
   <url><loc>https://osconsultants.pk/countries/south-asia/vietnam</loc><priority>0.75</priority></url>
-  <url><loc>https://osconsultants.pk/countries/central-asia/turkey</loc><priority>0.80</priority></url>
-  <url><loc>https://osconsultants.pk/countries/central-asia/azerbaijan</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/bangladesh</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-asia/cambodia</loc><priority>0.70</priority></url>
+
+  <!-- Central Asia Countries -->
+  <url><loc>https://osconsultants.pk/countries/central-asia/turkey</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/central-asia/azerbaijan</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/central-asia/uzbekistan</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/central-asia/kazakhstan</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/central-asia/kyrgyzstan</loc><priority>0.70</priority></url>
+
+  <!-- Middle East Countries -->
+  <url><loc>https://osconsultants.pk/countries/middle-east/united-arab-emirates</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/middle-east/saudi-arabia</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/middle-east/oman</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/middle-east/kuwait</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/middle-east/qatar</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/middle-east/bahrain</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/middle-east/jordan</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/middle-east/lebanon</loc><priority>0.70</priority></url>
+
+  <!-- East Asia Countries -->
+  <url><loc>https://osconsultants.pk/countries/east-asia/china</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/east-asia/japan</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/east-asia/south-korea</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/east-asia/taiwan</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/east-asia/hong-kong</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/east-asia/mongolia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/east-asia/macau</loc><priority>0.70</priority></url>
+
+  <!-- North Africa Countries -->
+  <url><loc>https://osconsultants.pk/countries/north-africa/egypt</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/north-africa/morocco</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/north-africa/tunisia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/north-africa/algeria</loc><priority>0.70</priority></url>
+
+  <!-- Southern Africa Countries -->
+  <url><loc>https://osconsultants.pk/countries/southern-africa/south-africa</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/southern-africa/mauritius</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/southern-africa/kenya</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/southern-africa/seychelles</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/southern-africa/zimbabwe</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/southern-africa/zambia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/southern-africa/tanzania</loc><priority>0.70</priority></url>
+
+  <!-- Oceania Countries -->
+  <url><loc>https://osconsultants.pk/countries/oceania/australia</loc><priority>0.85</priority></url>
+  <url><loc>https://osconsultants.pk/countries/oceania/new-zealand</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/oceania/fiji</loc><priority>0.70</priority></url>
+
+  <!-- Americas & South America -->
+  <url><loc>https://osconsultants.pk/countries/americas/mexico</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/brazil</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/argentina</loc><priority>0.75</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/colombia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/peru</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/chile</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/ecuador</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/bolivia</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/uruguay</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/venezuela</loc><priority>0.70</priority></url>
+  <url><loc>https://osconsultants.pk/countries/south-america/paraguay</loc><priority>0.70</priority></url>
+
+  <!-- Europe Others -->
+  <url><loc>https://osconsultants.pk/countries/europe-others/ireland</loc><priority>0.75</priority></url>
 </urlset>
