@@ -279,6 +279,25 @@ function SchengenCountryPage() {
           </div>
         </div>
       </section>
+      
+      {/* Hidden SEO Infrastructure for specific country ranking */}
+      <div className="sr-only" aria-hidden="true">
+        <h3>{country.name} Visa Consultant Islamabad Service Map</h3>
+        <p>
+          Searching for the best {country.name} visa agent in Islamabad? OS Consultants provides 
+          specialized services for {country.name} visit visa from Pakistan, {country.name} work permit 2026, 
+          and {country.name} student visa documentation. We cover all areas including Islamabad Blue Area, 
+          DHA, Bahria Town, and neighboring cities like Rawalpindi. Our experts ensure 
+          {country.name} visa and requirements are met with 100% accuracy to avoid 214(b) or 
+          Schengen Article 15 refusals.
+        </p>
+        <ul>
+          <li>{country.name} Visa and Requirements 2026</li>
+          <li>{country.name} Visa Fee Pakistan 2026</li>
+          <li>VFS Global {country.name} Appointment Islamabad</li>
+          <li>Best {country.name} Schengen Visa Agency Pakistan</li>
+        </ul>
+      </div>
     </>
   );
 }

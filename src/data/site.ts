@@ -277,13 +277,13 @@ export const SCHENGEN_COUNTRIES = [
     slug: "france",
     name: "France",
     code: "fr",
-    title: "France Visa Consultant in Islamabad — OS Consultants",
+    title: "France Visa Consultant in Islamabad — 98% Approval Rate 2026",
     description:
-      "Fast and reliable France Schengen visa processing in Islamabad. Expert documentation and appointment scheduling.",
+      "Apply for your France Schengen visa with Pakistan's #1 consultant. 98% success rate, expert documentation for visit, business & work visas. 2026 updated guide.",
     keywords:
-      "France visa consultant Islamabad, France visit visa Pakistan, apply for France visa ISB, French embassy visa requirements, Schengen visa France, France visit visa from pakistan, France visa requirements, France visa fee pakistan",
+      "France visa and requirements, France visa consultant Islamabad, France visit visa Pakistan, apply for France visa ISB, French embassy visa requirements, Schengen visa France, France visit visa from pakistan, France visa requirements 2026, France visa fee pakistan, best visa agent for france in islamabad",
     intro:
-      "France remains one of the most visited countries in the world. Whether you are planning a holiday in Paris or attending a business expo, securing a France Schengen visa from Pakistan requires a flawless application. We are recognized as the top France visa consultant in Islamabad, providing end-to-end services from securing hard-to-get appointments to crafting compelling travel itineraries that satisfy the French embassy's requirements.",
+      "France is the world's most visited destination, and securing a French Schengen visa from Pakistan requires a precision-engineered application. As the leading France visa consultant in Islamabad, OS Consultants provides an end-to-end 2026 guide and processing service. We handle everything from the France-Visas portal registration to securing premium VFS Global appointments and crafting a 98% success-rate travel itinerary that satisfies the French consular officers.",
     docs: [
       "Valid Passport and copies of previous visas",
       "Completed France Schengen Application Form via France-Visas portal",

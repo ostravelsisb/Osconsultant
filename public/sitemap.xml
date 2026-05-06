@@ -72,7 +72,7 @@
 
   <!-- Schengen Countries -->
   <url><loc>https://osconsultants.pk/countries/schengen/germany</loc><priority>0.80</priority></url>
-  <url><loc>https://osconsultants.pk/countries/schengen/france</loc><priority>0.80</priority></url>
+  <url><loc>https://osconsultants.pk/countries/schengen/france</loc><lastmod>2026-05-06</lastmod><priority>0.95</priority></url>
   <url><loc>https://osconsultants.pk/countries/schengen/italy</loc><priority>0.80</priority></url>
   <url><loc>https://osconsultants.pk/countries/schengen/spain</loc><priority>0.80</priority></url>
   <url><loc>https://osconsultants.pk/countries/schengen/netherlands</loc><priority>0.80</priority></url>
